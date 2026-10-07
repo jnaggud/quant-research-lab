@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Polymarket BTC Paper Desk</title>
+  <link rel="stylesheet" href="/polymarket-assets/polymarket.css?v=1">
+</head>
+<body>
+  <div id="app">
+    <header>
+      <div><div class="eyebrow">POLYMARKET / CRYPTO PAPER DESK</div><h1>BTC 15m Late Favorite <span>C1</span></h1></div>
+      <div id="feed" class="feed waiting"><i></i><b>CONNECTING</b><small>PAPER ONLY</small></div>
+    </header>
+
+    <main>
+      <section class="market-stage">
+        <div class="section-head"><div><div class="eyebrow">LIVE EXECUTABLE MARKET</div><h2 id="marketSlug">Current BTC contract</h2></div><div id="marketClock" class="clock">—</div></div>
+        <canvas id="probability"></canvas>
+        <div class="outcomes">
+          <div class="up"><small>UP BEST ASK</small><strong id="upAsk">—</strong><span id="upDepth">—</span></div>
+          <div class="down"><small>DOWN BEST ASK</small><strong id="downAsk">—</strong><span id="downDepth">—</span></div>
+        </div>
+        <div class="timeline"><i id="elapsedBar"></i><b></b><span>OPEN</span><span>10m DECISION</span><span>RESOLUTION</span></div>
+      </section>
+
+      <aside class="decision">
+        <div class="eyebrow">STRATEGY DECISION</div>
+        <div id="decision" class="decision-word waiting">WAITING</div>
+        <p id="decisionReason">Building the current order-book state.</p>
+        <div class="rule-grid">
+          <div><span>FAVORITE</span><b id="favorite">—</b></div>
+          <div><span>QUOTE AGE</span><b id="quoteAge">—</b></div>
+          <div><span>PRICE GATE</span><b id="priceGate">$0.55–$0.98</b></div>
+          <div><span>MAX PAPER COST</span><b>$10.00</b></div>
+        </div>
+        <div class="engine"><i></i><span>PAPER ENGINE</span><b id="engineState">—</b><small id="enginePoll">—</small></div>
+      </aside>
+
+      <section class="stats" id="stats">
+        <div class="primary"><small>FORWARD NET P&amp;L</small><strong id="netPnl">$0.00</strong><em id="resolved">0 resolved</em></div>
+        <div><small>WIN RATE</small><strong id="winRate">—</strong><em>resolved signals</em></div>
+        <div><small>MAX DRAWDOWN</small><strong id="drawdown">$0.00</strong><em>paper equity</em></div>
+        <div><small>SIGNALS</small><strong id="signals">0</strong><em id="days">0 calendar days</em></div>
+        <div><small>PROFITABLE WEEKS</small><strong id="weeks">—</strong><em>minimum 60%</em></div>
+        <div><small>PROMOTION STATUS</small><strong id="promotion">NOT READY</strong><em>live capital disabled</em></div>
+        <div class="projection"><small>PROJECTED MONTHLY REVENUE</small><strong id="monthlyRevenue">—</strong><em id="monthlyBasis">forward run rate</em></div>
+        <div class="projection"><small>PROJECTED YEARLY REVENUE</small><strong id="yearlyRevenue">—</strong><em id="yearlyBasis">forward run rate</em></div>
+      </section>
+
+      <section class="charts">
+        <div class="equity-panel"><div class="section-head"><div><div class="eyebrow">FORWARD PAPER EQUITY</div><h2>Realized P&amp;L and drawdown</h2></div><span id="equityLabel">NO RESOLVED TRADES</span></div><canvas id="equity"></canvas></div>
+        <div class="benchmark"><div class="eyebrow">UNTOUCHED HISTORICAL HOLDOUT</div><h2>Execution stress benchmark</h2><div id="benchmarkRows"></div><p>Historical evidence is a benchmark, not part of forward P&amp;L.</p></div>
+      </section>
+
+      <section class="gates">
+        <div class="section-head"><div><div class="eyebrow">FORWARD PROMOTION GATE</div><h2>Evidence required before live capital</h2></div><span id="gateCount">0 / 7 PASSED</span></div>
+        <div id="gateRows" class="gate-rows"></div>
+      </section>
+
+      <section class="ledger">
+        <div class="section-head"><div><div class="eyebrow">PAPER TRADE LEDGER</div><h2>Signals, fills and resolutions</h2></div><span id="lastUpdate">—</span></div>
+        <div class="table-wrap"><table><thead><tr><th>OBSERVED</th><th>CONTRACT</th><th>SIDE</th><th>ASK</th><th>SHARES</th><th>DEPTH</th><th>QUOTE AGE</th><th>WINNER</th><th>FEE</th><th>P&amp;L</th></tr></thead><tbody id="tradeRows"></tbody></table></div>
+      </section>
+    </main>
+  </div>
+  <script src="/polymarket-assets/polymarket.js?v=1"></script>
+</body>
+</html>

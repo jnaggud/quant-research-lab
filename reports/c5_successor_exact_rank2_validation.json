@@ -1,0 +1,308 @@
+{
+  "source_report": "reports/c5_successor_tv_parity_128k_exact_20260617.json",
+  "source_data": "/private/tmp/tv_es1_current_15m_bars_final.json",
+  "daily_bars": "/private/tmp/tv_es1_current_1d_bars.json",
+  "h4_bars": "/private/tmp/tv_es1_current_240m_bars.json",
+  "selected_rank": 2,
+  "selected_worker_id": 23,
+  "selected_score": 5466.810409027523,
+  "sampler": "deterministic_random",
+  "candidate_summary": {
+    "net_profit": 56952.5,
+    "buy_hold_net": 59512.5,
+    "excess_net": -2560.0,
+    "trades": 452,
+    "win_rate": 36.7257,
+    "profit_factor": 1.3625411779683945,
+    "max_drawdown_pct": 24.24109404018234,
+    "long_trades": 297,
+    "short_trades": 155,
+    "core_trades": 300,
+    "cap_trades": 152,
+    "recent_days": 30,
+    "recent_net": 5572.5,
+    "recent_buy_hold_net": 8662.5,
+    "recent_excess_net": -3090.0,
+    "recent_bar_window_bars": 2880,
+    "recent_bar_window_net": 17075.0,
+    "recent_bar_window_buy_hold_net": 14725.0,
+    "recent_bar_window_excess_net": 2350.0
+  },
+  "baseline_c5_summary": {
+    "net_profit": 35212.5,
+    "buy_hold_net": 59512.5,
+    "excess_net": -24300.0,
+    "trades": 515,
+    "win_rate": 41.165,
+    "profit_factor": 1.253756350664793,
+    "max_drawdown_pct": 22.03017382748442,
+    "long_trades": 398,
+    "short_trades": 117,
+    "core_trades": 238,
+    "cap_trades": 277,
+    "recent_days": 30,
+    "recent_net": -14085.0,
+    "recent_buy_hold_net": 8662.5,
+    "recent_excess_net": -22747.5,
+    "recent_bar_window_bars": 2880,
+    "recent_bar_window_net": -7932.5,
+    "recent_bar_window_buy_hold_net": 14725.0,
+    "recent_bar_window_excess_net": -22657.5
+  },
+  "delta_vs_c5": {
+    "net_profit": 21740.0,
+    "trades": -63,
+    "profit_factor": 0.1087848273036014,
+    "max_drawdown_pct": 2.2109202126979213
+  },
+  "by_kind": [
+    {
+      "group": "cap",
+      "trades": 152,
+      "net": 16040.0,
+      "win_rate": 45.39,
+      "avg_trade": 105.53,
+      "profit_factor": 1.4264
+    },
+    {
+      "group": "core",
+      "trades": 300,
+      "net": 40912.5,
+      "win_rate": 32.33,
+      "avg_trade": 136.38,
+      "profit_factor": 1.3424
+    }
+  ],
+  "by_direction": [
+    {
+      "group": "long",
+      "trades": 297,
+      "net": 29627.5,
+      "win_rate": 37.04,
+      "avg_trade": 99.76,
+      "profit_factor": 1.2763
+    },
+    {
+      "group": "short",
+      "trades": 155,
+      "net": 27325.0,
+      "win_rate": 36.13,
+      "avg_trade": 176.29,
+      "profit_factor": 1.5481
+    }
+  ],
+  "by_kind_direction": [
+    {
+      "group": "cap_long",
+      "trades": 152,
+      "net": 16040.0,
+      "win_rate": 45.39,
+      "avg_trade": 105.53,
+      "profit_factor": 1.4264
+    },
+    {
+      "group": "core_long",
+      "trades": 145,
+      "net": 13587.5,
+      "win_rate": 28.28,
+      "avg_trade": 93.71,
+      "profit_factor": 1.1952
+    },
+    {
+      "group": "core_short",
+      "trades": 155,
+      "net": 27325.0,
+      "win_rate": 36.13,
+      "avg_trade": 176.29,
+      "profit_factor": 1.5481
+    }
+  ],
+  "monthly": [
+    {
+      "period": "2025-09",
+      "pnl": -242.5,
+      "trades": 1,
+      "win_rate": 0.0
+    },
+    {
+      "period": "2025-10",
+      "pnl": 10827.5,
+      "trades": 57,
+      "win_rate": 35.09
+    },
+    {
+      "period": "2025-11",
+      "pnl": 11072.5,
+      "trades": 48,
+      "win_rate": 41.67
+    },
+    {
+      "period": "2025-12",
+      "pnl": -10625.0,
+      "trades": 55,
+      "win_rate": 29.09
+    },
+    {
+      "period": "2026-01",
+      "pnl": 1815.0,
+      "trades": 52,
+      "win_rate": 28.85
+    },
+    {
+      "period": "2026-02",
+      "pnl": -472.5,
+      "trades": 62,
+      "win_rate": 40.32
+    },
+    {
+      "period": "2026-03",
+      "pnl": 8075.0,
+      "trades": 55,
+      "win_rate": 34.55
+    },
+    {
+      "period": "2026-04",
+      "pnl": 15535.0,
+      "trades": 38,
+      "win_rate": 36.84
+    },
+    {
+      "period": "2026-05",
+      "pnl": 18562.5,
+      "trades": 45,
+      "win_rate": 55.56
+    },
+    {
+      "period": "2026-06",
+      "pnl": 2405.0,
+      "trades": 39,
+      "win_rate": 30.77
+    }
+  ],
+  "worst_months": [
+    {
+      "period": "2025-12",
+      "pnl": -10625.0,
+      "trades": 55,
+      "win_rate": 29.09
+    },
+    {
+      "period": "2026-02",
+      "pnl": -472.5,
+      "trades": 62,
+      "win_rate": 40.32
+    },
+    {
+      "period": "2025-09",
+      "pnl": -242.5,
+      "trades": 1,
+      "win_rate": 0.0
+    },
+    {
+      "period": "2026-01",
+      "pnl": 1815.0,
+      "trades": 52,
+      "win_rate": 28.85
+    },
+    {
+      "period": "2026-06",
+      "pnl": 2405.0,
+      "trades": 39,
+      "win_rate": 30.77
+    }
+  ],
+  "best_months": [
+    {
+      "period": "2026-05",
+      "pnl": 18562.5,
+      "trades": 45,
+      "win_rate": 55.56
+    },
+    {
+      "period": "2026-04",
+      "pnl": 15535.0,
+      "trades": 38,
+      "win_rate": 36.84
+    },
+    {
+      "period": "2025-11",
+      "pnl": 11072.5,
+      "trades": 48,
+      "win_rate": 41.67
+    },
+    {
+      "period": "2025-10",
+      "pnl": 10827.5,
+      "trades": 57,
+      "win_rate": 35.09
+    },
+    {
+      "period": "2026-03",
+      "pnl": 8075.0,
+      "trades": 55,
+      "win_rate": 34.55
+    }
+  ],
+  "params": {
+    "h4_fast": 11,
+    "h4_slow": 27,
+    "d_fast": 9,
+    "d_slow": 80,
+    "regime_mode": "h4",
+    "local_filter": "none",
+    "stop_atr": 2.7320715821627872,
+    "trail_atr": 8.18893517904225,
+    "cooldown": 14,
+    "long_rsi_min": 43.72649795448383,
+    "short_rsi_max": 58.41919231643762,
+    "macd_floor": -4.004301069650151,
+    "vol_mult": 0.5822144173387203,
+    "use_momentum_exit": true,
+    "long_exit_rsi": 39.66129925548556,
+    "short_exit_rsi": 43.043945472221175,
+    "long_exit_regime": -1,
+    "short_exit_regime": 0,
+    "allow_short": true,
+    "h4_offset_minutes": 120,
+    "short_gate": "any",
+    "use_carry_long": false,
+    "carry_regime": "h4_up",
+    "carry_filter": "ema55",
+    "carry_rsi_min": 40.2719980662775,
+    "carry_macd_floor": -3.141209364327226,
+    "carry_vol_mult": 0.7962708982892737,
+    "cap_priority": false,
+    "cap_regime": "daily_not_bear",
+    "cap_adx_min": 7.311941,
+    "cap_adx_max": 64.515881,
+    "cap_atr_rel_min": 0.771198,
+    "cap_atr_rel_max": 3.89685,
+    "cap_vwap_dist_atr": 3.554982,
+    "cap_bb_atr": -0.504851,
+    "cap_prev_low_atr": 1.686516,
+    "cap_low_break_atr": 1.343469,
+    "cap_low96_atr": 0.47606,
+    "cap_rsi_max": 39.841345,
+    "cap_stoch_max": 21.963174,
+    "cap_ret_z": 0.456169,
+    "cap_reclaim_pos": 0.020825,
+    "cap_volume_mult": 0.675144,
+    "cap_pv_z_max": 0.141433,
+    "cap_require_reversal": false,
+    "cap_stop_atr": 5.434981262036012,
+    "cap_target_atr": 1.403110851385852,
+    "cap_trail_atr": 2.8616551265049526,
+    "cap_exit_vwap_atr": 0.024621959933477378,
+    "cap_exit_rsi": 50.165860637132106,
+    "cap_exit_range_pos": 0.38519191606516623,
+    "cap_exit_on_peak": false,
+    "cap_exit_on_momentum_peak": true,
+    "cap_cooldown": 2,
+    "cap_min_hold": 1,
+    "cap_max_hold": 12,
+    "use_cap": true,
+    "use_date_range": true,
+    "start_time": "2025-09-30T00:00:00Z"
+  },
+  "trades": []
+}

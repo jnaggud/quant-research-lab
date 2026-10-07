@@ -1,0 +1,37 @@
+# Local configuration and credentials
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+.claude/
+.codex/
+
+# Dependencies, caches, and build products
+.venv*/
+venv/
+node_modules/
+tradingview-mcp/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.cache/
+*.egg-info/
+build/
+dist/
+.DS_Store
+
+# Licensed inputs and generated runtime output
+data/
+tmp/
+*.dbn*
+*.parquet
+quant/cache/
+reports/c7_monitor/
+reports/c8_monitor/
+reports/*.log
+*.log
+media/
+launchd/generated/
+archives/c11_frozen_20260714/tv_*.json
+reports/tv_*_bars_*.json

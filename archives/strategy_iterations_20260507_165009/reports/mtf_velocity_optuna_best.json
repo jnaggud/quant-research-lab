@@ -1,0 +1,81 @@
+{
+  "source_data": "tmp/tv_btcusd_15m_500.json",
+  "rows": 500,
+  "start": "2026-05-02 04:45:00+00:00",
+  "end": "2026-05-07 09:30:00+00:00",
+  "best_score": -165.60117205400115,
+  "params": {
+    "mode": "breakout",
+    "allow_short": false,
+    "ema_fast": 15,
+    "ema_slow": 114,
+    "ema_regime": 223,
+    "donchian": 10,
+    "vol_len": 71,
+    "vol_mult": 1.2992577596458634,
+    "vel_std": 33,
+    "vel_mult": 1.992813937737263,
+    "adx_min": 2.7669262462280004,
+    "arwo_long_cross": -0.2886250499526608,
+    "arwo_short_cross": 0.007141230023990641,
+    "arwo_long_floor": -0.731883424713903,
+    "arwo_short_ceiling": 0.5652484461598063,
+    "macd_floor": 17.360899592716542,
+    "h1_macd_floor": 6.211410142167146,
+    "h4_rsi_long": 40.66690487505517,
+    "h4_rsi_short": 53.50689081860209,
+    "rsi_long": 54.463773707669475,
+    "rsi_short": 63.84658205019175,
+    "rsi_take_long": 83.20398652060196,
+    "rsi_take_short": 40.20052360828624,
+    "long_exit_arwo": -0.7358086895117545,
+    "short_exit_arwo": 0.3994080139826337,
+    "pullback_atr": 1.6637864213169582,
+    "require_h4": false,
+    "require_vol": false,
+    "require_obv": false,
+    "require_vwap": true,
+    "stop_atr": 5.162931417950415,
+    "tp_atr": 12.331229698005798,
+    "trail_start_atr": 9.012012450231248,
+    "trail_atr": 5.358072569403026,
+    "cooldown": 17,
+    "cost_bps": 4.0
+  },
+  "metrics": {
+    "full": {
+      "total_return": 2.343489430448864,
+      "n_trades": 2,
+      "win_rate": 100.0,
+      "profit_factor": 2331517993.033674,
+      "max_drawdown": 0.0,
+      "sharpe_like": 4.097953479827015
+    },
+    "train_0_60": {
+      "total_return": 0.8013715850395231,
+      "n_trades": 1,
+      "win_rate": 100.0,
+      "profit_factor": 801371585.0395187,
+      "max_drawdown": 0.0,
+      "sharpe_like": 801371585.0395187
+    },
+    "test_60_80": {
+      "total_return": 0.45980918614814126,
+      "n_trades": 1,
+      "win_rate": 100.0,
+      "profit_factor": 459809186.1481368,
+      "max_drawdown": 0.0,
+      "sharpe_like": 459809186.1481368
+    },
+    "test_80_100": {
+      "total_return": 0.7634527742895081,
+      "n_trades": 1,
+      "win_rate": 100.0,
+      "profit_factor": 763452774.2895036,
+      "max_drawdown": 0.0,
+      "sharpe_like": 763452774.2895036
+    }
+  },
+  "cpu_jobs": 32,
+  "trials": 1800
+}

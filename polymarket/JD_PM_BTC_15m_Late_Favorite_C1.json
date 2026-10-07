@@ -1,0 +1,21 @@
+{
+  "strategy_name": "JD PM BTC 15m Late Favorite C1",
+  "version": "C1",
+  "market": "Polymarket recurring BTC Up/Down 15-minute",
+  "series_id": 10192,
+  "mode": "paper_only",
+  "decision_second": 600,
+  "timing_tolerance_seconds": 15,
+  "max_quote_age_seconds": 15,
+  "min_favorite_price": 0.55,
+  "max_limit_price": 0.98,
+  "max_order_cost_usd": 10.0,
+  "forward_gate": {
+    "minimum_signals": 500,
+    "minimum_calendar_days": 30,
+    "minimum_net_pnl_after_fees": 0,
+    "minimum_profitable_weeks_fraction": 0.6,
+    "maximum_allowed_drawdown_usd": 100,
+    "requires_observed_fillability": true
+  }
+}

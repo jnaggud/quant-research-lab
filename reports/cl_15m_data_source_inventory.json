@@ -1,0 +1,177 @@
+{
+  "tradingview_sources": [
+    {
+      "symbol": "NYMEX:CL1!",
+      "role": "primary",
+      "features": [
+        "15m OHLCV",
+        "front-month crude trend",
+        "session behavior"
+      ]
+    },
+    {
+      "symbol": "NYMEX:CL2!",
+      "role": "term_structure",
+      "features": [
+        "front-second spread",
+        "roll/contango/backwardation"
+      ]
+    },
+    {
+      "symbol": "NYMEX:CL3!",
+      "role": "term_structure",
+      "features": [
+        "curve slope",
+        "inventory expectation proxy"
+      ]
+    },
+    {
+      "symbol": "NYMEX:BZ1!",
+      "role": "cross_market",
+      "features": [
+        "Brent confirmation",
+        "Brent/WTI spread"
+      ]
+    },
+    {
+      "symbol": "NYMEX:RB1!",
+      "role": "energy_complex",
+      "features": [
+        "gasoline demand impulse",
+        "refined product confirmation"
+      ]
+    },
+    {
+      "symbol": "NYMEX:HO1!",
+      "role": "energy_complex",
+      "features": [
+        "distillate confirmation",
+        "crack-spread proxy"
+      ]
+    },
+    {
+      "symbol": "NYMEX:NG1!",
+      "role": "energy_complex",
+      "features": [
+        "energy volatility/risk proxy"
+      ]
+    },
+    {
+      "symbol": "TVC:DXY",
+      "role": "macro",
+      "features": [
+        "USD pressure",
+        "commodity headwind/tailwind"
+      ]
+    },
+    {
+      "symbol": "TVC:US10Y",
+      "role": "macro",
+      "features": [
+        "rates regime",
+        "risk/liquidity proxy"
+      ]
+    },
+    {
+      "symbol": "CME_MINI:ES1!",
+      "role": "risk",
+      "features": [
+        "risk-on/off confirmation",
+        "equity volatility proxy"
+      ]
+    },
+    {
+      "symbol": "CBOE:VIX",
+      "role": "risk",
+      "features": [
+        "risk-off regime",
+        "volatility shock filter"
+      ]
+    },
+    {
+      "symbol": "COMEX:GC1!",
+      "role": "macro",
+      "features": [
+        "safe-haven pressure",
+        "USD sensitivity proxy"
+      ]
+    },
+    {
+      "symbol": "AMEX:USO",
+      "role": "flow_proxy",
+      "features": [
+        "ETF flow proxy",
+        "cash-session oil proxy"
+      ]
+    },
+    {
+      "symbol": "TVC:SPX",
+      "role": "risk",
+      "features": [
+        "broad risk trend"
+      ]
+    }
+  ],
+  "vendor_sources": [
+    {
+      "name": "EIA petroleum status",
+      "frequency": "weekly",
+      "features": [
+        "crude inventory surprise",
+        "gasoline/distillate surprise",
+        "Cushing stocks"
+      ]
+    },
+    {
+      "name": "API inventory",
+      "frequency": "weekly",
+      "features": [
+        "pre-EIA inventory expectation",
+        "event risk flag"
+      ]
+    },
+    {
+      "name": "CFTC COT",
+      "frequency": "weekly",
+      "features": [
+        "managed-money positioning",
+        "producer hedge pressure"
+      ]
+    },
+    {
+      "name": "News/sentiment API",
+      "frequency": "intraday",
+      "features": [
+        "OPEC/geopolitical shock flags",
+        "headline intensity"
+      ]
+    },
+    {
+      "name": "Options/skew API",
+      "frequency": "intraday/daily",
+      "features": [
+        "implied vol regime",
+        "put/call skew",
+        "tail-risk pricing"
+      ]
+    },
+    {
+      "name": "Order-flow/tick API",
+      "frequency": "intraday",
+      "features": [
+        "delta",
+        "cumulative delta",
+        "liquidity sweeps",
+        "absorption"
+      ]
+    },
+    {
+      "name": "Economic calendar API",
+      "frequency": "scheduled",
+      "features": [
+        "CPI/FOMC/NFP blackouts",
+        "EIA event windows"
+      ]
+    }
+  ]
+}

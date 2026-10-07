@@ -1,0 +1,128 @@
+//@version=6
+strategy("JD MTF Peak Valley Reversal 20260507", overlay=true, initial_capital=10000, default_qty_type=strategy.percent_of_equity, default_qty_value=100, pyramiding=0, commission_type=strategy.commission.percent, commission_value=0.02, slippage=0, process_orders_on_close=true)
+
+// Base regime: pine_strategies/JD_MTF_Flip_64k_Best.pine
+h4FastLen = input.int(6, "4H fast EMA", minval=1)
+h4SlowLen = input.int(10, "4H slow EMA", minval=1)
+dFastLen = input.int(16, "Daily confirm fast EMA", minval=1)
+dSlowLen = input.int(33, "Daily confirm slow EMA", minval=1)
+holdBars = input.int(1, "Regime confirmation bars", minval=0)
+entryScoreMin = input.int(3, "Peak/valley entry score", minval=1, maxval=6)
+exitScoreMin = input.int(3, "Peak/valley exit score", minval=1, maxval=6)
+rsiLen = input.int(14, "RSI length", minval=2)
+stochLen = input.int(14, "Stoch length", minval=2)
+bbLen = input.int(20, "Bollinger length", minval=5)
+bbMult = input.float(2.0, "Bollinger mult", step=0.1)
+pivotBars = input.int(2, "Confirmed pivot bars", minval=1, maxval=5)
+atrLen = input.int(14, "ATR length", minval=1)
+stopAtr = input.float(2.8, "Disaster stop ATR", step=0.1)
+trailAtr = input.float(4.0, "Trend trail ATR", step=0.1)
+useDateRange = input.bool(true, "Use Python/TV test date range")
+startTime = input.time(1759190400000, "Start")
+endTime = input.time(1778157600000, "End")
+showSignals = input.bool(true, "Show peak/valley signals")
+showMtfLines = input.bool(true, "Show MTF EMAs")
+
+h4Fast = request.security(syminfo.tickerid, "240", ta.ema(close, h4FastLen)[1], barmerge.gaps_off, barmerge.lookahead_off)
+h4Slow = request.security(syminfo.tickerid, "240", ta.ema(close, h4SlowLen)[1], barmerge.gaps_off, barmerge.lookahead_off)
+dFast = request.security(syminfo.tickerid, "1D", ta.ema(close, dFastLen)[1], barmerge.gaps_off, barmerge.lookahead_off)
+dSlow = request.security(syminfo.tickerid, "1D", ta.ema(close, dSlowLen)[1], barmerge.gaps_off, barmerge.lookahead_off)
+
+h4Signal = h4Fast > h4Slow ? 1 : -1
+dailySignal = dFast > dSlow ? 1 : -1
+baseSignal = h4Signal == dailySignal ? h4Signal : 0
+
+var int regimeSignal = 0
+var int pendingSignal = na
+var int pendingAge = 0
+
+if baseSignal == regimeSignal
+    pendingSignal := na
+    pendingAge := 0
+else
+    if na(pendingSignal) or pendingSignal != baseSignal
+        pendingSignal := baseSignal
+        pendingAge := 0
+    else
+        pendingAge += 1
+    if pendingAge >= holdBars
+        regimeSignal := pendingSignal
+        pendingSignal := na
+        pendingAge := 0
+
+inRange = not useDateRange or (time >= startTime and time <= endTime)
+targetSignal = inRange ? regimeSignal : 0
+
+rsi = ta.rsi(close, rsiLen)
+stochK = ta.stoch(close, high, low, stochLen)
+stochD = ta.sma(stochK, 3)
+willr = -100.0 * (ta.highest(high, stochLen) - close) / math.max(ta.highest(high, stochLen) - ta.lowest(low, stochLen), syminfo.mintick)
+[_, _, macdHist] = ta.macd(close, 12, 26, 9)
+basis = ta.sma(close, bbLen)
+dev = bbMult * ta.stdev(close, bbLen)
+bbUpper = basis + dev
+bbLower = basis - dev
+atr = ta.atr(atrLen)
+pivotLow = not na(ta.pivotlow(low, pivotBars, pivotBars))
+pivotHigh = not na(ta.pivothigh(high, pivotBars, pivotBars))
+stochCrossUp = ta.crossover(stochK, stochD)
+rsiCrossUp = ta.crossover(rsi, 40)
+willrCrossUp = ta.crossover(willr, -80)
+stochCrossDown = ta.crossunder(stochK, stochD)
+rsiCrossDown = ta.crossunder(rsi, 60)
+willrCrossDown = ta.crossunder(willr, -20)
+
+valleyScore = 0
+valleyScore += stochCrossUp and stochK < 35 ? 1 : 0
+valleyScore += (rsi < 38 and rsi > rsi[1]) or rsiCrossUp ? 1 : 0
+valleyScore += willrCrossUp or (willr < -75 and willr > willr[1]) ? 1 : 0
+valleyScore += low <= bbLower or close < basis - atr ? 1 : 0
+valleyScore += macdHist < 0 and macdHist > macdHist[1] ? 1 : 0
+valleyScore += pivotLow ? 1 : 0
+
+peakScore = 0
+peakScore += stochCrossDown and stochK > 65 ? 1 : 0
+peakScore += (rsi > 62 and rsi < rsi[1]) or rsiCrossDown ? 1 : 0
+peakScore += willrCrossDown or (willr > -25 and willr < willr[1]) ? 1 : 0
+peakScore += high >= bbUpper or close > basis + atr ? 1 : 0
+peakScore += macdHist > 0 and macdHist < macdHist[1] ? 1 : 0
+peakScore += pivotHigh ? 1 : 0
+
+valleyTrigger = valleyScore >= entryScoreMin
+peakTrigger = peakScore >= entryScoreMin
+baseLongStart = targetSignal == 1 and targetSignal[1] != 1
+baseShortStart = targetSignal == -1 and targetSignal[1] != -1
+
+longEntry = targetSignal == 1 and strategy.position_size <= 0 and (baseLongStart or valleyTrigger)
+shortEntry = targetSignal == -1 and strategy.position_size >= 0 and (baseShortStart or peakTrigger)
+longPeakExit = strategy.position_size > 0 and peakScore >= exitScoreMin
+shortValleyExit = strategy.position_size < 0 and valleyScore >= exitScoreMin
+regimeFlatExit = targetSignal == 0 and strategy.position_size != 0
+
+if longEntry
+    strategy.entry("Long", strategy.long)
+if shortEntry
+    strategy.entry("Short", strategy.short)
+if longPeakExit
+    strategy.close("Long", comment="Peak exit")
+if shortValleyExit
+    strategy.close("Short", comment="Valley exit")
+if regimeFlatExit
+    strategy.close_all(comment="MTF flat")
+
+if strategy.position_size > 0
+    strategy.exit("Long Risk", "Long", stop=strategy.position_avg_price - stopAtr * atr, trail_points=trailAtr * atr / syminfo.mintick)
+if strategy.position_size < 0
+    strategy.exit("Short Risk", "Short", stop=strategy.position_avg_price + stopAtr * atr, trail_points=trailAtr * atr / syminfo.mintick)
+
+plot(showMtfLines ? h4Fast : na, "4H Fast EMA prev", color=color.new(color.aqua, 0))
+plot(showMtfLines ? h4Slow : na, "4H Slow EMA prev", color=color.new(color.orange, 0))
+plot(showMtfLines ? dFast : na, "Daily Fast EMA prev", color=color.new(color.lime, 55), linewidth=2)
+plot(showMtfLines ? dSlow : na, "Daily Slow EMA prev", color=color.new(color.red, 55), linewidth=2)
+plot(bbUpper, "Peak band", color=color.new(color.red, 75))
+plot(bbLower, "Valley band", color=color.new(color.lime, 75))
+plotshape(showSignals and valleyTrigger, "Valley", shape.circle, location.belowbar, color=color.new(color.lime, 0), size=size.tiny, text="V")
+plotshape(showSignals and peakTrigger, "Peak", shape.circle, location.abovebar, color=color.new(color.red, 0), size=size.tiny, text="P")
+plotshape(showSignals and longEntry, "Long", shape.triangleup, location.belowbar, color=color.lime, size=size.small, text="L")
+plotshape(showSignals and shortEntry, "Short", shape.triangledown, location.abovebar, color=color.red, size=size.small, text="S")
+bgcolor(targetSignal == 1 ? color.new(color.green, 92) : targetSignal == -1 ? color.new(color.red, 92) : color.new(color.gray, 94))

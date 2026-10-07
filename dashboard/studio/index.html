@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="application-name" content="ES Probability Studio">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <title>ES Probability Studio</title>
+  <link rel="stylesheet" href="/studio-assets/studio.css?v=5">
+</head>
+<body>
+  <div id="app" role="application">
+    <header>
+      <div>
+        <div class="eyebrow">QUANT DESK / CAUSAL INFERENCE</div>
+        <h1>One price. <span>Many possible futures.</span></h1>
+      </div>
+      <div id="feedState" class="feed waiting"><i></i><b>CONNECTING</b><small>closed bars only</small></div>
+    </header>
+
+    <main>
+      <p id="demoNotice" style="grid-column:1/-1;color:#9baab7;font-size:13px;margin:0">Research illustration. Regime scores are heuristic and uncalibrated; simulated paths are scenarios.</p>
+      <section class="stage">
+        <div class="stage-title">
+          <div><div class="eyebrow">STOCHASTIC FIELD</div><h2>Forward state distribution</h2></div>
+          <div class="equation">S<sub>t+1</sub> = S<sub>t</sub> exp[(μ − σ²/2)Δt + σ√Δt ε]</div>
+        </div>
+        <canvas id="field"></canvas>
+        <div class="price-readout"><small id="instrumentLabel">LAST CLOSED</small><strong id="price">—</strong><span id="direction">—</span></div>
+        <div class="legend"><span class="median">median</span><span class="inner">50% field</span><span class="outer">90% field</span></div>
+      </section>
+
+      <aside class="state-panel">
+        <div class="eyebrow">REGIME SCORE MIX</div>
+        <canvas id="simplex"></canvas>
+        <div id="stateName" class="state-name">WAITING</div>
+        <div id="posterior" class="equation">p(zₜ | y₁:ₜ)</div>
+        <div class="probabilities">
+          <label>Trend <span id="trendValue">—</span><i><b id="trendBar"></b></i></label>
+          <label>Chop <span id="chopValue">—</span><i><b id="chopBar"></b></i></label>
+          <label>Stress <span id="stressValue">—</span><i><b id="stressBar"></b></i></label>
+        </div>
+      </aside>
+
+      <section class="controls" aria-label="Simulation controls">
+        <label><span>HORIZON</span><output id="horizonOut">48 bars</output><input id="horizon" type="range" min="16" max="96" value="48" step="8"></label>
+        <label><span>PATHS</span><output id="pathsOut">180</output><input id="paths" type="range" min="40" max="400" value="180" step="20"></label>
+        <label><span>SHOCK SCALE</span><output id="shockOut">1.0×</output><input id="shock" type="range" min="50" max="250" value="100" step="10"></label>
+        <button id="play" type="button" title="Pause animation" aria-label="Pause animation">Ⅱ</button>
+        <button id="resample" type="button" title="Resample paths" aria-label="Resample paths">↻</button>
+      </section>
+
+      <section class="analysis-grid">
+        <div class="tape">
+          <div class="tape-head"><div><div class="eyebrow">FILTERED OBSERVATION</div><h2>Regime transition tape</h2></div><div id="timestamp">—</div></div>
+          <canvas id="history"></canvas>
+        </div>
+        <aside class="decision-pane">
+          <div class="decision-head"><div class="eyebrow">AUTOMATED SYNTHESIS</div><span id="decisionTime">—</span></div>
+          <div id="posture" class="posture waiting">WAITING</div>
+          <div id="postureLine" class="posture-line">Building a closed-bar assessment.</div>
+          <div class="checks">
+            <div><i id="feedCheck"></i><span>Data integrity</span><b id="feedText">—</b></div>
+            <div><i id="regimeCheck"></i><span>Regime quality</span><b id="regimeText">—</b></div>
+            <div><i id="alignmentCheck"></i><span>Directional alignment</span><b id="alignmentText">—</b></div>
+            <div><i id="fragilityCheck"></i><span>Shock fragility</span><b id="fragilityText">—</b></div>
+          </div>
+          <div class="decision-footer"><span>MODEL EXPOSURE</span><strong id="modelExposure">—</strong><small id="decisionBias">—</small></div>
+        </aside>
+      </section>
+
+      <section class="metrics">
+        <div><small>DIRECTION SCORE</small><strong id="directionProbability">—</strong><em id="directionLabel">—</em></div>
+        <div><small>VOLATILITY RANK</small><strong id="volatility">—</strong><em>rolling 96h</em></div>
+        <div><small>ADVISORY EXPOSURE</small><strong id="exposure">—</strong><em>wₜ = 1 − .65s − .15c</em></div>
+        <div><small>MAX REGIME SCORE</small><strong id="confidence">—</strong><em>independent heuristic scores</em></div>
+      </section>
+
+      <section class="trader" id="performance">
+        <div class="trader-head"><div><div class="eyebrow">STRATEGY REPORT</div><h2>Trader statistics</h2></div><div id="strategySource" class="source-pill">LOADING REPORT</div></div>
+        <div class="pnl-strip">
+          <div class="pnl-primary"><small>NET P&amp;L</small><strong id="netPnl">—</strong><em id="netReturn">—</em></div>
+          <div><small>PROFIT FACTOR</small><strong id="profitFactor">—</strong></div>
+          <div><small>WIN RATE</small><strong id="winRate">—</strong></div>
+          <div><small>MAX DRAWDOWN</small><strong id="maxDrawdown">—</strong><em id="maxDrawdownPct">—</em></div>
+          <div><small>EXPECTANCY</small><strong id="expectancy">—</strong><em>per trade</em></div>
+          <div><small>SHARPE</small><strong id="sharpe">—</strong></div>
+        </div>
+        <div class="performance-grid">
+          <div class="equity-panel"><div class="panel-title"><div><div class="eyebrow">REALIZED EQUITY</div><h2>Equity &amp; drawdown</h2></div><div class="range-control"><button data-range="60">60T</button><button data-range="180">180T</button><button data-range="all" class="active">ALL</button></div></div><canvas id="equity"></canvas><div id="equityTip" class="chart-tip"></div></div>
+          <div class="distribution-panel"><div class="eyebrow">TRADE DISTRIBUTION</div><h2>Outcome density</h2><canvas id="distribution"></canvas><div class="distribution-stats"><span>AVG WIN <b id="avgWin">—</b></span><span>AVG LOSS <b id="avgLoss">—</b></span><span>PAYOFF <b id="payoff">—</b></span></div></div>
+        </div>
+        <div class="extremes-grid">
+          <article class="best"><div class="eyebrow">BEST WIN</div><strong id="bestPnl">—</strong><span id="bestMeta">—</span><div id="bestExcursion">—</div></article>
+          <article class="worst"><div class="eyebrow">WORST LOSS</div><strong id="worstPnl">—</strong><span id="worstMeta">—</span><div id="worstExcursion">—</div></article>
+          <article><div class="eyebrow">STREAKS</div><strong id="streaks">—</strong><span>max wins / max losses</span><div id="currentStreak">—</div></article>
+          <article><div class="eyebrow">COST &amp; EFFICIENCY</div><strong id="commission">—</strong><span>commission paid</span><div id="recovery">—</div></article>
+        </div>
+        <div class="detail-grid">
+          <div class="attribution"><div class="eyebrow">MODEL DECISION ATTRIBUTION</div><h2>Why the current posture exists</h2><div id="decisionFactors"></div></div>
+          <div class="sleeves"><div class="eyebrow">SLEEVE ATTRIBUTION</div><h2>Performance by sleeve</h2><div id="sleeveRows"></div></div>
+        </div>
+        <div class="ledger"><div class="ledger-head"><div><div class="eyebrow">TRADE LEDGER</div><h2>Most recent closed trades</h2></div><span id="tradeCount">—</span></div><div class="table-wrap"><table><thead><tr><th>#</th><th>EXIT</th><th>SLEEVE</th><th>SIDE</th><th>ENTRY</th><th>EXIT</th><th>BARS</th><th>RUN-UP</th><th>DRAW-DOWN</th><th>P&amp;L</th></tr></thead><tbody id="tradeRows"></tbody></table></div></div>
+      </section>
+    </main>
+  </div>
+  <script src="/studio-assets/studio.js?v=5"></script>
+</body>
+</html>

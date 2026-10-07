@@ -1,0 +1,342 @@
+{
+  "source_report": "reports/c5_participation_overlay_32k_20260618.json",
+  "source_data": "/private/tmp/tv_es1_current_15m_bars_post_c1_load.json",
+  "daily_bars": "/private/tmp/tv_es1_current_1d_bars.json",
+  "h4_bars": "/private/tmp/tv_es1_current_240m_bars.json",
+  "selected_rank": 4,
+  "selected_worker_id": 48,
+  "selected_score": 66028.09157901813,
+  "sampler": null,
+  "candidate_summary": {
+    "net_profit": 88872.5,
+    "buy_hold_net": 56950.0,
+    "excess_net": 31922.5,
+    "trades": 488,
+    "win_rate": 41.3934,
+    "profit_factor": 1.4942715719807569,
+    "max_drawdown_pct": 19.132679050497504,
+    "long_trades": 371,
+    "short_trades": 117,
+    "core_trades": 289,
+    "cap_trades": 167,
+    "recent_days": 30,
+    "recent_net": 19400.0,
+    "recent_buy_hold_net": 3837.5,
+    "recent_excess_net": 15562.5,
+    "recent_bar_window_bars": 2880,
+    "recent_bar_window_net": 30085.0,
+    "recent_bar_window_buy_hold_net": 12275.0,
+    "recent_bar_window_excess_net": 17810.0
+  },
+  "baseline_c5_summary": {
+    "net_profit": 34157.5,
+    "buy_hold_net": 56950.0,
+    "excess_net": -22792.5,
+    "trades": 516,
+    "win_rate": 41.0853,
+    "profit_factor": 1.2442962380203118,
+    "max_drawdown_pct": 22.03017382748442,
+    "long_trades": 399,
+    "short_trades": 117,
+    "core_trades": 238,
+    "cap_trades": 278,
+    "recent_days": 30,
+    "recent_net": -16035.0,
+    "recent_buy_hold_net": 3837.5,
+    "recent_excess_net": -19872.5,
+    "recent_bar_window_bars": 2880,
+    "recent_bar_window_net": -8987.5,
+    "recent_bar_window_buy_hold_net": 12275.0,
+    "recent_bar_window_excess_net": -21262.5
+  },
+  "delta_vs_c5": {
+    "net_profit": 54715.0,
+    "trades": -28,
+    "profit_factor": 0.24997533396044513,
+    "max_drawdown_pct": -2.897494776986914
+  },
+  "by_kind": [
+    {
+      "group": "cap",
+      "trades": 167,
+      "net": 39265.0,
+      "win_rate": 54.49,
+      "avg_trade": 235.12,
+      "profit_factor": 1.6949
+    },
+    {
+      "group": "core",
+      "trades": 289,
+      "net": 31930.0,
+      "win_rate": 31.14,
+      "avg_trade": 110.48,
+      "profit_factor": 1.2879
+    },
+    {
+      "group": "participation",
+      "trades": 32,
+      "net": 17677.5,
+      "win_rate": 65.62,
+      "avg_trade": 552.42,
+      "profit_factor": 2.4265
+    }
+  ],
+  "by_direction": [
+    {
+      "group": "long",
+      "trades": 371,
+      "net": 66045.0,
+      "win_rate": 43.94,
+      "avg_trade": 178.02,
+      "profit_factor": 1.4615
+    },
+    {
+      "group": "short",
+      "trades": 117,
+      "net": 22827.5,
+      "win_rate": 33.33,
+      "avg_trade": 195.11,
+      "profit_factor": 1.6222
+    }
+  ],
+  "by_kind_direction": [
+    {
+      "group": "cap_long",
+      "trades": 167,
+      "net": 39265.0,
+      "win_rate": 54.49,
+      "avg_trade": 235.12,
+      "profit_factor": 1.6949
+    },
+    {
+      "group": "core_long",
+      "trades": 172,
+      "net": 9102.5,
+      "win_rate": 29.65,
+      "avg_trade": 52.92,
+      "profit_factor": 1.1226
+    },
+    {
+      "group": "core_short",
+      "trades": 117,
+      "net": 22827.5,
+      "win_rate": 33.33,
+      "avg_trade": 195.11,
+      "profit_factor": 1.6222
+    },
+    {
+      "group": "participation_long",
+      "trades": 32,
+      "net": 17677.5,
+      "win_rate": 65.62,
+      "avg_trade": 552.42,
+      "profit_factor": 2.4265
+    }
+  ],
+  "monthly": [
+    {
+      "period": "2025-09",
+      "pnl": 70.0,
+      "trades": 1,
+      "win_rate": 100.0
+    },
+    {
+      "period": "2025-10",
+      "pnl": 12785.0,
+      "trades": 63,
+      "win_rate": 36.51
+    },
+    {
+      "period": "2025-11",
+      "pnl": 7817.5,
+      "trades": 49,
+      "win_rate": 38.78
+    },
+    {
+      "period": "2025-12",
+      "pnl": -1965.0,
+      "trades": 58,
+      "win_rate": 43.1
+    },
+    {
+      "period": "2026-01",
+      "pnl": -8847.5,
+      "trades": 62,
+      "win_rate": 27.42
+    },
+    {
+      "period": "2026-02",
+      "pnl": 11170.0,
+      "trades": 66,
+      "win_rate": 48.48
+    },
+    {
+      "period": "2026-03",
+      "pnl": 8532.5,
+      "trades": 56,
+      "win_rate": 32.14
+    },
+    {
+      "period": "2026-04",
+      "pnl": 30050.0,
+      "trades": 50,
+      "win_rate": 54.0
+    },
+    {
+      "period": "2026-05",
+      "pnl": 15020.0,
+      "trades": 46,
+      "win_rate": 54.35
+    },
+    {
+      "period": "2026-06",
+      "pnl": 14240.0,
+      "trades": 37,
+      "win_rate": 40.54
+    }
+  ],
+  "worst_months": [
+    {
+      "period": "2026-01",
+      "pnl": -8847.5,
+      "trades": 62,
+      "win_rate": 27.42
+    },
+    {
+      "period": "2025-12",
+      "pnl": -1965.0,
+      "trades": 58,
+      "win_rate": 43.1
+    },
+    {
+      "period": "2025-09",
+      "pnl": 70.0,
+      "trades": 1,
+      "win_rate": 100.0
+    },
+    {
+      "period": "2025-11",
+      "pnl": 7817.5,
+      "trades": 49,
+      "win_rate": 38.78
+    },
+    {
+      "period": "2026-03",
+      "pnl": 8532.5,
+      "trades": 56,
+      "win_rate": 32.14
+    }
+  ],
+  "best_months": [
+    {
+      "period": "2026-04",
+      "pnl": 30050.0,
+      "trades": 50,
+      "win_rate": 54.0
+    },
+    {
+      "period": "2026-05",
+      "pnl": 15020.0,
+      "trades": 46,
+      "win_rate": 54.35
+    },
+    {
+      "period": "2026-06",
+      "pnl": 14240.0,
+      "trades": 37,
+      "win_rate": 40.54
+    },
+    {
+      "period": "2025-10",
+      "pnl": 12785.0,
+      "trades": 63,
+      "win_rate": 36.51
+    },
+    {
+      "period": "2026-02",
+      "pnl": 11170.0,
+      "trades": 66,
+      "win_rate": 48.48
+    }
+  ],
+  "params": {
+    "h4_fast": 11,
+    "h4_slow": 27,
+    "d_fast": 9,
+    "d_slow": 80,
+    "regime_mode": "h4",
+    "local_filter": "none",
+    "stop_atr": 5.5966911644782815,
+    "trail_atr": 4.721705812417004,
+    "cooldown": 13,
+    "long_rsi_min": 33.9889535595267,
+    "short_rsi_max": 49.20500496438799,
+    "macd_floor": -3.739191934873514,
+    "vol_mult": 0.3630048083252625,
+    "use_momentum_exit": true,
+    "long_exit_rsi": 39.66129925548556,
+    "short_exit_rsi": 43.043945472221175,
+    "long_exit_regime": -1,
+    "short_exit_regime": 0,
+    "allow_short": true,
+    "h4_offset_minutes": 120,
+    "short_gate": "any",
+    "use_carry_long": true,
+    "carry_regime": "h4_up",
+    "carry_filter": "ema55",
+    "carry_rsi_min": 51.63668766686909,
+    "carry_macd_floor": -3.684057251531886,
+    "carry_vol_mult": 0.9873815257754269,
+    "cap_priority": false,
+    "cap_regime": "either_up",
+    "cap_adx_min": 7.311941,
+    "cap_adx_max": 64.515881,
+    "cap_atr_rel_min": 0.771198,
+    "cap_atr_rel_max": 3.89685,
+    "cap_vwap_dist_atr": 3.554982,
+    "cap_bb_atr": -0.504851,
+    "cap_prev_low_atr": 1.686516,
+    "cap_low_break_atr": 1.343469,
+    "cap_low96_atr": 0.47606,
+    "cap_rsi_max": 39.841345,
+    "cap_stoch_max": 21.963174,
+    "cap_ret_z": 0.456169,
+    "cap_reclaim_pos": 0.020825,
+    "cap_volume_mult": 0.675144,
+    "cap_pv_z_max": 0.141433,
+    "cap_require_reversal": false,
+    "cap_stop_atr": 6.088860178852017,
+    "cap_target_atr": 1.919988822481338,
+    "cap_trail_atr": 2.8824397994115474,
+    "cap_exit_vwap_atr": 1.3465610806939274,
+    "cap_exit_rsi": 71.99521378924564,
+    "cap_exit_range_pos": 0.544491286195872,
+    "cap_exit_on_peak": false,
+    "cap_exit_on_momentum_peak": false,
+    "cap_cooldown": 1,
+    "cap_min_hold": 6,
+    "cap_max_hold": 90,
+    "use_cap": true,
+    "use_date_range": true,
+    "start_time": "2025-09-30T00:00:00Z",
+    "use_participation": true,
+    "participation_priority": true,
+    "participation_regime": "either_up",
+    "participation_filter": "ema55",
+    "participation_rsi_min": 46.21953499642111,
+    "participation_rsi_max": 86.33469878227672,
+    "participation_macd_floor": -1.6683645866868808,
+    "participation_vol_mult": 1.1524605024926935,
+    "participation_adx_min": 3.4489225215448798,
+    "participation_max_extension_atr": 2.8204167820575075,
+    "participation_stop_atr": 6.970354050526241,
+    "participation_trail_atr": 5.75858931599658,
+    "participation_cooldown": 23,
+    "participation_min_hold": 21,
+    "participation_max_hold": 126,
+    "participation_exit_filter": "ema144",
+    "participation_exit_rsi": 40.78229900530672,
+    "participation_exit_on_macd_roll": true
+  },
+  "trades": []
+}

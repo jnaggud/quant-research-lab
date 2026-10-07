@@ -1,0 +1,17 @@
+{
+  "success": true,
+  "local": {
+    "trades": 478,
+    "net_profit": 92922.5,
+    "profit_factor": 1.5258102392168513,
+    "max_drawdown_pct": 18.950788918294194
+  },
+  "tradingview": {
+    "trades": 478,
+    "net_profit": 92922.5,
+    "profit_factor": 1.5258102392168513,
+    "max_drawdown": 14370
+  },
+  "mismatch_count": 0,
+  "mismatches": []
+}

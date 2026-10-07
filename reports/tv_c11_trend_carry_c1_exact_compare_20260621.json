@@ -1,0 +1,86 @@
+{
+  "success": true,
+  "params_source": "reports/c11_trend_carry_sleeve_200k_20260621.json",
+  "rank": 1,
+  "data": {
+    "bars_15m": "reports/c8_monitor/data/es1_15m_20260620_064007.json",
+    "bars_daily": "reports/c8_monitor/data/es1_1d_20260620_064007.json",
+    "bars_h4": "reports/c8_monitor/data/es1_240m_20260620_064007.json",
+    "bar_count": 20868,
+    "first_bar": "2025-07-31T22:00:00+00:00",
+    "last_bar": "2026-06-19T16:45:00+00:00",
+    "exclude_tail_bars": 0,
+    "end_bar_exclusive": null
+  },
+  "local": {
+    "engine": {
+      "net_profit": 129107.5,
+      "profit_factor": 1.826949559647718,
+      "max_drawdown_pct": 8.833445718138908,
+      "n_trades": 436,
+      "win_rate": 48.39449541284404
+    },
+    "from_rows": {
+      "trades": 435,
+      "net": 128862.5,
+      "wins": 210,
+      "losses": 225,
+      "win_rate": 48.275862068965516,
+      "gross_profit": 284987.5,
+      "gross_loss": -156125.0,
+      "profit_factor": 1.8253803042433947
+    }
+  },
+  "tradingview": {
+    "completed": {
+      "trades": 435,
+      "net": 128862.5,
+      "wins": 210,
+      "losses": 225,
+      "win_rate": 48.275862068965516,
+      "gross_profit": 284987.5,
+      "gross_loss": -156125.0,
+      "profit_factor": 1.8253803042433947
+    },
+    "open_mark_count": 1,
+    "open_marks": [
+      {
+        "entry_bar": 20830,
+        "exit_bar": 20867,
+        "direction": 1,
+        "kind": "trend_carry",
+        "entry_time_ms": 1781854200000,
+        "exit_time_ms": 1781887500000,
+        "entry_price": 7551.0,
+        "exit_price": 7556.25,
+        "pnl": 257.5,
+        "cumulative_pnl": 129117.5,
+        "entry_signal": "Trend Carry Long",
+        "exit_signal": ""
+      }
+    ]
+  },
+  "local_open_mark_count": 1,
+  "local_open_marks": [
+    {
+      "entry_bar": 20830,
+      "exit_bar": 20867,
+      "direction": 1,
+      "kind": "trend_carry",
+      "entry_time_ms": 1781854200000,
+      "exit_time_ms": 1781887500000,
+      "entry_price": 7551.0,
+      "exit_price": 7556.0,
+      "pnl": 245.0,
+      "exit_reason": "end_of_data"
+    }
+  ],
+  "deltas": {
+    "completed_trade_count": 0,
+    "completed_net": 0.0,
+    "completed_profit_factor": 0.0,
+    "date_filtered_buy_hold_local_window": 42250.0
+  },
+  "mismatch_count_reported": 0,
+  "mismatches": []
+}

@@ -1,0 +1,1603 @@
+{
+  "data": {
+    "source": "/private/tmp/tv_es1_current_15m_bars_participation_inspect.json",
+    "daily_bars": "/private/tmp/tv_es1_current_1d_bars_participation_merged.json",
+    "h4_bars": "/private/tmp/tv_es1_current_240m_bars_participation_merged.json",
+    "exclude_tail_bars": 1,
+    "first_bar": "2025-07-31T22:00:00+00:00",
+    "last_closed_bar": "2026-06-18T15:45:00+00:00"
+  },
+  "strategies": {
+    "trusted_c2": {
+      "full": {
+        "net": 90245.0,
+        "buy_hold": 60050.0,
+        "excess": 30195.0,
+        "trades": 481,
+        "win_rate": 40.75,
+        "profit_factor": 1.5091037303434172,
+        "max_drawdown_pct": 18.380779456585174,
+        "core_trades": 297,
+        "cap_trades": 162,
+        "participation_trades": 22
+      },
+      "slices": {
+        "full_closed": {
+          "net": 90245.0,
+          "buy_hold": 60050.0,
+          "excess": 30195.0,
+          "trades": 481,
+          "win_rate": 40.75,
+          "profit_factor": 1.5091037303434172,
+          "trade_drawdown_pct": 18.380779456585174,
+          "core_trades": 297,
+          "cap_trades": 162,
+          "participation_trades": 22
+        },
+        "pre_2026": {
+          "net": 23545.0,
+          "buy_hold": 26712.5,
+          "excess": -3167.5,
+          "trades": 171,
+          "win_rate": 39.77,
+          "profit_factor": 1.3956976597621948,
+          "trade_drawdown_pct": 18.380779456585174,
+          "core_trades": 105,
+          "cap_trades": 57,
+          "participation_trades": 9
+        },
+        "q1_2026": {
+          "net": 15665.0,
+          "buy_hold": -15612.5,
+          "excess": 31277.5,
+          "trades": 177,
+          "win_rate": 36.16,
+          "profit_factor": 1.2329714455681142,
+          "trade_drawdown_pct": 21.591797324014898,
+          "core_trades": 114,
+          "cap_trades": 54,
+          "participation_trades": 9
+        },
+        "apr_jun_2026": {
+          "net": 51035.0,
+          "buy_hold": 48562.5,
+          "excess": 2472.5,
+          "trades": 133,
+          "win_rate": 48.12,
+          "profit_factor": 2.010193982581156,
+          "trade_drawdown_pct": 11.175,
+          "core_trades": 78,
+          "cap_trades": 51,
+          "participation_trades": 4
+        },
+        "june_2026": {
+          "net": 8265.0,
+          "buy_hold": -2237.5,
+          "excess": 10502.5,
+          "trades": 37,
+          "win_rate": 35.14,
+          "profit_factor": 1.4115523465703972,
+          "trade_drawdown_pct": 10.786591437105875,
+          "core_trades": 21,
+          "cap_trades": 13,
+          "participation_trades": 3
+        }
+      },
+      "monthly": [
+        {
+          "month": "2025-09",
+          "net": 70.0,
+          "trades": 1,
+          "profit_factor": 70000000000.0,
+          "win_rate": 100.0
+        },
+        {
+          "month": "2025-10",
+          "net": 11522.5,
+          "trades": 63,
+          "profit_factor": 1.5027817170284716,
+          "win_rate": 34.92
+        },
+        {
+          "month": "2025-11",
+          "net": 12480.0,
+          "trades": 49,
+          "profit_factor": 1.6925638179800222,
+          "win_rate": 40.82
+        },
+        {
+          "month": "2025-12",
+          "net": -527.5,
+          "trades": 58,
+          "profit_factor": 0.9715863183409642,
+          "win_rate": 43.1
+        },
+        {
+          "month": "2026-01",
+          "net": -6350.0,
+          "trades": 60,
+          "profit_factor": 0.7451334537427252,
+          "win_rate": 28.33
+        },
+        {
+          "month": "2026-02",
+          "net": 8947.5,
+          "trades": 63,
+          "profit_factor": 1.394684605205117,
+          "win_rate": 46.03
+        },
+        {
+          "month": "2026-03",
+          "net": 13067.5,
+          "trades": 54,
+          "profit_factor": 1.6648435512592217,
+          "win_rate": 33.33
+        },
+        {
+          "month": "2026-04",
+          "net": 30050.0,
+          "trades": 50,
+          "profit_factor": 2.960528461914859,
+          "win_rate": 54.0
+        },
+        {
+          "month": "2026-05",
+          "net": 12720.0,
+          "trades": 46,
+          "profit_factor": 1.841826604897419,
+          "win_rate": 52.17
+        },
+        {
+          "month": "2026-06",
+          "net": 8265.0,
+          "trades": 37,
+          "profit_factor": 1.4115523465703972,
+          "win_rate": 35.14
+        }
+      ],
+      "params_participation": {
+        "participation_priority": false,
+        "participation_regime": "daily_up",
+        "participation_filter": "stack",
+        "participation_rsi_min": 43.859322506337676,
+        "participation_rsi_max": 63.140128009339946,
+        "participation_macd_floor": -3.691496513768751,
+        "participation_vol_mult": 1.0555315122563385,
+        "participation_adx_min": 9.394490732571803,
+        "participation_max_extension_atr": 4.841995354240288,
+        "participation_stop_atr": 2.857851825679788,
+        "participation_trail_atr": 10.976452291885728,
+        "participation_cooldown": 24,
+        "participation_min_hold": 22,
+        "participation_max_hold": 40,
+        "participation_exit_filter": "ema21",
+        "participation_exit_rsi": 54.74497374142174,
+        "participation_exit_on_macd_roll": true
+      }
+    },
+    "c6": {
+      "full": {
+        "net": 92605.0,
+        "buy_hold": 60050.0,
+        "excess": 32555.0,
+        "trades": 479,
+        "win_rate": 40.92,
+        "profit_factor": 1.523073881608676,
+        "max_drawdown_pct": 18.950788918294194,
+        "core_trades": 296,
+        "cap_trades": 163,
+        "participation_trades": 20
+      },
+      "slices": {
+        "full_closed": {
+          "net": 92605.0,
+          "buy_hold": 60050.0,
+          "excess": 32555.0,
+          "trades": 479,
+          "win_rate": 40.92,
+          "profit_factor": 1.523073881608676,
+          "trade_drawdown_pct": 18.950788918294194,
+          "core_trades": 296,
+          "cap_trades": 163,
+          "participation_trades": 20
+        },
+        "pre_2026": {
+          "net": 21747.5,
+          "buy_hold": 26712.5,
+          "excess": -4965.0,
+          "trades": 168,
+          "win_rate": 39.29,
+          "profit_factor": 1.369399974521211,
+          "trade_drawdown_pct": 18.950788918294194,
+          "core_trades": 105,
+          "cap_trades": 57,
+          "participation_trades": 6
+        },
+        "q1_2026": {
+          "net": 18585.0,
+          "buy_hold": -15612.5,
+          "excess": 34197.5,
+          "trades": 178,
+          "win_rate": 36.52,
+          "profit_factor": 1.2763466042154568,
+          "trade_drawdown_pct": 21.049002482302107,
+          "core_trades": 113,
+          "cap_trades": 55,
+          "participation_trades": 10
+        },
+        "apr_jun_2026": {
+          "net": 52272.5,
+          "buy_hold": 48562.5,
+          "excess": 3710.0,
+          "trades": 133,
+          "win_rate": 48.87,
+          "profit_factor": 2.026662083865266,
+          "trade_drawdown_pct": 11.175,
+          "core_trades": 78,
+          "cap_trades": 51,
+          "participation_trades": 4
+        },
+        "june_2026": {
+          "net": 6552.5,
+          "buy_hold": -2237.5,
+          "excess": 8790.0,
+          "trades": 37,
+          "win_rate": 35.14,
+          "profit_factor": 1.30360245569327,
+          "trade_drawdown_pct": 10.786591437105875,
+          "core_trades": 21,
+          "cap_trades": 13,
+          "participation_trades": 3
+        }
+      },
+      "monthly": [
+        {
+          "month": "2025-09",
+          "net": 70.0,
+          "trades": 1,
+          "profit_factor": 70000000000.0,
+          "win_rate": 100.0
+        },
+        {
+          "month": "2025-10",
+          "net": 11452.5,
+          "trades": 62,
+          "profit_factor": 1.5084350721420643,
+          "win_rate": 35.48
+        },
+        {
+          "month": "2025-11",
+          "net": 10102.5,
+          "trades": 47,
+          "profit_factor": 1.5407466880770775,
+          "win_rate": 38.3
+        },
+        {
+          "month": "2025-12",
+          "net": 122.5,
+          "trades": 58,
+          "profit_factor": 1.0069346164732522,
+          "win_rate": 43.1
+        },
+        {
+          "month": "2026-01",
+          "net": -7062.5,
+          "trades": 60,
+          "profit_factor": 0.7244171300360941,
+          "win_rate": 28.33
+        },
+        {
+          "month": "2026-02",
+          "net": 12935.0,
+          "trades": 63,
+          "profit_factor": 1.6229231880568264,
+          "win_rate": 47.62
+        },
+        {
+          "month": "2026-03",
+          "net": 12712.5,
+          "trades": 55,
+          "profit_factor": 1.6094199424736337,
+          "win_rate": 32.73
+        },
+        {
+          "month": "2026-04",
+          "net": 30050.0,
+          "trades": 50,
+          "profit_factor": 2.960528461914859,
+          "win_rate": 54.0
+        },
+        {
+          "month": "2026-05",
+          "net": 15670.0,
+          "trades": 46,
+          "profit_factor": 2.1188861121028206,
+          "win_rate": 54.35
+        },
+        {
+          "month": "2026-06",
+          "net": 6552.5,
+          "trades": 37,
+          "profit_factor": 1.30360245569327,
+          "win_rate": 35.14
+        }
+      ],
+      "params_participation": {
+        "participation_priority": false,
+        "participation_regime": "daily_up",
+        "participation_filter": "stack",
+        "participation_rsi_min": 47.38694783071283,
+        "participation_rsi_max": 62.0,
+        "participation_macd_floor": -4.0,
+        "participation_vol_mult": 0.9469466673052394,
+        "participation_adx_min": 4.6676362093380535,
+        "participation_max_extension_atr": 6.0,
+        "participation_stop_atr": 4.01937456576717,
+        "participation_trail_atr": 8.682829246438372,
+        "participation_cooldown": 20,
+        "participation_min_hold": 23,
+        "participation_max_hold": 24,
+        "participation_exit_filter": "ema21",
+        "participation_exit_rsi": 51.6981938633159,
+        "participation_exit_on_macd_roll": true
+      }
+    },
+    "c7": {
+      "full": {
+        "net": 95497.5,
+        "buy_hold": 60050.0,
+        "excess": 35447.5,
+        "trades": 478,
+        "win_rate": 41.21,
+        "profit_factor": 1.54607445105215,
+        "max_drawdown_pct": 18.50143903715332,
+        "core_trades": 295,
+        "cap_trades": 162,
+        "participation_trades": 21
+      },
+      "slices": {
+        "full_closed": {
+          "net": 95497.5,
+          "buy_hold": 60050.0,
+          "excess": 35447.5,
+          "trades": 478,
+          "win_rate": 41.21,
+          "profit_factor": 1.54607445105215,
+          "trade_drawdown_pct": 18.50143903715332,
+          "core_trades": 295,
+          "cap_trades": 162,
+          "participation_trades": 21
+        },
+        "pre_2026": {
+          "net": 23085.0,
+          "buy_hold": 26712.5,
+          "excess": -3627.5,
+          "trades": 168,
+          "win_rate": 39.29,
+          "profit_factor": 1.3952234206471494,
+          "trade_drawdown_pct": 18.50143903715332,
+          "core_trades": 105,
+          "cap_trades": 57,
+          "participation_trades": 6
+        },
+        "q1_2026": {
+          "net": 18035.0,
+          "buy_hold": -15612.5,
+          "excess": 33647.5,
+          "trades": 178,
+          "win_rate": 37.08,
+          "profit_factor": 1.2686878468471825,
+          "trade_drawdown_pct": 16.839735342767874,
+          "core_trades": 112,
+          "cap_trades": 55,
+          "participation_trades": 11
+        },
+        "apr_jun_2026": {
+          "net": 54377.5,
+          "buy_hold": 48562.5,
+          "excess": 5815.0,
+          "trades": 132,
+          "win_rate": 49.24,
+          "profit_factor": 2.1019301889660063,
+          "trade_drawdown_pct": 11.175,
+          "core_trades": 78,
+          "cap_trades": 50,
+          "participation_trades": 4
+        },
+        "june_2026": {
+          "net": 8870.0,
+          "buy_hold": -2237.5,
+          "excess": 11107.5,
+          "trades": 36,
+          "win_rate": 36.11,
+          "profit_factor": 1.4431676242817886,
+          "trade_drawdown_pct": 10.786591437105875,
+          "core_trades": 21,
+          "cap_trades": 12,
+          "participation_trades": 3
+        }
+      },
+      "monthly": [
+        {
+          "month": "2025-09",
+          "net": 70.0,
+          "trades": 1,
+          "profit_factor": 70000000000.0,
+          "win_rate": 100.0
+        },
+        {
+          "month": "2025-10",
+          "net": 12477.5,
+          "trades": 62,
+          "profit_factor": 1.5539400665926748,
+          "win_rate": 35.48
+        },
+        {
+          "month": "2025-11",
+          "net": 10890.0,
+          "trades": 47,
+          "profit_factor": 1.5976948408342482,
+          "win_rate": 38.3
+        },
+        {
+          "month": "2025-12",
+          "net": -352.5,
+          "trades": 58,
+          "profit_factor": 0.9800452872912538,
+          "win_rate": 43.1
+        },
+        {
+          "month": "2026-01",
+          "net": -4645.0,
+          "trades": 59,
+          "profit_factor": 0.8022773225497499,
+          "win_rate": 30.51
+        },
+        {
+          "month": "2026-02",
+          "net": 12647.5,
+          "trades": 63,
+          "profit_factor": 1.6090777751023357,
+          "win_rate": 47.62
+        },
+        {
+          "month": "2026-03",
+          "net": 10032.5,
+          "trades": 56,
+          "profit_factor": 1.4387710474524382,
+          "win_rate": 32.14
+        },
+        {
+          "month": "2026-04",
+          "net": 30050.0,
+          "trades": 50,
+          "profit_factor": 2.960528461914859,
+          "win_rate": 54.0
+        },
+        {
+          "month": "2026-05",
+          "net": 15457.5,
+          "trades": 46,
+          "profit_factor": 2.1037129596572655,
+          "win_rate": 54.35
+        },
+        {
+          "month": "2026-06",
+          "net": 8870.0,
+          "trades": 36,
+          "profit_factor": 1.4431676242817886,
+          "win_rate": 36.11
+        }
+      ],
+      "params_participation": {
+        "participation_priority": false,
+        "participation_regime": "daily_up",
+        "participation_filter": "stack",
+        "participation_rsi_min": 47.38694783071283,
+        "participation_rsi_max": 62.0,
+        "participation_macd_floor": -4.0,
+        "participation_vol_mult": 0.9469466673052394,
+        "participation_adx_min": 4.6676362093380535,
+        "participation_max_extension_atr": 6.0,
+        "participation_stop_atr": 4.790618208143524,
+        "participation_trail_atr": 6.964511913458689,
+        "participation_cooldown": 19,
+        "participation_min_hold": 24,
+        "participation_max_hold": 47,
+        "participation_exit_filter": "ema21",
+        "participation_exit_rsi": 49.358024417749114,
+        "participation_exit_on_macd_roll": true
+      }
+    }
+  },
+  "stress": {
+    "trials": 512,
+    "gate_pass_all_count": 111,
+    "gate_pass_3of4_count": 163,
+    "summary": {
+      "net_min": 73737.5,
+      "net_median": 89375.0,
+      "net_max": 96385.0,
+      "pf_min": 1.3956192826675966,
+      "pf_median": 1.5051553672316385,
+      "pf_max": 1.5550150567523744,
+      "dd_min": 18.50143903715332,
+      "dd_median": 18.893824521559065,
+      "dd_max": 27.573306730323864,
+      "june_min": 3170.0,
+      "june_median": 8470.0,
+      "june_max": 9795.0
+    },
+    "top_by_net": [
+      {
+        "idx": 420,
+        "full": {
+          "net": 96385.0,
+          "buy_hold": 60050.0,
+          "excess": 36335.0,
+          "trades": 478,
+          "win_rate": 41.21,
+          "profit_factor": 1.553960659223817,
+          "max_drawdown_pct": 18.50143903715332,
+          "core_trades": 295,
+          "cap_trades": 162,
+          "participation_trades": 21
+        },
+        "june": {
+          "net": 9770.0,
+          "buy_hold": -2237.5,
+          "excess": 12007.5,
+          "trades": 36,
+          "win_rate": 36.11,
+          "profit_factor": 1.5111169238817683,
+          "trade_drawdown_pct": 10.786591437105875,
+          "core_trades": 21,
+          "cap_trades": 12,
+          "participation_trades": 3
+        },
+        "gates": {
+          "net_ge_c6": true,
+          "pf_ge_c6": true,
+          "dd_le_c6": true,
+          "june_ge_c2": true
+        },
+        "gates_passed": 4,
+        "params": {
+          "participation_priority": false,
+          "participation_regime": "daily_up",
+          "participation_filter": "stack",
+          "participation_rsi_min": 47.38694783071283,
+          "participation_rsi_max": 62.0,
+          "participation_macd_floor": -4.0,
+          "participation_vol_mult": 0.9469466673052394,
+          "participation_adx_min": 4.6676362093380535,
+          "participation_max_extension_atr": 6.0,
+          "participation_stop_atr": 4.872021337950447,
+          "participation_trail_atr": 6.360680069047081,
+          "participation_cooldown": 19,
+          "participation_min_hold": 24,
+          "participation_max_hold": 46,
+          "participation_exit_filter": "ema21",
+          "participation_exit_rsi": 47.99525443454097,
+          "participation_exit_on_macd_roll": true
+        }
+      },
+      {
+        "idx": 297,
+        "full": {
+          "net": 96347.5,
+          "buy_hold": 60050.0,
+          "excess": 36297.5,
+          "trades": 478,
+          "win_rate": 41.21,
+          "profit_factor": 1.553625811641671,
+          "max_drawdown_pct": 18.50143903715332,
+          "core_trades": 295,
+          "cap_trades": 162,
+          "participation_trades": 21
+        },
+        "june": {
+          "net": 9682.5,
+          "buy_hold": -2237.5,
+          "excess": 11920.0,
+          "trades": 36,
+          "win_rate": 36.11,
+          "profit_factor": 1.504231219893243,
+          "trade_drawdown_pct": 10.786591437105875,
+          "core_trades": 21,
+          "cap_trades": 12,
+          "participation_trades": 3
+        },
+        "gates": {
+          "net_ge_c6": true,
+          "pf_ge_c6": true,
+          "dd_le_c6": true,
+          "june_ge_c2": true
+        },
+        "gates_passed": 4,
+        "params": {
+          "participation_priority": false,
+          "participation_regime": "daily_up",
+          "participation_filter": "stack",
+          "participation_rsi_min": 47.38694783071283,
+          "participation_rsi_max": 62.0,
+          "participation_macd_floor": -4.0,
+          "participation_vol_mult": 0.9469466673052394,
+          "participation_adx_min": 4.6676362093380535,
+          "participation_max_extension_atr": 6.0,
+          "participation_stop_atr": 5.063218644561782,
+          "participation_trail_atr": 6.49018709003844,
+          "participation_cooldown": 19,
+          "participation_min_hold": 24,
+          "participation_max_hold": 52,
+          "participation_exit_filter": "ema21",
+          "participation_exit_rsi": 48.3911943654663,
+          "participation_exit_on_macd_roll": true
+        }
+      },
+      {
+        "idx": 362,
+        "full": {
+          "net": 96310.0,
+          "buy_hold": 60050.0,
+          "excess": 36260.0,
+          "trades": 478,
+          "win_rate": 41.21,
+          "profit_factor": 1.5532911083344105,
+          "max_drawdown_pct": 18.50143903715332,
+          "core_trades": 295,
+          "cap_trades": 162,
+          "participation_trades": 21
+        },
+        "june": {
+          "net": 9732.5,
+          "buy_hold": -2237.5,
+          "excess": 11970.0,
+          "trades": 36,
+          "win_rate": 36.11,
+          "profit_factor": 1.5081582038898316,
+          "trade_drawdown_pct": 10.786591437105875,
+          "core_trades": 21,
+          "cap_trades": 12,
+          "participation_trades": 3
+        },
+        "gates": {
+          "net_ge_c6": true,
+          "pf_ge_c6": true,
+          "dd_le_c6": true,
+          "june_ge_c2": true
+        },
+        "gates_passed": 4,
+        "params": {
+          "participation_priority": false,
+          "participation_regime": "daily_up",
+          "participation_filter": "stack",
+          "participation_rsi_min": 47.38694783071283,
+          "participation_rsi_max": 62.0,
+          "participation_macd_floor": -4.0,
+          "participation_vol_mult": 0.9469466673052394,
+          "participation_adx_min": 4.6676362093380535,
+          "participation_max_extension_atr": 6.0,
+          "participation_stop_atr": 4.562192550615276,
+          "participation_trail_atr": 6.428262247384325,
+          "participation_cooldown": 19,
+          "participation_min_hold": 24,
+          "participation_max_hold": 50,
+          "participation_exit_filter": "ema21",
+          "participation_exit_rsi": 47.378185548874974,
+          "participation_exit_on_macd_roll": true
+        }
+      },
+      {
+        "idx": 383,
+        "full": {
+          "net": 96310.0,
+          "buy_hold": 60050.0,
+          "excess": 36260.0,
+          "trades": 478,
+          "win_rate": 41.21,
+          "profit_factor": 1.5532911083344105,
+          "max_drawdown_pct": 18.50143903715332,
+          "core_trades": 295,
+          "cap_trades": 162,
+          "participation_trades": 21
+        },
+        "june": {
+          "net": 9770.0,
+          "buy_hold": -2237.5,
+          "excess": 12007.5,
+          "trades": 36,
+          "win_rate": 36.11,
+          "profit_factor": 1.5111169238817683,
+          "trade_drawdown_pct": 10.786591437105875,
+          "core_trades": 21,
+          "cap_trades": 12,
+          "participation_trades": 3
+        },
+        "gates": {
+          "net_ge_c6": true,
+          "pf_ge_c6": true,
+          "dd_le_c6": true,
+          "june_ge_c2": true
+        },
+        "gates_passed": 4,
+        "params": {
+          "participation_priority": false,
+          "participation_regime": "daily_up",
+          "participation_filter": "stack",
+          "participation_rsi_min": 47.38694783071283,
+          "participation_rsi_max": 62.0,
+          "participation_macd_floor": -4.0,
+          "participation_vol_mult": 0.9469466673052394,
+          "participation_adx_min": 4.6676362093380535,
+          "participation_max_extension_atr": 6.0,
+          "participation_stop_atr": 4.554173241531949,
+          "participation_trail_atr": 6.3742854106973015,
+          "participation_cooldown": 19,
+          "participation_min_hold": 24,
+          "participation_max_hold": 48,
+          "participation_exit_filter": "ema21",
+          "participation_exit_rsi": 47.551389470706056,
+          "participation_exit_on_macd_roll": true
+        }
+      },
+      {
+        "idx": 235,
+        "full": {
+          "net": 96142.5,
+          "buy_hold": 60050.0,
+          "excess": 36092.5,
+          "trades": 479,
+          "win_rate": 41.13,
+          "profit_factor": 1.5517978592131316,
+          "max_drawdown_pct": 18.50143903715332,
+          "core_trades": 295,
+          "cap_trades": 163,
+          "participation_trades": 21
+        },
+        "june": {
+          "net": 9477.5,
+          "buy_hold": -2237.5,
+          "excess": 11715.0,
+          "trades": 37,
+          "win_rate": 35.14,
+          "profit_factor": 1.488342135772253,
+          "trade_drawdown_pct": 10.786591437105875,
+          "core_trades": 21,
+          "cap_trades": 13,
+          "participation_trades": 3
+        },
+        "gates": {
+          "net_ge_c6": true,
+          "pf_ge_c6": true,
+          "dd_le_c6": true,
+          "june_ge_c2": true
+        },
+        "gates_passed": 4,
+        "params": {
+          "participation_priority": false,
+          "participation_regime": "daily_up",
+          "participation_filter": "stack",
+          "participation_rsi_min": 47.38694783071283,
+          "participation_rsi_max": 62.0,
+          "participation_macd_floor": -4.0,
+          "participation_vol_mult": 0.9469466673052394,
+          "participation_adx_min": 4.6676362093380535,
+          "participation_max_extension_atr": 6.0,
+          "participation_stop_atr": 4.664670303762316,
+          "participation_trail_atr": 6.0185524755319735,
+          "participation_cooldown": 19,
+          "participation_min_hold": 24,
+          "participation_max_hold": 52,
+          "participation_exit_filter": "ema21",
+          "participation_exit_rsi": 48.998761649053975,
+          "participation_exit_on_macd_roll": true
+        }
+      },
+      {
+        "idx": 323,
+        "full": {
+          "net": 96110.0,
+          "buy_hold": 60050.0,
+          "excess": 36060.0,
+          "trades": 478,
+          "win_rate": 41.42,
+          "profit_factor": 1.55140562248996,
+          "max_drawdown_pct": 18.50143903715332,
+          "core_trades": 295,
+          "cap_trades": 162,
+          "participation_trades": 21
+        },
+        "june": {
+          "net": 9132.5,
+          "buy_hold": -2237.5,
+          "excess": 11370.0,
+          "trades": 36,
+          "win_rate": 36.11,
+          "profit_factor": 1.462346538412859,
+          "trade_drawdown_pct": 10.786591437105875,
+          "core_trades": 21,
+          "cap_trades": 12,
+          "participation_trades": 3
+        },
+        "gates": {
+          "net_ge_c6": true,
+          "pf_ge_c6": true,
+          "dd_le_c6": true,
+          "june_ge_c2": true
+        },
+        "gates_passed": 4,
+        "params": {
+          "participation_priority": false,
+          "participation_regime": "daily_up",
+          "participation_filter": "stack",
+          "participation_rsi_min": 47.38694783071283,
+          "participation_rsi_max": 62.0,
+          "participation_macd_floor": -4.0,
+          "participation_vol_mult": 0.9469466673052394,
+          "participation_adx_min": 4.6676362093380535,
+          "participation_max_extension_atr": 6.0,
+          "participation_stop_atr": 4.6398096856732804,
+          "participation_trail_atr": 6.600878573889332,
+          "participation_cooldown": 19,
+          "participation_min_hold": 24,
+          "participation_max_hold": 53,
+          "participation_exit_filter": "ema21",
+          "participation_exit_rsi": 47.38518373529857,
+          "participation_exit_on_macd_roll": true
+        }
+      },
+      {
+        "idx": 272,
+        "full": {
+          "net": 96067.5,
+          "buy_hold": 60050.0,
+          "excess": 36017.5,
+          "trades": 479,
+          "win_rate": 41.13,
+          "profit_factor": 1.5511301703860938,
+          "max_drawdown_pct": 18.50143903715332,
+          "core_trades": 295,
+          "cap_trades": 163,
+          "participation_trades": 21
+        },
+        "june": {
+          "net": 9452.5,
+          "buy_hold": -2237.5,
+          "excess": 11690.0,
+          "trades": 37,
+          "win_rate": 35.14,
+          "profit_factor": 1.4864273768171876,
+          "trade_drawdown_pct": 10.786591437105875,
+          "core_trades": 21,
+          "cap_trades": 13,
+          "participation_trades": 3
+        },
+        "gates": {
+          "net_ge_c6": true,
+          "pf_ge_c6": true,
+          "dd_le_c6": true,
+          "june_ge_c2": true
+        },
+        "gates_passed": 4,
+        "params": {
+          "participation_priority": false,
+          "participation_regime": "daily_up",
+          "participation_filter": "stack",
+          "participation_rsi_min": 47.38694783071283,
+          "participation_rsi_max": 62.0,
+          "participation_macd_floor": -4.0,
+          "participation_vol_mult": 0.9469466673052394,
+          "participation_adx_min": 4.6676362093380535,
+          "participation_max_extension_atr": 6.0,
+          "participation_stop_atr": 5.009882593877183,
+          "participation_trail_atr": 6.055054697363884,
+          "participation_cooldown": 19,
+          "participation_min_hold": 24,
+          "participation_max_hold": 46,
+          "participation_exit_filter": "ema21",
+          "participation_exit_rsi": 49.366216745044234,
+          "participation_exit_on_macd_roll": true
+        }
+      },
+      {
+        "idx": 193,
+        "full": {
+          "net": 96017.5,
+          "buy_hold": 60050.0,
+          "excess": 35967.5,
+          "trades": 479,
+          "win_rate": 41.13,
+          "profit_factor": 1.5506853636155082,
+          "max_drawdown_pct": 18.50143903715332,
+          "core_trades": 295,
+          "cap_trades": 163,
+          "participation_trades": 21
+        },
+        "june": {
+          "net": 9402.5,
+          "buy_hold": -2237.5,
+          "excess": 11640.0,
+          "trades": 37,
+          "win_rate": 35.14,
+          "profit_factor": 1.4826126010522263,
+          "trade_drawdown_pct": 10.786591437105875,
+          "core_trades": 21,
+          "cap_trades": 13,
+          "participation_trades": 3
+        },
+        "gates": {
+          "net_ge_c6": true,
+          "pf_ge_c6": true,
+          "dd_le_c6": true,
+          "june_ge_c2": true
+        },
+        "gates_passed": 4,
+        "params": {
+          "participation_priority": false,
+          "participation_regime": "daily_up",
+          "participation_filter": "stack",
+          "participation_rsi_min": 47.38694783071283,
+          "participation_rsi_max": 62.0,
+          "participation_macd_floor": -4.0,
+          "participation_vol_mult": 0.9469466673052394,
+          "participation_adx_min": 4.6676362093380535,
+          "participation_max_extension_atr": 6.0,
+          "participation_stop_atr": 4.598412275055454,
+          "participation_trail_atr": 6.143331323515734,
+          "participation_cooldown": 19,
+          "participation_min_hold": 24,
+          "participation_max_hold": 49,
+          "participation_exit_filter": "ema21",
+          "participation_exit_rsi": 47.80843243339987,
+          "participation_exit_on_macd_roll": true
+        }
+      },
+      {
+        "idx": 61,
+        "full": {
+          "net": 95992.5,
+          "buy_hold": 60050.0,
+          "excess": 35942.5,
+          "trades": 479,
+          "win_rate": 41.13,
+          "profit_factor": 1.5504630558821,
+          "max_drawdown_pct": 18.50143903715332,
+          "core_trades": 295,
+          "cap_trades": 163,
+          "participation_trades": 21
+        },
+        "june": {
+          "net": 9502.5,
+          "buy_hold": -2237.5,
+          "excess": 11740.0,
+          "trades": 37,
+          "win_rate": 35.14,
+          "profit_factor": 1.4902618341287244,
+          "trade_drawdown_pct": 10.786591437105875,
+          "core_trades": 21,
+          "cap_trades": 13,
+          "participation_trades": 3
+        },
+        "gates": {
+          "net_ge_c6": true,
+          "pf_ge_c6": true,
+          "dd_le_c6": true,
+          "june_ge_c2": true
+        },
+        "gates_passed": 4,
+        "params": {
+          "participation_priority": false,
+          "participation_regime": "daily_up",
+          "participation_filter": "stack",
+          "participation_rsi_min": 47.38694783071283,
+          "participation_rsi_max": 62.0,
+          "participation_macd_floor": -4.0,
+          "participation_vol_mult": 0.9469466673052394,
+          "participation_adx_min": 4.6676362093380535,
+          "participation_max_extension_atr": 6.0,
+          "participation_stop_atr": 4.852880428863038,
+          "participation_trail_atr": 5.97612139642667,
+          "participation_cooldown": 19,
+          "participation_min_hold": 24,
+          "participation_max_hold": 41,
+          "participation_exit_filter": "ema21",
+          "participation_exit_rsi": 49.23252094389211,
+          "participation_exit_on_macd_roll": true
+        }
+      },
+      {
+        "idx": 186,
+        "full": {
+          "net": 95992.5,
+          "buy_hold": 60050.0,
+          "excess": 35942.5,
+          "trades": 479,
+          "win_rate": 41.13,
+          "profit_factor": 1.5504630558821,
+          "max_drawdown_pct": 18.50143903715332,
+          "core_trades": 295,
+          "cap_trades": 163,
+          "participation_trades": 21
+        },
+        "june": {
+          "net": 9502.5,
+          "buy_hold": -2237.5,
+          "excess": 11740.0,
+          "trades": 37,
+          "win_rate": 35.14,
+          "profit_factor": 1.4902618341287244,
+          "trade_drawdown_pct": 10.786591437105875,
+          "core_trades": 21,
+          "cap_trades": 13,
+          "participation_trades": 3
+        },
+        "gates": {
+          "net_ge_c6": true,
+          "pf_ge_c6": true,
+          "dd_le_c6": true,
+          "june_ge_c2": true
+        },
+        "gates_passed": 4,
+        "params": {
+          "participation_priority": false,
+          "participation_regime": "daily_up",
+          "participation_filter": "stack",
+          "participation_rsi_min": 47.38694783071283,
+          "participation_rsi_max": 62.0,
+          "participation_macd_floor": -4.0,
+          "participation_vol_mult": 0.9469466673052394,
+          "participation_adx_min": 4.6676362093380535,
+          "participation_max_extension_atr": 6.0,
+          "participation_stop_atr": 5.183626617765469,
+          "participation_trail_atr": 5.974639582301814,
+          "participation_cooldown": 19,
+          "participation_min_hold": 24,
+          "participation_max_hold": 51,
+          "participation_exit_filter": "ema21",
+          "participation_exit_rsi": 48.72757139191065,
+          "participation_exit_on_macd_roll": true
+        }
+      }
+    ],
+    "weakest": [
+      {
+        "idx": 381,
+        "full": {
+          "net": 73737.5,
+          "buy_hold": 60050.0,
+          "excess": 13687.5,
+          "trades": 480,
+          "win_rate": 40.21,
+          "profit_factor": 1.3956192826675966,
+          "max_drawdown_pct": 27.43079060818755,
+          "core_trades": 291,
+          "cap_trades": 163,
+          "participation_trades": 26
+        },
+        "june": {
+          "net": 3307.5,
+          "buy_hold": -2237.5,
+          "excess": 5545.0,
+          "trades": 36,
+          "win_rate": 33.33,
+          "profit_factor": 1.144306282722513,
+          "trade_drawdown_pct": 10.786591437105875,
+          "core_trades": 21,
+          "cap_trades": 12,
+          "participation_trades": 3
+        },
+        "gates": {
+          "net_ge_c6": false,
+          "pf_ge_c6": false,
+          "dd_le_c6": false,
+          "june_ge_c2": false
+        },
+        "gates_passed": 0,
+        "params": {
+          "participation_priority": false,
+          "participation_regime": "daily_up",
+          "participation_filter": "stack",
+          "participation_rsi_min": 47.38694783071283,
+          "participation_rsi_max": 62.0,
+          "participation_macd_floor": -4.0,
+          "participation_vol_mult": 0.9469466673052394,
+          "participation_adx_min": 4.6676362093380535,
+          "participation_max_extension_atr": 6.0,
+          "participation_stop_atr": 5.099333891071475,
+          "participation_trail_atr": 7.694465767468036,
+          "participation_cooldown": 17,
+          "participation_min_hold": 22,
+          "participation_max_hold": 44,
+          "participation_exit_filter": "ema21",
+          "participation_exit_rsi": 50.732304236002676,
+          "participation_exit_on_macd_roll": true
+        }
+      },
+      {
+        "idx": 24,
+        "full": {
+          "net": 73750.0,
+          "buy_hold": 60050.0,
+          "excess": 13700.0,
+          "trades": 480,
+          "win_rate": 40.21,
+          "profit_factor": 1.3957128868261144,
+          "max_drawdown_pct": 27.448605123454588,
+          "core_trades": 291,
+          "cap_trades": 163,
+          "participation_trades": 26
+        },
+        "june": {
+          "net": 3332.5,
+          "buy_hold": -2237.5,
+          "excess": 5570.0,
+          "trades": 36,
+          "win_rate": 33.33,
+          "profit_factor": 1.145555798209216,
+          "trade_drawdown_pct": 10.786591437105875,
+          "core_trades": 21,
+          "cap_trades": 12,
+          "participation_trades": 3
+        },
+        "gates": {
+          "net_ge_c6": false,
+          "pf_ge_c6": false,
+          "dd_le_c6": false,
+          "june_ge_c2": false
+        },
+        "gates_passed": 0,
+        "params": {
+          "participation_priority": false,
+          "participation_regime": "daily_up",
+          "participation_filter": "stack",
+          "participation_rsi_min": 47.38694783071283,
+          "participation_rsi_max": 62.0,
+          "participation_macd_floor": -4.0,
+          "participation_vol_mult": 0.9469466673052394,
+          "participation_adx_min": 4.6676362093380535,
+          "participation_max_extension_atr": 6.0,
+          "participation_stop_atr": 5.114623949350095,
+          "participation_trail_atr": 7.660886918277477,
+          "participation_cooldown": 17,
+          "participation_min_hold": 22,
+          "participation_max_hold": 46,
+          "participation_exit_filter": "ema21",
+          "participation_exit_rsi": 51.214832386412326,
+          "participation_exit_on_macd_roll": true
+        }
+      },
+      {
+        "idx": 148,
+        "full": {
+          "net": 74237.5,
+          "buy_hold": 60050.0,
+          "excess": 14187.5,
+          "trades": 480,
+          "win_rate": 40.21,
+          "profit_factor": 1.399373268418646,
+          "max_drawdown_pct": 27.288274486051233,
+          "core_trades": 291,
+          "cap_trades": 163,
+          "participation_trades": 26
+        },
+        "june": {
+          "net": 3720.0,
+          "buy_hold": -2237.5,
+          "excess": 5957.5,
+          "trades": 36,
+          "win_rate": 33.33,
+          "profit_factor": 1.1652782405864712,
+          "trade_drawdown_pct": 10.786591437105875,
+          "core_trades": 21,
+          "cap_trades": 12,
+          "participation_trades": 3
+        },
+        "gates": {
+          "net_ge_c6": false,
+          "pf_ge_c6": false,
+          "dd_le_c6": false,
+          "june_ge_c2": false
+        },
+        "gates_passed": 0,
+        "params": {
+          "participation_priority": false,
+          "participation_regime": "daily_up",
+          "participation_filter": "stack",
+          "participation_rsi_min": 47.38694783071283,
+          "participation_rsi_max": 62.0,
+          "participation_macd_floor": -4.0,
+          "participation_vol_mult": 0.9469466673052394,
+          "participation_adx_min": 4.6676362093380535,
+          "participation_max_extension_atr": 6.0,
+          "participation_stop_atr": 4.982314195382024,
+          "participation_trail_atr": 7.140302974519667,
+          "participation_cooldown": 17,
+          "participation_min_hold": 22,
+          "participation_max_hold": 53,
+          "participation_exit_filter": "ema21",
+          "participation_exit_rsi": 49.82376615320851,
+          "participation_exit_on_macd_roll": true
+        }
+      },
+      {
+        "idx": 354,
+        "full": {
+          "net": 74637.5,
+          "buy_hold": 60050.0,
+          "excess": 14587.5,
+          "trades": 480,
+          "win_rate": 40.21,
+          "profit_factor": 1.4023910289241717,
+          "max_drawdown_pct": 26.914169665443406,
+          "core_trades": 291,
+          "cap_trades": 163,
+          "participation_trades": 26
+        },
+        "june": {
+          "net": 3845.0,
+          "buy_hold": -2237.5,
+          "excess": 6082.5,
+          "trades": 36,
+          "win_rate": 33.33,
+          "profit_factor": 1.1717859935217245,
+          "trade_drawdown_pct": 10.786591437105875,
+          "core_trades": 21,
+          "cap_trades": 12,
+          "participation_trades": 3
+        },
+        "gates": {
+          "net_ge_c6": false,
+          "pf_ge_c6": false,
+          "dd_le_c6": false,
+          "june_ge_c2": false
+        },
+        "gates_passed": 0,
+        "params": {
+          "participation_priority": false,
+          "participation_regime": "daily_up",
+          "participation_filter": "stack",
+          "participation_rsi_min": 47.38694783071283,
+          "participation_rsi_max": 62.0,
+          "participation_macd_floor": -4.0,
+          "participation_vol_mult": 0.9469466673052394,
+          "participation_adx_min": 4.6676362093380535,
+          "participation_max_extension_atr": 6.0,
+          "participation_stop_atr": 4.652256651396863,
+          "participation_trail_atr": 6.964862905115739,
+          "participation_cooldown": 17,
+          "participation_min_hold": 22,
+          "participation_max_hold": 44,
+          "participation_exit_filter": "ema21",
+          "participation_exit_rsi": 51.29030308280904,
+          "participation_exit_on_macd_roll": true
+        }
+      },
+      {
+        "idx": 190,
+        "full": {
+          "net": 74725.0,
+          "buy_hold": 60050.0,
+          "excess": 14675.0,
+          "trades": 480,
+          "win_rate": 40.21,
+          "profit_factor": 1.4030528998503216,
+          "max_drawdown_pct": 27.234830940250117,
+          "core_trades": 291,
+          "cap_trades": 163,
+          "participation_trades": 26
+        },
+        "june": {
+          "net": 4157.5,
+          "buy_hold": -2237.5,
+          "excess": 6395.0,
+          "trades": 36,
+          "win_rate": 33.33,
+          "profit_factor": 1.1883778885364749,
+          "trade_drawdown_pct": 10.786591437105875,
+          "core_trades": 21,
+          "cap_trades": 12,
+          "participation_trades": 3
+        },
+        "gates": {
+          "net_ge_c6": false,
+          "pf_ge_c6": false,
+          "dd_le_c6": false,
+          "june_ge_c2": false
+        },
+        "gates_passed": 0,
+        "params": {
+          "participation_priority": false,
+          "participation_regime": "daily_up",
+          "participation_filter": "stack",
+          "participation_rsi_min": 47.38694783071283,
+          "participation_rsi_max": 62.0,
+          "participation_macd_floor": -4.0,
+          "participation_vol_mult": 0.9469466673052394,
+          "participation_adx_min": 4.6676362093380535,
+          "participation_max_extension_atr": 6.0,
+          "participation_stop_atr": 4.929338690143231,
+          "participation_trail_atr": 6.529604261122415,
+          "participation_cooldown": 17,
+          "participation_min_hold": 22,
+          "participation_max_hold": 52,
+          "participation_exit_filter": "ema21",
+          "participation_exit_rsi": 51.087816937771294,
+          "participation_exit_on_macd_roll": true
+        }
+      },
+      {
+        "idx": 450,
+        "full": {
+          "net": 74937.5,
+          "buy_hold": 60050.0,
+          "excess": 14887.5,
+          "trades": 480,
+          "win_rate": 40.21,
+          "profit_factor": 1.4046629046629047,
+          "max_drawdown_pct": 26.682580966971887,
+          "core_trades": 291,
+          "cap_trades": 163,
+          "participation_trades": 26
+        },
+        "june": {
+          "net": 3982.5,
+          "buy_hold": -2237.5,
+          "excess": 6220.0,
+          "trades": 36,
+          "win_rate": 33.33,
+          "profit_factor": 1.179028995279838,
+          "trade_drawdown_pct": 10.786591437105875,
+          "core_trades": 21,
+          "cap_trades": 12,
+          "participation_trades": 3
+        },
+        "gates": {
+          "net_ge_c6": false,
+          "pf_ge_c6": false,
+          "dd_le_c6": false,
+          "june_ge_c2": false
+        },
+        "gates_passed": 0,
+        "params": {
+          "participation_priority": false,
+          "participation_regime": "daily_up",
+          "participation_filter": "stack",
+          "participation_rsi_min": 47.38694783071283,
+          "participation_rsi_max": 62.0,
+          "participation_macd_floor": -4.0,
+          "participation_vol_mult": 0.9469466673052394,
+          "participation_adx_min": 4.6676362093380535,
+          "participation_max_extension_atr": 6.0,
+          "participation_stop_atr": 4.447586996895373,
+          "participation_trail_atr": 6.774763602532304,
+          "participation_cooldown": 17,
+          "participation_min_hold": 22,
+          "participation_max_hold": 52,
+          "participation_exit_filter": "ema21",
+          "participation_exit_rsi": 50.941281856930196,
+          "participation_exit_on_macd_roll": true
+        }
+      },
+      {
+        "idx": 23,
+        "full": {
+          "net": 75487.5,
+          "buy_hold": 60050.0,
+          "excess": 15437.5,
+          "trades": 480,
+          "win_rate": 40.42,
+          "profit_factor": 1.4070943213072318,
+          "max_drawdown_pct": 27.41297609292051,
+          "core_trades": 290,
+          "cap_trades": 164,
+          "participation_trades": 26
+        },
+        "june": {
+          "net": 3182.5,
+          "buy_hold": -2237.5,
+          "excess": 5420.0,
+          "trades": 36,
+          "win_rate": 33.33,
+          "profit_factor": 1.138099370796268,
+          "trade_drawdown_pct": 10.786591437105875,
+          "core_trades": 21,
+          "cap_trades": 12,
+          "participation_trades": 3
+        },
+        "gates": {
+          "net_ge_c6": false,
+          "pf_ge_c6": false,
+          "dd_le_c6": false,
+          "june_ge_c2": false
+        },
+        "gates_passed": 0,
+        "params": {
+          "participation_priority": false,
+          "participation_regime": "daily_up",
+          "participation_filter": "stack",
+          "participation_rsi_min": 47.38694783071283,
+          "participation_rsi_max": 62.0,
+          "participation_macd_floor": -4.0,
+          "participation_vol_mult": 0.9469466673052394,
+          "participation_adx_min": 4.6676362093380535,
+          "participation_max_extension_atr": 6.0,
+          "participation_stop_atr": 5.087170808849139,
+          "participation_trail_atr": 7.870225950917963,
+          "participation_cooldown": 17,
+          "participation_min_hold": 22,
+          "participation_max_hold": 46,
+          "participation_exit_filter": "ema21",
+          "participation_exit_rsi": 48.453825945828264,
+          "participation_exit_on_macd_roll": true
+        }
+      },
+      {
+        "idx": 295,
+        "full": {
+          "net": 75625.0,
+          "buy_hold": 60050.0,
+          "excess": 15575.0,
+          "trades": 480,
+          "win_rate": 40.42,
+          "profit_factor": 1.4081384837486677,
+          "max_drawdown_pct": 27.555492215056827,
+          "core_trades": 290,
+          "cap_trades": 164,
+          "participation_trades": 26
+        },
+        "june": {
+          "net": 3457.5,
+          "buy_hold": -2237.5,
+          "excess": 5695.0,
+          "trades": 36,
+          "win_rate": 33.33,
+          "profit_factor": 1.151844532279315,
+          "trade_drawdown_pct": 10.786591437105875,
+          "core_trades": 21,
+          "cap_trades": 12,
+          "participation_trades": 3
+        },
+        "gates": {
+          "net_ge_c6": false,
+          "pf_ge_c6": false,
+          "dd_le_c6": false,
+          "june_ge_c2": false
+        },
+        "gates_passed": 0,
+        "params": {
+          "participation_priority": false,
+          "participation_regime": "daily_up",
+          "participation_filter": "stack",
+          "participation_rsi_min": 47.38694783071283,
+          "participation_rsi_max": 62.0,
+          "participation_macd_floor": -4.0,
+          "participation_vol_mult": 0.9469466673052394,
+          "participation_adx_min": 4.6676362093380535,
+          "participation_max_extension_atr": 6.0,
+          "participation_stop_atr": 5.206044736580101,
+          "participation_trail_atr": 7.500911721310386,
+          "participation_cooldown": 17,
+          "participation_min_hold": 22,
+          "participation_max_hold": 50,
+          "participation_exit_filter": "ema21",
+          "participation_exit_rsi": 49.09506462904743,
+          "participation_exit_on_macd_roll": true
+        }
+      },
+      {
+        "idx": 365,
+        "full": {
+          "net": 76075.0,
+          "buy_hold": 60050.0,
+          "excess": 16025.0,
+          "trades": 480,
+          "win_rate": 40.42,
+          "profit_factor": 1.4115666040007033,
+          "max_drawdown_pct": 26.949798695977485,
+          "core_trades": 290,
+          "cap_trades": 164,
+          "participation_trades": 26
+        },
+        "june": {
+          "net": 3395.0,
+          "buy_hold": -2237.5,
+          "excess": 5632.5,
+          "trades": 36,
+          "win_rate": 33.33,
+          "profit_factor": 1.1486915580860615,
+          "trade_drawdown_pct": 10.786591437105875,
+          "core_trades": 21,
+          "cap_trades": 12,
+          "participation_trades": 3
+        },
+        "gates": {
+          "net_ge_c6": false,
+          "pf_ge_c6": false,
+          "dd_le_c6": false,
+          "june_ge_c2": false
+        },
+        "gates_passed": 0,
+        "params": {
+          "participation_priority": false,
+          "participation_regime": "daily_up",
+          "participation_filter": "stack",
+          "participation_rsi_min": 47.38694783071283,
+          "participation_rsi_max": 62.0,
+          "participation_macd_floor": -4.0,
+          "participation_vol_mult": 0.9469466673052394,
+          "participation_adx_min": 4.6676362093380535,
+          "participation_max_extension_atr": 6.0,
+          "participation_stop_atr": 4.684276187862056,
+          "participation_trail_atr": 7.616366175471953,
+          "participation_cooldown": 17,
+          "participation_min_hold": 22,
+          "participation_max_hold": 52,
+          "participation_exit_filter": "ema21",
+          "participation_exit_rsi": 47.727933034207545,
+          "participation_exit_on_macd_roll": true
+        }
+      },
+      {
+        "idx": 478,
+        "full": {
+          "net": 76100.0,
+          "buy_hold": 60050.0,
+          "excess": 16050.0,
+          "trades": 480,
+          "win_rate": 40.42,
+          "profit_factor": 1.411757544604813,
+          "max_drawdown_pct": 26.860726119642287,
+          "core_trades": 290,
+          "cap_trades": 164,
+          "participation_trades": 26
+        },
+        "june": {
+          "net": 3445.0,
+          "buy_hold": -2237.5,
+          "excess": 5682.5,
+          "trades": 36,
+          "win_rate": 33.33,
+          "profit_factor": 1.151212553495007,
+          "trade_drawdown_pct": 10.786591437105875,
+          "core_trades": 21,
+          "cap_trades": 12,
+          "participation_trades": 3
+        },
+        "gates": {
+          "net_ge_c6": false,
+          "pf_ge_c6": false,
+          "dd_le_c6": false,
+          "june_ge_c2": false
+        },
+        "gates_passed": 0,
+        "params": {
+          "participation_priority": false,
+          "participation_regime": "daily_up",
+          "participation_filter": "stack",
+          "participation_rsi_min": 47.38694783071283,
+          "participation_rsi_max": 62.0,
+          "participation_macd_floor": -4.0,
+          "participation_vol_mult": 0.9469466673052394,
+          "participation_adx_min": 4.6676362093380535,
+          "participation_max_extension_atr": 6.0,
+          "participation_stop_atr": 4.6094102264107,
+          "participation_trail_atr": 7.587597284424822,
+          "participation_cooldown": 17,
+          "participation_min_hold": 22,
+          "participation_max_hold": 50,
+          "participation_exit_filter": "ema21",
+          "participation_exit_rsi": 48.2439379675469,
+          "participation_exit_on_macd_roll": true
+        }
+      }
+    ]
+  },
+  "decision": [
+    "C7 remains forward-test active if it beats C6 on full net/PF and beats trusted C2 on June net.",
+    "Full closed-bar C7 net $95,497.50 vs C6 $92,605.00.",
+    "June C7 net $8,870.00 vs trusted C2 $8,265.00.",
+    "Stress all-gate pass rate 111/512.",
+    "C7 clears the forward-test active gate set on the current closed-bar snapshot."
+  ]
+}

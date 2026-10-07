@@ -1,0 +1,2965 @@
+{
+  "summary": {
+    "data_start": "2025-06-30T22:00:00+00:00",
+    "data_end": "2026-05-08T20:00:00+00:00",
+    "truth_method": "scipy_price",
+    "truth_prominence_threshold": 0.6941085869834199,
+    "bars": 20205,
+    "truth_valleys": 385,
+    "truth_peaks": 346,
+    "strategy_long_entries": 161,
+    "strategy_short_entries": 127,
+    "strategy_exits": 288,
+    "missed_truth_valleys": 352,
+    "matched_truth_valleys": 33,
+    "missed_truth_peak_exits": 312,
+    "top_long_entry_blockers": [
+      [
+        "core_rsi_low",
+        336
+      ],
+      [
+        "sleeve_allowed_false",
+        324
+      ],
+      [
+        "core_price_below_ema55",
+        270
+      ],
+      [
+        "core_trend_state_false",
+        183
+      ],
+      [
+        "sleeve_stoch_false",
+        125
+      ],
+      [
+        "sleeve_vwap_not_deep",
+        119
+      ],
+      [
+        "sleeve_rsi_too_high",
+        118
+      ],
+      [
+        "sleeve_location_false",
+        114
+      ],
+      [
+        "already_in_position",
+        112
+      ],
+      [
+        "core_volume_low",
+        91
+      ],
+      [
+        "sleeve_daily_bearish",
+        73
+      ],
+      [
+        "core_direction_false",
+        51
+      ],
+      [
+        "core_macd_low",
+        4
+      ],
+      [
+        "core_pullback_false",
+        2
+      ]
+    ],
+    "context": {
+      "start": null,
+      "end": null,
+      "truth_valleys": 385,
+      "truth_peaks": 346,
+      "long_entries": 161,
+      "exits": 288
+    }
+  },
+  "trades": [
+    {
+      "side": "long",
+      "kind": "sleeve",
+      "entry_time": "2025-07-04T08:15:00+00:00",
+      "exit_time": "2025-07-06T22:00:00+00:00",
+      "entry": 66.67,
+      "exit": 65.73605309490249,
+      "bars": 35,
+      "reason": "risk_stop"
+    },
+    {
+      "side": "long",
+      "kind": "core",
+      "entry_time": "2025-07-07T07:15:00+00:00",
+      "exit_time": "2025-07-07T18:00:00+00:00",
+      "entry": 66.53,
+      "exit": 67.25,
+      "bars": 43,
+      "reason": "core_momentum"
+    },
+    {
+      "side": "long",
+      "kind": "sleeve",
+      "entry_time": "2025-07-08T08:00:00+00:00",
+      "exit_time": "2025-07-08T10:00:00+00:00",
+      "entry": 67.46,
+      "exit": 67.63,
+      "bars": 8,
+      "reason": "sleeve_vwap"
+    },
+    {
+      "side": "long",
+      "kind": "core",
+      "entry_time": "2025-07-08T16:15:00+00:00",
+      "exit_time": "2025-07-08T20:30:00+00:00",
+      "entry": 68.49,
+      "exit": 68.21,
+      "bars": 17,
+      "reason": "core_momentum"
+    },
+    {
+      "side": "long",
+      "kind": "core",
+      "entry_time": "2025-07-09T09:00:00+00:00",
+      "exit_time": "2025-07-09T12:15:00+00:00",
+      "entry": 68.74,
+      "exit": 68.4,
+      "bars": 13,
+      "reason": "core_momentum"
+    },
+    {
+      "side": "long",
+      "kind": "sleeve",
+      "entry_time": "2025-07-10T08:15:00+00:00",
+      "exit_time": "2025-07-10T11:30:00+00:00",
+      "entry": 68.13,
+      "exit": 68.58264798801386,
+      "bars": 13,
+      "reason": "target"
+    },
+    {
+      "side": "long",
+      "kind": "sleeve",
+      "entry_time": "2025-07-11T08:45:00+00:00",
+      "exit_time": "2025-07-11T10:15:00+00:00",
+      "entry": 66.58,
+      "exit": 66.9777548658831,
+      "bars": 6,
+      "reason": "target"
+    },
+    {
+      "side": "long",
+      "kind": "core",
+      "entry_time": "2025-07-11T13:45:00+00:00",
+      "exit_time": "2025-07-11T20:15:00+00:00",
+      "entry": 67.67,
+      "exit": 68.76935889214495,
+      "bars": 26,
+      "reason": "target"
+    },
+    {
+      "side": "long",
+      "kind": "core",
+      "entry_time": "2025-07-14T06:45:00+00:00",
+      "exit_time": "2025-07-14T12:30:00+00:00",
+      "entry": 68.63,
+      "exit": 69.12,
+      "bars": 23,
+      "reason": "core_momentum"
+    },
+    {
+      "side": "short",
+      "kind": "core",
+      "entry_time": "2025-07-15T08:00:00+00:00",
+      "exit_time": "2025-07-15T10:45:00+00:00",
+      "entry": 66.51,
+      "exit": 66.69,
+      "bars": 11,
+      "reason": "core_momentum"
+    },
+    {
+      "side": "short",
+      "kind": "core",
+      "entry_time": "2025-07-16T09:15:00+00:00",
+      "exit_time": "2025-07-16T15:45:00+00:00",
+      "entry": 66.3,
+      "exit": 65.93,
+      "bars": 26,
+      "reason": "core_momentum"
+    },
+    {
+      "side": "long",
+      "kind": "core",
+      "entry_time": "2025-07-16T17:15:00+00:00",
+      "exit_time": "2025-07-17T06:00:00+00:00",
+      "entry": 66.31,
+      "exit": 66.61,
+      "bars": 47,
+      "reason": "core_momentum"
+    },
+    {
+      "side": "long",
+      "kind": "core",
+      "entry_time": "2025-07-17T18:30:00+00:00",
+      "exit_time": "2025-07-17T22:00:00+00:00",
+      "entry": 67.62,
+      "exit": 66.4483296879768,
+      "bars": 10,
+      "reason": "risk_stop"
+    },
+    {
+      "side": "long",
+      "kind": "core",
+      "entry_time": "2025-07-18T06:15:00+00:00",
+      "exit_time": "2025-07-18T15:00:00+00:00",
+      "entry": 66.7,
+      "exit": 66.51,
+      "bars": 35,
+      "reason": "core_momentum"
+    },
+    {
+      "side": "long",
+      "kind": "sleeve",
+      "entry_time": "2025-07-18T20:00:00+00:00",
+      "exit_time": "2025-07-20T23:00:00+00:00",
+      "entry": 66.11,
+      "exit": 66.23,
+      "bars": 8,
+      "reason": "sleeve_vwap"
+    },
+    {
+      "side": "long",
+      "kind": "sleeve",
+      "entry_time": "2025-07-21T08:15:00+00:00",
+      "exit_time": "2025-07-21T11:15:00+00:00",
+      "entry": 65.84,
+      "exit": 66.04,
+      "bars": 12,
+      "reason": "sleeve_vwap"
+    },
+    {
+      "side": "long",
+      "kind": "sleeve",
+      "entry_time": "2025-07-21T13:15:00+00:00",
+      "exit_time": "2025-07-21T17:15:00+00:00",
+      "entry": 65.74,
+      "exit": 65.89,
+      "bars": 16,
+      "reason": "sleeve_vwap"
+    },
+    {
+      "side": "short",
+      "kind": "core",
+      "entry_time": "2025-07-22T05:30:00+00:00",
+      "exit_time": "2025-07-22T09:00:00+00:00",
+      "entry": 65.47,
+      "exit": 65.46,
+      "bars": 14,
+      "reason": "core_momentum"
+    },
+    {
+      "side": "short",
+      "kind": "core",
+      "entry_time": "2025-07-22T09:45:00+00:00",
+      "exit_time": "2025-07-22T12:15:00+00:00",
+      "entry": 65.3,
+      "exit": 65.65,
+      "bars": 10,
+      "reason": "core_momentum"
+    },
+    {
+      "side": "short",
+      "kind": "core",
+      "entry_time": "2025-07-23T10:15:00+00:00",
+      "exit_time": "2025-07-23T12:45:00+00:00",
+      "entry": 64.91,
+      "exit": 65.03,
+      "bars": 10,
+      "reason": "core_momentum"
+    },
+    {
+      "side": "short",
+      "kind": "core",
+      "entry_time": "2025-07-23T13:30:00+00:00",
+      "exit_time": "2025-07-23T16:00:00+00:00",
+      "entry": 65.2,
+      "exit": 65.21,
+      "bars": 10,
+      "reason": "core_momentum"
+    },
+    {
+      "side": "long",
+      "kind": "core",
+      "entry_time": "2025-07-24T06:00:00+00:00",
+      "exit_time": "2025-07-24T11:30:00+00:00",
+      "entry": 65.75,
+      "exit": 65.68,
+      "bars": 22,
+      "reason": "core_momentum"
+    },
+    {
+      "side": "long",
+      "kind": "core",
+      "entry_time": "2025-07-24T12:45:00+00:00",
+      "exit_time": "2025-07-24T16:30:00+00:00",
+      "entry": 66.07,
+      "exit": 65.78,
+      "bars": 15,
+      "reason": "core_momentum"
+    },
+    {
+      "side": "long",
+      "kind": "core",
+      "entry_time": "2025-07-25T07:15:00+00:00",
+      "exit_time": "2025-07-25T09:45:00+00:00",
+      "entry": 66.49,
+      "exit": 66.24,
+      "bars": 10,
+      "reason": "core_momentum"
+    },
+    {
+      "side": "short",
+      "kind": "core",
+      "entry_time": "2025-07-25T14:30:00+00:00",
+      "exit_time": "2025-07-27T22:00:00+00:00",
+      "entry": 65.65,
+      "exit": 65.27,
+      "bars": 26,
+      "reason": "core_momentum"
+    },
+    {
+      "side": "long",
+      "kind": "core",
+      "entry_time": "2025-07-28T13:30:00+00:00",
+      "exit_time": "2025-07-29T01:00:00+00:00",
+      "entry": 66.61,
+      "exit": 66.72,
+      "bars": 42,
+      "reason": "core_momentum"
+    },
+    {
+      "side": "long",
+      "kind": "core",
+      "entry_time": "2025-07-29T14:00:00+00:00",
+      "exit_time": "2025-07-29T18:15:00+00:00",
+      "entry": 67.48,
+      "exit": 69.3149586010854,
+      "bars": 17,
+      "reason": "target"
+    },
+    {
+      "side": "long",
+      "kind": "sleeve",
+      "entry_time": "2025-07-30T09:30:00+00:00",
+      "exit_time": "2025-07-30T12:00:00+00:00",
+      "entry": 68.82,
+      "exit": 69.2722310002377,
+      "bars": 10,
+      "reason": "target"
+    },
+    {
+      "side": "long",
+      "kind": "core",
+      "entry_time": "2025-07-30T12:45:00+00:00",
+      "exit_time": "2025-07-31T00:00:00+00:00",
+      "entry": 69.57,
+      "exit": 70.40789546400215,
+      "bars": 41,
+      "reason": "target"
+    },
+    {
+      "side": "long",
+      "kind": "sleeve",
+      "entry_time": "2025-07-31T09:00:00+00:00",
+      "exit_time": "2025-07-31T14:00:00+00:00",
+      "entry": 69.82,
+      "exit": 69.78,
+      "bars": 20,
+      "reason": "sleeve_vwap"
+    },
+    {
+      "side": "long",
+      "kind": "sleeve",
+      "entry_time": "2025-08-01T07:15:00+00:00",
+      "exit_time": "2025-08-01T08:00:00+00:00",
+      "entry": 69.07,
+      "exit": 69.43343506650822,
+      "bars": 3,
+      "reason": "target"
+    },
+    {
+      "side": "long",
+      "kind": "sleeve",
+      "entry_time": "2025-08-01T20:30:00+00:00",
+      "exit_time": "2025-08-03T23:30:00+00:00",
+      "entry": 67.17,
+      "exit": 66.95,
+      "bars": 8,
+      "reason": "sleeve_vwap"
+    },
+    {
+      "side": "short",
+      "kind": "core",
+      "entry_time": "2025-08-04T12:15:00+00:00",
+      "exit_time": "2025-08-04T14:45:00+00:00",
+      "entry": 65.94,
+      "exit": 66.87,
+      "bars": 10,
+      "reason": "core_momentum"
+    },
+    {
+      "side": "long",
+      "kind": "core",
+      "entry_time": "2025-08-04T15:30:00+00:00",
+      "exit_time": "2025-08-04T18:00:00+00:00",
+      "entry": 66.87,
+      "exit": 66.24,
+      "bars": 10,
+      "reason": "core_momentum"
+    },
+    {
+      "side": "long",
+      "kind": "sleeve",
+      "entry_time": "2025-08-04T19:45:00+00:00",
+      "exit_time": "2025-08-05T00:00:00+00:00",
+      "entry": 66.09,
+      "exit": 66.3428744951338,
+      "bars": 13,
+      "reason": "target"
+    },
+    {
+      "side": "long",
+      "kind": "sleeve",
+      "entry_time": "2025-08-05T08:45:00+00:00",
+      "exit_time": "2025-08-05T16:15:00+00:00",
+      "entry": 65.88,
+      "exit": 65.76,
+      "bars": 30,
+      "reason": "sleeve_vwap"
+    },
+    {
+      "side": "long",
+      "kind": "core",
+      "entry_time": "2025-08-06T06:45:00+00:00",
+      "exit_time": "2025-08-06T14:00:00+00:00",
+      "entry": 65.63,
+      "exit": 65.76,
+      "bars": 29,
+      "reason": "core_momentum"
+    },
+    {
+      "side": "short",
+      "kind": "core",
+      "entry_time": "2025-08-06T15:00:00+00:00",
+      "exit_time": "2025-08-06T22:30:00+00:00",
+      "entry": 65.86,
+      "exit": 64.33488388290044,
+      "bars": 26,
+      "reason": "target"
+    },
+    {
+      "side": "long",
+      "kind": "sleeve",
+      "entry_time": "2025-08-07T08:00:00+00:00",
+      "exit_time": "2025-08-07T09:00:00+00:00",
+      "entry": 64.27,
+      "exit": 64.72612741028588,
+      "bars": 4,
+      "reason": "target"
+    },
+    {
+      "side": "long",
+      "kind": "sleeve",
+      "entry_time": "2025-08-07T13:00:00+00:00",
+      "exit_time": "2025-08-07T19:45:00+00:00",
+      "entry": 64.36,
+      "exit": 63.74106453215897,
+      "bars": 27,
+      "reason": "risk_stop"
+    },
+    {
+      "side": "short",
+      "kind": "core",
+      "entry_time": "2025-08-08T06:00:00+00:00",
+      "exit_time": "2025-08-08T08:30:00+00:00",
+      "entry": 63.58,
+      "exit": 64.09,
+      "bars": 10,
+      "reason": "core_momentum"
+    },
+    {
+      "side": "short",
+      "kind": "core",
+      "entry_time": "2025-08-11T14:30:00+00:00",
+      "exit_time": "2025-08-11T17:00:00+00:00",
+      "entry": 63.77,
+      "exit": 64.19,
+      "bars": 10,
+      "reason": "core_momentum"
+    },
+    {
+      "side": "short",
+      "kind": "core",
+      "entry_time": "2025-08-12T12:15:00+00:00",
+      "exit_time": "2025-08-12T15:00:00+00:00",
+      "entry": 63.55,
+      "exit": 63.69,
+      "bars": 11,
+      "reason": "core_momentum"
+    },
+    {
+      "side": "short",
+      "kind": "core",
+      "entry_time": "2025-08-12T16:30:00+00:00",
+      "exit_time": "2025-08-13T01:45:00+00:00",
+      "entry": 63.16,
+      "exit": 63.15,
+      "bars": 33,
+      "reason": "core_momentum"
+    },
+    {
+      "side": "short",
+      "kind": "core",
+      "entry_time": "2025-08-14T07:45:00+00:00",
+      "exit_time": "2025-08-14T11:00:00+00:00",
+      "entry": 62.83,
+      "exit": 62.91,
+      "bars": 13,
+      "reason": "core_momentum"
+    },
+    {
+      "side": "short",
+      "kind": "core",
+      "entry_time": "2025-08-15T09:15:00+00:00",
+      "exit_time": "2025-08-15T11:45:00+00:00",
+      "entry": 63.45,
+      "exit": 63.67,
+      "bars": 10,
+      "reason": "core_momentum"
+    },
+    {
+      "side": "short",
+      "kind": "core",
+      "entry_time": "2025-08-18T07:00:00+00:00",
+      "exit_time": "2025-08-18T09:30:00+00:00",
+      "entry": 62.1,
+      "exit": 62.47,
+      "bars": 10,
+      "reason": "core_momentum"
+    },
+    {
+      "side": "short",
+      "kind": "core",
+      "entry_time": "2025-08-19T06:00:00+00:00",
+      "exit_time": "2025-08-19T11:30:00+00:00",
+      "entry": 62.28,
+      "exit": 62.12,
+      "bars": 22,
+      "reason": "core_momentum"
+    },
+    {
+      "side": "short",
+      "kind": "core",
+      "entry_time": "2025-08-19T12:15:00+00:00",
+      "exit_time": "2025-08-19T15:00:00+00:00",
+      "entry": 62.07,
+      "exit": 62.18,
+      "bars": 11,
+      "reason": "core_momentum"
+    },
+    {
+      "side": "short",
+      "kind": "core",
+      "entry_time": "2025-08-21T11:30:00+00:00",
+      "exit_time": "2025-08-21T14:15:00+00:00",
+      "entry": 63.08,
+      "exit": 62.99,
+      "bars": 11,
+      "reason": "core_momentum"
+    },
+    {
+      "side": "long",
+      "kind": "core",
+      "entry_time": "2025-08-25T12:00:00+00:00",
+      "exit_time": "2025-08-25T16:30:00+00:00",
+      "entry": 64.12,
+      "exit": 64.9973540974616,
+      "bars": 18,
+      "reason": "target"
+    },
+    {
+      "side": "long",
+      "kind": "core",
+      "entry_time": "2025-08-25T17:30:00+00:00",
+      "exit_time": "2025-08-26T00:00:00+00:00",
+      "entry": 64.96,
+      "exit": 64.64,
+      "bars": 22,
+      "reason": "core_momentum"
+    },
+    {
+      "side": "short",
+      "kind": "core",
+      "entry_time": "2025-08-26T06:00:00+00:00",
+      "exit_time": "2025-08-26T10:45:00+00:00",
+      "entry": 64.41,
+      "exit": 63.60380211782303,
+      "bars": 19,
+      "reason": "target"
+    },
+    {
+      "side": "short",
+      "kind": "core",
+      "entry_time": "2025-08-26T11:30:00+00:00",
+      "exit_time": "2025-08-26T14:00:00+00:00",
+      "entry": 63.67,
+      "exit": 64.08,
+      "bars": 10,
+      "reason": "core_momentum"
+    },
+    {
+      "side": "short",
+      "kind": "core",
+      "entry_time": "2025-08-26T14:45:00+00:00",
+      "exit_time": "2025-08-26T22:30:00+00:00",
+      "entry": 63.88,
+      "exit": 63.41,
+      "bars": 27,
+      "reason": "core_momentum"
+    },
+    {
+      "side": "long",
+      "kind": "core",
+      "entry_time": "2025-08-27T13:45:00+00:00",
+      "exit_time": "2025-08-27T22:00:00+00:00",
+      "entry": 63.66,
+      "exit": 63.79,
+      "bars": 29,
+      "reason": "core_momentum"
+    },
+    {
+      "side": "short",
+      "kind": "core",
+      "entry_time": "2025-08-28T07:00:00+00:00",
+      "exit_time": "2025-08-28T09:45:00+00:00",
+      "entry": 63.6,
+      "exit": 63.78,
+      "bars": 11,
+      "reason": "core_momentum"
+    },
+    {
+      "side": "long",
+      "kind": "core",
+      "entry_time": "2025-08-28T18:45:00+00:00",
+      "exit_time": "2025-08-29T01:30:00+00:00",
+      "entry": 64.26,
+      "exit": 64.14,
+      "bars": 23,
+      "reason": "core_momentum"
+    },
+    {
+      "side": "long",
+      "kind": "core",
+      "entry_time": "2025-09-01T08:00:00+00:00",
+      "exit_time": "2025-09-01T18:15:00+00:00",
+      "entry": 64.3,
+      "exit": 64.61,
+      "bars": 41,
+      "reason": "core_momentum"
+    },
+    {
+      "side": "long",
+      "kind": "core",
+      "entry_time": "2025-09-02T02:00:00+00:00",
+      "exit_time": "2025-09-02T08:45:00+00:00",
+      "entry": 64.95,
+      "exit": 65.81451531859834,
+      "bars": 27,
+      "reason": "target"
+    },
+    {
+      "side": "long",
+      "kind": "core",
+      "entry_time": "2025-09-02T11:00:00+00:00",
+      "exit_time": "2025-09-02T12:45:00+00:00",
+      "entry": 65.74,
+      "exit": 64.64886161147622,
+      "bars": 7,
+      "reason": "risk_stop"
+    },
+    {
+      "side": "short",
+      "kind": "core",
+      "entry_time": "2025-09-02T13:30:00+00:00",
+      "exit_time": "2025-09-02T16:00:00+00:00",
+      "entry": 64.81,
+      "exit": 65.66,
+      "bars": 10,
+      "reason": "core_momentum"
+    },
+    {
+      "side": "long",
+      "kind": "core",
+      "entry_time": "2025-09-02T16:45:00+00:00",
+      "exit_time": "2025-09-03T02:30:00+00:00",
+      "entry": 65.69,
+      "exit": 65.54,
+      "bars": 35,
+      "reason": "core_momentum"
+    },
+    {
+      "side": "short",
+      "kind": "core",
+      "entry_time": "2025-09-03T11:15:00+00:00",
+      "exit_time": "2025-09-03T15:45:00+00:00",
+      "entry": 64.35,
+      "exit": 64.7,
+      "bars": 18,
+      "reason": "core_momentum"
+    },
+    {
+      "side": "short",
+      "kind": "core",
+      "entry_time": "2025-09-03T16:45:00+00:00",
+      "exit_time": "2025-09-04T05:15:00+00:00",
+      "entry": 64.0,
+      "exit": 63.49643968829883,
+      "bars": 46,
+      "reason": "target"
+    },
+    {
+      "side": "short",
+      "kind": "core",
+      "entry_time": "2025-09-04T06:00:00+00:00",
+      "exit_time": "2025-09-04T11:15:00+00:00",
+      "entry": 63.51,
+      "exit": 63.31,
+      "bars": 21,
+      "reason": "core_momentum"
+    },
+    {
+      "side": "short",
+      "kind": "core",
+      "entry_time": "2025-09-05T11:45:00+00:00",
+      "exit_time": "2025-09-05T18:30:00+00:00",
+      "entry": 62.88,
+      "exit": 61.98,
+      "bars": 27,
+      "reason": "core_momentum"
+    },
+    {
+      "side": "short",
+      "kind": "core",
+      "entry_time": "2025-09-08T13:15:00+00:00",
+      "exit_time": "2025-09-08T20:00:00+00:00",
+      "entry": 62.78,
+      "exit": 62.42,
+      "bars": 27,
+      "reason": "core_momentum"
+    },
+    {
+      "side": "short",
+      "kind": "core",
+      "entry_time": "2025-09-10T09:15:00+00:00",
+      "exit_time": "2025-09-10T12:00:00+00:00",
+      "entry": 63.03,
+      "exit": 63.29,
+      "bars": 11,
+      "reason": "core_momentum"
+    },
+    {
+      "side": "short",
+      "kind": "core",
+      "entry_time": "2025-09-11T06:00:00+00:00",
+      "exit_time": "2025-09-11T09:15:00+00:00",
+      "entry": 63.54,
+      "exit": 63.51,
+      "bars": 13,
+      "reason": "core_momentum"
+    },
+    {
+      "side": "short",
+      "kind": "core",
+      "entry_time": "2025-09-11T10:30:00+00:00",
+      "exit_time": "2025-09-11T19:45:00+00:00",
+      "entry": 63.13,
+      "exit": 62.28481773708711,
+      "bars": 37,
+      "reason": "target"
+    },
+    {
+      "side": "short",
+      "kind": "core",
+      "entry_time": "2025-09-12T06:00:00+00:00",
+      "exit_time": "2025-09-12T08:30:00+00:00",
+      "entry": 61.81,
+      "exit": 62.27,
+      "bars": 10,
+      "reason": "core_momentum"
+    },
+    {
+      "side": "short",
+      "kind": "core",
+      "entry_time": "2025-09-12T16:30:00+00:00",
+      "exit_time": "2025-09-14T22:45:00+00:00",
+      "entry": 62.76,
+      "exit": 62.67,
+      "bars": 21,
+      "reason": "core_momentum"
+    },
+    {
+      "side": "short",
+      "kind": "core",
+      "entry_time": "2025-09-15T06:45:00+00:00",
+      "exit_time": "2025-09-15T09:30:00+00:00",
+      "entry": 62.91,
+      "exit": 63.05,
+      "bars": 11,
+      "reason": "core_momentum"
+    },
+    {
+      "side": "short",
+      "kind": "core",
+      "entry_time": "2025-09-16T08:00:00+00:00",
+      "exit_time": "2025-09-16T10:30:00+00:00",
+      "entry": 63.07,
+      "exit": 63.26,
+      "bars": 10,
+      "reason": "core_momentum"
+    },
+    {
+      "side": "long",
+      "kind": "core",
+      "entry_time": "2025-09-16T13:45:00+00:00",
+      "exit_time": "2025-09-17T00:00:00+00:00",
+      "entry": 64.08,
+      "exit": 64.63822996847715,
+      "bars": 37,
+      "reason": "target"
+    },
+    {
+      "side": "short",
+      "kind": "core",
+      "entry_time": "2025-09-17T09:15:00+00:00",
+      "exit_time": "2025-09-17T11:45:00+00:00",
+      "entry": 64.09,
+      "exit": 64.22,
+      "bars": 10,
+      "reason": "core_momentum"
+    },
+    {
+      "side": "short",
+      "kind": "core",
+      "entry_time": "2025-09-18T07:00:00+00:00",
+      "exit_time": "2025-09-18T10:15:00+00:00",
+      "entry": 63.44,
+      "exit": 63.63,
+      "bars": 13,
+      "reason": "core_momentum"
+    },
+    {
+      "side": "short",
+      "kind": "core",
+      "entry_time": "2025-09-19T18:15:00+00:00",
+      "exit_time": "2025-09-21T22:00:00+00:00",
+      "entry": 62.41,
+      "exit": 62.5,
+      "bars": 11,
+      "reason": "core_momentum"
+    },
+    {
+      "side": "short",
+      "kind": "core",
+      "entry_time": "2025-09-22T08:30:00+00:00",
+      "exit_time": "2025-09-22T14:30:00+00:00",
+      "entry": 62.51,
+      "exit": 62.06,
+      "bars": 24,
+      "reason": "core_momentum"
+    },
+    {
+      "side": "short",
+      "kind": "core",
+      "entry_time": "2025-09-22T15:15:00+00:00",
+      "exit_time": "2025-09-22T20:00:00+00:00",
+      "entry": 62.2,
+      "exit": 62.35,
+      "bars": 19,
+      "reason": "core_momentum"
+    },
+    {
+      "side": "short",
+      "kind": "core",
+      "entry_time": "2025-09-23T06:30:00+00:00",
+      "exit_time": "2025-09-23T09:00:00+00:00",
+      "entry": 61.93,
+      "exit": 62.46,
+      "bars": 10,
+      "reason": "core_momentum"
+    },
+    {
+      "side": "long",
+      "kind": "core",
+      "entry_time": "2025-09-24T12:00:00+00:00",
+      "exit_time": "2025-09-24T20:45:00+00:00",
+      "entry": 64.16,
+      "exit": 64.82871854877374,
+      "bars": 35,
+      "reason": "target"
+    },
+    {
+      "side": "long",
+      "kind": "core",
+      "entry_time": "2025-09-26T15:45:00+00:00",
+      "exit_time": "2025-09-26T19:45:00+00:00",
+      "entry": 66.17,
+      "exit": 65.28,
+      "bars": 16,
+      "reason": "core_momentum"
+    },
+    {
+      "side": "long",
+      "kind": "sleeve",
+      "entry_time": "2025-09-29T07:00:00+00:00",
+      "exit_time": "2025-09-29T10:45:00+00:00",
+      "entry": 65.09,
+      "exit": 64.45640266599688,
+      "bars": 15,
+      "reason": "risk_stop"
+    },
+    {
+      "side": "short",
+      "kind": "core",
+      "entry_time": "2025-09-30T08:30:00+00:00",
+      "exit_time": "2025-09-30T11:00:00+00:00",
+      "entry": 62.71,
+      "exit": 62.99,
+      "bars": 10,
+      "reason": "core_momentum"
+    },
+    {
+      "side": "short",
+      "kind": "core",
+      "entry_time": "2025-09-30T12:45:00+00:00",
+      "exit_time": "2025-09-30T15:30:00+00:00",
+      "entry": 62.35,
+      "exit": 62.98,
+      "bars": 11,
+      "reason": "core_momentum"
+    },
+    {
+      "side": "short",
+      "kind": "core",
+      "entry_time": "2025-10-01T10:00:00+00:00",
+      "exit_time": "2025-10-01T15:15:00+00:00",
+      "entry": 62.23,
+      "exit": 61.98,
+      "bars": 21,
+      "reason": "core_momentum"
+    },
+    {
+      "side": "short",
+      "kind": "core",
+      "entry_time": "2025-10-02T06:30:00+00:00",
+      "exit_time": "2025-10-02T13:30:00+00:00",
+      "entry": 61.85,
+      "exit": 61.56,
+      "bars": 28,
+      "reason": "core_momentum"
+    },
+    {
+      "side": "short",
+      "kind": "core",
+      "entry_time": "2025-10-02T17:15:00+00:00",
+      "exit_time": "2025-10-02T20:15:00+00:00",
+      "entry": 60.62,
+      "exit": 60.75,
+      "bars": 12,
+      "reason": "core_momentum"
+    },
+    {
+      "side": "short",
+      "kind": "core",
+      "entry_time": "2025-10-03T09:45:00+00:00",
+      "exit_time": "2025-10-03T12:45:00+00:00",
+      "entry": 60.83,
+      "exit": 60.86,
+      "bars": 12,
+      "reason": "core_momentum"
+    },
+    {
+      "side": "short",
+      "kind": "core",
+      "entry_time": "2025-10-08T13:45:00+00:00",
+      "exit_time": "2025-10-08T17:00:00+00:00",
+      "entry": 62.23,
+      "exit": 62.72,
+      "bars": 13,
+      "reason": "core_momentum"
+    },
+    {
+      "side": "long",
+      "kind": "core",
+      "entry_time": "2025-10-09T06:15:00+00:00",
+      "exit_time": "2025-10-09T09:30:00+00:00",
+      "entry": 62.53,
+      "exit": 62.39,
+      "bars": 13,
+      "reason": "core_momentum"
+    },
+    {
+      "side": "short",
+      "kind": "core",
+      "entry_time": "2025-10-09T10:15:00+00:00",
+      "exit_time": "2025-10-09T12:45:00+00:00",
+      "entry": 62.16,
+      "exit": 62.57,
+      "bars": 10,
+      "reason": "core_momentum"
+    },
+    {
+      "side": "short",
+      "kind": "core",
+      "entry_time": "2025-10-09T17:45:00+00:00",
+      "exit_time": "2025-10-09T23:00:00+00:00",
+      "entry": 61.45,
+      "exit": 61.59,
+      "bars": 17,
+      "reason": "core_momentum"
+    },
+    {
+      "side": "short",
+      "kind": "core",
+      "entry_time": "2025-10-10T06:15:00+00:00",
+      "exit_time": "2025-10-10T13:00:00+00:00",
+      "entry": 61.25,
+      "exit": 59.90510892996152,
+      "bars": 27,
+      "reason": "target"
+    },
+    {
+      "side": "short",
+      "kind": "core",
+      "entry_time": "2025-10-10T13:45:00+00:00",
+      "exit_time": "2025-10-10T20:15:00+00:00",
+      "entry": 60.2,
+      "exit": 58.829035558834995,
+      "bars": 26,
+      "reason": "target"
+    },
+    {
+      "side": "short",
+      "kind": "core",
+      "entry_time": "2025-10-12T22:00:00+00:00",
+      "exit_time": "2025-10-13T00:30:00+00:00",
+      "entry": 59.33,
+      "exit": 59.81,
+      "bars": 10,
+      "reason": "core_momentum"
+    },
+    {
+      "side": "short",
+      "kind": "core",
+      "entry_time": "2025-10-14T06:00:00+00:00",
+      "exit_time": "2025-10-14T09:15:00+00:00",
+      "entry": 59.37,
+      "exit": 58.02470456607898,
+      "bars": 13,
+      "reason": "target"
+    },
+    {
+      "side": "short",
+      "kind": "core",
+      "entry_time": "2025-10-14T10:00:00+00:00",
+      "exit_time": "2025-10-14T13:15:00+00:00",
+      "entry": 58.17,
+      "exit": 58.57,
+      "bars": 13,
+      "reason": "core_momentum"
+    },
+    {
+      "side": "short",
+      "kind": "core",
+      "entry_time": "2025-10-14T14:00:00+00:00",
+      "exit_time": "2025-10-14T16:30:00+00:00",
+      "entry": 58.28,
+      "exit": 58.73,
+      "bars": 10,
+      "reason": "core_momentum"
+    },
+    {
+      "side": "short",
+      "kind": "core",
+      "entry_time": "2025-10-14T19:30:00+00:00",
+      "exit_time": "2025-10-14T23:15:00+00:00",
+      "entry": 58.41,
+      "exit": 58.73,
+      "bars": 11,
+      "reason": "core_momentum"
+    },
+    {
+      "side": "short",
+      "kind": "core",
+      "entry_time": "2025-10-16T18:00:00+00:00",
+      "exit_time": "2025-10-17T02:00:00+00:00",
+      "entry": 57.41,
+      "exit": 56.539671840423715,
+      "bars": 28,
+      "reason": "target"
+    },
+    {
+      "side": "short",
+      "kind": "core",
+      "entry_time": "2025-10-17T06:30:00+00:00",
+      "exit_time": "2025-10-17T10:30:00+00:00",
+      "entry": 56.81,
+      "exit": 56.75,
+      "bars": 16,
+      "reason": "core_momentum"
+    },
+    {
+      "side": "short",
+      "kind": "core",
+      "entry_time": "2025-10-20T06:45:00+00:00",
+      "exit_time": "2025-10-20T09:15:00+00:00",
+      "entry": 56.62,
+      "exit": 57.04,
+      "bars": 10,
+      "reason": "core_momentum"
+    },
+    {
+      "side": "short",
+      "kind": "core",
+      "entry_time": "2025-10-20T13:15:00+00:00",
+      "exit_time": "2025-10-20T16:00:00+00:00",
+      "entry": 56.32,
+      "exit": 56.58,
+      "bars": 11,
+      "reason": "core_momentum"
+    },
+    {
+      "side": "short",
+      "kind": "core",
+      "entry_time": "2025-10-21T13:00:00+00:00",
+      "exit_time": "2025-10-21T15:30:00+00:00",
+      "entry": 57.11,
+      "exit": 57.29,
+      "bars": 10,
+      "reason": "core_momentum"
+    },
+    {
+      "side": "long",
+      "kind": "core",
+      "entry_time": "2025-10-23T03:15:00+00:00",
+      "exit_time": "2025-10-23T09:30:00+00:00",
+      "entry": 60.14,
+      "exit": 61.70279722602744,
+      "bars": 25,
+      "reason": "target"
+    },
+    {
+      "side": "long",
+      "kind": "core",
+      "entry_time": "2025-10-23T10:15:00+00:00",
+      "exit_time": "2025-10-23T23:30:00+00:00",
+      "entry": 61.54,
+      "exit": 61.59,
+      "bars": 49,
+      "reason": "core_momentum"
+    },
+    {
+      "side": "long",
+      "kind": "core",
+      "entry_time": "2025-10-24T12:00:00+00:00",
+      "exit_time": "2025-10-24T16:45:00+00:00",
+      "entry": 62.16,
+      "exit": 61.91,
+      "bars": 19,
+      "reason": "core_momentum"
+    },
+    {
+      "side": "short",
+      "kind": "core",
+      "entry_time": "2025-10-27T09:30:00+00:00",
+      "exit_time": "2025-10-27T12:15:00+00:00",
+      "entry": 60.96,
+      "exit": 61.44,
+      "bars": 11,
+      "reason": "core_momentum"
+    },
+    {
+      "side": "short",
+      "kind": "core",
+      "entry_time": "2025-10-28T07:00:00+00:00",
+      "exit_time": "2025-10-28T08:30:00+00:00",
+      "entry": 61.17,
+      "exit": 59.932034695245,
+      "bars": 6,
+      "reason": "target"
+    },
+    {
+      "side": "short",
+      "kind": "core",
+      "entry_time": "2025-10-28T09:45:00+00:00",
+      "exit_time": "2025-10-28T13:00:00+00:00",
+      "entry": 60.36,
+      "exit": 60.61,
+      "bars": 13,
+      "reason": "core_momentum"
+    },
+    {
+      "side": "long",
+      "kind": "core",
+      "entry_time": "2025-10-29T15:30:00+00:00",
+      "exit_time": "2025-10-29T18:15:00+00:00",
+      "entry": 60.87,
+      "exit": 60.46,
+      "bars": 11,
+      "reason": "core_momentum"
+    },
+    {
+      "side": "short",
+      "kind": "core",
+      "entry_time": "2025-11-04T07:30:00+00:00",
+      "exit_time": "2025-11-04T14:00:00+00:00",
+      "entry": 60.66,
+      "exit": 60.3,
+      "bars": 26,
+      "reason": "core_momentum"
+    },
+    {
+      "side": "long",
+      "kind": "core",
+      "entry_time": "2025-11-04T14:45:00+00:00",
+      "exit_time": "2025-11-04T19:45:00+00:00",
+      "entry": 60.52,
+      "exit": 60.53,
+      "bars": 20,
+      "reason": "core_momentum"
+    },
+    {
+      "side": "long",
+      "kind": "core",
+      "entry_time": "2025-11-05T06:45:00+00:00",
+      "exit_time": "2025-11-05T11:30:00+00:00",
+      "entry": 60.56,
+      "exit": 60.63,
+      "bars": 19,
+      "reason": "core_momentum"
+    },
+    {
+      "side": "short",
+      "kind": "core",
+      "entry_time": "2025-11-05T12:15:00+00:00",
+      "exit_time": "2025-11-05T15:30:00+00:00",
+      "entry": 60.38,
+      "exit": 60.41,
+      "bars": 13,
+      "reason": "core_momentum"
+    },
+    {
+      "side": "short",
+      "kind": "core",
+      "entry_time": "2025-11-05T16:30:00+00:00",
+      "exit_time": "2025-11-06T01:30:00+00:00",
+      "entry": 59.9,
+      "exit": 59.71,
+      "bars": 32,
+      "reason": "core_momentum"
+    },
+    {
+      "side": "short",
+      "kind": "core",
+      "entry_time": "2025-11-06T15:45:00+00:00",
+      "exit_time": "2025-11-06T18:30:00+00:00",
+      "entry": 59.12,
+      "exit": 59.37,
+      "bars": 11,
+      "reason": "core_momentum"
+    },
+    {
+      "side": "short",
+      "kind": "core",
+      "entry_time": "2025-11-10T08:30:00+00:00",
+      "exit_time": "2025-11-10T12:30:00+00:00",
+      "entry": 60.06,
+      "exit": 60.07,
+      "bars": 16,
+      "reason": "core_momentum"
+    },
+    {
+      "side": "long",
+      "kind": "core",
+      "entry_time": "2025-11-11T16:00:00+00:00",
+      "exit_time": "2025-11-12T01:00:00+00:00",
+      "entry": 61.0,
+      "exit": 60.94,
+      "bars": 32,
+      "reason": "core_momentum"
+    },
+    {
+      "side": "short",
+      "kind": "core",
+      "entry_time": "2025-11-12T09:00:00+00:00",
+      "exit_time": "2025-11-12T14:15:00+00:00",
+      "entry": 60.61,
+      "exit": 59.600304906343126,
+      "bars": 21,
+      "reason": "target"
+    },
+    {
+      "side": "short",
+      "kind": "core",
+      "entry_time": "2025-11-12T19:15:00+00:00",
+      "exit_time": "2025-11-13T02:15:00+00:00",
+      "entry": 58.5,
+      "exit": 58.43,
+      "bars": 24,
+      "reason": "core_momentum"
+    },
+    {
+      "side": "short",
+      "kind": "sleeve",
+      "entry_time": "2025-11-13T12:00:00+00:00",
+      "exit_time": "2025-11-13T18:30:00+00:00",
+      "entry": 58.94,
+      "exit": 58.5987913957612,
+      "bars": 26,
+      "reason": "target"
+    },
+    {
+      "side": "short",
+      "kind": "core",
+      "entry_time": "2025-11-17T08:45:00+00:00",
+      "exit_time": "2025-11-17T13:00:00+00:00",
+      "entry": 59.55,
+      "exit": 60.26,
+      "bars": 17,
+      "reason": "core_momentum"
+    },
+    {
+      "side": "short",
+      "kind": "core",
+      "entry_time": "2025-11-18T07:00:00+00:00",
+      "exit_time": "2025-11-18T10:00:00+00:00",
+      "entry": 59.31,
+      "exit": 59.68,
+      "bars": 12,
+      "reason": "core_momentum"
+    },
+    {
+      "side": "short",
+      "kind": "core",
+      "entry_time": "2025-11-18T15:00:00+00:00",
+      "exit_time": "2025-11-18T17:30:00+00:00",
+      "entry": 59.49,
+      "exit": 60.02,
+      "bars": 10,
+      "reason": "core_momentum"
+    },
+    {
+      "side": "long",
+      "kind": "core",
+      "entry_time": "2025-11-18T18:15:00+00:00",
+      "exit_time": "2025-11-19T01:00:00+00:00",
+      "entry": 60.39,
+      "exit": 60.33,
+      "bars": 23,
+      "reason": "core_momentum"
+    },
+    {
+      "side": "short",
+      "kind": "core",
+      "entry_time": "2025-11-19T13:45:00+00:00",
+      "exit_time": "2025-11-19T17:30:00+00:00",
+      "entry": 59.14,
+      "exit": 59.22,
+      "bars": 15,
+      "reason": "core_momentum"
+    },
+    {
+      "side": "short",
+      "kind": "core",
+      "entry_time": "2025-11-19T19:00:00+00:00",
+      "exit_time": "2025-11-19T21:30:00+00:00",
+      "entry": 59.23,
+      "exit": 59.39,
+      "bars": 10,
+      "reason": "core_momentum"
+    },
+    {
+      "side": "short",
+      "kind": "core",
+      "entry_time": "2025-11-20T17:30:00+00:00",
+      "exit_time": "2025-11-21T03:45:00+00:00",
+      "entry": 58.85,
+      "exit": 58.152094431977766,
+      "bars": 37,
+      "reason": "target"
+    },
+    {
+      "side": "short",
+      "kind": "core",
+      "entry_time": "2025-11-21T07:00:00+00:00",
+      "exit_time": "2025-11-21T11:30:00+00:00",
+      "entry": 58.07,
+      "exit": 57.94,
+      "bars": 18,
+      "reason": "core_momentum"
+    },
+    {
+      "side": "short",
+      "kind": "core",
+      "entry_time": "2025-11-24T08:15:00+00:00",
+      "exit_time": "2025-11-24T11:00:00+00:00",
+      "entry": 57.8,
+      "exit": 57.83,
+      "bars": 11,
+      "reason": "core_momentum"
+    },
+    {
+      "side": "short",
+      "kind": "core",
+      "entry_time": "2025-11-24T14:30:00+00:00",
+      "exit_time": "2025-11-24T18:15:00+00:00",
+      "entry": 57.86,
+      "exit": 58.68646603610867,
+      "bars": 15,
+      "reason": "risk_stop"
+    },
+    {
+      "side": "short",
+      "kind": "core",
+      "entry_time": "2025-11-25T13:15:00+00:00",
+      "exit_time": "2025-11-25T17:00:00+00:00",
+      "entry": 58.05,
+      "exit": 57.85,
+      "bars": 15,
+      "reason": "core_momentum"
+    },
+    {
+      "side": "short",
+      "kind": "core",
+      "entry_time": "2025-11-25T18:15:00+00:00",
+      "exit_time": "2025-11-25T21:30:00+00:00",
+      "entry": 57.84,
+      "exit": 58.11,
+      "bars": 13,
+      "reason": "core_momentum"
+    },
+    {
+      "side": "short",
+      "kind": "core",
+      "entry_time": "2025-12-01T12:45:00+00:00",
+      "exit_time": "2025-12-01T15:15:00+00:00",
+      "entry": 59.14,
+      "exit": 59.45,
+      "bars": 10,
+      "reason": "core_momentum"
+    },
+    {
+      "side": "long",
+      "kind": "core",
+      "entry_time": "2025-12-03T11:00:00+00:00",
+      "exit_time": "2025-12-03T14:00:00+00:00",
+      "entry": 59.46,
+      "exit": 59.04,
+      "bars": 12,
+      "reason": "core_momentum"
+    },
+    {
+      "side": "long",
+      "kind": "core",
+      "entry_time": "2025-12-03T15:45:00+00:00",
+      "exit_time": "2025-12-03T18:30:00+00:00",
+      "entry": 59.52,
+      "exit": 59.17,
+      "bars": 11,
+      "reason": "core_momentum"
+    },
+    {
+      "side": "short",
+      "kind": "core",
+      "entry_time": "2025-12-04T14:00:00+00:00",
+      "exit_time": "2025-12-04T16:30:00+00:00",
+      "entry": 59.19,
+      "exit": 59.9,
+      "bars": 10,
+      "reason": "core_momentum"
+    },
+    {
+      "side": "long",
+      "kind": "core",
+      "entry_time": "2025-12-04T17:15:00+00:00",
+      "exit_time": "2025-12-05T00:45:00+00:00",
+      "entry": 59.84,
+      "exit": 59.64,
+      "bars": 26,
+      "reason": "core_momentum"
+    },
+    {
+      "side": "long",
+      "kind": "core",
+      "entry_time": "2025-12-05T16:00:00+00:00",
+      "exit_time": "2025-12-08T00:45:00+00:00",
+      "entry": 60.25,
+      "exit": 60.05,
+      "bars": 31,
+      "reason": "core_momentum"
+    },
+    {
+      "side": "short",
+      "kind": "core",
+      "entry_time": "2025-12-08T12:15:00+00:00",
+      "exit_time": "2025-12-08T23:30:00+00:00",
+      "entry": 59.44,
+      "exit": 58.8305116094875,
+      "bars": 41,
+      "reason": "target"
+    },
+    {
+      "side": "short",
+      "kind": "core",
+      "entry_time": "2025-12-09T08:15:00+00:00",
+      "exit_time": "2025-12-09T11:15:00+00:00",
+      "entry": 58.74,
+      "exit": 59.07,
+      "bars": 12,
+      "reason": "core_momentum"
+    },
+    {
+      "side": "short",
+      "kind": "core",
+      "entry_time": "2025-12-09T15:00:00+00:00",
+      "exit_time": "2025-12-09T19:45:00+00:00",
+      "entry": 58.5,
+      "exit": 58.4,
+      "bars": 19,
+      "reason": "core_momentum"
+    },
+    {
+      "side": "short",
+      "kind": "core",
+      "entry_time": "2025-12-10T15:00:00+00:00",
+      "exit_time": "2025-12-10T17:45:00+00:00",
+      "entry": 57.9,
+      "exit": 58.09,
+      "bars": 11,
+      "reason": "core_momentum"
+    },
+    {
+      "side": "short",
+      "kind": "core",
+      "entry_time": "2025-12-11T07:30:00+00:00",
+      "exit_time": "2025-12-11T14:15:00+00:00",
+      "entry": 58.13,
+      "exit": 57.24473714103064,
+      "bars": 27,
+      "reason": "target"
+    },
+    {
+      "side": "short",
+      "kind": "core",
+      "entry_time": "2025-12-11T15:00:00+00:00",
+      "exit_time": "2025-12-11T18:45:00+00:00",
+      "entry": 57.39,
+      "exit": 57.41,
+      "bars": 15,
+      "reason": "core_momentum"
+    },
+    {
+      "side": "short",
+      "kind": "core",
+      "entry_time": "2025-12-12T08:00:00+00:00",
+      "exit_time": "2025-12-12T12:30:00+00:00",
+      "entry": 57.89,
+      "exit": 57.65,
+      "bars": 18,
+      "reason": "core_momentum"
+    },
+    {
+      "side": "short",
+      "kind": "core",
+      "entry_time": "2025-12-15T12:45:00+00:00",
+      "exit_time": "2025-12-15T19:15:00+00:00",
+      "entry": 57.18,
+      "exit": 56.82,
+      "bars": 26,
+      "reason": "core_momentum"
+    },
+    {
+      "side": "short",
+      "kind": "core",
+      "entry_time": "2025-12-16T08:45:00+00:00",
+      "exit_time": "2025-12-16T15:15:00+00:00",
+      "entry": 56.14,
+      "exit": 55.13192530350016,
+      "bars": 26,
+      "reason": "target"
+    },
+    {
+      "side": "short",
+      "kind": "core",
+      "entry_time": "2025-12-16T16:15:00+00:00",
+      "exit_time": "2025-12-16T23:45:00+00:00",
+      "entry": 55.34,
+      "exit": 55.44,
+      "bars": 26,
+      "reason": "core_momentum"
+    },
+    {
+      "side": "short",
+      "kind": "core",
+      "entry_time": "2025-12-18T10:00:00+00:00",
+      "exit_time": "2025-12-18T13:00:00+00:00",
+      "entry": 55.96,
+      "exit": 56.14,
+      "bars": 12,
+      "reason": "core_momentum"
+    },
+    {
+      "side": "long",
+      "kind": "core",
+      "entry_time": "2025-12-22T14:00:00+00:00",
+      "exit_time": "2025-12-22T23:00:00+00:00",
+      "entry": 57.82,
+      "exit": 57.83,
+      "bars": 32,
+      "reason": "core_momentum"
+    },
+    {
+      "side": "long",
+      "kind": "core",
+      "entry_time": "2025-12-23T13:00:00+00:00",
+      "exit_time": "2025-12-23T15:45:00+00:00",
+      "entry": 58.11,
+      "exit": 57.78,
+      "bars": 11,
+      "reason": "core_momentum"
+    },
+    {
+      "side": "long",
+      "kind": "core",
+      "entry_time": "2025-12-23T18:30:00+00:00",
+      "exit_time": "2025-12-24T01:15:00+00:00",
+      "entry": 58.35,
+      "exit": 58.37,
+      "bars": 23,
+      "reason": "core_momentum"
+    },
+    {
+      "side": "short",
+      "kind": "core",
+      "entry_time": "2025-12-26T14:45:00+00:00",
+      "exit_time": "2025-12-26T19:15:00+00:00",
+      "entry": 57.88,
+      "exit": 56.88471069415739,
+      "bars": 18,
+      "reason": "target"
+    },
+    {
+      "side": "long",
+      "kind": "core",
+      "entry_time": "2025-12-29T10:15:00+00:00",
+      "exit_time": "2025-12-29T18:00:00+00:00",
+      "entry": 57.82,
+      "exit": 57.91,
+      "bars": 31,
+      "reason": "core_momentum"
+    },
+    {
+      "side": "long",
+      "kind": "core",
+      "entry_time": "2025-12-30T09:45:00+00:00",
+      "exit_time": "2025-12-30T16:00:00+00:00",
+      "entry": 58.36,
+      "exit": 58.26,
+      "bars": 25,
+      "reason": "core_momentum"
+    },
+    {
+      "side": "short",
+      "kind": "core",
+      "entry_time": "2025-12-30T18:45:00+00:00",
+      "exit_time": "2025-12-31T04:00:00+00:00",
+      "entry": 58.01,
+      "exit": 58.04,
+      "bars": 33,
+      "reason": "core_momentum"
+    },
+    {
+      "side": "long",
+      "kind": "core",
+      "entry_time": "2025-12-31T11:45:00+00:00",
+      "exit_time": "2025-12-31T15:15:00+00:00",
+      "entry": 58.24,
+      "exit": 58.1,
+      "bars": 14,
+      "reason": "core_momentum"
+    },
+    {
+      "side": "short",
+      "kind": "core",
+      "entry_time": "2025-12-31T16:45:00+00:00",
+      "exit_time": "2026-01-02T01:30:00+00:00",
+      "entry": 57.86,
+      "exit": 57.55,
+      "bars": 31,
+      "reason": "core_momentum"
+    },
+    {
+      "side": "short",
+      "kind": "core",
+      "entry_time": "2026-01-02T10:00:00+00:00",
+      "exit_time": "2026-01-02T17:00:00+00:00",
+      "entry": 57.48,
+      "exit": 56.92,
+      "bars": 28,
+      "reason": "core_momentum"
+    },
+    {
+      "side": "short",
+      "kind": "core",
+      "entry_time": "2026-01-02T17:45:00+00:00",
+      "exit_time": "2026-01-04T23:45:00+00:00",
+      "entry": 57.0,
+      "exit": 57.32,
+      "bars": 20,
+      "reason": "core_momentum"
+    },
+    {
+      "side": "short",
+      "kind": "core",
+      "entry_time": "2026-01-05T08:00:00+00:00",
+      "exit_time": "2026-01-05T11:00:00+00:00",
+      "entry": 56.84,
+      "exit": 57.5,
+      "bars": 12,
+      "reason": "core_momentum"
+    },
+    {
+      "side": "long",
+      "kind": "core",
+      "entry_time": "2026-01-06T09:30:00+00:00",
+      "exit_time": "2026-01-06T14:45:00+00:00",
+      "entry": 58.4,
+      "exit": 58.13,
+      "bars": 21,
+      "reason": "core_momentum"
+    },
+    {
+      "side": "short",
+      "kind": "core",
+      "entry_time": "2026-01-06T15:45:00+00:00",
+      "exit_time": "2026-01-06T19:45:00+00:00",
+      "entry": 58.14,
+      "exit": 56.94924027585372,
+      "bars": 16,
+      "reason": "target"
+    },
+    {
+      "side": "short",
+      "kind": "core",
+      "entry_time": "2026-01-07T01:00:00+00:00",
+      "exit_time": "2026-01-07T07:45:00+00:00",
+      "entry": 56.42,
+      "exit": 56.33,
+      "bars": 27,
+      "reason": "core_momentum"
+    },
+    {
+      "side": "short",
+      "kind": "core",
+      "entry_time": "2026-01-07T17:30:00+00:00",
+      "exit_time": "2026-01-07T20:00:00+00:00",
+      "entry": 55.95,
+      "exit": 56.2,
+      "bars": 10,
+      "reason": "core_momentum"
+    },
+    {
+      "side": "short",
+      "kind": "core",
+      "entry_time": "2026-01-09T09:45:00+00:00",
+      "exit_time": "2026-01-09T12:15:00+00:00",
+      "entry": 57.92,
+      "exit": 58.27,
+      "bars": 10,
+      "reason": "core_momentum"
+    },
+    {
+      "side": "long",
+      "kind": "core",
+      "entry_time": "2026-01-09T17:15:00+00:00",
+      "exit_time": "2026-01-09T19:45:00+00:00",
+      "entry": 59.34,
+      "exit": 58.98,
+      "bars": 10,
+      "reason": "core_momentum"
+    },
+    {
+      "side": "short",
+      "kind": "core",
+      "entry_time": "2026-01-12T11:15:00+00:00",
+      "exit_time": "2026-01-12T14:00:00+00:00",
+      "entry": 58.58,
+      "exit": 58.98,
+      "bars": 11,
+      "reason": "core_momentum"
+    },
+    {
+      "side": "long",
+      "kind": "core",
+      "entry_time": "2026-01-13T08:45:00+00:00",
+      "exit_time": "2026-01-13T14:00:00+00:00",
+      "entry": 60.12,
+      "exit": 60.33,
+      "bars": 21,
+      "reason": "core_momentum"
+    },
+    {
+      "side": "long",
+      "kind": "core",
+      "entry_time": "2026-01-13T14:45:00+00:00",
+      "exit_time": "2026-01-13T17:45:00+00:00",
+      "entry": 61.0,
+      "exit": 60.78,
+      "bars": 12,
+      "reason": "core_momentum"
+    },
+    {
+      "side": "long",
+      "kind": "core",
+      "entry_time": "2026-01-13T18:30:00+00:00",
+      "exit_time": "2026-01-14T01:00:00+00:00",
+      "entry": 61.24,
+      "exit": 60.87,
+      "bars": 22,
+      "reason": "core_momentum"
+    },
+    {
+      "side": "long",
+      "kind": "core",
+      "entry_time": "2026-01-14T09:45:00+00:00",
+      "exit_time": "2026-01-14T16:15:00+00:00",
+      "entry": 61.0,
+      "exit": 61.47,
+      "bars": 26,
+      "reason": "core_momentum"
+    },
+    {
+      "side": "long",
+      "kind": "sleeve",
+      "entry_time": "2026-01-15T09:30:00+00:00",
+      "exit_time": "2026-01-15T19:15:00+00:00",
+      "entry": 59.6,
+      "exit": 59.09,
+      "bars": 39,
+      "reason": "time"
+    },
+    {
+      "side": "long",
+      "kind": "core",
+      "entry_time": "2026-01-16T10:15:00+00:00",
+      "exit_time": "2026-01-16T14:30:00+00:00",
+      "entry": 59.65,
+      "exit": 59.45,
+      "bars": 17,
+      "reason": "core_momentum"
+    },
+    {
+      "side": "short",
+      "kind": "core",
+      "entry_time": "2026-01-19T07:45:00+00:00",
+      "exit_time": "2026-01-19T10:30:00+00:00",
+      "entry": 58.98,
+      "exit": 59.0,
+      "bars": 11,
+      "reason": "core_momentum"
+    },
+    {
+      "side": "short",
+      "kind": "core",
+      "entry_time": "2026-01-19T11:15:00+00:00",
+      "exit_time": "2026-01-19T13:45:00+00:00",
+      "entry": 58.99,
+      "exit": 59.05,
+      "bars": 10,
+      "reason": "core_momentum"
+    },
+    {
+      "side": "long",
+      "kind": "sleeve",
+      "entry_time": "2026-01-20T07:15:00+00:00",
+      "exit_time": "2026-01-20T09:15:00+00:00",
+      "entry": 59.21,
+      "exit": 59.52,
+      "bars": 8,
+      "reason": "sleeve_vwap"
+    },
+    {
+      "side": "long",
+      "kind": "core",
+      "entry_time": "2026-01-20T13:15:00+00:00",
+      "exit_time": "2026-01-20T19:30:00+00:00",
+      "entry": 59.82,
+      "exit": 60.06,
+      "bars": 25,
+      "reason": "core_momentum"
+    },
+    {
+      "side": "long",
+      "kind": "core",
+      "entry_time": "2026-01-23T10:30:00+00:00",
+      "exit_time": "2026-01-23T21:00:00+00:00",
+      "entry": 60.27,
+      "exit": 61.283018264604905,
+      "bars": 42,
+      "reason": "target"
+    },
+    {
+      "side": "long",
+      "kind": "sleeve",
+      "entry_time": "2026-01-26T12:30:00+00:00",
+      "exit_time": "2026-01-26T23:15:00+00:00",
+      "entry": 60.98,
+      "exit": 60.83,
+      "bars": 39,
+      "reason": "time"
+    },
+    {
+      "side": "long",
+      "kind": "core",
+      "entry_time": "2026-01-27T09:15:00+00:00",
+      "exit_time": "2026-01-27T12:30:00+00:00",
+      "entry": 60.61,
+      "exit": 60.5,
+      "bars": 13,
+      "reason": "core_momentum"
+    },
+    {
+      "side": "long",
+      "kind": "core",
+      "entry_time": "2026-01-27T14:30:00+00:00",
+      "exit_time": "2026-01-27T21:30:00+00:00",
+      "entry": 61.25,
+      "exit": 62.52915133952925,
+      "bars": 28,
+      "reason": "target"
+    },
+    {
+      "side": "long",
+      "kind": "core",
+      "entry_time": "2026-01-28T06:00:00+00:00",
+      "exit_time": "2026-01-28T09:00:00+00:00",
+      "entry": 62.89,
+      "exit": 62.38,
+      "bars": 12,
+      "reason": "core_momentum"
+    },
+    {
+      "side": "long",
+      "kind": "sleeve",
+      "entry_time": "2026-01-28T10:15:00+00:00",
+      "exit_time": "2026-01-28T11:45:00+00:00",
+      "entry": 62.18,
+      "exit": 62.55501727285059,
+      "bars": 6,
+      "reason": "target"
+    },
+    {
+      "side": "long",
+      "kind": "core",
+      "entry_time": "2026-01-28T12:45:00+00:00",
+      "exit_time": "2026-01-28T16:45:00+00:00",
+      "entry": 62.81,
+      "exit": 62.74,
+      "bars": 16,
+      "reason": "core_momentum"
+    },
+    {
+      "side": "long",
+      "kind": "core",
+      "entry_time": "2026-01-29T06:30:00+00:00",
+      "exit_time": "2026-01-29T15:30:00+00:00",
+      "entry": 64.38,
+      "exit": 64.73,
+      "bars": 36,
+      "reason": "core_momentum"
+    },
+    {
+      "side": "long",
+      "kind": "core",
+      "entry_time": "2026-01-30T09:00:00+00:00",
+      "exit_time": "2026-01-30T17:15:00+00:00",
+      "entry": 64.97,
+      "exit": 64.64,
+      "bars": 33,
+      "reason": "core_momentum"
+    },
+    {
+      "side": "long",
+      "kind": "sleeve",
+      "entry_time": "2026-02-02T13:30:00+00:00",
+      "exit_time": "2026-02-02T14:00:00+00:00",
+      "entry": 61.75,
+      "exit": 62.41635016689483,
+      "bars": 2,
+      "reason": "target"
+    },
+    {
+      "side": "long",
+      "kind": "sleeve",
+      "entry_time": "2026-02-02T18:45:00+00:00",
+      "exit_time": "2026-02-02T20:45:00+00:00",
+      "entry": 61.73,
+      "exit": 62.29519743237558,
+      "bars": 8,
+      "reason": "target"
+    },
+    {
+      "side": "long",
+      "kind": "sleeve",
+      "entry_time": "2026-02-04T13:30:00+00:00",
+      "exit_time": "2026-02-04T16:45:00+00:00",
+      "entry": 63.13,
+      "exit": 63.54,
+      "bars": 13,
+      "reason": "sleeve_vwap"
+    },
+    {
+      "side": "long",
+      "kind": "core",
+      "entry_time": "2026-02-04T18:30:00+00:00",
+      "exit_time": "2026-02-05T01:30:00+00:00",
+      "entry": 64.89,
+      "exit": 64.27,
+      "bars": 24,
+      "reason": "core_momentum"
+    },
+    {
+      "side": "long",
+      "kind": "core",
+      "entry_time": "2026-02-05T09:15:00+00:00",
+      "exit_time": "2026-02-05T12:30:00+00:00",
+      "entry": 64.4,
+      "exit": 63.62,
+      "bars": 13,
+      "reason": "core_momentum"
+    },
+    {
+      "side": "long",
+      "kind": "sleeve",
+      "entry_time": "2026-02-05T19:30:00+00:00",
+      "exit_time": "2026-02-06T00:30:00+00:00",
+      "entry": 63.11,
+      "exit": 62.95,
+      "bars": 16,
+      "reason": "sleeve_vwap"
+    },
+    {
+      "side": "long",
+      "kind": "core",
+      "entry_time": "2026-02-06T02:30:00+00:00",
+      "exit_time": "2026-02-06T10:00:00+00:00",
+      "entry": 63.6,
+      "exit": 63.85,
+      "bars": 30,
+      "reason": "core_momentum"
+    },
+    {
+      "side": "long",
+      "kind": "core",
+      "entry_time": "2026-02-06T15:00:00+00:00",
+      "exit_time": "2026-02-06T19:00:00+00:00",
+      "entry": 63.85,
+      "exit": 63.7,
+      "bars": 16,
+      "reason": "core_momentum"
+    },
+    {
+      "side": "long",
+      "kind": "core",
+      "entry_time": "2026-02-09T09:00:00+00:00",
+      "exit_time": "2026-02-09T13:30:00+00:00",
+      "entry": 63.11,
+      "exit": 63.27,
+      "bars": 18,
+      "reason": "core_momentum"
+    },
+    {
+      "side": "long",
+      "kind": "core",
+      "entry_time": "2026-02-09T15:00:00+00:00",
+      "exit_time": "2026-02-10T00:15:00+00:00",
+      "entry": 64.05,
+      "exit": 64.27,
+      "bars": 33,
+      "reason": "core_momentum"
+    },
+    {
+      "side": "long",
+      "kind": "core",
+      "entry_time": "2026-02-11T08:45:00+00:00",
+      "exit_time": "2026-02-11T15:15:00+00:00",
+      "entry": 64.79,
+      "exit": 65.03,
+      "bars": 26,
+      "reason": "core_momentum"
+    },
+    {
+      "side": "long",
+      "kind": "sleeve",
+      "entry_time": "2026-02-12T09:15:00+00:00",
+      "exit_time": "2026-02-12T16:00:00+00:00",
+      "entry": 64.43,
+      "exit": 63.46368265927101,
+      "bars": 27,
+      "reason": "risk_stop"
+    },
+    {
+      "side": "long",
+      "kind": "sleeve",
+      "entry_time": "2026-02-13T20:15:00+00:00",
+      "exit_time": "2026-02-15T23:00:00+00:00",
+      "entry": 62.62,
+      "exit": 63.0818687298748,
+      "bars": 7,
+      "reason": "target"
+    },
+    {
+      "side": "long",
+      "kind": "core",
+      "entry_time": "2026-02-16T15:30:00+00:00",
+      "exit_time": "2026-02-17T02:30:00+00:00",
+      "entry": 63.45,
+      "exit": 63.58,
+      "bars": 30,
+      "reason": "core_momentum"
+    },
+    {
+      "side": "short",
+      "kind": "core",
+      "entry_time": "2026-02-17T06:45:00+00:00",
+      "exit_time": "2026-02-17T09:45:00+00:00",
+      "entry": 63.34,
+      "exit": 63.29,
+      "bars": 12,
+      "reason": "core_momentum"
+    },
+    {
+      "side": "long",
+      "kind": "core",
+      "entry_time": "2026-02-17T10:30:00+00:00",
+      "exit_time": "2026-02-17T13:15:00+00:00",
+      "entry": 63.64,
+      "exit": 63.45,
+      "bars": 11,
+      "reason": "core_momentum"
+    },
+    {
+      "side": "short",
+      "kind": "core",
+      "entry_time": "2026-02-17T14:00:00+00:00",
+      "exit_time": "2026-02-18T02:00:00+00:00",
+      "entry": 62.85,
+      "exit": 62.29,
+      "bars": 44,
+      "reason": "core_momentum"
+    },
+    {
+      "side": "long",
+      "kind": "core",
+      "entry_time": "2026-02-18T13:45:00+00:00",
+      "exit_time": "2026-02-18T18:15:00+00:00",
+      "entry": 63.77,
+      "exit": 65.063715555934,
+      "bars": 18,
+      "reason": "target"
+    },
+    {
+      "side": "long",
+      "kind": "core",
+      "entry_time": "2026-02-18T19:15:00+00:00",
+      "exit_time": "2026-02-19T08:30:00+00:00",
+      "entry": 64.99,
+      "exit": 66.06380143511736,
+      "bars": 49,
+      "reason": "target"
+    },
+    {
+      "side": "long",
+      "kind": "core",
+      "entry_time": "2026-02-19T09:15:00+00:00",
+      "exit_time": "2026-02-19T23:00:00+00:00",
+      "entry": 65.74,
+      "exit": 66.52,
+      "bars": 51,
+      "reason": "time"
+    },
+    {
+      "side": "long",
+      "kind": "sleeve",
+      "entry_time": "2026-02-20T08:30:00+00:00",
+      "exit_time": "2026-02-20T17:45:00+00:00",
+      "entry": 66.22,
+      "exit": 66.45,
+      "bars": 37,
+      "reason": "sleeve_vwap"
+    },
+    {
+      "side": "long",
+      "kind": "core",
+      "entry_time": "2026-02-23T13:15:00+00:00",
+      "exit_time": "2026-02-23T16:30:00+00:00",
+      "entry": 66.64,
+      "exit": 66.5,
+      "bars": 13,
+      "reason": "core_momentum"
+    },
+    {
+      "side": "long",
+      "kind": "sleeve",
+      "entry_time": "2026-02-24T10:30:00+00:00",
+      "exit_time": "2026-02-24T12:30:00+00:00",
+      "entry": 66.24,
+      "exit": 66.63767654435728,
+      "bars": 8,
+      "reason": "target"
+    },
+    {
+      "side": "long",
+      "kind": "core",
+      "entry_time": "2026-02-24T13:45:00+00:00",
+      "exit_time": "2026-02-24T17:30:00+00:00",
+      "entry": 66.87,
+      "exit": 65.9,
+      "bars": 15,
+      "reason": "core_momentum"
+    },
+    {
+      "side": "long",
+      "kind": "sleeve",
+      "entry_time": "2026-02-25T06:15:00+00:00",
+      "exit_time": "2026-02-25T07:00:00+00:00",
+      "entry": 65.8,
+      "exit": 66.1331778142534,
+      "bars": 3,
+      "reason": "target"
+    },
+    {
+      "side": "long",
+      "kind": "sleeve",
+      "entry_time": "2026-02-25T09:30:00+00:00",
+      "exit_time": "2026-02-25T12:00:00+00:00",
+      "entry": 65.59,
+      "exit": 65.99644647592103,
+      "bars": 10,
+      "reason": "target"
+    },
+    {
+      "side": "long",
+      "kind": "core",
+      "entry_time": "2026-02-26T18:00:00+00:00",
+      "exit_time": "2026-02-26T23:00:00+00:00",
+      "entry": 66.36,
+      "exit": 65.25,
+      "bars": 16,
+      "reason": "core_momentum"
+    },
+    {
+      "side": "long",
+      "kind": "core",
+      "entry_time": "2026-02-27T08:00:00+00:00",
+      "exit_time": "2026-02-27T13:00:00+00:00",
+      "entry": 65.85,
+      "exit": 67.26631270666303,
+      "bars": 20,
+      "reason": "target"
+    },
+    {
+      "side": "long",
+      "kind": "core",
+      "entry_time": "2026-02-27T14:15:00+00:00",
+      "exit_time": "2026-03-01T23:00:00+00:00",
+      "entry": 67.3,
+      "exit": 72.50824343511272,
+      "bars": 31,
+      "reason": "target"
+    },
+    {
+      "side": "long",
+      "kind": "core",
+      "entry_time": "2026-03-02T01:00:00+00:00",
+      "exit_time": "2026-03-02T13:45:00+00:00",
+      "entry": 70.96,
+      "exit": 72.29,
+      "bars": 51,
+      "reason": "time"
+    },
+    {
+      "side": "long",
+      "kind": "core",
+      "entry_time": "2026-03-03T05:30:00+00:00",
+      "exit_time": "2026-03-03T10:45:00+00:00",
+      "entry": 73.14,
+      "exit": 76.97619007942959,
+      "bars": 21,
+      "reason": "target"
+    },
+    {
+      "side": "long",
+      "kind": "core",
+      "entry_time": "2026-03-03T12:00:00+00:00",
+      "exit_time": "2026-03-03T16:30:00+00:00",
+      "entry": 76.16,
+      "exit": 75.74,
+      "bars": 18,
+      "reason": "core_momentum"
+    },
+    {
+      "side": "long",
+      "kind": "sleeve",
+      "entry_time": "2026-03-04T10:30:00+00:00",
+      "exit_time": "2026-03-04T20:15:00+00:00",
+      "entry": 75.05,
+      "exit": 75.2,
+      "bars": 39,
+      "reason": "time"
+    },
+    {
+      "side": "long",
+      "kind": "core",
+      "entry_time": "2026-03-05T05:30:00+00:00",
+      "exit_time": "2026-03-05T09:00:00+00:00",
+      "entry": 77.77,
+      "exit": 75.8,
+      "bars": 14,
+      "reason": "core_momentum"
+    },
+    {
+      "side": "long",
+      "kind": "core",
+      "entry_time": "2026-03-05T16:30:00+00:00",
+      "exit_time": "2026-03-05T21:00:00+00:00",
+      "entry": 79.21,
+      "exit": 79.06,
+      "bars": 18,
+      "reason": "core_momentum"
+    },
+    {
+      "side": "long",
+      "kind": "core",
+      "entry_time": "2026-03-06T13:00:00+00:00",
+      "exit_time": "2026-03-06T17:30:00+00:00",
+      "entry": 85.49,
+      "exit": 92.28268809782114,
+      "bars": 18,
+      "reason": "target"
+    },
+    {
+      "side": "long",
+      "kind": "core",
+      "entry_time": "2026-03-06T18:15:00+00:00",
+      "exit_time": "2026-03-08T22:00:00+00:00",
+      "entry": 90.68,
+      "exit": 105.44597385658489,
+      "bars": 15,
+      "reason": "target"
+    },
+    {
+      "side": "long",
+      "kind": "sleeve",
+      "entry_time": "2026-03-10T07:45:00+00:00",
+      "exit_time": "2026-03-10T10:00:00+00:00",
+      "entry": 85.82,
+      "exit": 88.62,
+      "bars": 9,
+      "reason": "sleeve_vwap"
+    },
+    {
+      "side": "long",
+      "kind": "core",
+      "entry_time": "2026-03-12T02:30:00+00:00",
+      "exit_time": "2026-03-12T06:15:00+00:00",
+      "entry": 94.96,
+      "exit": 92.8,
+      "bars": 15,
+      "reason": "core_momentum"
+    },
+    {
+      "side": "long",
+      "kind": "core",
+      "entry_time": "2026-03-12T14:30:00+00:00",
+      "exit_time": "2026-03-13T00:15:00+00:00",
+      "entry": 95.55,
+      "exit": 95.18,
+      "bars": 35,
+      "reason": "core_momentum"
+    },
+    {
+      "side": "long",
+      "kind": "core",
+      "entry_time": "2026-03-13T14:45:00+00:00",
+      "exit_time": "2026-03-15T22:00:00+00:00",
+      "entry": 95.64,
+      "exit": 101.84660765477372,
+      "bars": 25,
+      "reason": "target"
+    },
+    {
+      "side": "long",
+      "kind": "sleeve",
+      "entry_time": "2026-03-17T12:00:00+00:00",
+      "exit_time": "2026-03-17T18:15:00+00:00",
+      "entry": 95.67,
+      "exit": 96.12,
+      "bars": 25,
+      "reason": "sleeve_vwap"
+    },
+    {
+      "side": "long",
+      "kind": "core",
+      "entry_time": "2026-03-18T08:30:00+00:00",
+      "exit_time": "2026-03-18T17:30:00+00:00",
+      "entry": 93.95,
+      "exit": 96.26,
+      "bars": 36,
+      "reason": "core_momentum"
+    },
+    {
+      "side": "long",
+      "kind": "sleeve",
+      "entry_time": "2026-03-19T07:15:00+00:00",
+      "exit_time": "2026-03-19T09:15:00+00:00",
+      "entry": 95.8,
+      "exit": 97.78216302713409,
+      "bars": 8,
+      "reason": "target"
+    },
+    {
+      "side": "long",
+      "kind": "core",
+      "entry_time": "2026-03-20T17:45:00+00:00",
+      "exit_time": "2026-03-23T05:30:00+00:00",
+      "entry": 98.02,
+      "exit": 98.16,
+      "bars": 43,
+      "reason": "core_momentum"
+    },
+    {
+      "side": "long",
+      "kind": "core",
+      "entry_time": "2026-03-23T06:15:00+00:00",
+      "exit_time": "2026-03-23T08:45:00+00:00",
+      "entry": 99.89,
+      "exit": 99.34,
+      "bars": 10,
+      "reason": "core_momentum"
+    },
+    {
+      "side": "long",
+      "kind": "sleeve",
+      "entry_time": "2026-03-24T10:00:00+00:00",
+      "exit_time": "2026-03-24T11:45:00+00:00",
+      "entry": 89.61,
+      "exit": 91.19016619364301,
+      "bars": 7,
+      "reason": "target"
+    },
+    {
+      "side": "short",
+      "kind": "core",
+      "entry_time": "2026-03-25T08:30:00+00:00",
+      "exit_time": "2026-03-25T12:15:00+00:00",
+      "entry": 87.22,
+      "exit": 88.88,
+      "bars": 15,
+      "reason": "core_momentum"
+    },
+    {
+      "side": "long",
+      "kind": "core",
+      "entry_time": "2026-03-25T15:45:00+00:00",
+      "exit_time": "2026-03-26T05:30:00+00:00",
+      "entry": 90.34,
+      "exit": 92.27,
+      "bars": 51,
+      "reason": "time"
+    },
+    {
+      "side": "long",
+      "kind": "core",
+      "entry_time": "2026-03-26T06:15:00+00:00",
+      "exit_time": "2026-03-26T13:45:00+00:00",
+      "entry": 92.23,
+      "exit": 92.86,
+      "bars": 30,
+      "reason": "core_momentum"
+    },
+    {
+      "side": "long",
+      "kind": "core",
+      "entry_time": "2026-03-27T09:15:00+00:00",
+      "exit_time": "2026-03-27T19:30:00+00:00",
+      "entry": 96.1,
+      "exit": 100.32998704338475,
+      "bars": 41,
+      "reason": "target"
+    },
+    {
+      "side": "long",
+      "kind": "core",
+      "entry_time": "2026-03-27T20:30:00+00:00",
+      "exit_time": "2026-03-30T03:00:00+00:00",
+      "entry": 100.89,
+      "exit": 100.99,
+      "bars": 22,
+      "reason": "core_momentum"
+    },
+    {
+      "side": "long",
+      "kind": "sleeve",
+      "entry_time": "2026-03-30T06:00:00+00:00",
+      "exit_time": "2026-03-30T07:00:00+00:00",
+      "entry": 100.69,
+      "exit": 102.1886182157514,
+      "bars": 4,
+      "reason": "target"
+    },
+    {
+      "side": "long",
+      "kind": "core",
+      "entry_time": "2026-04-02T01:00:00+00:00",
+      "exit_time": "2026-04-02T04:30:00+00:00",
+      "entry": 100.29,
+      "exit": 105.46320507167877,
+      "bars": 14,
+      "reason": "target"
+    },
+    {
+      "side": "long",
+      "kind": "core",
+      "entry_time": "2026-04-02T07:15:00+00:00",
+      "exit_time": "2026-04-02T12:30:00+00:00",
+      "entry": 106.51,
+      "exit": 111.24798225579437,
+      "bars": 21,
+      "reason": "target"
+    },
+    {
+      "side": "long",
+      "kind": "core",
+      "entry_time": "2026-04-02T13:45:00+00:00",
+      "exit_time": "2026-04-06T00:45:00+00:00",
+      "entry": 111.03,
+      "exit": 112.2,
+      "bars": 40,
+      "reason": "core_momentum"
+    },
+    {
+      "side": "long",
+      "kind": "sleeve",
+      "entry_time": "2026-04-06T06:00:00+00:00",
+      "exit_time": "2026-04-06T09:45:00+00:00",
+      "entry": 110.98,
+      "exit": 111.46,
+      "bars": 15,
+      "reason": "sleeve_vwap"
+    },
+    {
+      "side": "long",
+      "kind": "core",
+      "entry_time": "2026-04-06T15:15:00+00:00",
+      "exit_time": "2026-04-07T04:00:00+00:00",
+      "entry": 112.2,
+      "exit": 116.30778046159942,
+      "bars": 47,
+      "reason": "target"
+    },
+    {
+      "side": "long",
+      "kind": "sleeve",
+      "entry_time": "2026-04-07T08:30:00+00:00",
+      "exit_time": "2026-04-07T11:00:00+00:00",
+      "entry": 112.57,
+      "exit": 114.71988166852401,
+      "bars": 10,
+      "reason": "target"
+    },
+    {
+      "side": "short",
+      "kind": "core",
+      "entry_time": "2026-04-08T12:15:00+00:00",
+      "exit_time": "2026-04-08T14:45:00+00:00",
+      "entry": 94.07,
+      "exit": 95.58,
+      "bars": 10,
+      "reason": "core_momentum"
+    },
+    {
+      "side": "long",
+      "kind": "core",
+      "entry_time": "2026-04-09T12:15:00+00:00",
+      "exit_time": "2026-04-09T15:45:00+00:00",
+      "entry": 99.1,
+      "exit": 99.16,
+      "bars": 14,
+      "reason": "core_momentum"
+    },
+    {
+      "side": "short",
+      "kind": "core",
+      "entry_time": "2026-04-09T16:30:00+00:00",
+      "exit_time": "2026-04-09T19:00:00+00:00",
+      "entry": 97.71,
+      "exit": 98.39,
+      "bars": 10,
+      "reason": "core_momentum"
+    },
+    {
+      "side": "short",
+      "kind": "core",
+      "entry_time": "2026-04-10T12:00:00+00:00",
+      "exit_time": "2026-04-10T14:30:00+00:00",
+      "entry": 97.68,
+      "exit": 98.73,
+      "bars": 10,
+      "reason": "core_momentum"
+    },
+    {
+      "side": "long",
+      "kind": "sleeve",
+      "entry_time": "2026-04-10T18:00:00+00:00",
+      "exit_time": "2026-04-12T22:00:00+00:00",
+      "entry": 97.64,
+      "exit": 100.36582546822343,
+      "bars": 12,
+      "reason": "target"
+    },
+    {
+      "side": "short",
+      "kind": "core",
+      "entry_time": "2026-04-13T14:15:00+00:00",
+      "exit_time": "2026-04-13T22:00:00+00:00",
+      "entry": 101.96,
+      "exit": 97.53764097095461,
+      "bars": 27,
+      "reason": "target"
+    },
+    {
+      "side": "short",
+      "kind": "core",
+      "entry_time": "2026-04-14T06:45:00+00:00",
+      "exit_time": "2026-04-14T09:15:00+00:00",
+      "entry": 97.39,
+      "exit": 97.15,
+      "bars": 10,
+      "reason": "core_momentum"
+    },
+    {
+      "side": "short",
+      "kind": "core",
+      "entry_time": "2026-04-14T10:00:00+00:00",
+      "exit_time": "2026-04-14T17:30:00+00:00",
+      "entry": 96.58,
+      "exit": 91.74270887501847,
+      "bars": 30,
+      "reason": "target"
+    },
+    {
+      "side": "short",
+      "kind": "core",
+      "entry_time": "2026-04-14T18:15:00+00:00",
+      "exit_time": "2026-04-15T02:30:00+00:00",
+      "entry": 91.31,
+      "exit": 91.08,
+      "bars": 29,
+      "reason": "core_momentum"
+    },
+    {
+      "side": "long",
+      "kind": "sleeve",
+      "entry_time": "2026-04-15T19:00:00+00:00",
+      "exit_time": "2026-04-16T00:45:00+00:00",
+      "entry": 91.04,
+      "exit": 90.96,
+      "bars": 19,
+      "reason": "sleeve_vwap"
+    },
+    {
+      "side": "long",
+      "kind": "core",
+      "entry_time": "2026-04-16T08:45:00+00:00",
+      "exit_time": "2026-04-16T11:15:00+00:00",
+      "entry": 92.39,
+      "exit": 91.72,
+      "bars": 10,
+      "reason": "core_momentum"
+    },
+    {
+      "side": "long",
+      "kind": "core",
+      "entry_time": "2026-04-16T14:30:00+00:00",
+      "exit_time": "2026-04-16T19:30:00+00:00",
+      "entry": 93.34,
+      "exit": 93.45,
+      "bars": 20,
+      "reason": "core_momentum"
+    },
+    {
+      "side": "short",
+      "kind": "core",
+      "entry_time": "2026-04-17T06:00:00+00:00",
+      "exit_time": "2026-04-17T12:15:00+00:00",
+      "entry": 89.62,
+      "exit": 86.50815689902662,
+      "bars": 25,
+      "reason": "target"
+    },
+    {
+      "side": "short",
+      "kind": "core",
+      "entry_time": "2026-04-17T15:15:00+00:00",
+      "exit_time": "2026-04-17T18:00:00+00:00",
+      "entry": 81.54,
+      "exit": 82.89,
+      "bars": 11,
+      "reason": "core_momentum"
+    },
+    {
+      "side": "long",
+      "kind": "core",
+      "entry_time": "2026-04-20T07:30:00+00:00",
+      "exit_time": "2026-04-20T10:00:00+00:00",
+      "entry": 87.8,
+      "exit": 87.25,
+      "bars": 10,
+      "reason": "core_momentum"
+    },
+    {
+      "side": "long",
+      "kind": "sleeve",
+      "entry_time": "2026-04-20T13:00:00+00:00",
+      "exit_time": "2026-04-20T15:45:00+00:00",
+      "entry": 86.45,
+      "exit": 87.33,
+      "bars": 11,
+      "reason": "sleeve_vwap"
+    },
+    {
+      "side": "long",
+      "kind": "sleeve",
+      "entry_time": "2026-04-20T20:45:00+00:00",
+      "exit_time": "2026-04-21T01:00:00+00:00",
+      "entry": 85.89,
+      "exit": 86.72143760918145,
+      "bars": 13,
+      "reason": "target"
+    },
+    {
+      "side": "long",
+      "kind": "core",
+      "entry_time": "2026-04-21T18:30:00+00:00",
+      "exit_time": "2026-04-22T00:00:00+00:00",
+      "entry": 89.67,
+      "exit": 89.4,
+      "bars": 18,
+      "reason": "core_momentum"
+    },
+    {
+      "side": "short",
+      "kind": "core",
+      "entry_time": "2026-04-22T07:15:00+00:00",
+      "exit_time": "2026-04-22T09:45:00+00:00",
+      "entry": 89.04,
+      "exit": 90.86,
+      "bars": 10,
+      "reason": "core_momentum"
+    },
+    {
+      "side": "long",
+      "kind": "core",
+      "entry_time": "2026-04-22T16:15:00+00:00",
+      "exit_time": "2026-04-23T06:00:00+00:00",
+      "entry": 93.22,
+      "exit": 93.87,
+      "bars": 51,
+      "reason": "time"
+    },
+    {
+      "side": "long",
+      "kind": "core",
+      "entry_time": "2026-04-23T08:30:00+00:00",
+      "exit_time": "2026-04-23T11:00:00+00:00",
+      "entry": 95.0,
+      "exit": 94.01,
+      "bars": 10,
+      "reason": "core_momentum"
+    },
+    {
+      "side": "long",
+      "kind": "sleeve",
+      "entry_time": "2026-04-23T12:15:00+00:00",
+      "exit_time": "2026-04-23T13:45:00+00:00",
+      "entry": 92.92,
+      "exit": 94.41641996074281,
+      "bars": 6,
+      "reason": "target"
+    },
+    {
+      "side": "long",
+      "kind": "core",
+      "entry_time": "2026-04-23T18:30:00+00:00",
+      "exit_time": "2026-04-24T02:30:00+00:00",
+      "entry": 96.04,
+      "exit": 96.44,
+      "bars": 28,
+      "reason": "core_momentum"
+    },
+    {
+      "side": "long",
+      "kind": "core",
+      "entry_time": "2026-04-27T08:00:00+00:00",
+      "exit_time": "2026-04-27T10:30:00+00:00",
+      "entry": 96.81,
+      "exit": 95.44,
+      "bars": 10,
+      "reason": "core_momentum"
+    },
+    {
+      "side": "long",
+      "kind": "core",
+      "entry_time": "2026-04-27T12:30:00+00:00",
+      "exit_time": "2026-04-27T19:15:00+00:00",
+      "entry": 96.37,
+      "exit": 96.1,
+      "bars": 27,
+      "reason": "core_momentum"
+    },
+    {
+      "side": "long",
+      "kind": "core",
+      "entry_time": "2026-04-28T06:30:00+00:00",
+      "exit_time": "2026-04-28T11:45:00+00:00",
+      "entry": 98.23,
+      "exit": 101.52354437736844,
+      "bars": 21,
+      "reason": "target"
+    },
+    {
+      "side": "long",
+      "kind": "core",
+      "entry_time": "2026-04-28T13:00:00+00:00",
+      "exit_time": "2026-04-28T16:45:00+00:00",
+      "entry": 100.33,
+      "exit": 99.21,
+      "bars": 15,
+      "reason": "core_momentum"
+    },
+    {
+      "side": "long",
+      "kind": "core",
+      "entry_time": "2026-04-29T11:00:00+00:00",
+      "exit_time": "2026-04-29T16:45:00+00:00",
+      "entry": 103.15,
+      "exit": 107.15606346480085,
+      "bars": 23,
+      "reason": "target"
+    },
+    {
+      "side": "long",
+      "kind": "core",
+      "entry_time": "2026-04-29T17:30:00+00:00",
+      "exit_time": "2026-04-30T00:00:00+00:00",
+      "entry": 107.15,
+      "exit": 107.03,
+      "bars": 22,
+      "reason": "core_momentum"
+    },
+    {
+      "side": "long",
+      "kind": "core",
+      "entry_time": "2026-04-30T04:30:00+00:00",
+      "exit_time": "2026-04-30T07:00:00+00:00",
+      "entry": 109.88,
+      "exit": 108.04,
+      "bars": 10,
+      "reason": "core_momentum"
+    },
+    {
+      "side": "long",
+      "kind": "core",
+      "entry_time": "2026-05-04T11:15:00+00:00",
+      "exit_time": "2026-05-05T01:00:00+00:00",
+      "entry": 105.14,
+      "exit": 104.97,
+      "bars": 51,
+      "reason": "time"
+    },
+    {
+      "side": "long",
+      "kind": "sleeve",
+      "entry_time": "2026-05-05T12:00:00+00:00",
+      "exit_time": "2026-05-05T22:45:00+00:00",
+      "entry": 103.2,
+      "exit": 100.69144821253929,
+      "bars": 39,
+      "reason": "risk_stop"
+    },
+    {
+      "side": "short",
+      "kind": "core",
+      "entry_time": "2026-05-06T08:15:00+00:00",
+      "exit_time": "2026-05-06T10:15:00+00:00",
+      "entry": 99.02,
+      "exit": 92.21962601695209,
+      "bars": 8,
+      "reason": "target"
+    },
+    {
+      "side": "short",
+      "kind": "core",
+      "entry_time": "2026-05-06T11:45:00+00:00",
+      "exit_time": "2026-05-06T16:45:00+00:00",
+      "entry": 92.56,
+      "exit": 95.87,
+      "bars": 20,
+      "reason": "core_momentum"
+    },
+    {
+      "side": "short",
+      "kind": "core",
+      "entry_time": "2026-05-07T07:45:00+00:00",
+      "exit_time": "2026-05-07T15:00:00+00:00",
+      "entry": 93.33,
+      "exit": 91.69,
+      "bars": 29,
+      "reason": "core_momentum"
+    },
+    {
+      "side": "long",
+      "kind": "core",
+      "entry_time": "2026-05-07T15:45:00+00:00",
+      "exit_time": "2026-05-08T01:15:00+00:00",
+      "entry": 93.31,
+      "exit": 95.78,
+      "bars": 34,
+      "reason": "core_momentum"
+    },
+    {
+      "side": "long",
+      "kind": "sleeve",
+      "entry_time": "2026-05-08T13:15:00+00:00",
+      "exit_time": "2026-05-08T14:30:00+00:00",
+      "entry": 94.16,
+      "exit": 95.69530671746435,
+      "bars": 5,
+      "reason": "target"
+    }
+  ]
+}

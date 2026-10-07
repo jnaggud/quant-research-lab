@@ -1,0 +1,46 @@
+name: Tests
+on:
+  push:
+    branches: [main]
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python: ['3.10', '3.12']
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+          cache: pip
+          cache-dependency-path: pyproject.toml
+      - run: python -m pip install -e '.[research,dev]'
+      - run: python -m pytest -q
+      - run: python -m compileall -q quant dashboard polymarket scripts
+      - run: python scripts/check_publication.py
+  packaged-demo:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install build
+      - run: python -m build --wheel
+      - run: python -m venv /tmp/demo-env && /tmp/demo-env/bin/pip install dist/*.whl
+      - name: Check installed dashboard without research extras
+        working-directory: /tmp
+        run: |
+          /tmp/demo-env/bin/python - <<'PY'
+          from dashboard.visual_server import app
+          client = app.test_client()
+          assert client.get('/').status_code == 200
+          assert client.get('/studio-assets/studio.js').status_code == 200
+          assert client.get('/api/live').get_json()['demo']
+          assert client.get('/api/trader').get_json()['demo']
+          PY

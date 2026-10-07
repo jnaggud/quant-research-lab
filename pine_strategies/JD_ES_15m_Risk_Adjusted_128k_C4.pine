@@ -1,0 +1,239 @@
+//@version=6
+strategy("JD ES 15m Risk Adjusted 128k C4 20260519", overlay=true, initial_capital=50000, default_qty_type=strategy.fixed, default_qty_value=1, pyramiding=0, margin_long=5, margin_short=5, commission_type=strategy.commission.cash_per_contract, commission_value=2.50, slippage=1, process_orders_on_close=true)
+
+// Source: reports/es_15m_capitulation_sleeve_risk_adjusted_128k.json candidate C4, worker 10.
+// Python reference: net $158592.94, trades 411, PF 3.277, max DD 3.78%.
+// Engine: fixed ES 15m regime-carry core plus optimized long-only capitulation sleeve trained against SciPy valley labels.
+h4FastLen = input.int(11, "4H fast EMA", minval=1)
+h4SlowLen = input.int(27, "4H slow EMA", minval=1)
+dFastLen = input.int(9, "Daily fast EMA", minval=1)
+dSlowLen = input.int(80, "Daily slow EMA", minval=1)
+regimeMode = input.string("h4", "Core regime mode", options=["both", "h4", "h4_daily_veto"])
+localFilter = input.string("none", "Core local filter", options=["none", "ema21", "ema55", "stack", "ema144"])
+coreStopAtr = input.float(4.084982, "Core hard stop ATR", step=0.1)
+coreTrailAtr = input.float(7.393095, "Core trail stop ATR", step=0.1)
+coreCooldown = input.int(21, "Core cooldown bars", minval=0)
+coreLongRsiMin = input.float(40.338021, "Core long RSI min", step=0.1)
+coreShortRsiMax = input.float(59.050222, "Core short RSI max", step=0.1)
+coreMacdFloor = input.float(-3.123175, "Core MACD floor", step=0.1)
+coreVolMult = input.float(0.929367, "Core volume multiplier", step=0.01)
+useMomentumExit = input.bool(true, "Use core momentum exit")
+coreLongExitRsi = input.float(39.661299, "Core long exit RSI", step=0.1)
+coreShortExitRsi = input.float(43.043945, "Core short exit RSI", step=0.1)
+longExitRegime = input.int(-1, "Core long exit regime", minval=-1, maxval=0)
+shortExitRegime = input.int(0, "Core short exit regime", minval=0, maxval=1)
+allowShorts = input.bool(true, "Allow shorts")
+
+useCap = input.bool(true, "Use capitulation sleeve")
+capPriority = input.bool(true, "Cap sleeve priority")
+capRegime = input.string("any", "Cap regime", options=["any", "daily_not_bear", "h4_up", "either_up"])
+capAdxMin = input.float(10.806829, "Cap ADX min", step=0.1)
+capAdxMax = input.float(61.295905, "Cap ADX max", step=0.1)
+capAtrRelMin = input.float(0.505889, "Cap ATR relative min", step=0.01)
+capAtrRelMax = input.float(3.854679, "Cap ATR relative max", step=0.01)
+capVwapDistAtr = input.float(3.41156, "Cap VWAP distance ATR", step=0.1)
+capBbAtr = input.float(0.429331, "Cap Bollinger ATR offset", step=0.1)
+capPrevLowAtr = input.float(0.273317, "Cap prior low ATR", step=0.1)
+capLowBreakAtr = input.float(-0.69689, "Cap 24-bar low break ATR", step=0.1)
+capLow96Atr = input.float(-0.75519, "Cap 96-bar low ATR", step=0.1)
+capRsiMax = input.float(46.942265, "Cap RSI max", step=0.1)
+capStochMax = input.float(30.542032, "Cap stochastic max", step=0.1)
+capRetZ = input.float(1.40368, "Cap negative return Z", step=0.1)
+capReclaimPos = input.float(0.045532, "Cap candle reclaim position", step=0.01)
+capVolumeMult = input.float(1.245587, "Cap volume climax multiplier", step=0.01)
+capPvZMax = input.float(0.411794, "Cap price-volume Z max", step=0.1)
+capRequireReversal = input.bool(false, "Cap requires reversal confirmation")
+capStopAtr = input.float(1.39711, "Cap hard stop ATR", step=0.1)
+capTargetAtr = input.float(6.020463, "Cap target ATR", step=0.1)
+capTrailAtr = input.float(0.661426, "Cap trailing ATR", step=0.1)
+capExitVwapAtr = input.float(-0.260162, "Cap VWAP exit ATR", step=0.1)
+capExitRsi = input.float(71.495159, "Cap exit RSI", step=0.1)
+capExitRangePos = input.float(0.247939, "Cap peak-exit candle position", step=0.01)
+capExitOnPeak = input.bool(true, "Cap SciPy peak exit marker")
+capExitOnMomentumPeak = input.bool(true, "Cap momentum peak exit")
+capCooldown = input.int(0, "Cap cooldown bars", minval=0)
+capMinHold = input.int(7, "Cap minimum hold bars", minval=0)
+capMaxHold = input.int(41, "Cap maximum hold bars", minval=1)
+
+useDateRange = input.bool(true, "Use optimization date range")
+startTime = input.time(1759190400000, "Start")
+endTime = input.time(1778198399000, "End")
+showSignals = input.bool(true, "Show entry signals")
+showRawSignals = input.bool(false, "Show raw setups")
+showMtfLines = input.bool(true, "Show MTF / router levels")
+
+h4Fast = request.security(syminfo.tickerid, "240", ta.ema(close, h4FastLen)[1], barmerge.gaps_off, barmerge.lookahead_off)
+h4Slow = request.security(syminfo.tickerid, "240", ta.ema(close, h4SlowLen)[1], barmerge.gaps_off, barmerge.lookahead_off)
+dFast = request.security(syminfo.tickerid, "1D", ta.ema(close, dFastLen)[1], barmerge.gaps_off, barmerge.lookahead_off)
+dSlow = request.security(syminfo.tickerid, "1D", ta.ema(close, dSlowLen)[1], barmerge.gaps_off, barmerge.lookahead_off)
+prevDayLow = request.security(syminfo.tickerid, "1D", low[1], barmerge.gaps_off, barmerge.lookahead_off)
+
+h4Signal = h4Fast > h4Slow ? 1 : -1
+dailySignal = dFast > dSlow ? 1 : -1
+regime = regimeMode == "both" ? (h4Signal == dailySignal ? h4Signal : 0) : regimeMode == "h4" ? h4Signal : (dailySignal == -h4Signal ? 0 : h4Signal)
+inRange = not useDateRange or (time >= startTime and time <= endTime)
+
+rsiValue = ta.rsi(close, 14)
+stochK = ta.stoch(close, high, low, 14)
+stochD = ta.sma(stochK, 3)
+[_, _, macdHist] = ta.macd(close, 12, 26, 9)
+atrValue = ta.atr(14)
+[_, _, adxValue] = ta.dmi(14, 14)
+ema8 = ta.ema(close, 8)
+ema21 = ta.ema(close, 21)
+ema55 = ta.ema(close, 55)
+ema144 = ta.ema(close, 144)
+volSma = ta.sma(volume, 48)
+bbBasis = ta.sma(close, 40)
+bbDev = ta.stdev(close, 40)
+bbLower = bbBasis - 2.0 * bbDev
+vwapValue = ta.vwap(hlc3)
+atrRel = atrValue / ta.sma(atrValue, 192)
+vwapDist = (close - vwapValue) / atrValue
+ret1 = ta.change(close) / close[1]
+retMean = ta.sma(ret1, 96)
+retStd = ta.stdev(ret1, 96)
+retZ = retStd != 0.0 ? (ret1 - retMean) / retStd : 0.0
+rangePos = (close - low) / math.max(high - low, syminfo.mintick)
+low24 = ta.lowest(low, 24)[1]
+low96 = ta.lowest(low, 96)[1]
+priceVelocity = ta.change(close)
+pvMomentum = math.sum(priceVelocity * volume, 4)
+pvStd = ta.stdev(pvMomentum, 96)
+pvZ = pvStd != 0.0 ? pvMomentum / pvStd : 0.0
+climaxVolume = volume / ta.sma(volume, 96)
+
+longFilter = localFilter == "none" ? true : localFilter == "ema21" ? close > ema21 : localFilter == "ema55" ? close > ema55 : localFilter == "stack" ? ema8 > ema21 and ema21 > ema55 and close > ema8 : close > ema144
+shortFilter = localFilter == "none" ? true : localFilter == "ema21" ? close < ema21 : localFilter == "ema55" ? close < ema55 : localFilter == "stack" ? ema8 < ema21 and ema21 < ema55 and close < ema8 : close < ema144
+coreVolOk = volume >= coreVolMult * volSma
+coreLong = inRange and regime == 1 and longFilter and rsiValue >= coreLongRsiMin and macdHist >= coreMacdFloor and coreVolOk
+coreShort = inRange and allowShorts and regime == -1 and shortFilter and rsiValue <= coreShortRsiMax and macdHist <= -coreMacdFloor and coreVolOk
+
+kCrossUp = stochK[1] <= stochD[1] and stochK > stochD
+capRegimeOk = capRegime == "any" or (capRegime == "daily_not_bear" and dailySignal != -1) or (capRegime == "h4_up" and h4Signal == 1) or (capRegime == "either_up" and (h4Signal == 1 or dailySignal == 1))
+capDeep = vwapDist <= -capVwapDistAtr or close <= bbLower + capBbAtr * atrValue or close <= prevDayLow + capPrevLowAtr * atrValue or low <= low24 - capLowBreakAtr * atrValue or low <= low96 + capLow96Atr * atrValue
+capExhaustion = rsiValue <= capRsiMax and stochK <= capStochMax and retZ <= -capRetZ and rangePos >= capReclaimPos and climaxVolume >= capVolumeMult and pvZ <= capPvZMax and atrRel >= capAtrRelMin and atrRel <= capAtrRelMax and adxValue >= capAdxMin and adxValue <= capAdxMax
+capReversal = kCrossUp or close > close[1] or macdHist > macdHist[1]
+capLong = inRange and useCap and capRegimeOk and capDeep and capExhaustion and (not capRequireReversal or capReversal)
+
+var int lastExitBar = na
+var int entryBar = na
+var int activeKind = 0
+var float entryHigh = na
+var float entryLow = na
+flatNow = strategy.position_size == 0 and strategy.position_size[1] != 0
+if flatNow
+    lastExitBar := bar_index
+    entryBar := na
+    activeKind := 0
+    entryHigh := na
+    entryLow := na
+
+coreReady = na(lastExitBar) or bar_index - lastExitBar >= coreCooldown
+capReady = na(lastExitBar) or bar_index - lastExitBar >= capCooldown
+canEnter = strategy.position_size == 0
+
+if canEnter and capPriority and capReady and capLong
+    strategy.entry("Cap Long", strategy.long)
+    entryBar := bar_index
+    activeKind := 2
+    entryHigh := high
+    entryLow := low
+else if canEnter and coreReady and coreLong
+    strategy.entry("Core Long", strategy.long)
+    entryBar := bar_index
+    activeKind := 1
+    entryHigh := high
+    entryLow := low
+else if canEnter and coreReady and coreShort
+    strategy.entry("Core Short", strategy.short)
+    entryBar := bar_index
+    activeKind := 1
+    entryHigh := high
+    entryLow := low
+else if canEnter and capReady and capLong
+    strategy.entry("Cap Long", strategy.long)
+    entryBar := bar_index
+    activeKind := 2
+    entryHigh := high
+    entryLow := low
+
+if strategy.position_size != 0
+    entryHigh := na(entryHigh) ? high : math.max(entryHigh, high)
+    entryLow := na(entryLow) ? low : math.min(entryLow, low)
+
+barsHeld = strategy.position_size != 0 and not na(entryBar) ? bar_index - entryBar : 0
+coreLongStop = math.max(strategy.position_avg_price - coreStopAtr * atrValue, entryHigh - coreTrailAtr * atrValue)
+coreShortStop = math.min(strategy.position_avg_price + coreStopAtr * atrValue, entryLow + coreTrailAtr * atrValue)
+capLongStop = math.max(strategy.position_avg_price - capStopAtr * atrValue, entryHigh - capTrailAtr * atrValue)
+capLongTarget = strategy.position_avg_price + capTargetAtr * atrValue
+
+if strategy.position_size > 0 and activeKind == 1
+    strategy.exit("Core Long Risk", "Core Long", stop=coreLongStop)
+if strategy.position_size < 0 and activeKind == 1
+    strategy.exit("Core Short Risk", "Core Short", stop=coreShortStop)
+if strategy.position_size > 0 and activeKind == 2
+    strategy.exit("Cap Long Risk", "Cap Long", stop=capLongStop, limit=capLongTarget)
+
+if strategy.position_size > 0 and activeKind == 1 and (not inRange or regime <= longExitRegime)
+    strategy.close("Core Long", comment="Regime exit")
+if strategy.position_size < 0 and activeKind == 1 and (not inRange or regime >= shortExitRegime)
+    strategy.close("Core Short", comment="Regime exit")
+if strategy.position_size > 0 and activeKind == 1 and useMomentumExit and macdHist < macdHist[1] and rsiValue < coreLongExitRsi
+    strategy.close("Core Long", comment="Momentum exit")
+if strategy.position_size < 0 and activeKind == 1 and useMomentumExit and macdHist > macdHist[1] and rsiValue > coreShortExitRsi
+    strategy.close("Core Short", comment="Momentum exit")
+capMomentumPeakExit = capExitOnMomentumPeak and macdHist < macdHist[1] and rangePos <= capExitRangePos
+if strategy.position_size > 0 and activeKind == 2 and (not inRange or barsHeld >= capMaxHold or (barsHeld >= capMinHold and (close >= vwapValue + capExitVwapAtr * atrValue or rsiValue >= capExitRsi or capMomentumPeakExit)))
+    strategy.close("Cap Long", comment="Cap exit")
+
+activeLongStop = strategy.position_size > 0 and activeKind == 1 ? coreLongStop : strategy.position_size > 0 and activeKind == 2 ? capLongStop : na
+activeShortStop = strategy.position_size < 0 and activeKind == 1 ? coreShortStop : na
+activeLongTarget = strategy.position_size > 0 and activeKind == 2 ? capLongTarget : na
+
+plot(showMtfLines ? h4Fast : na, "4H Fast EMA prev", color=color.new(color.aqua, 0))
+plot(showMtfLines ? h4Slow : na, "4H Slow EMA prev", color=color.new(color.orange, 0))
+plot(showMtfLines ? dFast : na, "Daily Fast EMA prev", color=color.new(color.lime, 60), linewidth=2)
+plot(showMtfLines ? dSlow : na, "Daily Slow EMA prev", color=color.new(color.red, 60), linewidth=2)
+plot(showMtfLines ? vwapValue : na, "Session VWAP", color=color.new(color.white, 55))
+plot(activeLongStop, "Long active stop", color=color.new(color.red, 0), style=plot.style_linebr)
+plot(activeLongTarget, "Long active target", color=color.new(color.lime, 65), style=plot.style_linebr)
+plot(activeShortStop, "Short active stop", color=color.new(color.lime, 0), style=plot.style_linebr)
+plotshape(showSignals and canEnter and coreReady and coreLong, "Core long", shape.triangleup, location.belowbar, color=color.new(color.lime, 0), size=size.small, text="CL")
+plotshape(showSignals and canEnter and coreReady and coreShort, "Core short", shape.triangledown, location.abovebar, color=color.new(color.fuchsia, 0), size=size.small, text="CS")
+plotshape(showSignals and canEnter and capReady and capLong, "Cap long", shape.diamond, location.belowbar, color=color.new(color.yellow, 0), size=size.small, text="CAP")
+plotshape(showRawSignals and capDeep, "Cap deep raw", shape.circle, location.belowbar, color=color.new(color.blue, 80), size=size.tiny, text="D")
+plotshape(showRawSignals and capExhaustion, "Cap exhaustion raw", shape.circle, location.belowbar, color=color.new(color.yellow, 80), size=size.tiny, text="E")
+bgcolor(regime == 1 ? color.new(color.green, 92) : regime == -1 ? color.new(color.red, 94) : color.new(color.gray, 94))
+
+// SciPy truth markers are hindsight diagnostic labels generated from exported TradingView data.
+// They are plotted for analysis only and are not used by the strategy logic.
+showPeaks = input.bool(true, "Show SciPy peaks")
+showValleys = input.bool(true, "Show SciPy valleys")
+
+var int[] peakTimes = array.from(
+    timestamp("GMT+0", 2025, 7, 3, 16, 30), timestamp("GMT+0", 2025, 7, 10, 18, 15), timestamp("GMT+0", 2025, 7, 15, 12, 30), timestamp("GMT+0", 2025, 7, 28, 6, 0), timestamp("GMT+0", 2025, 7, 31, 7, 45), timestamp("GMT+0", 2025, 8, 7, 10, 15), timestamp("GMT+0", 2025, 8, 15, 6, 45), timestamp("GMT+0", 2025, 8, 28, 19, 45),
+    timestamp("GMT+0", 2025, 9, 5, 13, 45), timestamp("GMT+0", 2025, 9, 22, 19, 30), timestamp("GMT+0", 2025, 10, 8, 23, 15), timestamp("GMT+0", 2025, 10, 14, 0, 30), timestamp("GMT+0", 2025, 10, 15, 14, 0), timestamp("GMT+0", 2025, 10, 16, 14, 30), timestamp("GMT+0", 2025, 10, 21, 16, 45), timestamp("GMT+0", 2025, 10, 30, 3, 45),
+    timestamp("GMT+0", 2025, 11, 5, 17, 30), timestamp("GMT+0", 2025, 11, 12, 10, 0), timestamp("GMT+0", 2025, 11, 17, 8, 30), timestamp("GMT+0", 2025, 11, 19, 15, 15), timestamp("GMT+0", 2025, 11, 20, 15, 30), timestamp("GMT+0", 2025, 12, 10, 20, 30), timestamp("GMT+0", 2025, 12, 11, 21, 45), timestamp("GMT+0", 2025, 12, 16, 13, 30),
+    timestamp("GMT+0", 2025, 12, 26, 14, 45), timestamp("GMT+0", 2026, 1, 13, 13, 30), timestamp("GMT+0", 2026, 1, 15, 17, 0), timestamp("GMT+0", 2026, 1, 28, 6, 30), timestamp("GMT+0", 2026, 1, 29, 21, 30), timestamp("GMT+0", 2026, 2, 3, 8, 0), timestamp("GMT+0", 2026, 2, 11, 14, 30), timestamp("GMT+0", 2026, 2, 18, 18, 0),
+    timestamp("GMT+0", 2026, 2, 20, 18, 45), timestamp("GMT+0", 2026, 2, 25, 21, 30), timestamp("GMT+0", 2026, 3, 2, 19, 30), timestamp("GMT+0", 2026, 3, 5, 0, 15), timestamp("GMT+0", 2026, 3, 10, 17, 15), timestamp("GMT+0", 2026, 3, 13, 13, 45), timestamp("GMT+0", 2026, 3, 18, 6, 15), timestamp("GMT+0", 2026, 3, 23, 11, 0),
+    timestamp("GMT+0", 2026, 3, 25, 13, 30), timestamp("GMT+0", 2026, 3, 30, 11, 15), timestamp("GMT+0", 2026, 4, 1, 17, 15), timestamp("GMT+0", 2026, 4, 7, 9, 30), timestamp("GMT+0", 2026, 4, 10, 12, 30), timestamp("GMT+0", 2026, 4, 17, 16, 45), timestamp("GMT+0", 2026, 4, 21, 11, 30), timestamp("GMT+0", 2026, 4, 28, 0, 0),
+    timestamp("GMT+0", 2026, 5, 1, 14, 15)
+)
+
+var int[] valleyTimes = array.from(
+    timestamp("GMT+0", 2025, 7, 7, 18, 15), timestamp("GMT+0", 2025, 7, 14, 7, 15), timestamp("GMT+0", 2025, 7, 16, 15, 30), timestamp("GMT+0", 2025, 7, 30, 19, 0), timestamp("GMT+0", 2025, 8, 1, 18, 0), timestamp("GMT+0", 2025, 8, 7, 18, 15), timestamp("GMT+0", 2025, 8, 20, 14, 45), timestamp("GMT+0", 2025, 9, 2, 15, 45),
+    timestamp("GMT+0", 2025, 9, 5, 15, 0), timestamp("GMT+0", 2025, 9, 17, 18, 45), timestamp("GMT+0", 2025, 9, 25, 18, 0), timestamp("GMT+0", 2025, 10, 10, 20, 45), timestamp("GMT+0", 2025, 10, 14, 13, 45), timestamp("GMT+0", 2025, 10, 15, 17, 15), timestamp("GMT+0", 2025, 10, 17, 8, 15), timestamp("GMT+0", 2025, 10, 22, 17, 45),
+    timestamp("GMT+0", 2025, 11, 5, 1, 30), timestamp("GMT+0", 2025, 11, 7, 17, 0), timestamp("GMT+0", 2025, 11, 14, 14, 30), timestamp("GMT+0", 2025, 11, 18, 16, 0), timestamp("GMT+0", 2025, 11, 19, 17, 30), timestamp("GMT+0", 2025, 11, 21, 10, 15), timestamp("GMT+0", 2025, 12, 11, 3, 0), timestamp("GMT+0", 2025, 12, 12, 16, 30),
+    timestamp("GMT+0", 2025, 12, 18, 3, 15), timestamp("GMT+0", 2026, 1, 2, 18, 45), timestamp("GMT+0", 2026, 1, 14, 16, 45), timestamp("GMT+0", 2026, 1, 21, 12, 45), timestamp("GMT+0", 2026, 1, 25, 23, 0), timestamp("GMT+0", 2026, 1, 29, 16, 0), timestamp("GMT+0", 2026, 2, 2, 6, 30), timestamp("GMT+0", 2026, 2, 3, 19, 0),
+    timestamp("GMT+0", 2026, 2, 6, 0, 15), timestamp("GMT+0", 2026, 2, 13, 14, 30), timestamp("GMT+0", 2026, 2, 17, 15, 30), timestamp("GMT+0", 2026, 2, 20, 14, 30), timestamp("GMT+0", 2026, 2, 24, 14, 30), timestamp("GMT+0", 2026, 3, 2, 8, 15), timestamp("GMT+0", 2026, 3, 3, 15, 15), timestamp("GMT+0", 2026, 3, 5, 19, 30),
+    timestamp("GMT+0", 2026, 3, 9, 2, 15), timestamp("GMT+0", 2026, 3, 13, 8, 15), timestamp("GMT+0", 2026, 3, 15, 22, 0), timestamp("GMT+0", 2026, 3, 23, 7, 15), timestamp("GMT+0", 2026, 3, 24, 13, 30), timestamp("GMT+0", 2026, 3, 30, 0, 0), timestamp("GMT+0", 2026, 3, 31, 0, 15), timestamp("GMT+0", 2026, 4, 2, 12, 0),
+    timestamp("GMT+0", 2026, 4, 7, 15, 0), timestamp("GMT+0", 2026, 4, 12, 22, 30), timestamp("GMT+0", 2026, 4, 19, 22, 0), timestamp("GMT+0", 2026, 4, 21, 19, 30), timestamp("GMT+0", 2026, 4, 23, 17, 45), timestamp("GMT+0", 2026, 4, 29, 20, 15), timestamp("GMT+0", 2026, 5, 4, 16, 0)
+)
+
+isPeak = showPeaks and array.includes(peakTimes, time)
+isValley = showValleys and array.includes(valleyTimes, time)
+
+plotshape(isValley, "SciPy true valley", shape.circle, location.belowbar, color=color.new(color.lime, 0), size=size.tiny, text="V")
+plotshape(isPeak, "SciPy true peak", shape.circle, location.abovebar, color=color.new(color.red, 0), size=size.tiny, text="P")
+

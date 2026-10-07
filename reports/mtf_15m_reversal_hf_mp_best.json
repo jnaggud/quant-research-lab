@@ -1,0 +1,701 @@
+{
+  "source_data": "tmp/bitstamp_btcusd_15m_20231231_20260507.json",
+  "workers": 32,
+  "requested_trials": 96000,
+  "completed_trials": 96000,
+  "best": {
+    "worker_id": 19,
+    "score": 115.597088258819,
+    "params": {
+      "h4_fast": 10,
+      "h4_slow": 29,
+      "d_fast": 12,
+      "d_slow": 63,
+      "entry_score": 2,
+      "exit_score": 4,
+      "stoch_low": 20.724117650162604,
+      "stoch_high": 84.50640210620233,
+      "rsi_low": 41.780268118446465,
+      "rsi_high": 72.83067655886404,
+      "willr_low": -89.38051855145154,
+      "willr_high": -13.369999933917036,
+      "bb_mult": 2.177263405793329,
+      "atr_displace": 1.235853464057821,
+      "stop_atr": 5.339114996875116,
+      "target_atr": 9.506783849878248,
+      "cooldown": 32,
+      "allow_short": false,
+      "cost_bps": 4.0
+    },
+    "metrics": {
+      "full": {
+        "total_return": 113.48087463675154,
+        "n_trades": 319,
+        "win_rate": 64.26332288401254,
+        "profit_factor": 1.5729578322475448,
+        "max_drawdown": 14.503964131560313
+      },
+      "q1": {
+        "total_return": 41.89877429084119,
+        "n_trades": 92,
+        "win_rate": 72.82608695652173,
+        "profit_factor": 1.772355728708977,
+        "max_drawdown": 11.722721429355708
+      },
+      "q2": {
+        "total_return": 21.756397313273613,
+        "n_trades": 95,
+        "win_rate": 58.94736842105262,
+        "profit_factor": 1.4806098568117951,
+        "max_drawdown": 9.199007972559183
+      },
+      "q3": {
+        "total_return": 12.76012158152815,
+        "n_trades": 102,
+        "win_rate": 62.745098039215684,
+        "profit_factor": 1.3373158107418444,
+        "max_drawdown": 11.487464035865063
+      },
+      "q4": {
+        "total_return": 9.58043112532263,
+        "n_trades": 30,
+        "win_rate": 60.0,
+        "profit_factor": 1.900232015400761,
+        "max_drawdown": 4.376789999396347
+      }
+    },
+    "trials": 3000
+  },
+  "top10": [
+    {
+      "worker_id": 19,
+      "score": 115.597088258819,
+      "params": {
+        "h4_fast": 10,
+        "h4_slow": 29,
+        "d_fast": 12,
+        "d_slow": 63,
+        "entry_score": 2,
+        "exit_score": 4,
+        "stoch_low": 20.724117650162604,
+        "stoch_high": 84.50640210620233,
+        "rsi_low": 41.780268118446465,
+        "rsi_high": 72.83067655886404,
+        "willr_low": -89.38051855145154,
+        "willr_high": -13.369999933917036,
+        "bb_mult": 2.177263405793329,
+        "atr_displace": 1.235853464057821,
+        "stop_atr": 5.339114996875116,
+        "target_atr": 9.506783849878248,
+        "cooldown": 32,
+        "allow_short": false,
+        "cost_bps": 4.0
+      },
+      "metrics": {
+        "full": {
+          "total_return": 113.48087463675154,
+          "n_trades": 319,
+          "win_rate": 64.26332288401254,
+          "profit_factor": 1.5729578322475448,
+          "max_drawdown": 14.503964131560313
+        },
+        "q1": {
+          "total_return": 41.89877429084119,
+          "n_trades": 92,
+          "win_rate": 72.82608695652173,
+          "profit_factor": 1.772355728708977,
+          "max_drawdown": 11.722721429355708
+        },
+        "q2": {
+          "total_return": 21.756397313273613,
+          "n_trades": 95,
+          "win_rate": 58.94736842105262,
+          "profit_factor": 1.4806098568117951,
+          "max_drawdown": 9.199007972559183
+        },
+        "q3": {
+          "total_return": 12.76012158152815,
+          "n_trades": 102,
+          "win_rate": 62.745098039215684,
+          "profit_factor": 1.3373158107418444,
+          "max_drawdown": 11.487464035865063
+        },
+        "q4": {
+          "total_return": 9.58043112532263,
+          "n_trades": 30,
+          "win_rate": 60.0,
+          "profit_factor": 1.900232015400761,
+          "max_drawdown": 4.376789999396347
+        }
+      },
+      "trials": 3000
+    },
+    {
+      "worker_id": 14,
+      "score": 104.55471828603879,
+      "params": {
+        "h4_fast": 10,
+        "h4_slow": 35,
+        "d_fast": 22,
+        "d_slow": 50,
+        "entry_score": 2,
+        "exit_score": 4,
+        "stoch_low": 24.985818729372657,
+        "stoch_high": 81.6816463867575,
+        "rsi_low": 28.398478938782237,
+        "rsi_high": 71.98831454874674,
+        "willr_low": -71.26934786103398,
+        "willr_high": -13.837699053877817,
+        "bb_mult": 2.3245476696421448,
+        "atr_displace": 1.3995191702709344,
+        "stop_atr": 4.75621763950749,
+        "target_atr": 9.317863932457707,
+        "cooldown": 33,
+        "allow_short": false,
+        "cost_bps": 4.0
+      },
+      "metrics": {
+        "full": {
+          "total_return": 105.87896356684271,
+          "n_trades": 300,
+          "win_rate": 61.66666666666667,
+          "profit_factor": 1.5507608983546832,
+          "max_drawdown": 12.476936108117087
+        },
+        "q1": {
+          "total_return": 29.158437197127164,
+          "n_trades": 80,
+          "win_rate": 70.0,
+          "profit_factor": 1.5374436911907778,
+          "max_drawdown": 12.476936108117087
+        },
+        "q2": {
+          "total_return": 28.974847636237833,
+          "n_trades": 93,
+          "win_rate": 58.06451612903226,
+          "profit_factor": 1.6508000184298774,
+          "max_drawdown": 7.164458676641419
+        },
+        "q3": {
+          "total_return": 8.25007136476148,
+          "n_trades": 101,
+          "win_rate": 57.42574257425742,
+          "profit_factor": 1.2188785643617472,
+          "max_drawdown": 10.43905318829023
+        },
+        "q4": {
+          "total_return": 14.17104521804362,
+          "n_trades": 26,
+          "win_rate": 65.38461538461539,
+          "profit_factor": 2.954399254568926,
+          "max_drawdown": 1.2511845059986513
+        }
+      },
+      "trials": 3000
+    },
+    {
+      "worker_id": 16,
+      "score": 104.08688477556063,
+      "params": {
+        "h4_fast": 15,
+        "h4_slow": 27,
+        "d_fast": 23,
+        "d_slow": 47,
+        "entry_score": 2,
+        "exit_score": 4,
+        "stoch_low": 23.75099801533007,
+        "stoch_high": 80.0261433672065,
+        "rsi_low": 37.71026458066921,
+        "rsi_high": 68.04908136845978,
+        "willr_low": -80.9441687768665,
+        "willr_high": -11.599230657066125,
+        "bb_mult": 2.2713468690017464,
+        "atr_displace": 1.735278031473809,
+        "stop_atr": 5.4656541224068205,
+        "target_atr": 9.094439497763632,
+        "cooldown": 62,
+        "allow_short": false,
+        "cost_bps": 4.0
+      },
+      "metrics": {
+        "full": {
+          "total_return": 90.74864229227674,
+          "n_trades": 220,
+          "win_rate": 61.36363636363637,
+          "profit_factor": 1.6106588733177791,
+          "max_drawdown": 7.716661487678316
+        },
+        "q1": {
+          "total_return": 21.87571520179472,
+          "n_trades": 62,
+          "win_rate": 61.29032258064516,
+          "profit_factor": 1.4735703603200627,
+          "max_drawdown": 7.716661487678316
+        },
+        "q2": {
+          "total_return": 29.790423103448262,
+          "n_trades": 69,
+          "win_rate": 60.86956521739131,
+          "profit_factor": 1.8567585316542734,
+          "max_drawdown": 4.982633590317312
+        },
+        "q3": {
+          "total_return": 16.37374035762884,
+          "n_trades": 70,
+          "win_rate": 62.857142857142854,
+          "profit_factor": 1.6453902797959576,
+          "max_drawdown": 5.379184731017417
+        },
+        "q4": {
+          "total_return": 3.62072743707913,
+          "n_trades": 19,
+          "win_rate": 57.89473684210527,
+          "profit_factor": 1.3732175694482718,
+          "max_drawdown": 3.569330416999947
+        }
+      },
+      "trials": 3000
+    },
+    {
+      "worker_id": 26,
+      "score": 100.42920363126613,
+      "params": {
+        "h4_fast": 8,
+        "h4_slow": 38,
+        "d_fast": 23,
+        "d_slow": 51,
+        "entry_score": 2,
+        "exit_score": 4,
+        "stoch_low": 37.40918704700916,
+        "stoch_high": 81.74207032843643,
+        "rsi_low": 32.10015374958375,
+        "rsi_high": 74.67811820953122,
+        "willr_low": -74.59193021936179,
+        "willr_high": -21.020154224085662,
+        "bb_mult": 2.1247891670007464,
+        "atr_displace": 1.4084234439460124,
+        "stop_atr": 5.28970893140276,
+        "target_atr": 9.96343403830764,
+        "cooldown": 23,
+        "allow_short": false,
+        "cost_bps": 4.0
+      },
+      "metrics": {
+        "full": {
+          "total_return": 108.97257842847128,
+          "n_trades": 356,
+          "win_rate": 63.20224719101124,
+          "profit_factor": 1.4865669996939597,
+          "max_drawdown": 10.120629390771194
+        },
+        "q1": {
+          "total_return": 46.13284329016205,
+          "n_trades": 106,
+          "win_rate": 71.69811320754717,
+          "profit_factor": 1.7269463039464121,
+          "max_drawdown": 9.241206965280305
+        },
+        "q2": {
+          "total_return": 23.582388550889235,
+          "n_trades": 111,
+          "win_rate": 59.45945945945946,
+          "profit_factor": 1.416476503368817,
+          "max_drawdown": 6.786222428493768
+        },
+        "q3": {
+          "total_return": 7.568241753364924,
+          "n_trades": 113,
+          "win_rate": 59.29203539823009,
+          "profit_factor": 1.1920498709783045,
+          "max_drawdown": 7.84850871176538
+        },
+        "q4": {
+          "total_return": 7.572388621947956,
+          "n_trades": 26,
+          "win_rate": 61.53846153846154,
+          "profit_factor": 1.7501206519862071,
+          "max_drawdown": 4.3701710297541
+        }
+      },
+      "trials": 3000
+    },
+    {
+      "worker_id": 11,
+      "score": 98.44262069392265,
+      "params": {
+        "h4_fast": 11,
+        "h4_slow": 29,
+        "d_fast": 24,
+        "d_slow": 48,
+        "entry_score": 2,
+        "exit_score": 4,
+        "stoch_low": 29.25633261186573,
+        "stoch_high": 80.6687979974334,
+        "rsi_low": 33.29371070351938,
+        "rsi_high": 72.5596535778814,
+        "willr_low": -65.36225340853461,
+        "willr_high": -12.571938370956994,
+        "bb_mult": 2.11777856179188,
+        "atr_displace": 1.3158319065928186,
+        "stop_atr": 5.310516625729159,
+        "target_atr": 9.590952261167704,
+        "cooldown": 32,
+        "allow_short": false,
+        "cost_bps": 4.0
+      },
+      "metrics": {
+        "full": {
+          "total_return": 95.9663554462469,
+          "n_trades": 301,
+          "win_rate": 64.11960132890366,
+          "profit_factor": 1.5320065158687484,
+          "max_drawdown": 11.620224836141055
+        },
+        "q1": {
+          "total_return": 26.94124849661359,
+          "n_trades": 84,
+          "win_rate": 70.23809523809523,
+          "profit_factor": 1.5375211428177555,
+          "max_drawdown": 10.845747490199122
+        },
+        "q2": {
+          "total_return": 30.45611916471649,
+          "n_trades": 94,
+          "win_rate": 61.702127659574465,
+          "profit_factor": 1.6746037441425488,
+          "max_drawdown": 8.484599507444438
+        },
+        "q3": {
+          "total_return": 8.222512922971227,
+          "n_trades": 99,
+          "win_rate": 62.62626262626263,
+          "profit_factor": 1.2338533651207657,
+          "max_drawdown": 10.765496696392063
+        },
+        "q4": {
+          "total_return": 9.344434143220791,
+          "n_trades": 24,
+          "win_rate": 58.333333333333336,
+          "profit_factor": 2.097434064345007,
+          "max_drawdown": 1.6706973294908687
+        }
+      },
+      "trials": 3000
+    },
+    {
+      "worker_id": 4,
+      "score": 97.84835739004444,
+      "params": {
+        "h4_fast": 12,
+        "h4_slow": 33,
+        "d_fast": 19,
+        "d_slow": 69,
+        "entry_score": 2,
+        "exit_score": 4,
+        "stoch_low": 33.65533399360256,
+        "stoch_high": 81.93127826769035,
+        "rsi_low": 36.88547988113703,
+        "rsi_high": 69.71695764144768,
+        "willr_low": -84.82201635374203,
+        "willr_high": -12.786195249634378,
+        "bb_mult": 2.336596679759976,
+        "atr_displace": 1.5514052752314118,
+        "stop_atr": 5.0859261560604665,
+        "target_atr": 9.175854867777437,
+        "cooldown": 33,
+        "allow_short": false,
+        "cost_bps": 4.0
+      },
+      "metrics": {
+        "full": {
+          "total_return": 97.65129585929762,
+          "n_trades": 275,
+          "win_rate": 62.909090909090914,
+          "profit_factor": 1.5136844125561306,
+          "max_drawdown": 12.865554620428124
+        },
+        "q1": {
+          "total_return": 19.674579563865425,
+          "n_trades": 80,
+          "win_rate": 63.74999999999999,
+          "profit_factor": 1.3295824114190022,
+          "max_drawdown": 12.865554620428124
+        },
+        "q2": {
+          "total_return": 39.761672420263515,
+          "n_trades": 85,
+          "win_rate": 64.70588235294117,
+          "profit_factor": 1.9276471559549844,
+          "max_drawdown": 9.75754118130365
+        },
+        "q3": {
+          "total_return": 11.028289321107888,
+          "n_trades": 92,
+          "win_rate": 59.78260869565217,
+          "profit_factor": 1.306394812453786,
+          "max_drawdown": 9.107657868921837
+        },
+        "q4": {
+          "total_return": 6.432930071607346,
+          "n_trades": 18,
+          "win_rate": 66.66666666666666,
+          "profit_factor": 2.0348647575843453,
+          "max_drawdown": 1.3351457283421417
+        }
+      },
+      "trials": 3000
+    },
+    {
+      "worker_id": 9,
+      "score": 96.0049361986743,
+      "params": {
+        "h4_fast": 11,
+        "h4_slow": 25,
+        "d_fast": 20,
+        "d_slow": 68,
+        "entry_score": 2,
+        "exit_score": 4,
+        "stoch_low": 22.69733797550436,
+        "stoch_high": 84.23234082414554,
+        "rsi_low": 29.72644061446411,
+        "rsi_high": 68.14237133404134,
+        "willr_low": -83.0678802725833,
+        "willr_high": -14.541208399889385,
+        "bb_mult": 2.227351782494952,
+        "atr_displace": 1.7376491773517249,
+        "stop_atr": 4.8836396810212275,
+        "target_atr": 7.5620916765222566,
+        "cooldown": 48,
+        "allow_short": false,
+        "cost_bps": 4.0
+      },
+      "metrics": {
+        "full": {
+          "total_return": 104.06522950682469,
+          "n_trades": 264,
+          "win_rate": 63.63636363636363,
+          "profit_factor": 1.608413468002168,
+          "max_drawdown": 12.266496247100452
+        },
+        "q1": {
+          "total_return": 22.752698277513538,
+          "n_trades": 79,
+          "win_rate": 64.55696202531645,
+          "profit_factor": 1.4029911871854626,
+          "max_drawdown": 12.266496247100452
+        },
+        "q2": {
+          "total_return": 48.18910398473317,
+          "n_trades": 83,
+          "win_rate": 66.26506024096386,
+          "profit_factor": 2.413580379251408,
+          "max_drawdown": 5.504044691080332
+        },
+        "q3": {
+          "total_return": 5.199158901932566,
+          "n_trades": 85,
+          "win_rate": 60.0,
+          "profit_factor": 1.176734812229145,
+          "max_drawdown": 9.292402016398665
+        },
+        "q4": {
+          "total_return": 3.645890883551406,
+          "n_trades": 18,
+          "win_rate": 61.111111111111114,
+          "profit_factor": 1.4240093883260294,
+          "max_drawdown": 3.1764117070923006
+        }
+      },
+      "trials": 3000
+    },
+    {
+      "worker_id": 17,
+      "score": 95.57015945611501,
+      "params": {
+        "h4_fast": 15,
+        "h4_slow": 27,
+        "d_fast": 15,
+        "d_slow": 42,
+        "entry_score": 4,
+        "exit_score": 4,
+        "stoch_low": 31.616895510958145,
+        "stoch_high": 84.18424460701331,
+        "rsi_low": 28.182546433470282,
+        "rsi_high": 73.86171729703716,
+        "willr_low": -87.52661668576522,
+        "willr_high": -10.00709055216383,
+        "bb_mult": 2.661439552001526,
+        "atr_displace": 1.5738625528140102,
+        "stop_atr": 3.9695930680910565,
+        "target_atr": 7.875591040217416,
+        "cooldown": 9,
+        "allow_short": false,
+        "cost_bps": 4.0
+      },
+      "metrics": {
+        "full": {
+          "total_return": 69.8417257992642,
+          "n_trades": 210,
+          "win_rate": 53.80952380952381,
+          "profit_factor": 1.525305235623216,
+          "max_drawdown": 9.738128754461417
+        },
+        "q1": {
+          "total_return": 7.213981593748553,
+          "n_trades": 53,
+          "win_rate": 52.83018867924528,
+          "profit_factor": 1.2133351850698253,
+          "max_drawdown": 7.052730605112748
+        },
+        "q2": {
+          "total_return": 32.25630209028234,
+          "n_trades": 62,
+          "win_rate": 54.83870967741935,
+          "profit_factor": 1.9257114406337883,
+          "max_drawdown": 6.823764434510557
+        },
+        "q3": {
+          "total_return": 11.184132890992537,
+          "n_trades": 70,
+          "win_rate": 51.42857142857142,
+          "profit_factor": 1.394312224495035,
+          "max_drawdown": 5.166861708528133
+        },
+        "q4": {
+          "total_return": 7.729285753857917,
+          "n_trades": 25,
+          "win_rate": 60.0,
+          "profit_factor": 1.8211439160657632,
+          "max_drawdown": 3.326518783287836
+        }
+      },
+      "trials": 3000
+    },
+    {
+      "worker_id": 3,
+      "score": 90.53841010690435,
+      "params": {
+        "h4_fast": 16,
+        "h4_slow": 27,
+        "d_fast": 21,
+        "d_slow": 56,
+        "entry_score": 2,
+        "exit_score": 4,
+        "stoch_low": 32.89707867449543,
+        "stoch_high": 83.5888752937578,
+        "rsi_low": 30.929798910213016,
+        "rsi_high": 72.47722884184292,
+        "willr_low": -75.31316956338404,
+        "willr_high": -13.16867597078299,
+        "bb_mult": 2.479498285801669,
+        "atr_displace": 1.2668594491726144,
+        "stop_atr": 5.462706569953327,
+        "target_atr": 9.956347063400852,
+        "cooldown": 34,
+        "allow_short": false,
+        "cost_bps": 4.0
+      },
+      "metrics": {
+        "full": {
+          "total_return": 89.20466482087173,
+          "n_trades": 276,
+          "win_rate": 62.68115942028986,
+          "profit_factor": 1.500771373925376,
+          "max_drawdown": 12.894910136871074
+        },
+        "q1": {
+          "total_return": 26.660977435529286,
+          "n_trades": 79,
+          "win_rate": 64.55696202531645,
+          "profit_factor": 1.5129702358744819,
+          "max_drawdown": 12.894910136871074
+        },
+        "q2": {
+          "total_return": 29.502319929165587,
+          "n_trades": 86,
+          "win_rate": 63.95348837209303,
+          "profit_factor": 1.6894497164999667,
+          "max_drawdown": 8.662014910658717
+        },
+        "q3": {
+          "total_return": 7.402282246275282,
+          "n_trades": 86,
+          "win_rate": 59.30232558139535,
+          "profit_factor": 1.2055099026796556,
+          "max_drawdown": 9.330202424984959
+        },
+        "q4": {
+          "total_return": 7.398433296685769,
+          "n_trades": 25,
+          "win_rate": 64.0,
+          "profit_factor": 1.891228298656777,
+          "max_drawdown": 3.7512729934941924
+        }
+      },
+      "trials": 3000
+    },
+    {
+      "worker_id": 1,
+      "score": 90.26345090494688,
+      "params": {
+        "h4_fast": 8,
+        "h4_slow": 40,
+        "d_fast": 22,
+        "d_slow": 55,
+        "entry_score": 2,
+        "exit_score": 4,
+        "stoch_low": 30.25440590106166,
+        "stoch_high": 83.42565198560328,
+        "rsi_low": 35.027049168955266,
+        "rsi_high": 73.81241561739009,
+        "willr_low": -85.69413002344821,
+        "willr_high": -17.525868793899026,
+        "bb_mult": 2.1977178279376273,
+        "atr_displace": 1.5753920557160124,
+        "stop_atr": 4.697915148829971,
+        "target_atr": 9.755277492527451,
+        "cooldown": 31,
+        "allow_short": false,
+        "cost_bps": 4.0
+      },
+      "metrics": {
+        "full": {
+          "total_return": 86.63222550363618,
+          "n_trades": 297,
+          "win_rate": 63.2996632996633,
+          "profit_factor": 1.4833028104274957,
+          "max_drawdown": 12.172185572337892
+        },
+        "q1": {
+          "total_return": 21.41827893224848,
+          "n_trades": 81,
+          "win_rate": 65.4320987654321,
+          "profit_factor": 1.40802037350407,
+          "max_drawdown": 10.918724532228032
+        },
+        "q2": {
+          "total_return": 30.588051991181974,
+          "n_trades": 92,
+          "win_rate": 63.04347826086957,
+          "profit_factor": 1.6598197845912142,
+          "max_drawdown": 9.657371641074265
+        },
+        "q3": {
+          "total_return": 9.016489181616304,
+          "n_trades": 100,
+          "win_rate": 62.0,
+          "profit_factor": 1.2716155353302119,
+          "max_drawdown": 6.825225273477923
+        },
+        "q4": {
+          "total_return": 7.9709511215039,
+          "n_trades": 24,
+          "win_rate": 62.5,
+          "profit_factor": 1.8773952960860416,
+          "max_drawdown": 4.356149822979613
+        }
+      },
+      "trials": 3000
+    }
+  ]
+}

@@ -1,0 +1,217 @@
+{
+  "source_data": "/private/tmp/tv_es1_main_bars_full.json",
+  "daily_bars": "/private/tmp/tv_es1_daily_bars_hidden_target.json",
+  "h4_bars": "/private/tmp/tv_es1_240_bars_hidden_target.json",
+  "summary": {
+    "net_profit": 36605.0,
+    "buy_hold_net": 61862.5,
+    "excess_net": -25257.5,
+    "trades": 514,
+    "profit_factor": 1.2645252204075734,
+    "max_drawdown_pct": 20.159013467467144,
+    "recent_days": 30,
+    "recent_net": -13565.0,
+    "recent_buy_hold_net": 9875.0,
+    "recent_excess_net": -23440.0
+  },
+  "by_kind": [
+    {
+      "group": "cap",
+      "trades": 277,
+      "net": 2640.0,
+      "win_rate": 48.01,
+      "avg_trade": 9.53,
+      "profit_factor": 1.0518
+    },
+    {
+      "group": "core",
+      "trades": 237,
+      "net": 33965.0,
+      "win_rate": 33.76,
+      "avg_trade": 143.31,
+      "profit_factor": 1.3886
+    }
+  ],
+  "by_direction": [
+    {
+      "group": "long",
+      "trades": 397,
+      "net": 25202.5,
+      "win_rate": 42.57,
+      "avg_trade": 63.48,
+      "profit_factor": 1.2466
+    },
+    {
+      "group": "short",
+      "trades": 117,
+      "net": 11402.5,
+      "win_rate": 37.61,
+      "avg_trade": 97.46,
+      "profit_factor": 1.3151
+    }
+  ],
+  "by_kind_direction": [
+    {
+      "group": "cap_long",
+      "trades": 277,
+      "net": 2640.0,
+      "win_rate": 48.01,
+      "avg_trade": 9.53,
+      "profit_factor": 1.0518
+    },
+    {
+      "group": "core_long",
+      "trades": 120,
+      "net": 22562.5,
+      "win_rate": 30.0,
+      "avg_trade": 188.02,
+      "profit_factor": 1.4406
+    },
+    {
+      "group": "core_short",
+      "trades": 117,
+      "net": 11402.5,
+      "win_rate": 37.61,
+      "avg_trade": 97.46,
+      "profit_factor": 1.3151
+    }
+  ],
+  "monthly": [
+    {
+      "period": "2025-09",
+      "pnl": -142.5,
+      "trades": 1,
+      "win_rate": 0.0
+    },
+    {
+      "period": "2025-10",
+      "pnl": 9837.5,
+      "trades": 70,
+      "win_rate": 37.14
+    },
+    {
+      "period": "2025-11",
+      "pnl": 17160.0,
+      "trades": 48,
+      "win_rate": 52.08
+    },
+    {
+      "period": "2025-12",
+      "pnl": -6235.0,
+      "trades": 72,
+      "win_rate": 36.11
+    },
+    {
+      "period": "2026-01",
+      "pnl": -1377.5,
+      "trades": 63,
+      "win_rate": 33.33
+    },
+    {
+      "period": "2026-02",
+      "pnl": -5097.5,
+      "trades": 72,
+      "win_rate": 45.83
+    },
+    {
+      "period": "2026-03",
+      "pnl": 7172.5,
+      "trades": 48,
+      "win_rate": 45.83
+    },
+    {
+      "period": "2026-04",
+      "pnl": 20710.0,
+      "trades": 38,
+      "win_rate": 55.26
+    },
+    {
+      "period": "2026-05",
+      "pnl": 7682.5,
+      "trades": 51,
+      "win_rate": 49.02
+    },
+    {
+      "period": "2026-06",
+      "pnl": -13105.0,
+      "trades": 51,
+      "win_rate": 27.45
+    }
+  ],
+  "worst_months": [
+    {
+      "period": "2026-06",
+      "pnl": -13105.0,
+      "trades": 51,
+      "win_rate": 27.45
+    },
+    {
+      "period": "2025-12",
+      "pnl": -6235.0,
+      "trades": 72,
+      "win_rate": 36.11
+    },
+    {
+      "period": "2026-02",
+      "pnl": -5097.5,
+      "trades": 72,
+      "win_rate": 45.83
+    },
+    {
+      "period": "2026-01",
+      "pnl": -1377.5,
+      "trades": 63,
+      "win_rate": 33.33
+    },
+    {
+      "period": "2025-09",
+      "pnl": -142.5,
+      "trades": 1,
+      "win_rate": 0.0
+    }
+  ],
+  "best_months": [
+    {
+      "period": "2026-04",
+      "pnl": 20710.0,
+      "trades": 38,
+      "win_rate": 55.26
+    },
+    {
+      "period": "2025-11",
+      "pnl": 17160.0,
+      "trades": 48,
+      "win_rate": 52.08
+    },
+    {
+      "period": "2025-10",
+      "pnl": 9837.5,
+      "trades": 70,
+      "win_rate": 37.14
+    },
+    {
+      "period": "2026-05",
+      "pnl": 7682.5,
+      "trades": 51,
+      "win_rate": 49.02
+    },
+    {
+      "period": "2026-03",
+      "pnl": 7172.5,
+      "trades": 48,
+      "win_rate": 45.83
+    }
+  ],
+  "conclusions": [
+    "C5 is under buy-and-hold over this export window; successor scoring should optimize excess return, not standalone net profit.",
+    "C5 is lagging buy-and-hold over the last 30 days; add recent-window excess return as a hard validation metric.",
+    "Shorts are profitable in aggregate, so do not delete them blindly; gate them more tightly during daily bull regimes.",
+    "The cap sleeve is lower quality than the whole system in this window; cap exit/hold rules should be re-optimized under TV-parity fills."
+  ],
+  "next_successor_tests": [
+    "Use TV-parity optimizer with min_trades >= 435 and excess-over-buy-hold objective.",
+    "Test daily-bull short gates instead of removing shorts entirely.",
+    "Test long-carry sleeve only as an opt-in extension, preserving C5 core/cap behavior as baseline.",
+    "Re-optimize cap min hold, max hold, target, trail, and momentum exits with exact TV fill semantics."
+  ]
+}

@@ -1,0 +1,136 @@
+//@version=6
+strategy("JD Velocity Optuna MTF Best 20260507", overlay=true, initial_capital=10000, default_qty_type=strategy.percent_of_equity, default_qty_value=100, pyramiding=0, commission_type=strategy.commission.percent, commission_value=0.02, slippage=0, process_orders_on_close=true)
+
+// Optuna source: reports/mtf_velocity_optuna_best.json
+fastLen = input.int(15, "Fast EMA", minval=1)
+slowLen = input.int(114, "Slow EMA", minval=1)
+regimeLen = input.int(223, "Regime EMA", minval=1)
+donchianLen = input.int(10, "Donchian length", minval=2)
+adxMin = input.float(2.7669, "Minimum ADX", step=0.1)
+h1MacdFloor = input.float(6.2114, "1H MACD floor", step=0.1)
+h4RsiLong = input.float(40.6669, "4H RSI floor", step=0.1)
+macdFloor = input.float(17.3609, "15m MACD floor", step=0.1)
+longExitArwo = input.float(-0.7358, "ARWO exit floor", step=0.01)
+rsiTakeLong = input.float(83.2040, "RSI take-profit exit", step=0.1)
+stopAtrMult = input.float(5.1629, "Stop ATR", step=0.1)
+targetAtrMult = input.float(12.3312, "Target ATR", step=0.1)
+trailStartAtrMult = input.float(9.0120, "Trail starts ATR", step=0.1)
+trailAtrMult = input.float(5.3581, "Trail ATR", step=0.1)
+cooldownBars = input.int(17, "Cooldown bars", minval=0)
+useDateRange = input.bool(false, "Use date range")
+startTime = input.time(1777697100000, "Start")
+endTime = input.time(4102444800000, "End")
+showSignals = input.bool(true, "Show signals")
+showDebug = input.bool(false, "Show debug plots")
+
+f_safe_div(a, b) => math.abs(b) > 1e-10 ? a / b : 0.0
+f_clip(x, lo, hi) => math.max(lo, math.min(hi, x))
+f_norm_minmax(src, len) =>
+    lowest = ta.lowest(src, len)
+    highest = ta.highest(src, len)
+    f_clip(2.0 * f_safe_div(src - lowest, highest - lowest) - 1.0, -1.0, 1.0)
+f_rsi_sma(src, len) =>
+    delta = ta.change(src)
+    gain = ta.sma(math.max(delta, 0.0), len)
+    loss = ta.sma(math.max(-delta, 0.0), len)
+    100.0 - 100.0 / (1.0 + gain / (loss + 1e-10))
+f_williams(len) => -100.0 * f_safe_div(ta.highest(high, len) - close, ta.highest(high, len) - ta.lowest(low, len))
+f_aroon_osc(len) =>
+    highBars = math.abs(ta.highestbars(high, len + 1))
+    lowBars = math.abs(ta.lowestbars(low, len + 1))
+    aroonUp = 100.0 * (len - highBars) / len
+    aroonDown = 100.0 * (len - lowBars) / len
+    aroonUp - aroonDown
+f_macdh(src) =>
+    line = ta.ema(src, 12) - ta.ema(src, 26)
+    line - ta.ema(line, 9)
+f_adx_sma(len) =>
+    prevClose = nz(close[1], close)
+    tr = math.max(high - low, math.max(math.abs(high - prevClose), math.abs(low - prevClose)))
+    atrS = ta.sma(tr, len)
+    upMove = high - nz(high[1], high)
+    downMove = nz(low[1], low) - low
+    plusDm = upMove > downMove and upMove > 0.0 ? upMove : 0.0
+    minusDm = downMove > upMove and downMove > 0.0 ? downMove : 0.0
+    plusDi = 100.0 * f_safe_div(ta.sma(plusDm, len), atrS)
+    minusDi = 100.0 * f_safe_div(ta.sma(minusDm, len), atrS)
+    dx = 100.0 * f_safe_div(math.abs(plusDi - minusDi), plusDi + minusDi)
+    ta.sma(dx, len)
+
+emaFast = ta.ema(close, fastLen)
+emaSlow = ta.ema(close, slowLen)
+emaRegime = ta.ema(close, regimeLen)
+macdHist = f_macdh(close)
+rsi14 = f_rsi_sma(close, 14)
+atr14 = ta.ema(ta.tr(true), 14)
+adx14 = f_adx_sma(14)
+donHigh = ta.highest(high, donchianLen)[1]
+
+newDay = timeframe.change("D")
+var float cumPv = na
+var float cumVol = na
+if newDay or na(cumPv)
+    cumPv := hlc3 * volume
+    cumVol := volume
+else
+    cumPv += hlc3 * volume
+    cumVol += volume
+sessionVwap = cumPv / math.max(cumVol, 1.0)
+
+rocNorm = f_norm_minmax(ta.roc(close, 10), 50)
+macdNorm = f_norm_minmax(macdHist, 50)
+aroonNorm = f_aroon_osc(25) / 100.0
+trendComponent = (rocNorm + macdNorm + aroonNorm) / 3.0
+rsiNorm = (rsi14 - 50.0) / 50.0
+stochNorm = (ta.stoch(close, high, low, 14) - 50.0) / 50.0
+willNorm = (f_williams(14) + 50.0) / 50.0
+reversionComponent = (rsiNorm + stochNorm + willNorm) / 3.0
+arwo = f_clip(ta.sma(f_clip(adx14 / 100.0, 0.0, 1.0) * trendComponent + (1.0 - f_clip(adx14 / 100.0, 0.0, 1.0)) * reversionComponent, 3), -1.0, 1.0)
+
+h1EmaFast = request.security(syminfo.tickerid, "60", ta.ema(close, 21), barmerge.gaps_off, barmerge.lookahead_off)
+h1EmaSlow = request.security(syminfo.tickerid, "60", ta.ema(close, 55), barmerge.gaps_off, barmerge.lookahead_off)
+h1Macdh = request.security(syminfo.tickerid, "60", f_macdh(close), barmerge.gaps_off, barmerge.lookahead_off)
+h4EmaFast = request.security(syminfo.tickerid, "240", ta.ema(close, 21), barmerge.gaps_off, barmerge.lookahead_off)
+h4EmaSlow = request.security(syminfo.tickerid, "240", ta.ema(close, 55), barmerge.gaps_off, barmerge.lookahead_off)
+h4Rsi = request.security(syminfo.tickerid, "240", f_rsi_sma(close, 14), barmerge.gaps_off, barmerge.lookahead_off)
+
+inRange = not useDateRange or (time >= startTime and time <= endTime)
+trendLong = emaFast > emaSlow and close > emaRegime and adx14 > adxMin
+h1Bull = h1EmaFast > h1EmaSlow and h1Macdh > h1MacdFloor
+h4Bull = h4EmaFast > h4EmaSlow and h4Rsi > h4RsiLong
+breakoutLong = close > donHigh and macdHist > macdFloor
+
+var int lastExitBar = na
+if strategy.position_size == 0 and strategy.position_size[1] > 0
+    lastExitBar := bar_index
+cooldownOk = na(lastExitBar) or bar_index - lastExitBar >= cooldownBars
+
+longSignal = inRange and cooldownOk and strategy.position_size == 0 and trendLong and h1Bull and h4Bull and breakoutLong and close > sessionVwap
+longExit = strategy.position_size > 0 and (emaFast < emaSlow or arwo < longExitArwo or rsi14 > rsiTakeLong or (useDateRange and time > endTime))
+
+var float highWater = na
+if strategy.position_size > 0
+    highWater := na(highWater) ? high : math.max(highWater, high)
+else
+    highWater := na
+
+if longSignal
+    strategy.entry("Long", strategy.long)
+if strategy.position_size > 0
+    initialStop = strategy.position_avg_price - stopAtrMult * atr14
+    target = strategy.position_avg_price + targetAtrMult * atr14
+    trailActive = highWater >= strategy.position_avg_price + trailStartAtrMult * atr14
+    trailStop = highWater - trailAtrMult * atr14
+    activeStop = trailActive ? math.max(initialStop, trailStop) : initialStop
+    strategy.exit("Long Risk", "Long", stop=activeStop, limit=target)
+if longExit
+    strategy.close("Long", comment="Signal exit")
+
+plot(emaFast, "EMA Fast", color=color.new(color.aqua, 0))
+plot(emaSlow, "EMA Slow", color=color.new(color.orange, 0))
+plot(emaRegime, "EMA Regime", color=color.new(color.white, 20), linewidth=2)
+plot(sessionVwap, "Session VWAP", color=color.new(color.purple, 25))
+plotshape(showSignals and longSignal, "Long", shape.triangleup, location.belowbar, color=color.lime, size=size.tiny, text="L")
+plot(showDebug ? arwo : na, "ARWO", color=color.new(color.aqua, 0), display=display.pane)
+plot(showDebug ? h1Macdh : na, "1H MACD Hist", color=color.new(color.orange, 0), display=display.pane)
+hline(0, "Zero", color=color.gray)

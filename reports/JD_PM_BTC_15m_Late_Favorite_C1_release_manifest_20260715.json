@@ -1,0 +1,27 @@
+{
+  "strategy_name": "JD PM BTC 15m Late Favorite C1",
+  "release_date": "2026-07-15",
+  "status": "paper_only",
+  "files": {
+    "strategy": {
+      "path": "polymarket/JD_PM_BTC_15m_Late_Favorite_C1.py",
+      "sha256": "a80def4a6a2654fa43db7fc0dc3b3f3164676393c15a8db5b42c235a7cc6636c"
+    },
+    "configuration": {
+      "path": "polymarket/JD_PM_BTC_15m_Late_Favorite_C1.json",
+      "sha256": "8ddd448b6c313cc4996437ff829f2aa6d363351786ab35423ddddfc0f38bab33"
+    },
+    "backtest": {
+      "path": "reports/JD_PM_BTC_15m_Late_Favorite_C1_backtest_20260715.json",
+      "sha256": "d807761697065a4d0020adf919e4d7f3804a6b9e11f1fa809bb8b0b9bf594ef9"
+    },
+    "validation": {
+      "path": "reports/JD_PM_BTC_15m_Late_Favorite_C1_validation_20260715.md",
+      "sha256": "b9debad1765b350bc64dfd63aa9ce73fb52ff897d20d116b802743ec44b0f33a"
+    },
+    "data_manifest": {
+      "path": "data/polymarket_crypto/btc_15m/manifest.json",
+      "sha256": "c1a54f1aa41885cb1710bf21d8828a0c8d98808df3387df6ce8b477b9471c095"
+    }
+  }
+}

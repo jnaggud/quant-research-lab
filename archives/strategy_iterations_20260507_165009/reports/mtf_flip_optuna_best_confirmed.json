@@ -1,0 +1,56 @@
+{
+  "source_data": "tmp/bitstamp_btcusd_15m_20250930_20260507.json",
+  "rows": 21065,
+  "start": "2025-09-30 00:00:00+00:00",
+  "end": "2026-05-07 10:00:00+00:00",
+  "best_score": -13.171116249875398,
+  "params": {
+    "tf": "1D",
+    "fast": 15,
+    "slow": 34,
+    "confirm": "240min",
+    "confirm_fast": 6,
+    "confirm_slow": 10,
+    "hold_bars": 2,
+    "cost_bps": 4.0
+  },
+  "metrics": {
+    "full": {
+      "total_return": 33.886528680219975,
+      "n_trades": 50,
+      "win_rate": 40.0,
+      "profit_factor": 1.7301532440961427,
+      "max_drawdown": 12.687804873263891
+    },
+    "q1": {
+      "total_return": 15.272721148092527,
+      "n_trades": 10,
+      "win_rate": 50.0,
+      "profit_factor": 2.472034985772324,
+      "max_drawdown": 6.93008436896609
+    },
+    "q2": {
+      "total_return": -8.002084895001305,
+      "n_trades": 15,
+      "win_rate": 20.0,
+      "profit_factor": 0.516315219821882,
+      "max_drawdown": 12.687804873263897
+    },
+    "q3": {
+      "total_return": 21.074114702983326,
+      "n_trades": 12,
+      "win_rate": 58.333333333333336,
+      "profit_factor": 4.264898864106496,
+      "max_drawdown": 3.569019443409132
+    },
+    "q4": {
+      "total_return": 4.27520416566578,
+      "n_trades": 13,
+      "win_rate": 38.46153846153847,
+      "profit_factor": 1.4099509385794964,
+      "max_drawdown": 6.747603665240811
+    }
+  },
+  "cpu_jobs": 32,
+  "trials": 3000
+}

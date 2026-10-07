@@ -1,0 +1,49 @@
+:root { color-scheme: dark; font-family: Inter, "Helvetica Neue", Arial, sans-serif; background: #070a0d; color: #f1f4f6; }
+* { box-sizing: border-box; }
+body { margin: 0; background: #070a0d; }
+main { max-width: 1680px; margin: auto; padding: 26px 34px 50px; }
+header { min-height: 112px; display: flex; justify-content: space-between; align-items: flex-start; border-bottom: 1px solid #273039; padding: 8px 0 24px; }
+h1 { max-width: 820px; font-size: 46px; line-height: 1.02; margin: 12px 0 0; font-weight: 620; letter-spacing: 0; }
+h2 { font-size: 15px; margin: 7px 0 0; font-weight: 650; letter-spacing: 0; }
+.kicker { color: #788894; font: 700 10px/1.2 ui-monospace, SFMono-Regular, Menlo, monospace; }
+.status { margin-top: 5px; font-size: 11px; font-weight: 750; padding-left: 16px; position: relative; }
+.status:before { content: ''; width: 8px; height: 8px; border-radius: 50%; position: absolute; left: 0; top: 2px; }
+.status.live { color: #43d08d; } .status.live:before { background: #43d08d; box-shadow: 0 0 12px #43d08d; }
+.status.offline { color: #f06464; } .status.offline:before { background: #f06464; }
+.status.degraded { color: #f0ae3d; } .status.degraded:before { background: #f0ae3d; }
+.summary-grid { display: grid; grid-template-columns: repeat(4, 1fr); border-bottom: 1px solid #273039; }
+.summary-grid > div { min-height: 116px; padding: 24px 24px 20px; border-right: 1px solid #273039; }
+.summary-grid > div:first-child { padding-left: 0; } .summary-grid > div:last-child { border-right: 0; }
+.summary-grid span { color: #71808c; display: block; font: 700 10px ui-monospace, SFMono-Regular, Menlo, monospace; margin-bottom: 12px; }
+.summary-grid strong { display: block; font-size: 31px; line-height: 1; letter-spacing: 0; font-variant-numeric: tabular-nums; }
+.summary-grid i { color: #778590; display: block; font-style: normal; font-size: 10px; margin-top: 9px; }
+.hero-grid { display: grid; grid-template-columns: minmax(0, 3fr) minmax(300px, 1fr); margin-top: 24px; border: 1px solid #273039; background: #0c1014; }
+.simulation-stage { min-width: 0; padding: 24px 24px 0; border-right: 1px solid #273039; }
+.simulation-stage h2 { font-size: 24px; }
+.hero-grid aside { background: #101419; }
+.hero-grid aside > div:first-child { padding: 24px 22px 17px; border-bottom: 1px solid #273039; }
+.state-word { font-size: 58px; font-weight: 720; line-height: 1; margin-top: 16px; letter-spacing: 0; }
+.state-word.trend { color: #49a9f8; } .state-word.chop { color: #f0ae3d; } .state-word.stress { color: #f06464; }
+.formula { color: #8795a0; font: 500 12px ui-monospace, SFMono-Regular, Menlo, monospace; margin-top: 12px; }
+.hero-grid aside .dash-graph { border-bottom: 1px solid #273039; }
+.panel { background: #0c1014; margin-top: 24px; border: 1px solid #273039; padding-top: 20px; }
+.section-head { display: flex; justify-content: space-between; align-items: flex-end; padding: 0 22px; }
+#freshness { color: #687782; font: 500 10px ui-monospace, SFMono-Regular, Menlo, monospace; }
+.method-grid { display: grid; grid-template-columns: 1fr 1.25fr 1fr; border: 1px solid #273039; margin-top: 24px; }
+.method-grid > div { min-height: 158px; padding: 24px; border-right: 1px solid #273039; }
+.method-grid > div:last-child { border-right: 0; }
+.big-formula { color: #dbe2e7; font: 500 22px ui-monospace, SFMono-Regular, Menlo, monospace; margin-top: 26px; white-space: nowrap; }
+ul { padding-left: 16px; margin: 12px 0 0; color: #93a0aa; font: 500 11px/1.8 ui-monospace, SFMono-Regular, Menlo, monospace; }
+.error { color: #f06464; padding: 24px 0; }
+@media (max-width: 980px) {
+  main { padding: 20px; } h1 { font-size: 36px; }
+  .hero-grid { grid-template-columns: 1fr; } .simulation-stage { border-right: 0; border-bottom: 1px solid #273039; }
+  .hero-grid aside { display: grid; grid-template-columns: repeat(2, 1fr); } .hero-grid aside > div:first-child { grid-column: 1 / -1; }
+  .method-grid { grid-template-columns: 1fr; } .method-grid > div { border-right: 0; border-bottom: 1px solid #273039; }
+}
+@media (max-width: 650px) {
+  main { padding: 14px; } header { min-height: 102px; } h1 { font-size: 29px; }
+  .summary-grid { grid-template-columns: repeat(2, 1fr); } .summary-grid > div:first-child { padding-left: 18px; }
+  .hero-grid aside { grid-template-columns: 1fr; } .state-word { font-size: 46px; }
+  #freshness { display: none; } .big-formula { font-size: 15px; white-space: normal; }
+}

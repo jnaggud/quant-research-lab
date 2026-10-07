@@ -1,0 +1,85 @@
+{
+  "summary": {
+    "data_start": "2026-05-11T22:00:00+00:00",
+    "data_end": "2026-05-19T07:45:00+00:00",
+    "truth_method": "scipy_price",
+    "truth_prominence_threshold": 1.0117607999999998,
+    "bars": 500,
+    "truth_valleys": 7,
+    "truth_peaks": 8,
+    "strategy_long_entries": 3,
+    "strategy_short_entries": 0,
+    "strategy_exits": 2,
+    "missed_truth_valleys": 7,
+    "matched_truth_valleys": 0,
+    "missed_truth_peak_exits": 7,
+    "top_long_entry_blockers": [
+      [
+        "core_price_below_ema55",
+        7
+      ],
+      [
+        "core_rsi_low",
+        7
+      ],
+      [
+        "sleeve_allowed_false",
+        7
+      ],
+      [
+        "core_trend_state_false",
+        5
+      ],
+      [
+        "sleeve_rsi_too_high",
+        4
+      ],
+      [
+        "core_volume_low",
+        3
+      ],
+      [
+        "sleeve_vwap_not_deep",
+        2
+      ],
+      [
+        "already_in_position",
+        2
+      ],
+      [
+        "sleeve_location_false",
+        1
+      ]
+    ],
+    "context": {
+      "start": "2026-05-18T00:00:00Z",
+      "end": "2026-05-19T00:00:00Z",
+      "truth_valleys": 2,
+      "truth_peaks": 3,
+      "long_entries": 2,
+      "exits": 1
+    }
+  },
+  "trades": [
+    {
+      "side": "long",
+      "kind": "core",
+      "entry_time": "2026-05-15T10:00:00+00:00",
+      "exit_time": "2026-05-15T13:00:00+00:00",
+      "entry": 100.19,
+      "exit": 99.49,
+      "bars": 12,
+      "reason": "core_momentum"
+    },
+    {
+      "side": "long",
+      "kind": "sleeve",
+      "entry_time": "2026-05-18T07:15:00+00:00",
+      "exit_time": "2026-05-18T11:00:00+00:00",
+      "entry": 102.12,
+      "exit": 103.064989406696,
+      "bars": 15,
+      "reason": "target"
+    }
+  ]
+}

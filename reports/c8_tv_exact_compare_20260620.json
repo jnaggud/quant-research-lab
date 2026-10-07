@@ -1,0 +1,86 @@
+{
+  "success": true,
+  "params_source": "reports/c8_successor_200k_20260618.json",
+  "rank": 1,
+  "data": {
+    "bars_15m": "reports/tv_es1_15m_bars_20260620.json",
+    "bars_daily": "reports/tv_es1_1d_bars_20260620.json",
+    "bars_h4": "reports/tv_es1_240m_bars_20260620.json",
+    "bar_count": 20840,
+    "first_bar": "2025-07-31T22:00:00+00:00",
+    "last_bar": "2026-06-19T09:45:00+00:00",
+    "exclude_tail_bars": 0,
+    "end_bar_exclusive": 20840
+  },
+  "local": {
+    "engine": {
+      "net_profit": 101007.5,
+      "profit_factor": 1.5613788887190674,
+      "max_drawdown_pct": 14.193971524608532,
+      "n_trades": 481,
+      "win_rate": 43.24324324324324
+    },
+    "from_rows": {
+      "trades": 480,
+      "net": 100812.5,
+      "wins": 207,
+      "losses": 273,
+      "win_rate": 43.125,
+      "gross_profit": 280740.0,
+      "gross_loss": -179927.5,
+      "profit_factor": 1.5602951188673215
+    }
+  },
+  "tradingview": {
+    "completed": {
+      "trades": 480,
+      "net": 100812.5,
+      "wins": 207,
+      "losses": 273,
+      "win_rate": 43.125,
+      "gross_profit": 280740.0,
+      "gross_loss": -179927.5,
+      "profit_factor": 1.5602951188673215
+    },
+    "open_mark_count": 1,
+    "open_marks": [
+      {
+        "entry_bar": 20830,
+        "exit_bar": 20839,
+        "direction": 1,
+        "kind": "core",
+        "entry_time_ms": 1781855700327,
+        "exit_time_ms": 1781863710145,
+        "entry_price": 7551.0,
+        "exit_price": 7555.5,
+        "pnl": 220.0,
+        "cumulative_pnl": 101030.0,
+        "entry_signal": "Core Long",
+        "exit_signal": ""
+      }
+    ]
+  },
+  "local_open_mark_count": 1,
+  "local_open_marks": [
+    {
+      "entry_bar": 20830,
+      "exit_bar": 20839,
+      "direction": 1,
+      "kind": "core",
+      "entry_time_ms": 1781854200000,
+      "exit_time_ms": 1781862300000,
+      "entry_price": 7551.0,
+      "exit_price": 7555.0,
+      "pnl": 195.0,
+      "exit_reason": "end_of_data"
+    }
+  ],
+  "deltas": {
+    "completed_trade_count": 0,
+    "completed_net": 0.0,
+    "completed_profit_factor": 0.0,
+    "date_filtered_buy_hold_local_window": 42200.0
+  },
+  "mismatch_count_reported": 0,
+  "mismatches": []
+}

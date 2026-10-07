@@ -1,0 +1,11 @@
+{
+  "data": "tmp/tv_es1_15m_loaded_full_raw.json",
+  "coverage_start": "2025-06-30T22:00:00+00:00",
+  "coverage_end": "2026-05-08T11:30:00+00:00",
+  "prominence_pct": 1.0,
+  "distance": 5,
+  "absolute_prominence": 67.835,
+  "peaks": 49,
+  "valleys": 55,
+  "pine": "pine_strategies/JD_ES_15m_SciPy_Truth_Markers_20260519.pine"
+}

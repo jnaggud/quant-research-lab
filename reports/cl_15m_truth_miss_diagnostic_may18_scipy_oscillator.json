@@ -1,0 +1,101 @@
+{
+  "summary": {
+    "data_start": "2026-05-11T22:00:00+00:00",
+    "data_end": "2026-05-19T07:45:00+00:00",
+    "truth_method": "scipy_oscillator",
+    "truth_prominence_threshold": 0.15,
+    "bars": 500,
+    "truth_valleys": 179,
+    "truth_peaks": 166,
+    "strategy_long_entries": 3,
+    "strategy_short_entries": 0,
+    "strategy_exits": 2,
+    "missed_truth_valleys": 174,
+    "matched_truth_valleys": 5,
+    "missed_truth_peak_exits": 164,
+    "top_long_entry_blockers": [
+      [
+        "sleeve_allowed_false",
+        157
+      ],
+      [
+        "sleeve_rsi_too_high",
+        133
+      ],
+      [
+        "sleeve_vwap_not_deep",
+        127
+      ],
+      [
+        "sleeve_location_false",
+        113
+      ],
+      [
+        "core_rsi_low",
+        110
+      ],
+      [
+        "sleeve_stoch_false",
+        102
+      ],
+      [
+        "core_trend_state_false",
+        91
+      ],
+      [
+        "core_volume_low",
+        85
+      ],
+      [
+        "core_price_below_ema55",
+        65
+      ],
+      [
+        "sleeve_daily_bearish",
+        32
+      ],
+      [
+        "already_in_position",
+        21
+      ],
+      [
+        "core_pullback_false",
+        12
+      ],
+      [
+        "core_direction_false",
+        6
+      ]
+    ],
+    "context": {
+      "start": "2026-05-18T00:00:00Z",
+      "end": "2026-05-19T00:00:00Z",
+      "truth_valleys": 39,
+      "truth_peaks": 36,
+      "long_entries": 2,
+      "exits": 1
+    }
+  },
+  "trades": [
+    {
+      "side": "long",
+      "kind": "core",
+      "entry_time": "2026-05-15T10:00:00+00:00",
+      "exit_time": "2026-05-15T13:00:00+00:00",
+      "entry": 100.19,
+      "exit": 99.49,
+      "bars": 12,
+      "reason": "core_momentum"
+    },
+    {
+      "side": "long",
+      "kind": "sleeve",
+      "entry_time": "2026-05-18T07:15:00+00:00",
+      "exit_time": "2026-05-18T11:00:00+00:00",
+      "entry": 102.12,
+      "exit": 103.064989406696,
+      "bars": 15,
+      "reason": "target"
+    }
+  ]
+}

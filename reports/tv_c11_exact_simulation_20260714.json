@@ -1,0 +1,2491 @@
+{
+  "integrity": {
+    "trades": 469,
+    "realized_pnl": 126905.0,
+    "pine_sha256": "f78e404927533c2f37e3b391f3d0e82f98eadeafdb8a90edf637ef90de8611d6",
+    "frozen_pine_sha256": "f78e404927533c2f37e3b391f3d0e82f98eadeafdb8a90edf637ef90de8611d6",
+    "bar_count": 20494,
+    "missing_trade_timestamps": 0
+  },
+  "historical": {
+    "days": 247,
+    "start": "2025-09-30",
+    "end": "2026-07-14",
+    "total_pnl": 126905.0,
+    "total_return": 2.5381,
+    "max_drawdown": -0.08456460232631247,
+    "annualized_sharpe": 4.156898533630726
+  },
+  "sweep": [
+    {
+      "group": "block_days",
+      "label": "5",
+      "risk": 1.0,
+      "regime_column": "regime_4",
+      "spec": {
+        "n_paths": 20000,
+        "horizon_days": 756,
+        "mean_block_days": 5,
+        "bootstrap_method": "regime",
+        "equity_mode": "fixed_notional",
+        "extra_slippage_ticks": 0.0,
+        "slippage_cost_per_trade_return": 0.0005,
+        "missed_trade_probability": 0.0,
+        "synchronized_loss_probability": 0.0,
+        "gap_shock_probability": 0.0,
+        "gap_shock_multiplier": 2.0,
+        "starting_equity": 1.0,
+        "ruin_level": 0.5
+      },
+      "summary": {
+        "paths": 20000,
+        "probability_profitable": 1.0,
+        "probability_ruin_50pct": 5e-05,
+        "probability_drawdown_20pct": 0.06575,
+        "probability_drawdown_30pct": 0.0073,
+        "probability_drawdown_50pct": 5e-05,
+        "return_quantiles": {
+          "0.01": 5.5437925,
+          "0.05": 6.160380000000002,
+          "0.25": 7.065225000000002,
+          "0.5": 7.704900000000002,
+          "0.75": 8.3725375,
+          "0.95": 9.401300000000008,
+          "0.99": 10.114408999999986
+        },
+        "max_drawdown_quantiles": {
+          "0.01": -0.28480820319743344,
+          "0.05": -0.21208358253294682,
+          "0.25": -0.14101265254752643,
+          "0.5": -0.11001469132240116,
+          "0.75": -0.08769297752863325,
+          "0.95": -0.0655252483433389,
+          "0.99": -0.053759900666790886
+        },
+        "recovery_days_quantiles": {
+          "0.01": 20.0,
+          "0.05": 24.0,
+          "0.25": 32.0,
+          "0.5": 40.0,
+          "0.75": 52.0,
+          "0.95": 75.04999999999927,
+          "0.99": 100.0
+        }
+      }
+    },
+    {
+      "group": "block_days",
+      "label": "10",
+      "risk": 1.0,
+      "regime_column": "regime_4",
+      "spec": {
+        "n_paths": 20000,
+        "horizon_days": 756,
+        "mean_block_days": 10,
+        "bootstrap_method": "regime",
+        "equity_mode": "fixed_notional",
+        "extra_slippage_ticks": 0.0,
+        "slippage_cost_per_trade_return": 0.0005,
+        "missed_trade_probability": 0.0,
+        "synchronized_loss_probability": 0.0,
+        "gap_shock_probability": 0.0,
+        "gap_shock_multiplier": 2.0,
+        "starting_equity": 1.0,
+        "ruin_level": 0.5
+      },
+      "summary": {
+        "paths": 20000,
+        "probability_profitable": 1.0,
+        "probability_ruin_50pct": 5e-05,
+        "probability_drawdown_20pct": 0.03335,
+        "probability_drawdown_30pct": 0.00275,
+        "probability_drawdown_50pct": 5e-05,
+        "return_quantiles": {
+          "0.01": 5.669496000000001,
+          "0.05": 6.24807500000001,
+          "0.25": 7.082424999999999,
+          "0.5": 7.668724999999997,
+          "0.75": 8.281350000000007,
+          "0.95": 9.195467500000007,
+          "0.99": 9.934152000000006
+        },
+        "max_drawdown_quantiles": {
+          "0.01": -0.24720187167202454,
+          "0.05": -0.18560802910491428,
+          "0.25": -0.129536446758907,
+          "0.5": -0.10415856536543455,
+          "0.75": -0.08532976349279861,
+          "0.95": -0.06421522388044008,
+          "0.99": -0.05357167188364818
+        },
+        "recovery_days_quantiles": {
+          "0.01": 18.0,
+          "0.05": 23.0,
+          "0.25": 30.0,
+          "0.5": 36.0,
+          "0.75": 46.0,
+          "0.95": 66.0,
+          "0.99": 87.0099999999984
+        }
+      }
+    },
+    {
+      "group": "block_days",
+      "label": "20",
+      "risk": 1.0,
+      "regime_column": "regime_4",
+      "spec": {
+        "n_paths": 20000,
+        "horizon_days": 756,
+        "mean_block_days": 20,
+        "bootstrap_method": "regime",
+        "equity_mode": "fixed_notional",
+        "extra_slippage_ticks": 0.0,
+        "slippage_cost_per_trade_return": 0.0005,
+        "missed_trade_probability": 0.0,
+        "synchronized_loss_probability": 0.0,
+        "gap_shock_probability": 0.0,
+        "gap_shock_multiplier": 2.0,
+        "starting_equity": 1.0,
+        "ruin_level": 0.5
+      },
+      "summary": {
+        "paths": 20000,
+        "probability_profitable": 1.0,
+        "probability_ruin_50pct": 0.0,
+        "probability_drawdown_20pct": 0.01415,
+        "probability_drawdown_30pct": 0.0006,
+        "probability_drawdown_50pct": 0.0,
+        "return_quantiles": {
+          "0.01": 5.743291500000005,
+          "0.05": 6.296632500000001,
+          "0.25": 7.062287500000002,
+          "0.5": 7.597349999999999,
+          "0.75": 8.1503125,
+          "0.95": 8.978717500000004,
+          "0.99": 9.614616999999997
+        },
+        "max_drawdown_quantiles": {
+          "0.01": -0.21028192338593013,
+          "0.05": -0.16349264778572417,
+          "0.25": -0.12310458723104009,
+          "0.5": -0.10108362134085913,
+          "0.75": -0.08536351429119504,
+          "0.95": -0.06419944674583304,
+          "0.99": -0.053349078781104835
+        },
+        "recovery_days_quantiles": {
+          "0.01": 17.0,
+          "0.05": 23.0,
+          "0.25": 31.0,
+          "0.5": 36.0,
+          "0.75": 42.0,
+          "0.95": 59.0,
+          "0.99": 75.0
+        }
+      }
+    },
+    {
+      "group": "block_days",
+      "label": "40",
+      "risk": 1.0,
+      "regime_column": "regime_4",
+      "spec": {
+        "n_paths": 20000,
+        "horizon_days": 756,
+        "mean_block_days": 40,
+        "bootstrap_method": "regime",
+        "equity_mode": "fixed_notional",
+        "extra_slippage_ticks": 0.0,
+        "slippage_cost_per_trade_return": 0.0005,
+        "missed_trade_probability": 0.0,
+        "synchronized_loss_probability": 0.0,
+        "gap_shock_probability": 0.0,
+        "gap_shock_multiplier": 2.0,
+        "starting_equity": 1.0,
+        "ruin_level": 0.5
+      },
+      "summary": {
+        "paths": 20000,
+        "probability_profitable": 1.0,
+        "probability_ruin_50pct": 0.0,
+        "probability_drawdown_20pct": 0.00805,
+        "probability_drawdown_30pct": 0.0004,
+        "probability_drawdown_50pct": 0.0,
+        "return_quantiles": {
+          "0.01": 5.886248500000002,
+          "0.05": 6.397489999999998,
+          "0.25": 7.073187500000007,
+          "0.5": 7.542250000000003,
+          "0.75": 8.020062500000002,
+          "0.95": 8.707460000000005,
+          "0.99": 9.179473499999999
+        },
+        "max_drawdown_quantiles": {
+          "0.01": -0.1949535377201616,
+          "0.05": -0.14745746147965164,
+          "0.25": -0.11836147433456057,
+          "0.5": -0.09936221279476454,
+          "0.75": -0.08742803588164416,
+          "0.95": -0.06553769706866627,
+          "0.99": -0.05483931071415043
+        },
+        "recovery_days_quantiles": {
+          "0.01": 18.0,
+          "0.05": 26.0,
+          "0.25": 32.0,
+          "0.5": 36.0,
+          "0.75": 41.0,
+          "0.95": 54.04999999999927,
+          "0.99": 69.0
+        }
+      }
+    },
+    {
+      "group": "block_days",
+      "label": "60",
+      "risk": 1.0,
+      "regime_column": "regime_4",
+      "spec": {
+        "n_paths": 20000,
+        "horizon_days": 756,
+        "mean_block_days": 60,
+        "bootstrap_method": "regime",
+        "equity_mode": "fixed_notional",
+        "extra_slippage_ticks": 0.0,
+        "slippage_cost_per_trade_return": 0.0005,
+        "missed_trade_probability": 0.0,
+        "synchronized_loss_probability": 0.0,
+        "gap_shock_probability": 0.0,
+        "gap_shock_multiplier": 2.0,
+        "starting_equity": 1.0,
+        "ruin_level": 0.5
+      },
+      "summary": {
+        "paths": 20000,
+        "probability_profitable": 1.0,
+        "probability_ruin_50pct": 0.0,
+        "probability_drawdown_20pct": 0.0045,
+        "probability_drawdown_30pct": 0.0001,
+        "probability_drawdown_50pct": 0.0,
+        "return_quantiles": {
+          "0.01": 5.993843500000002,
+          "0.05": 6.447395000000009,
+          "0.25": 7.0837625000000095,
+          "0.5": 7.512825000000003,
+          "0.75": 7.9320125000000035,
+          "0.95": 8.5412075,
+          "0.99": 8.980756000000007
+        },
+        "max_drawdown_quantiles": {
+          "0.01": -0.17728620746022092,
+          "0.05": -0.1411445485939814,
+          "0.25": -0.11536290322580633,
+          "0.5": -0.09873623270262655,
+          "0.75": -0.08824052659669113,
+          "0.95": -0.06660045655131297,
+          "0.99": -0.056152970751405996
+        },
+        "recovery_days_quantiles": {
+          "0.01": 21.0,
+          "0.05": 28.0,
+          "0.25": 32.0,
+          "0.5": 36.0,
+          "0.75": 41.0,
+          "0.95": 52.0,
+          "0.99": 67.0
+        }
+      }
+    },
+    {
+      "group": "horizon_days",
+      "label": "252",
+      "risk": 1.0,
+      "regime_column": "regime_4",
+      "spec": {
+        "n_paths": 20000,
+        "horizon_days": 252,
+        "mean_block_days": 20,
+        "bootstrap_method": "regime",
+        "equity_mode": "fixed_notional",
+        "extra_slippage_ticks": 0.0,
+        "slippage_cost_per_trade_return": 0.0005,
+        "missed_trade_probability": 0.0,
+        "synchronized_loss_probability": 0.0,
+        "gap_shock_probability": 0.0,
+        "gap_shock_multiplier": 2.0,
+        "starting_equity": 1.0,
+        "ruin_level": 0.5
+      },
+      "summary": {
+        "paths": 20000,
+        "probability_profitable": 1.0,
+        "probability_ruin_50pct": 0.0,
+        "probability_drawdown_20pct": 0.01585,
+        "probability_drawdown_30pct": 0.0006,
+        "probability_drawdown_50pct": 0.0,
+        "return_quantiles": {
+          "0.01": 1.5108329999999996,
+          "0.05": 1.7940924999999994,
+          "0.25": 2.2304374999999994,
+          "0.5": 2.548225,
+          "0.75": 2.8696000000000006,
+          "0.95": 3.3656025000000014,
+          "0.99": 3.7413514999999924
+        },
+        "max_drawdown_quantiles": {
+          "0.01": -0.21750141801873094,
+          "0.05": -0.1645240091514677,
+          "0.25": -0.12327486879939611,
+          "0.5": -0.1008030364981568,
+          "0.75": -0.08484040754881692,
+          "0.95": -0.06372011956773031,
+          "0.99": -0.05280618006180628
+        },
+        "recovery_days_quantiles": {
+          "0.01": 9.0,
+          "0.05": 13.0,
+          "0.25": 18.0,
+          "0.5": 26.0,
+          "0.75": 33.0,
+          "0.95": 47.0,
+          "0.99": 62.0
+        }
+      }
+    },
+    {
+      "group": "horizon_days",
+      "label": "756",
+      "risk": 1.0,
+      "regime_column": "regime_4",
+      "spec": {
+        "n_paths": 20000,
+        "horizon_days": 756,
+        "mean_block_days": 20,
+        "bootstrap_method": "regime",
+        "equity_mode": "fixed_notional",
+        "extra_slippage_ticks": 0.0,
+        "slippage_cost_per_trade_return": 0.0005,
+        "missed_trade_probability": 0.0,
+        "synchronized_loss_probability": 0.0,
+        "gap_shock_probability": 0.0,
+        "gap_shock_multiplier": 2.0,
+        "starting_equity": 1.0,
+        "ruin_level": 0.5
+      },
+      "summary": {
+        "paths": 20000,
+        "probability_profitable": 1.0,
+        "probability_ruin_50pct": 0.0,
+        "probability_drawdown_20pct": 0.0167,
+        "probability_drawdown_30pct": 0.00065,
+        "probability_drawdown_50pct": 0.0,
+        "return_quantiles": {
+          "0.01": 5.781548999999998,
+          "0.05": 6.300095000000004,
+          "0.25": 7.070874999999996,
+          "0.5": 7.613975000000002,
+          "0.75": 8.167050000000007,
+          "0.95": 8.983707500000001,
+          "0.99": 9.5671615
+        },
+        "max_drawdown_quantiles": {
+          "0.01": -0.21787173128849444,
+          "0.05": -0.1642436965572977,
+          "0.25": -0.12380488668555234,
+          "0.5": -0.10086400630402004,
+          "0.75": -0.08540330586632133,
+          "0.95": -0.06389939045567018,
+          "0.99": -0.05279538631179739
+        },
+        "recovery_days_quantiles": {
+          "0.01": 17.0,
+          "0.05": 23.0,
+          "0.25": 30.0,
+          "0.5": 35.0,
+          "0.75": 42.0,
+          "0.95": 59.0,
+          "0.99": 76.0099999999984
+        }
+      }
+    },
+    {
+      "group": "horizon_days",
+      "label": "1260",
+      "risk": 1.0,
+      "regime_column": "regime_4",
+      "spec": {
+        "n_paths": 20000,
+        "horizon_days": 1260,
+        "mean_block_days": 20,
+        "bootstrap_method": "regime",
+        "equity_mode": "fixed_notional",
+        "extra_slippage_ticks": 0.0,
+        "slippage_cost_per_trade_return": 0.0005,
+        "missed_trade_probability": 0.0,
+        "synchronized_loss_probability": 0.0,
+        "gap_shock_probability": 0.0,
+        "gap_shock_multiplier": 2.0,
+        "starting_equity": 1.0,
+        "ruin_level": 0.5
+      },
+      "summary": {
+        "paths": 20000,
+        "probability_profitable": 1.0,
+        "probability_ruin_50pct": 0.0,
+        "probability_drawdown_20pct": 0.01555,
+        "probability_drawdown_30pct": 0.0011,
+        "probability_drawdown_50pct": 0.0,
+        "return_quantiles": {
+          "0.01": 10.277971500000033,
+          "0.05": 10.969920000000034,
+          "0.25": 11.98883750000001,
+          "0.5": 12.700425000000024,
+          "0.75": 13.40921250000002,
+          "0.95": 14.412010000000018,
+          "0.99": 15.131060500000043
+        },
+        "max_drawdown_quantiles": {
+          "0.01": -0.21471064585644542,
+          "0.05": -0.16281464857686828,
+          "0.25": -0.12293368356959186,
+          "0.5": -0.10059635907093534,
+          "0.75": -0.08498372652638969,
+          "0.95": -0.06384950424994447,
+          "0.99": -0.05325188036463087
+        },
+        "recovery_days_quantiles": {
+          "0.01": 24.0,
+          "0.05": 29.0,
+          "0.25": 34.0,
+          "0.5": 40.0,
+          "0.75": 47.0,
+          "0.95": 63.0,
+          "0.99": 80.0
+        }
+      }
+    },
+    {
+      "group": "regime_states",
+      "label": "2",
+      "risk": 1.0,
+      "regime_column": "regime_2",
+      "spec": {
+        "n_paths": 20000,
+        "horizon_days": 756,
+        "mean_block_days": 20,
+        "bootstrap_method": "regime",
+        "equity_mode": "fixed_notional",
+        "extra_slippage_ticks": 0.0,
+        "slippage_cost_per_trade_return": 0.0005,
+        "missed_trade_probability": 0.0,
+        "synchronized_loss_probability": 0.0,
+        "gap_shock_probability": 0.0,
+        "gap_shock_multiplier": 2.0,
+        "starting_equity": 1.0,
+        "ruin_level": 0.5
+      },
+      "summary": {
+        "paths": 20000,
+        "probability_profitable": 1.0,
+        "probability_ruin_50pct": 0.0,
+        "probability_drawdown_20pct": 0.0196,
+        "probability_drawdown_30pct": 0.0006,
+        "probability_drawdown_50pct": 0.0,
+        "return_quantiles": {
+          "0.01": 5.81968200000001,
+          "0.05": 6.357907500000006,
+          "0.25": 7.147337500000006,
+          "0.5": 7.700175000000003,
+          "0.75": 8.259225000000004,
+          "0.95": 9.100067500000012,
+          "0.99": 9.694552500000013
+        },
+        "max_drawdown_quantiles": {
+          "0.01": -0.21878032183093402,
+          "0.05": -0.16807227256745852,
+          "0.25": -0.13003954365710646,
+          "0.5": -0.1061489117007206,
+          "0.75": -0.08689810768466286,
+          "0.95": -0.06296913541201857,
+          "0.99": -0.05040823799420143
+        },
+        "recovery_days_quantiles": {
+          "0.01": 17.0,
+          "0.05": 23.0,
+          "0.25": 30.0,
+          "0.5": 36.0,
+          "0.75": 44.0,
+          "0.95": 62.0,
+          "0.99": 77.0
+        }
+      }
+    },
+    {
+      "group": "regime_states",
+      "label": "4",
+      "risk": 1.0,
+      "regime_column": "regime_4",
+      "spec": {
+        "n_paths": 20000,
+        "horizon_days": 756,
+        "mean_block_days": 20,
+        "bootstrap_method": "regime",
+        "equity_mode": "fixed_notional",
+        "extra_slippage_ticks": 0.0,
+        "slippage_cost_per_trade_return": 0.0005,
+        "missed_trade_probability": 0.0,
+        "synchronized_loss_probability": 0.0,
+        "gap_shock_probability": 0.0,
+        "gap_shock_multiplier": 2.0,
+        "starting_equity": 1.0,
+        "ruin_level": 0.5
+      },
+      "summary": {
+        "paths": 20000,
+        "probability_profitable": 1.0,
+        "probability_ruin_50pct": 0.0,
+        "probability_drawdown_20pct": 0.0152,
+        "probability_drawdown_30pct": 0.0012,
+        "probability_drawdown_50pct": 0.0,
+        "return_quantiles": {
+          "0.01": 5.781692999999994,
+          "0.05": 6.306562500000004,
+          "0.25": 7.0774375,
+          "0.5": 7.616225,
+          "0.75": 8.17026250000001,
+          "0.95": 8.970762500000008,
+          "0.99": 9.561161500000003
+        },
+        "max_drawdown_quantiles": {
+          "0.01": -0.21236921013900245,
+          "0.05": -0.16200335479614494,
+          "0.25": -0.12344320373592735,
+          "0.5": -0.10089701555992636,
+          "0.75": -0.08534852689365868,
+          "0.95": -0.06418256075784551,
+          "0.99": -0.05355930893803235
+        },
+        "recovery_days_quantiles": {
+          "0.01": 17.0,
+          "0.05": 23.0,
+          "0.25": 31.0,
+          "0.5": 36.0,
+          "0.75": 42.0,
+          "0.95": 58.0,
+          "0.99": 74.0
+        }
+      }
+    },
+    {
+      "group": "regime_states",
+      "label": "6",
+      "risk": 1.0,
+      "regime_column": "regime_6",
+      "spec": {
+        "n_paths": 20000,
+        "horizon_days": 756,
+        "mean_block_days": 20,
+        "bootstrap_method": "regime",
+        "equity_mode": "fixed_notional",
+        "extra_slippage_ticks": 0.0,
+        "slippage_cost_per_trade_return": 0.0005,
+        "missed_trade_probability": 0.0,
+        "synchronized_loss_probability": 0.0,
+        "gap_shock_probability": 0.0,
+        "gap_shock_multiplier": 2.0,
+        "starting_equity": 1.0,
+        "ruin_level": 0.5
+      },
+      "summary": {
+        "paths": 20000,
+        "probability_profitable": 1.0,
+        "probability_ruin_50pct": 0.0,
+        "probability_drawdown_20pct": 0.0206,
+        "probability_drawdown_30pct": 0.0013,
+        "probability_drawdown_50pct": 0.0,
+        "return_quantiles": {
+          "0.01": 5.613481000000001,
+          "0.05": 6.166595000000008,
+          "0.25": 6.96537500000001,
+          "0.5": 7.511800000000007,
+          "0.75": 8.086325000000006,
+          "0.95": 8.913257500000002,
+          "0.99": 9.482072999999994
+        },
+        "max_drawdown_quantiles": {
+          "0.01": -0.2247696296669626,
+          "0.05": -0.16944843671981888,
+          "0.25": -0.12581940139234715,
+          "0.5": -0.10506742797039936,
+          "0.75": -0.08742803588164416,
+          "0.95": -0.06526900972159747,
+          "0.99": -0.05364506510792985
+        },
+        "recovery_days_quantiles": {
+          "0.01": 19.0,
+          "0.05": 25.0,
+          "0.25": 32.0,
+          "0.5": 37.0,
+          "0.75": 44.0,
+          "0.95": 61.0,
+          "0.99": 80.0
+        }
+      }
+    },
+    {
+      "group": "bootstrap_method",
+      "label": "regime",
+      "risk": 1.0,
+      "regime_column": "regime_4",
+      "spec": {
+        "n_paths": 20000,
+        "horizon_days": 756,
+        "mean_block_days": 20,
+        "bootstrap_method": "regime",
+        "equity_mode": "fixed_notional",
+        "extra_slippage_ticks": 0.0,
+        "slippage_cost_per_trade_return": 0.0005,
+        "missed_trade_probability": 0.0,
+        "synchronized_loss_probability": 0.0,
+        "gap_shock_probability": 0.0,
+        "gap_shock_multiplier": 2.0,
+        "starting_equity": 1.0,
+        "ruin_level": 0.5
+      },
+      "summary": {
+        "paths": 20000,
+        "probability_profitable": 1.0,
+        "probability_ruin_50pct": 0.0,
+        "probability_drawdown_20pct": 0.01805,
+        "probability_drawdown_30pct": 0.00085,
+        "probability_drawdown_50pct": 0.0,
+        "return_quantiles": {
+          "0.01": 5.743146,
+          "0.05": 6.277132500000001,
+          "0.25": 7.075850000000001,
+          "0.5": 7.616949999999999,
+          "0.75": 8.161062500000007,
+          "0.95": 8.973505000000007,
+          "0.99": 9.568106000000018
+        },
+        "max_drawdown_quantiles": {
+          "0.01": -0.21808165603600124,
+          "0.05": -0.16748359907805566,
+          "0.25": -0.12399237236716643,
+          "0.5": -0.1011787206311412,
+          "0.75": -0.08547306650777234,
+          "0.95": -0.06448027071347764,
+          "0.99": -0.05404688225411762
+        },
+        "recovery_days_quantiles": {
+          "0.01": 17.0,
+          "0.05": 23.0,
+          "0.25": 30.0,
+          "0.5": 35.0,
+          "0.75": 42.0,
+          "0.95": 58.0,
+          "0.99": 75.0
+        }
+      }
+    },
+    {
+      "group": "bootstrap_method",
+      "label": "stationary",
+      "risk": 1.0,
+      "regime_column": "regime_4",
+      "spec": {
+        "n_paths": 20000,
+        "horizon_days": 756,
+        "mean_block_days": 20,
+        "bootstrap_method": "stationary",
+        "equity_mode": "fixed_notional",
+        "extra_slippage_ticks": 0.0,
+        "slippage_cost_per_trade_return": 0.0005,
+        "missed_trade_probability": 0.0,
+        "synchronized_loss_probability": 0.0,
+        "gap_shock_probability": 0.0,
+        "gap_shock_multiplier": 2.0,
+        "starting_equity": 1.0,
+        "ruin_level": 0.5
+      },
+      "summary": {
+        "paths": 20000,
+        "probability_profitable": 1.0,
+        "probability_ruin_50pct": 0.0,
+        "probability_drawdown_20pct": 0.01435,
+        "probability_drawdown_30pct": 0.0005,
+        "probability_drawdown_50pct": 0.0,
+        "return_quantiles": {
+          "0.01": 5.669164500000001,
+          "0.05": 6.237512499999998,
+          "0.25": 7.033137499999999,
+          "0.5": 7.6059250000000045,
+          "0.75": 8.1907125,
+          "0.95": 9.049065000000013,
+          "0.99": 9.662714499999995
+        },
+        "max_drawdown_quantiles": {
+          "0.01": -0.21075176636108406,
+          "0.05": -0.1638405785159616,
+          "0.25": -0.12244451254213551,
+          "0.5": -0.10317857012368004,
+          "0.75": -0.08710616297626383,
+          "0.95": -0.06699688130618231,
+          "0.99": -0.056113340205341186
+        },
+        "recovery_days_quantiles": {
+          "0.01": 17.0,
+          "0.05": 23.0,
+          "0.25": 30.0,
+          "0.5": 36.0,
+          "0.75": 45.0,
+          "0.95": 62.0,
+          "0.99": 80.0
+        }
+      }
+    },
+    {
+      "group": "bootstrap_method",
+      "label": "moving",
+      "risk": 1.0,
+      "regime_column": "regime_4",
+      "spec": {
+        "n_paths": 20000,
+        "horizon_days": 756,
+        "mean_block_days": 20,
+        "bootstrap_method": "moving",
+        "equity_mode": "fixed_notional",
+        "extra_slippage_ticks": 0.0,
+        "slippage_cost_per_trade_return": 0.0005,
+        "missed_trade_probability": 0.0,
+        "synchronized_loss_probability": 0.0,
+        "gap_shock_probability": 0.0,
+        "gap_shock_multiplier": 2.0,
+        "starting_equity": 1.0,
+        "ruin_level": 0.5
+      },
+      "summary": {
+        "paths": 20000,
+        "probability_profitable": 1.0,
+        "probability_ruin_50pct": 0.0,
+        "probability_drawdown_20pct": 0.00855,
+        "probability_drawdown_30pct": 0.0001,
+        "probability_drawdown_50pct": 0.0,
+        "return_quantiles": {
+          "0.01": 5.761147000000009,
+          "0.05": 6.33335000000001,
+          "0.25": 7.1319499999999945,
+          "0.5": 7.69970000000001,
+          "0.75": 8.275575,
+          "0.95": 9.140427500000012,
+          "0.99": 9.743683000000011
+        },
+        "max_drawdown_quantiles": {
+          "0.01": -0.19454993242991148,
+          "0.05": -0.15830491948160974,
+          "0.25": -0.12244451254213551,
+          "0.5": -0.10215903720518377,
+          "0.75": -0.08704568532892484,
+          "0.95": -0.0668005037663423,
+          "0.99": -0.055814674126316924
+        },
+        "recovery_days_quantiles": {
+          "0.01": 17.0,
+          "0.05": 21.0,
+          "0.25": 28.0,
+          "0.5": 34.0,
+          "0.75": 43.0,
+          "0.95": 61.0,
+          "0.99": 80.0
+        }
+      }
+    },
+    {
+      "group": "bootstrap_method",
+      "label": "circular",
+      "risk": 1.0,
+      "regime_column": "regime_4",
+      "spec": {
+        "n_paths": 20000,
+        "horizon_days": 756,
+        "mean_block_days": 20,
+        "bootstrap_method": "circular",
+        "equity_mode": "fixed_notional",
+        "extra_slippage_ticks": 0.0,
+        "slippage_cost_per_trade_return": 0.0005,
+        "missed_trade_probability": 0.0,
+        "synchronized_loss_probability": 0.0,
+        "gap_shock_probability": 0.0,
+        "gap_shock_multiplier": 2.0,
+        "starting_equity": 1.0,
+        "ruin_level": 0.5
+      },
+      "summary": {
+        "paths": 20000,
+        "probability_profitable": 1.0,
+        "probability_ruin_50pct": 0.0,
+        "probability_drawdown_20pct": 0.00595,
+        "probability_drawdown_30pct": 0.0,
+        "probability_drawdown_50pct": 0.0,
+        "return_quantiles": {
+          "0.01": 5.900568000000007,
+          "0.05": 6.4374424999999995,
+          "0.25": 7.203112499999997,
+          "0.5": 7.759100000000003,
+          "0.75": 8.3345,
+          "0.95": 9.171437500000014,
+          "0.99": 9.812604000000004
+        },
+        "max_drawdown_quantiles": {
+          "0.01": -0.19029273866526336,
+          "0.05": -0.1535164025192281,
+          "0.25": -0.12045860631328176,
+          "0.5": -0.10050353754165775,
+          "0.75": -0.08520338851064826,
+          "0.95": -0.06651652315728711,
+          "0.99": -0.05604969028288154
+        },
+        "recovery_days_quantiles": {
+          "0.01": 16.0,
+          "0.05": 20.0,
+          "0.25": 27.0,
+          "0.5": 33.0,
+          "0.75": 41.0,
+          "0.95": 58.0,
+          "0.99": 76.0
+        }
+      }
+    },
+    {
+      "group": "bootstrap_method",
+      "label": "crisis_weighted",
+      "risk": 1.0,
+      "regime_column": "regime_4",
+      "spec": {
+        "n_paths": 20000,
+        "horizon_days": 756,
+        "mean_block_days": 20,
+        "bootstrap_method": "crisis_weighted",
+        "equity_mode": "fixed_notional",
+        "extra_slippage_ticks": 0.0,
+        "slippage_cost_per_trade_return": 0.0005,
+        "missed_trade_probability": 0.0,
+        "synchronized_loss_probability": 0.0,
+        "gap_shock_probability": 0.0,
+        "gap_shock_multiplier": 2.0,
+        "starting_equity": 1.0,
+        "ruin_level": 0.5
+      },
+      "summary": {
+        "paths": 20000,
+        "probability_profitable": 1.0,
+        "probability_ruin_50pct": 0.0,
+        "probability_drawdown_20pct": 0.02095,
+        "probability_drawdown_30pct": 0.0006,
+        "probability_drawdown_50pct": 0.0,
+        "return_quantiles": {
+          "0.01": 6.617280500000001,
+          "0.05": 7.251595000000005,
+          "0.25": 8.182287500000005,
+          "0.5": 8.834350000000002,
+          "0.75": 9.508825000000003,
+          "0.95": 10.474210000000017,
+          "0.99": 11.216654500000013
+        },
+        "max_drawdown_quantiles": {
+          "0.01": -0.2224534429631365,
+          "0.05": -0.17167410596357588,
+          "0.25": -0.13016306704557032,
+          "0.5": -0.10751749982744235,
+          "0.75": -0.08931706658263172,
+          "0.95": -0.0651903796690642,
+          "0.99": -0.0518962591036171
+        },
+        "recovery_days_quantiles": {
+          "0.01": 17.0,
+          "0.05": 22.0,
+          "0.25": 29.0,
+          "0.5": 35.0,
+          "0.75": 43.0,
+          "0.95": 60.0,
+          "0.99": 76.0
+        }
+      }
+    },
+    {
+      "group": "equity_mode",
+      "label": "fixed_notional",
+      "risk": 1.0,
+      "regime_column": "regime_4",
+      "spec": {
+        "n_paths": 20000,
+        "horizon_days": 756,
+        "mean_block_days": 20,
+        "bootstrap_method": "regime",
+        "equity_mode": "fixed_notional",
+        "extra_slippage_ticks": 0.0,
+        "slippage_cost_per_trade_return": 0.0005,
+        "missed_trade_probability": 0.0,
+        "synchronized_loss_probability": 0.0,
+        "gap_shock_probability": 0.0,
+        "gap_shock_multiplier": 2.0,
+        "starting_equity": 1.0,
+        "ruin_level": 0.5
+      },
+      "summary": {
+        "paths": 20000,
+        "probability_profitable": 1.0,
+        "probability_ruin_50pct": 0.0,
+        "probability_drawdown_20pct": 0.01555,
+        "probability_drawdown_30pct": 0.00035,
+        "probability_drawdown_50pct": 0.0,
+        "return_quantiles": {
+          "0.01": 5.75954900000001,
+          "0.05": 6.299975000000001,
+          "0.25": 7.062750000000003,
+          "0.5": 7.611275000000002,
+          "0.75": 8.161512500000006,
+          "0.95": 8.985005000000017,
+          "0.99": 9.555906000000004
+        },
+        "max_drawdown_quantiles": {
+          "0.01": -0.21175428968798046,
+          "0.05": -0.16389110913267635,
+          "0.25": -0.12380488668555234,
+          "0.5": -0.10118402401400828,
+          "0.75": -0.08537210974912676,
+          "0.95": -0.06424586124146228,
+          "0.99": -0.05400017747305704
+        },
+        "recovery_days_quantiles": {
+          "0.01": 17.0,
+          "0.05": 23.0,
+          "0.25": 31.0,
+          "0.5": 36.0,
+          "0.75": 42.0,
+          "0.95": 58.0,
+          "0.99": 74.0
+        }
+      }
+    },
+    {
+      "group": "equity_mode",
+      "label": "compound",
+      "risk": 1.0,
+      "regime_column": "regime_4",
+      "spec": {
+        "n_paths": 20000,
+        "horizon_days": 756,
+        "mean_block_days": 20,
+        "bootstrap_method": "regime",
+        "equity_mode": "compound",
+        "extra_slippage_ticks": 0.0,
+        "slippage_cost_per_trade_return": 0.0005,
+        "missed_trade_probability": 0.0,
+        "synchronized_loss_probability": 0.0,
+        "gap_shock_probability": 0.0,
+        "gap_shock_multiplier": 2.0,
+        "starting_equity": 1.0,
+        "ruin_level": 0.5
+      },
+      "summary": {
+        "paths": 20000,
+        "probability_profitable": 1.0,
+        "probability_ruin_50pct": 0.0,
+        "probability_drawdown_20pct": 0.3881,
+        "probability_drawdown_30pct": 0.01315,
+        "probability_drawdown_50pct": 0.0,
+        "return_quantiles": {
+          "0.01": 184.62544444378713,
+          "0.05": 315.0079735256933,
+          "0.25": 663.2335446696987,
+          "0.5": 1126.2144549069683,
+          "0.75": 1894.2263504448297,
+          "0.95": 4023.6319216710003,
+          "0.99": 7100.222594974142
+        },
+        "max_drawdown_quantiles": {
+          "0.01": -0.3085806764444277,
+          "0.05": -0.2620718370852355,
+          "0.25": -0.21644718607268745,
+          "0.5": -0.18910767839662018,
+          "0.75": -0.16676448687664058,
+          "0.95": -0.14037951297571094,
+          "0.99": -0.13843269954100001
+        },
+        "recovery_days_quantiles": {
+          "0.01": 18.0,
+          "0.05": 25.0,
+          "0.25": 32.0,
+          "0.5": 38.0,
+          "0.75": 46.0,
+          "0.95": 64.0,
+          "0.99": 83.0
+        }
+      }
+    },
+    {
+      "group": "loss_synchronization",
+      "label": "0.0",
+      "risk": 1.0,
+      "regime_column": "regime_4",
+      "spec": {
+        "n_paths": 20000,
+        "horizon_days": 756,
+        "mean_block_days": 20,
+        "bootstrap_method": "regime",
+        "equity_mode": "fixed_notional",
+        "extra_slippage_ticks": 0.0,
+        "slippage_cost_per_trade_return": 0.0005,
+        "missed_trade_probability": 0.0,
+        "synchronized_loss_probability": 0.0,
+        "gap_shock_probability": 0.0,
+        "gap_shock_multiplier": 2.0,
+        "starting_equity": 1.0,
+        "ruin_level": 0.5
+      },
+      "summary": {
+        "paths": 20000,
+        "probability_profitable": 1.0,
+        "probability_ruin_50pct": 0.0,
+        "probability_drawdown_20pct": 0.01555,
+        "probability_drawdown_30pct": 0.0007,
+        "probability_drawdown_50pct": 0.0,
+        "return_quantiles": {
+          "0.01": 5.742589500000001,
+          "0.05": 6.296387499999997,
+          "0.25": 7.078000000000005,
+          "0.5": 7.62690000000001,
+          "0.75": 8.176937500000014,
+          "0.95": 8.9954,
+          "0.99": 9.571072500000003
+        },
+        "max_drawdown_quantiles": {
+          "0.01": -0.21333028285281977,
+          "0.05": -0.16389430438570082,
+          "0.25": -0.12324113862630062,
+          "0.5": -0.10059635907093534,
+          "0.75": -0.08514869958053858,
+          "0.95": -0.06426521763830018,
+          "0.99": -0.053504413624291376
+        },
+        "recovery_days_quantiles": {
+          "0.01": 17.0,
+          "0.05": 23.0,
+          "0.25": 31.0,
+          "0.5": 36.0,
+          "0.75": 42.0,
+          "0.95": 58.0,
+          "0.99": 75.0
+        }
+      }
+    },
+    {
+      "group": "loss_synchronization",
+      "label": "0.25",
+      "risk": 1.0,
+      "regime_column": "regime_4",
+      "spec": {
+        "n_paths": 20000,
+        "horizon_days": 756,
+        "mean_block_days": 20,
+        "bootstrap_method": "regime",
+        "equity_mode": "fixed_notional",
+        "extra_slippage_ticks": 0.0,
+        "slippage_cost_per_trade_return": 0.0005,
+        "missed_trade_probability": 0.0,
+        "synchronized_loss_probability": 0.25,
+        "gap_shock_probability": 0.0,
+        "gap_shock_multiplier": 2.0,
+        "starting_equity": 1.0,
+        "ruin_level": 0.5
+      },
+      "summary": {
+        "paths": 20000,
+        "probability_profitable": 1.0,
+        "probability_ruin_50pct": 0.0004,
+        "probability_drawdown_20pct": 0.2071,
+        "probability_drawdown_30pct": 0.02915,
+        "probability_drawdown_50pct": 0.0006,
+        "return_quantiles": {
+          "0.01": 3.6328442999999995,
+          "0.05": 4.208233500000008,
+          "0.25": 5.072582500000003,
+          "0.5": 5.657825000000007,
+          "0.75": 6.253812500000006,
+          "0.95": 7.144989000000017,
+          "0.99": 7.780086800000002
+        },
+        "max_drawdown_quantiles": {
+          "0.01": -0.3577206670637736,
+          "0.05": -0.27307730409851605,
+          "0.25": -0.19030395237323897,
+          "0.5": -0.1510233962224371,
+          "0.75": -0.12317400906458331,
+          "0.95": -0.09284938805249432,
+          "0.99": -0.07871314136443341
+        },
+        "recovery_days_quantiles": {
+          "0.01": 28.0,
+          "0.05": 34.0,
+          "0.25": 47.0,
+          "0.5": 59.0,
+          "0.75": 75.0,
+          "0.95": 112.0,
+          "0.99": 151.0
+        }
+      }
+    },
+    {
+      "group": "loss_synchronization",
+      "label": "0.5",
+      "risk": 1.0,
+      "regime_column": "regime_4",
+      "spec": {
+        "n_paths": 20000,
+        "horizon_days": 756,
+        "mean_block_days": 20,
+        "bootstrap_method": "regime",
+        "equity_mode": "fixed_notional",
+        "extra_slippage_ticks": 0.0,
+        "slippage_cost_per_trade_return": 0.0005,
+        "missed_trade_probability": 0.0,
+        "synchronized_loss_probability": 0.5,
+        "gap_shock_probability": 0.0,
+        "gap_shock_multiplier": 2.0,
+        "starting_equity": 1.0,
+        "ruin_level": 0.5
+      },
+      "summary": {
+        "paths": 20000,
+        "probability_profitable": 0.9999,
+        "probability_ruin_50pct": 0.01255,
+        "probability_drawdown_20pct": 0.6875,
+        "probability_drawdown_30pct": 0.2575,
+        "probability_drawdown_50pct": 0.0251,
+        "return_quantiles": {
+          "0.01": 1.4533762999999895,
+          "0.05": 2.111961499999994,
+          "0.25": 3.0441174999999996,
+          "0.5": 3.6863800000000064,
+          "0.75": 4.3543300000000125,
+          "0.95": 5.311931500000012,
+          "0.99": 6.016463300000009
+        },
+        "max_drawdown_quantiles": {
+          "0.01": -0.584930135513218,
+          "0.05": -0.44280955536108785,
+          "0.25": -0.30257956542692444,
+          "0.5": -0.23740089066125325,
+          "0.75": -0.18822824945720704,
+          "0.95": -0.13797487613905285,
+          "0.99": -0.11366533579463615
+        },
+        "recovery_days_quantiles": {
+          "0.01": 46.0,
+          "0.05": 56.0,
+          "0.25": 81.0,
+          "0.5": 108.0,
+          "0.75": 147.0,
+          "0.95": 240.0,
+          "0.99": 335.0
+        }
+      }
+    },
+    {
+      "group": "loss_synchronization",
+      "label": "0.75",
+      "risk": 1.0,
+      "regime_column": "regime_4",
+      "spec": {
+        "n_paths": 20000,
+        "horizon_days": 756,
+        "mean_block_days": 20,
+        "bootstrap_method": "regime",
+        "equity_mode": "fixed_notional",
+        "extra_slippage_ticks": 0.0,
+        "slippage_cost_per_trade_return": 0.0005,
+        "missed_trade_probability": 0.0,
+        "synchronized_loss_probability": 0.75,
+        "gap_shock_probability": 0.0,
+        "gap_shock_multiplier": 2.0,
+        "starting_equity": 1.0,
+        "ruin_level": 0.5
+      },
+      "summary": {
+        "paths": 20000,
+        "probability_profitable": 0.9365,
+        "probability_ruin_50pct": 0.19385,
+        "probability_drawdown_20pct": 0.97175,
+        "probability_drawdown_30pct": 0.7947,
+        "probability_drawdown_50pct": 0.32985,
+        "return_quantiles": {
+          "0.01": -1.0,
+          "0.05": -0.17973200000000447,
+          "0.25": 1.0129149999999947,
+          "0.5": 1.7340249999999853,
+          "0.75": 2.448667499999991,
+          "0.95": 3.460009500000006,
+          "0.99": 4.191808899999992
+        },
+        "max_drawdown_quantiles": {
+          "0.01": -1.0,
+          "0.05": -0.9006736951866168,
+          "0.25": -0.5577170143946425,
+          "0.5": -0.40938092684845867,
+          "0.75": -0.3169147175560867,
+          "0.95": -0.22003960573378542,
+          "0.99": -0.172749293920303
+        },
+        "recovery_days_quantiles": {
+          "0.01": 73.0,
+          "0.05": 98.0,
+          "0.25": 157.0,
+          "0.5": 224.0,
+          "0.75": 333.0,
+          "0.95": 598.0499999999993,
+          "0.99": 750.0
+        }
+      }
+    },
+    {
+      "group": "extra_slippage_ticks",
+      "label": "0.0",
+      "risk": 1.0,
+      "regime_column": "regime_4",
+      "spec": {
+        "n_paths": 20000,
+        "horizon_days": 756,
+        "mean_block_days": 20,
+        "bootstrap_method": "regime",
+        "equity_mode": "fixed_notional",
+        "extra_slippage_ticks": 0.0,
+        "slippage_cost_per_trade_return": 0.0005,
+        "missed_trade_probability": 0.0,
+        "synchronized_loss_probability": 0.0,
+        "gap_shock_probability": 0.0,
+        "gap_shock_multiplier": 2.0,
+        "starting_equity": 1.0,
+        "ruin_level": 0.5
+      },
+      "summary": {
+        "paths": 20000,
+        "probability_profitable": 1.0,
+        "probability_ruin_50pct": 0.0,
+        "probability_drawdown_20pct": 0.0175,
+        "probability_drawdown_30pct": 0.0006,
+        "probability_drawdown_50pct": 0.0,
+        "return_quantiles": {
+          "0.01": 5.815898500000005,
+          "0.05": 6.2968900000000065,
+          "0.25": 7.057150000000007,
+          "0.5": 7.606625000000002,
+          "0.75": 8.174337500000005,
+          "0.95": 8.989432500000007,
+          "0.99": 9.57118300000001
+        },
+        "max_drawdown_quantiles": {
+          "0.01": -0.21750224177764255,
+          "0.05": -0.164405742763609,
+          "0.25": -0.12379035796321386,
+          "0.5": -0.10105347084106853,
+          "0.75": -0.08539703992182945,
+          "0.95": -0.06450562464763959,
+          "0.99": -0.053590754967278366
+        },
+        "recovery_days_quantiles": {
+          "0.01": 17.0,
+          "0.05": 23.0,
+          "0.25": 30.0,
+          "0.5": 35.0,
+          "0.75": 42.0,
+          "0.95": 58.0,
+          "0.99": 75.0
+        }
+      }
+    },
+    {
+      "group": "extra_slippage_ticks",
+      "label": "1.0",
+      "risk": 1.0,
+      "regime_column": "regime_4",
+      "spec": {
+        "n_paths": 20000,
+        "horizon_days": 756,
+        "mean_block_days": 20,
+        "bootstrap_method": "regime",
+        "equity_mode": "fixed_notional",
+        "extra_slippage_ticks": 1.0,
+        "slippage_cost_per_trade_return": 0.0005,
+        "missed_trade_probability": 0.0,
+        "synchronized_loss_probability": 0.0,
+        "gap_shock_probability": 0.0,
+        "gap_shock_multiplier": 2.0,
+        "starting_equity": 1.0,
+        "ruin_level": 0.5
+      },
+      "summary": {
+        "paths": 20000,
+        "probability_profitable": 1.0,
+        "probability_ruin_50pct": 0.0,
+        "probability_drawdown_20pct": 0.02895,
+        "probability_drawdown_30pct": 0.0021,
+        "probability_drawdown_50pct": 0.0,
+        "return_quantiles": {
+          "0.01": 5.069790999999995,
+          "0.05": 5.584874999999999,
+          "0.25": 6.350275000000006,
+          "0.5": 6.891725000000002,
+          "0.75": 7.440499999999998,
+          "0.95": 8.269007500000006,
+          "0.99": 8.869854499999994
+        },
+        "max_drawdown_quantiles": {
+          "0.01": -0.23805804205093592,
+          "0.05": -0.18359364769185085,
+          "0.25": -0.1340146831851398,
+          "0.5": -0.11057648564385025,
+          "0.75": -0.09273067425828774,
+          "0.95": -0.07015994458041376,
+          "0.99": -0.05792277763499953
+        },
+        "recovery_days_quantiles": {
+          "0.01": 22.0,
+          "0.05": 26.0,
+          "0.25": 34.0,
+          "0.5": 41.0,
+          "0.75": 49.0,
+          "0.95": 69.0,
+          "0.99": 89.0
+        }
+      }
+    },
+    {
+      "group": "extra_slippage_ticks",
+      "label": "2.0",
+      "risk": 1.0,
+      "regime_column": "regime_4",
+      "spec": {
+        "n_paths": 20000,
+        "horizon_days": 756,
+        "mean_block_days": 20,
+        "bootstrap_method": "regime",
+        "equity_mode": "fixed_notional",
+        "extra_slippage_ticks": 2.0,
+        "slippage_cost_per_trade_return": 0.0005,
+        "missed_trade_probability": 0.0,
+        "synchronized_loss_probability": 0.0,
+        "gap_shock_probability": 0.0,
+        "gap_shock_multiplier": 2.0,
+        "starting_equity": 1.0,
+        "ruin_level": 0.5
+      },
+      "summary": {
+        "paths": 20000,
+        "probability_profitable": 1.0,
+        "probability_ruin_50pct": 0.0,
+        "probability_drawdown_20pct": 0.05605,
+        "probability_drawdown_30pct": 0.00395,
+        "probability_drawdown_50pct": 0.0,
+        "return_quantiles": {
+          "0.01": 4.345085999999996,
+          "0.05": 4.858534999999997,
+          "0.25": 5.642787499999993,
+          "0.5": 6.187175,
+          "0.75": 6.732399999999997,
+          "0.95": 7.566302500000002,
+          "0.99": 8.181467000000001
+        },
+        "max_drawdown_quantiles": {
+          "0.01": -0.267178665565424,
+          "0.05": -0.203441924331557,
+          "0.25": -0.14632167327803824,
+          "0.5": -0.12220526652044578,
+          "0.75": -0.10196775504556368,
+          "0.95": -0.0774173485414729,
+          "0.99": -0.06459567190397814
+        },
+        "recovery_days_quantiles": {
+          "0.01": 23.0,
+          "0.05": 29.0,
+          "0.25": 38.0,
+          "0.5": 46.0,
+          "0.75": 57.0,
+          "0.95": 82.0,
+          "0.99": 107.0099999999984
+        }
+      }
+    },
+    {
+      "group": "extra_slippage_ticks",
+      "label": "4.0",
+      "risk": 1.0,
+      "regime_column": "regime_4",
+      "spec": {
+        "n_paths": 20000,
+        "horizon_days": 756,
+        "mean_block_days": 20,
+        "bootstrap_method": "regime",
+        "equity_mode": "fixed_notional",
+        "extra_slippage_ticks": 4.0,
+        "slippage_cost_per_trade_return": 0.0005,
+        "missed_trade_probability": 0.0,
+        "synchronized_loss_probability": 0.0,
+        "gap_shock_probability": 0.0,
+        "gap_shock_multiplier": 2.0,
+        "starting_equity": 1.0,
+        "ruin_level": 0.5
+      },
+      "summary": {
+        "paths": 20000,
+        "probability_profitable": 1.0,
+        "probability_ruin_50pct": 0.00045,
+        "probability_drawdown_20pct": 0.18375,
+        "probability_drawdown_30pct": 0.0231,
+        "probability_drawdown_50pct": 0.0008,
+        "return_quantiles": {
+          "0.01": 2.906742499999996,
+          "0.05": 3.459897499999996,
+          "0.25": 4.2225874999999995,
+          "0.5": 4.758950000000004,
+          "0.75": 5.308837500000003,
+          "0.95": 6.106560000000001,
+          "0.99": 6.690806500000004
+        },
+        "max_drawdown_quantiles": {
+          "0.01": -0.3481388641229833,
+          "0.05": -0.2637952791423219,
+          "0.25": -0.18518338785242702,
+          "0.5": -0.15277110748247036,
+          "0.75": -0.12660730514869348,
+          "0.95": -0.09764030152665268,
+          "0.99": -0.08189302905030807
+        },
+        "recovery_days_quantiles": {
+          "0.01": 30.0,
+          "0.05": 37.0,
+          "0.25": 51.0,
+          "0.5": 65.0,
+          "0.75": 83.0,
+          "0.95": 126.04999999999927,
+          "0.99": 171.0
+        }
+      }
+    },
+    {
+      "group": "missed_trade_probability",
+      "label": "0.0",
+      "risk": 1.0,
+      "regime_column": "regime_4",
+      "spec": {
+        "n_paths": 20000,
+        "horizon_days": 756,
+        "mean_block_days": 20,
+        "bootstrap_method": "regime",
+        "equity_mode": "fixed_notional",
+        "extra_slippage_ticks": 0.0,
+        "slippage_cost_per_trade_return": 0.0005,
+        "missed_trade_probability": 0.0,
+        "synchronized_loss_probability": 0.0,
+        "gap_shock_probability": 0.0,
+        "gap_shock_multiplier": 2.0,
+        "starting_equity": 1.0,
+        "ruin_level": 0.5
+      },
+      "summary": {
+        "paths": 20000,
+        "probability_profitable": 1.0,
+        "probability_ruin_50pct": 0.0,
+        "probability_drawdown_20pct": 0.0168,
+        "probability_drawdown_30pct": 0.0009,
+        "probability_drawdown_50pct": 0.0,
+        "return_quantiles": {
+          "0.01": 5.759899499999998,
+          "0.05": 6.290640000000004,
+          "0.25": 7.073987500000006,
+          "0.5": 7.618625,
+          "0.75": 8.162300000000004,
+          "0.95": 8.987365000000004,
+          "0.99": 9.577454500000009
+        },
+        "max_drawdown_quantiles": {
+          "0.01": -0.21529360937597303,
+          "0.05": -0.16527025612958582,
+          "0.25": -0.1237145724440355,
+          "0.5": -0.10060304892790284,
+          "0.75": -0.08512675497706179,
+          "0.95": -0.06402192588514032,
+          "0.99": -0.05353122766072067
+        },
+        "recovery_days_quantiles": {
+          "0.01": 17.0,
+          "0.05": 23.0,
+          "0.25": 31.0,
+          "0.5": 35.0,
+          "0.75": 42.0,
+          "0.95": 59.0,
+          "0.99": 75.0
+        }
+      }
+    },
+    {
+      "group": "missed_trade_probability",
+      "label": "0.05",
+      "risk": 1.0,
+      "regime_column": "regime_4",
+      "spec": {
+        "n_paths": 20000,
+        "horizon_days": 756,
+        "mean_block_days": 20,
+        "bootstrap_method": "regime",
+        "equity_mode": "fixed_notional",
+        "extra_slippage_ticks": 0.0,
+        "slippage_cost_per_trade_return": 0.0005,
+        "missed_trade_probability": 0.05,
+        "synchronized_loss_probability": 0.0,
+        "gap_shock_probability": 0.0,
+        "gap_shock_multiplier": 2.0,
+        "starting_equity": 1.0,
+        "ruin_level": 0.5
+      },
+      "summary": {
+        "paths": 20000,
+        "probability_profitable": 1.0,
+        "probability_ruin_50pct": 0.0,
+        "probability_drawdown_20pct": 0.01305,
+        "probability_drawdown_30pct": 0.0007,
+        "probability_drawdown_50pct": 0.0,
+        "return_quantiles": {
+          "0.01": 5.487096449999999,
+          "0.05": 5.992735374999998,
+          "0.25": 6.711524375,
+          "0.5": 7.225201250000005,
+          "0.75": 7.7426662499999965,
+          "0.95": 8.525972125000006,
+          "0.99": 9.0369871
+        },
+        "max_drawdown_quantiles": {
+          "0.01": -0.20857752747390984,
+          "0.05": -0.1579411622653226,
+          "0.25": -0.1185826538047059,
+          "0.5": -0.097136515609687,
+          "0.75": -0.08232357200999776,
+          "0.95": -0.06256415087873553,
+          "0.99": -0.05260672354379969
+        },
+        "recovery_days_quantiles": {
+          "0.01": 17.0,
+          "0.05": 23.0,
+          "0.25": 31.0,
+          "0.5": 35.0,
+          "0.75": 42.0,
+          "0.95": 58.0,
+          "0.99": 76.0
+        }
+      }
+    },
+    {
+      "group": "missed_trade_probability",
+      "label": "0.1",
+      "risk": 1.0,
+      "regime_column": "regime_4",
+      "spec": {
+        "n_paths": 20000,
+        "horizon_days": 756,
+        "mean_block_days": 20,
+        "bootstrap_method": "regime",
+        "equity_mode": "fixed_notional",
+        "extra_slippage_ticks": 0.0,
+        "slippage_cost_per_trade_return": 0.0005,
+        "missed_trade_probability": 0.1,
+        "synchronized_loss_probability": 0.0,
+        "gap_shock_probability": 0.0,
+        "gap_shock_multiplier": 2.0,
+        "starting_equity": 1.0,
+        "ruin_level": 0.5
+      },
+      "summary": {
+        "paths": 20000,
+        "probability_profitable": 1.0,
+        "probability_ruin_50pct": 0.0,
+        "probability_drawdown_20pct": 0.00925,
+        "probability_drawdown_30pct": 0.00035,
+        "probability_drawdown_50pct": 0.0,
+        "return_quantiles": {
+          "0.01": 5.200640099999991,
+          "0.05": 5.667480000000006,
+          "0.25": 6.366982500000003,
+          "0.5": 6.8574600000000006,
+          "0.75": 7.356600000000005,
+          "0.95": 8.081507250000007,
+          "0.99": 8.593263000000004
+        },
+        "max_drawdown_quantiles": {
+          "0.01": -0.19762829986057723,
+          "0.05": -0.15023307189832474,
+          "0.25": -0.113099891946975,
+          "0.5": -0.0933270905320111,
+          "0.75": -0.07905836676732655,
+          "0.95": -0.06020198296435719,
+          "0.99": -0.05064140477250271
+        },
+        "recovery_days_quantiles": {
+          "0.01": 17.0,
+          "0.05": 23.0,
+          "0.25": 30.0,
+          "0.5": 35.0,
+          "0.75": 42.0,
+          "0.95": 58.0,
+          "0.99": 75.0
+        }
+      }
+    },
+    {
+      "group": "missed_trade_probability",
+      "label": "0.2",
+      "risk": 1.0,
+      "regime_column": "regime_4",
+      "spec": {
+        "n_paths": 20000,
+        "horizon_days": 756,
+        "mean_block_days": 20,
+        "bootstrap_method": "regime",
+        "equity_mode": "fixed_notional",
+        "extra_slippage_ticks": 0.0,
+        "slippage_cost_per_trade_return": 0.0005,
+        "missed_trade_probability": 0.2,
+        "synchronized_loss_probability": 0.0,
+        "gap_shock_probability": 0.0,
+        "gap_shock_multiplier": 2.0,
+        "starting_equity": 1.0,
+        "ruin_level": 0.5
+      },
+      "summary": {
+        "paths": 20000,
+        "probability_profitable": 1.0,
+        "probability_ruin_50pct": 0.0,
+        "probability_drawdown_20pct": 0.00415,
+        "probability_drawdown_30pct": 5e-05,
+        "probability_drawdown_50pct": 0.0,
+        "return_quantiles": {
+          "0.01": 4.596598399999999,
+          "0.05": 5.038697999999994,
+          "0.25": 5.657109999999995,
+          "0.5": 6.090140000000003,
+          "0.75": 6.540490000000002,
+          "0.95": 7.190619999999996,
+          "0.99": 7.654646799999994
+        },
+        "max_drawdown_quantiles": {
+          "0.01": -0.1772075683110518,
+          "0.05": -0.13651740897512737,
+          "0.25": -0.10209761448072294,
+          "0.5": -0.08530083710964764,
+          "0.75": -0.07276269823883333,
+          "0.95": -0.05613271421599316,
+          "0.99": -0.04793338037386598
+        },
+        "recovery_days_quantiles": {
+          "0.01": 17.0,
+          "0.05": 23.0,
+          "0.25": 31.0,
+          "0.5": 35.0,
+          "0.75": 42.0,
+          "0.95": 59.0,
+          "0.99": 76.0
+        }
+      }
+    },
+    {
+      "group": "gap_probability",
+      "label": "0.0",
+      "risk": 1.0,
+      "regime_column": "regime_4",
+      "spec": {
+        "n_paths": 20000,
+        "horizon_days": 756,
+        "mean_block_days": 20,
+        "bootstrap_method": "regime",
+        "equity_mode": "fixed_notional",
+        "extra_slippage_ticks": 0.0,
+        "slippage_cost_per_trade_return": 0.0005,
+        "missed_trade_probability": 0.0,
+        "synchronized_loss_probability": 0.0,
+        "gap_shock_probability": 0.0,
+        "gap_shock_multiplier": 2.0,
+        "starting_equity": 1.0,
+        "ruin_level": 0.5
+      },
+      "summary": {
+        "paths": 20000,
+        "probability_profitable": 1.0,
+        "probability_ruin_50pct": 5e-05,
+        "probability_drawdown_20pct": 0.0169,
+        "probability_drawdown_30pct": 0.0007,
+        "probability_drawdown_50pct": 5e-05,
+        "return_quantiles": {
+          "0.01": 5.7530385,
+          "0.05": 6.2872950000000065,
+          "0.25": 7.0602,
+          "0.5": 7.601175000000006,
+          "0.75": 8.163412500000002,
+          "0.95": 8.9887,
+          "0.99": 9.610612999999994
+        },
+        "max_drawdown_quantiles": {
+          "0.01": -0.218104645848899,
+          "0.05": -0.1642416705103168,
+          "0.25": -0.12311284476332135,
+          "0.5": -0.10059635907093534,
+          "0.75": -0.08507729519402671,
+          "0.95": -0.06414767248404278,
+          "0.99": -0.053813479023095044
+        },
+        "recovery_days_quantiles": {
+          "0.01": 17.0,
+          "0.05": 23.0,
+          "0.25": 30.0,
+          "0.5": 35.0,
+          "0.75": 42.0,
+          "0.95": 58.0,
+          "0.99": 76.0
+        }
+      }
+    },
+    {
+      "group": "gap_probability",
+      "label": "0.002",
+      "risk": 1.0,
+      "regime_column": "regime_4",
+      "spec": {
+        "n_paths": 20000,
+        "horizon_days": 756,
+        "mean_block_days": 20,
+        "bootstrap_method": "regime",
+        "equity_mode": "fixed_notional",
+        "extra_slippage_ticks": 0.0,
+        "slippage_cost_per_trade_return": 0.0005,
+        "missed_trade_probability": 0.0,
+        "synchronized_loss_probability": 0.0,
+        "gap_shock_probability": 0.002,
+        "gap_shock_multiplier": 2.0,
+        "starting_equity": 1.0,
+        "ruin_level": 0.5
+      },
+      "summary": {
+        "paths": 20000,
+        "probability_profitable": 1.0,
+        "probability_ruin_50pct": 0.0,
+        "probability_drawdown_20pct": 0.0267,
+        "probability_drawdown_30pct": 0.00125,
+        "probability_drawdown_50pct": 0.0,
+        "return_quantiles": {
+          "0.01": 5.591017000000011,
+          "0.05": 6.1386815000000094,
+          "0.25": 6.912150000000006,
+          "0.5": 7.467039999999999,
+          "0.75": 8.021964999999998,
+          "0.95": 8.823602999999997,
+          "0.99": 9.425515000000017
+        },
+        "max_drawdown_quantiles": {
+          "0.01": -0.23111407007015097,
+          "0.05": -0.17810376052937726,
+          "0.25": -0.12844982520147513,
+          "0.5": -0.10464324818925458,
+          "0.75": -0.08782390771881968,
+          "0.95": -0.06608928180217827,
+          "0.99": -0.0550073890498081
+        },
+        "recovery_days_quantiles": {
+          "0.01": 19.0,
+          "0.05": 24.0,
+          "0.25": 31.0,
+          "0.5": 37.0,
+          "0.75": 44.0,
+          "0.95": 63.0,
+          "0.99": 81.0099999999984
+        }
+      }
+    },
+    {
+      "group": "gap_probability",
+      "label": "0.005",
+      "risk": 1.0,
+      "regime_column": "regime_4",
+      "spec": {
+        "n_paths": 20000,
+        "horizon_days": 756,
+        "mean_block_days": 20,
+        "bootstrap_method": "regime",
+        "equity_mode": "fixed_notional",
+        "extra_slippage_ticks": 0.0,
+        "slippage_cost_per_trade_return": 0.0005,
+        "missed_trade_probability": 0.0,
+        "synchronized_loss_probability": 0.0,
+        "gap_shock_probability": 0.005,
+        "gap_shock_multiplier": 2.0,
+        "starting_equity": 1.0,
+        "ruin_level": 0.5
+      },
+      "summary": {
+        "paths": 20000,
+        "probability_profitable": 1.0,
+        "probability_ruin_50pct": 5e-05,
+        "probability_drawdown_20pct": 0.0424,
+        "probability_drawdown_30pct": 0.0023,
+        "probability_drawdown_50pct": 5e-05,
+        "return_quantiles": {
+          "0.01": 5.343233200000007,
+          "0.05": 5.892385500000004,
+          "0.25": 6.688690000000005,
+          "0.5": 7.241085000000005,
+          "0.75": 7.80673,
+          "0.95": 8.634101500000012,
+          "0.99": 9.247025600000008
+        },
+        "max_drawdown_quantiles": {
+          "0.01": -0.24893922123670037,
+          "0.05": -0.19347087595633872,
+          "0.25": -0.1357946303522126,
+          "0.5": -0.11042505624348187,
+          "0.75": -0.09195233909561484,
+          "0.95": -0.06972886308757732,
+          "0.99": -0.05706858815133714
+        },
+        "recovery_days_quantiles": {
+          "0.01": 20.0,
+          "0.05": 26.0,
+          "0.25": 33.0,
+          "0.5": 39.0,
+          "0.75": 48.0,
+          "0.95": 68.0,
+          "0.99": 88.0
+        }
+      }
+    },
+    {
+      "group": "gap_probability",
+      "label": "0.01",
+      "risk": 1.0,
+      "regime_column": "regime_4",
+      "spec": {
+        "n_paths": 20000,
+        "horizon_days": 756,
+        "mean_block_days": 20,
+        "bootstrap_method": "regime",
+        "equity_mode": "fixed_notional",
+        "extra_slippage_ticks": 0.0,
+        "slippage_cost_per_trade_return": 0.0005,
+        "missed_trade_probability": 0.0,
+        "synchronized_loss_probability": 0.0,
+        "gap_shock_probability": 0.01,
+        "gap_shock_multiplier": 2.0,
+        "starting_equity": 1.0,
+        "ruin_level": 0.5
+      },
+      "summary": {
+        "paths": 20000,
+        "probability_profitable": 1.0,
+        "probability_ruin_50pct": 0.0001,
+        "probability_drawdown_20pct": 0.08455,
+        "probability_drawdown_30pct": 0.0072,
+        "probability_drawdown_50pct": 0.00015,
+        "return_quantiles": {
+          "0.01": 4.905442800000004,
+          "0.05": 5.493109000000017,
+          "0.25": 6.2956500000000055,
+          "0.5": 6.881375000000004,
+          "0.75": 7.461895000000004,
+          "0.95": 8.285634000000007,
+          "0.99": 8.867400500000011
+        },
+        "max_drawdown_quantiles": {
+          "0.01": -0.28720035132466265,
+          "0.05": -0.2216360321006404,
+          "0.25": -0.15283645305846644,
+          "0.5": -0.12222914991461464,
+          "0.75": -0.09837440729926464,
+          "0.95": -0.07500230937712535,
+          "0.99": -0.06183801016644068
+        },
+        "recovery_days_quantiles": {
+          "0.01": 22.0,
+          "0.05": 27.0,
+          "0.25": 35.0,
+          "0.5": 43.0,
+          "0.75": 54.0,
+          "0.95": 79.0,
+          "0.99": 103.0
+        }
+      }
+    },
+    {
+      "group": "gap_multiplier",
+      "label": "1.0",
+      "risk": 1.0,
+      "regime_column": "regime_4",
+      "spec": {
+        "n_paths": 20000,
+        "horizon_days": 756,
+        "mean_block_days": 20,
+        "bootstrap_method": "regime",
+        "equity_mode": "fixed_notional",
+        "extra_slippage_ticks": 0.0,
+        "slippage_cost_per_trade_return": 0.0005,
+        "missed_trade_probability": 0.0,
+        "synchronized_loss_probability": 0.0,
+        "gap_shock_probability": 0.005,
+        "gap_shock_multiplier": 1.0,
+        "starting_equity": 1.0,
+        "ruin_level": 0.5
+      },
+      "summary": {
+        "paths": 20000,
+        "probability_profitable": 1.0,
+        "probability_ruin_50pct": 0.0,
+        "probability_drawdown_20pct": 0.02145,
+        "probability_drawdown_30pct": 0.00105,
+        "probability_drawdown_50pct": 0.0,
+        "return_quantiles": {
+          "0.01": 5.586254499999999,
+          "0.05": 6.122078500000005,
+          "0.25": 6.88475,
+          "0.5": 7.416385000000005,
+          "0.75": 7.963627500000001,
+          "0.95": 8.765535000000005,
+          "0.99": 9.333370599999999
+        },
+        "max_drawdown_quantiles": {
+          "0.01": -0.22468190792536133,
+          "0.05": -0.1733604090463775,
+          "0.25": -0.1276997505475632,
+          "0.5": -0.10486112420407773,
+          "0.75": -0.08820987697620941,
+          "0.95": -0.06629708833447295,
+          "0.99": -0.05503520883573816
+        },
+        "recovery_days_quantiles": {
+          "0.01": 18.0,
+          "0.05": 24.0,
+          "0.25": 31.0,
+          "0.5": 37.0,
+          "0.75": 44.0,
+          "0.95": 61.0,
+          "0.99": 80.0
+        }
+      }
+    },
+    {
+      "group": "gap_multiplier",
+      "label": "2.0",
+      "risk": 1.0,
+      "regime_column": "regime_4",
+      "spec": {
+        "n_paths": 20000,
+        "horizon_days": 756,
+        "mean_block_days": 20,
+        "bootstrap_method": "regime",
+        "equity_mode": "fixed_notional",
+        "extra_slippage_ticks": 0.0,
+        "slippage_cost_per_trade_return": 0.0005,
+        "missed_trade_probability": 0.0,
+        "synchronized_loss_probability": 0.0,
+        "gap_shock_probability": 0.005,
+        "gap_shock_multiplier": 2.0,
+        "starting_equity": 1.0,
+        "ruin_level": 0.5
+      },
+      "summary": {
+        "paths": 20000,
+        "probability_profitable": 1.0,
+        "probability_ruin_50pct": 0.0,
+        "probability_drawdown_20pct": 0.04515,
+        "probability_drawdown_30pct": 0.00285,
+        "probability_drawdown_50pct": 0.0,
+        "return_quantiles": {
+          "0.01": 5.361131000000002,
+          "0.05": 5.9084310000000055,
+          "0.25": 6.686955000000006,
+          "0.5": 7.237245000000001,
+          "0.75": 7.803612500000003,
+          "0.95": 8.62582150000001,
+          "0.99": 9.227740200000028
+        },
+        "max_drawdown_quantiles": {
+          "0.01": -0.25283976032445293,
+          "0.05": -0.1959758494599343,
+          "0.25": -0.1363950388883455,
+          "0.5": -0.1099318085327537,
+          "0.75": -0.091466198484145,
+          "0.95": -0.06959629802318446,
+          "0.99": -0.05799383474712145
+        },
+        "recovery_days_quantiles": {
+          "0.01": 20.0,
+          "0.05": 25.0,
+          "0.25": 33.0,
+          "0.5": 39.0,
+          "0.75": 48.0,
+          "0.95": 68.0,
+          "0.99": 91.0
+        }
+      }
+    },
+    {
+      "group": "gap_multiplier",
+      "label": "3.0",
+      "risk": 1.0,
+      "regime_column": "regime_4",
+      "spec": {
+        "n_paths": 20000,
+        "horizon_days": 756,
+        "mean_block_days": 20,
+        "bootstrap_method": "regime",
+        "equity_mode": "fixed_notional",
+        "extra_slippage_ticks": 0.0,
+        "slippage_cost_per_trade_return": 0.0005,
+        "missed_trade_probability": 0.0,
+        "synchronized_loss_probability": 0.0,
+        "gap_shock_probability": 0.005,
+        "gap_shock_multiplier": 3.0,
+        "starting_equity": 1.0,
+        "ruin_level": 0.5
+      },
+      "summary": {
+        "paths": 20000,
+        "probability_profitable": 1.0,
+        "probability_ruin_50pct": 0.0,
+        "probability_drawdown_20pct": 0.09925,
+        "probability_drawdown_30pct": 0.0101,
+        "probability_drawdown_50pct": 0.0001,
+        "return_quantiles": {
+          "0.01": 5.066937299999999,
+          "0.05": 5.641991000000006,
+          "0.25": 6.474007499999995,
+          "0.5": 7.059029999999995,
+          "0.75": 7.647375000000004,
+          "0.95": 8.498496000000005,
+          "0.99": 9.061812100000006
+        },
+        "max_drawdown_quantiles": {
+          "0.01": -0.30065256575148,
+          "0.05": -0.2305963628651446,
+          "0.25": -0.15180457729073774,
+          "0.5": -0.1207254458443674,
+          "0.75": -0.09736638431411099,
+          "0.95": -0.07380258183242633,
+          "0.99": -0.06100668291845792
+        },
+        "recovery_days_quantiles": {
+          "0.01": 22.0,
+          "0.05": 27.0,
+          "0.25": 35.0,
+          "0.5": 42.0,
+          "0.75": 53.0,
+          "0.95": 78.0,
+          "0.99": 103.0
+        }
+      }
+    },
+    {
+      "group": "position_size",
+      "label": "0.25",
+      "risk": 0.25,
+      "regime_column": "regime_4",
+      "spec": {
+        "n_paths": 20000,
+        "horizon_days": 756,
+        "mean_block_days": 20,
+        "bootstrap_method": "regime",
+        "equity_mode": "fixed_notional",
+        "extra_slippage_ticks": 0.0,
+        "slippage_cost_per_trade_return": 0.0005,
+        "missed_trade_probability": 0.0,
+        "synchronized_loss_probability": 0.0,
+        "gap_shock_probability": 0.0,
+        "gap_shock_multiplier": 2.0,
+        "starting_equity": 1.0,
+        "ruin_level": 0.5
+      },
+      "summary": {
+        "paths": 20000,
+        "probability_profitable": 1.0,
+        "probability_ruin_50pct": 0.0,
+        "probability_drawdown_20pct": 0.0,
+        "probability_drawdown_30pct": 0.0,
+        "probability_drawdown_50pct": 0.0,
+        "return_quantiles": {
+          "0.01": 1.4353445000000002,
+          "0.05": 1.5713118750000012,
+          "0.25": 1.7658750000000016,
+          "0.5": 1.9019375000000007,
+          "0.75": 2.0403656250000006,
+          "0.95": 2.2439962500000017,
+          "0.99": 2.390675250000004
+        },
+        "max_drawdown_quantiles": {
+          "0.01": -0.06416213123888816,
+          "0.05": -0.05186484177826098,
+          "0.25": -0.03850408415932566,
+          "0.5": -0.03348548689138586,
+          "0.75": -0.029679647242146473,
+          "0.95": -0.025329297339551235,
+          "0.99": -0.022617522705671814
+        },
+        "recovery_days_quantiles": {
+          "0.01": 17.0,
+          "0.05": 23.0,
+          "0.25": 30.0,
+          "0.5": 35.0,
+          "0.75": 42.0,
+          "0.95": 58.0,
+          "0.99": 75.0
+        }
+      }
+    },
+    {
+      "group": "position_size",
+      "label": "0.5",
+      "risk": 0.5,
+      "regime_column": "regime_4",
+      "spec": {
+        "n_paths": 20000,
+        "horizon_days": 756,
+        "mean_block_days": 20,
+        "bootstrap_method": "regime",
+        "equity_mode": "fixed_notional",
+        "extra_slippage_ticks": 0.0,
+        "slippage_cost_per_trade_return": 0.0005,
+        "missed_trade_probability": 0.0,
+        "synchronized_loss_probability": 0.0,
+        "gap_shock_probability": 0.0,
+        "gap_shock_multiplier": 2.0,
+        "starting_equity": 1.0,
+        "ruin_level": 0.5
+      },
+      "summary": {
+        "paths": 20000,
+        "probability_profitable": 1.0,
+        "probability_ruin_50pct": 0.0,
+        "probability_drawdown_20pct": 0.00015,
+        "probability_drawdown_30pct": 0.0,
+        "probability_drawdown_50pct": 0.0,
+        "return_quantiles": {
+          "0.01": 2.8973697500000015,
+          "0.05": 3.14582375,
+          "0.25": 3.5356375,
+          "0.5": 3.803700000000001,
+          "0.75": 4.075656249999998,
+          "0.95": 4.471394999999997,
+          "0.99": 4.762542249999996
+        },
+        "max_drawdown_quantiles": {
+          "0.01": -0.11723724375125466,
+          "0.05": -0.09243910971529841,
+          "0.25": -0.0691086717127006,
+          "0.5": -0.059164258986003915,
+          "0.75": -0.05128496340818073,
+          "0.95": -0.04171876365574638,
+          "0.99": -0.036450017231770666
+        },
+        "recovery_days_quantiles": {
+          "0.01": 17.0,
+          "0.05": 23.0,
+          "0.25": 30.0,
+          "0.5": 35.0,
+          "0.75": 42.0,
+          "0.95": 58.0,
+          "0.99": 75.0
+        }
+      }
+    },
+    {
+      "group": "position_size",
+      "label": "0.75",
+      "risk": 0.75,
+      "regime_column": "regime_4",
+      "spec": {
+        "n_paths": 20000,
+        "horizon_days": 756,
+        "mean_block_days": 20,
+        "bootstrap_method": "regime",
+        "equity_mode": "fixed_notional",
+        "extra_slippage_ticks": 0.0,
+        "slippage_cost_per_trade_return": 0.0005,
+        "missed_trade_probability": 0.0,
+        "synchronized_loss_probability": 0.0,
+        "gap_shock_probability": 0.0,
+        "gap_shock_multiplier": 2.0,
+        "starting_equity": 1.0,
+        "ruin_level": 0.5
+      },
+      "summary": {
+        "paths": 20000,
+        "probability_profitable": 1.0,
+        "probability_ruin_50pct": 0.0,
+        "probability_drawdown_20pct": 0.0029,
+        "probability_drawdown_30pct": 5e-05,
+        "probability_drawdown_50pct": 0.0,
+        "return_quantiles": {
+          "0.01": 4.333416375000004,
+          "0.05": 4.721773125000003,
+          "0.25": 5.30233125,
+          "0.5": 5.708531250000004,
+          "0.75": 6.121349999999996,
+          "0.95": 6.717470625000002,
+          "0.99": 7.156021875000001
+        },
+        "max_drawdown_quantiles": {
+          "0.01": -0.16900521001628685,
+          "0.05": -0.130977190770952,
+          "0.25": -0.09681619389946705,
+          "0.5": -0.08109693743712704,
+          "0.75": -0.06917551893261431,
+          "0.95": -0.054110455915292156,
+          "0.99": -0.04573890535420876
+        },
+        "recovery_days_quantiles": {
+          "0.01": 17.0,
+          "0.05": 23.0,
+          "0.25": 31.0,
+          "0.5": 36.0,
+          "0.75": 43.0,
+          "0.95": 58.0,
+          "0.99": 75.0
+        }
+      }
+    },
+    {
+      "group": "position_size",
+      "label": "1.0",
+      "risk": 1.0,
+      "regime_column": "regime_4",
+      "spec": {
+        "n_paths": 20000,
+        "horizon_days": 756,
+        "mean_block_days": 20,
+        "bootstrap_method": "regime",
+        "equity_mode": "fixed_notional",
+        "extra_slippage_ticks": 0.0,
+        "slippage_cost_per_trade_return": 0.0005,
+        "missed_trade_probability": 0.0,
+        "synchronized_loss_probability": 0.0,
+        "gap_shock_probability": 0.0,
+        "gap_shock_multiplier": 2.0,
+        "starting_equity": 1.0,
+        "ruin_level": 0.5
+      },
+      "summary": {
+        "paths": 20000,
+        "probability_profitable": 1.0,
+        "probability_ruin_50pct": 0.0,
+        "probability_drawdown_20pct": 0.01675,
+        "probability_drawdown_30pct": 0.00065,
+        "probability_drawdown_50pct": 0.0,
+        "return_quantiles": {
+          "0.01": 5.776046000000001,
+          "0.05": 6.314845000000008,
+          "0.25": 7.078900000000008,
+          "0.5": 7.6199000000000074,
+          "0.75": 8.170525000000001,
+          "0.95": 8.995025000000014,
+          "0.99": 9.59951900000001
+        },
+        "max_drawdown_quantiles": {
+          "0.01": -0.217184171258733,
+          "0.05": -0.16417904440551895,
+          "0.25": -0.12331062626705902,
+          "0.5": -0.10083480914297194,
+          "0.75": -0.08515284049353844,
+          "0.95": -0.06347362766748238,
+          "0.99": -0.05284258826920796
+        },
+        "recovery_days_quantiles": {
+          "0.01": 17.0,
+          "0.05": 23.0,
+          "0.25": 30.0,
+          "0.5": 35.0,
+          "0.75": 42.0,
+          "0.95": 58.0,
+          "0.99": 75.0
+        }
+      }
+    }
+  ],
+  "envelopes": {
+    "block_days": {
+      "median_return_min": 7.512825000000003,
+      "median_return_max": 7.704900000000002,
+      "probability_dd30_min": 0.0001,
+      "probability_dd30_max": 0.0073
+    },
+    "bootstrap_method": {
+      "median_return_min": 7.6059250000000045,
+      "median_return_max": 8.834350000000002,
+      "probability_dd30_min": 0.0,
+      "probability_dd30_max": 0.00085
+    },
+    "equity_mode": {
+      "median_return_min": 7.611275000000002,
+      "median_return_max": 1126.2144549069683,
+      "probability_dd30_min": 0.00035,
+      "probability_dd30_max": 0.01315
+    },
+    "extra_slippage_ticks": {
+      "median_return_min": 4.758950000000004,
+      "median_return_max": 7.606625000000002,
+      "probability_dd30_min": 0.0006,
+      "probability_dd30_max": 0.0231
+    },
+    "gap_multiplier": {
+      "median_return_min": 7.059029999999995,
+      "median_return_max": 7.416385000000005,
+      "probability_dd30_min": 0.00105,
+      "probability_dd30_max": 0.0101
+    },
+    "gap_probability": {
+      "median_return_min": 6.881375000000004,
+      "median_return_max": 7.601175000000006,
+      "probability_dd30_min": 0.0007,
+      "probability_dd30_max": 0.0072
+    },
+    "horizon_days": {
+      "median_return_min": 2.548225,
+      "median_return_max": 12.700425000000024,
+      "probability_dd30_min": 0.0006,
+      "probability_dd30_max": 0.0011
+    },
+    "loss_synchronization": {
+      "median_return_min": 1.7340249999999853,
+      "median_return_max": 7.62690000000001,
+      "probability_dd30_min": 0.0007,
+      "probability_dd30_max": 0.7947
+    },
+    "missed_trade_probability": {
+      "median_return_min": 6.090140000000003,
+      "median_return_max": 7.618625,
+      "probability_dd30_min": 5e-05,
+      "probability_dd30_max": 0.0009
+    },
+    "position_size": {
+      "median_return_min": 1.9019375000000007,
+      "median_return_max": 7.6199000000000074,
+      "probability_dd30_min": 0.0,
+      "probability_dd30_max": 0.00065
+    },
+    "regime_states": {
+      "median_return_min": 7.511800000000007,
+      "median_return_max": 7.700175000000003,
+      "probability_dd30_min": 0.0006,
+      "probability_dd30_max": 0.0013
+    }
+  },
+  "precision": {
+    "full_size_baseline": {
+      "spec": {
+        "n_paths": 1000000,
+        "horizon_days": 756,
+        "mean_block_days": 20,
+        "bootstrap_method": "regime",
+        "equity_mode": "fixed_notional",
+        "extra_slippage_ticks": 0.0,
+        "slippage_cost_per_trade_return": 0.0005,
+        "missed_trade_probability": 0.0,
+        "synchronized_loss_probability": 0.0,
+        "gap_shock_probability": 0.0,
+        "gap_shock_multiplier": 2.0,
+        "starting_equity": 1.0,
+        "ruin_level": 0.5
+      },
+      "summary": {
+        "paths": 1000000,
+        "probability_profitable": 1.0,
+        "probability_ruin_50pct": 1e-06,
+        "probability_drawdown_20pct": 0.016047,
+        "probability_drawdown_30pct": 0.000674,
+        "probability_drawdown_50pct": 3e-06,
+        "return_quantiles": {
+          "0.01": 5.7684494999999965,
+          "0.05": 6.298749999999999,
+          "0.25": 7.0671000000000035,
+          "0.5": 7.612900000000002,
+          "0.75": 8.164250000000003,
+          "0.95": 8.975650000000012,
+          "0.99": 9.56415050000001
+        },
+        "max_drawdown_quantiles": {
+          "0.01": -0.21467615349894184,
+          "0.05": -0.1639715261490351,
+          "0.25": -0.12353195164075981,
+          "0.5": -0.10082216345518552,
+          "0.75": -0.08533926639546885,
+          "0.95": -0.06418275892256833,
+          "0.99": -0.053365281477237854
+        },
+        "recovery_days_quantiles": {
+          "0.01": 17.0,
+          "0.05": 23.0,
+          "0.25": 30.0,
+          "0.5": 35.0,
+          "0.75": 42.0,
+          "0.95": 58.0,
+          "0.99": 75.0
+        }
+      }
+    },
+    "full_size_severe_stress": {
+      "spec": {
+        "n_paths": 1000000,
+        "horizon_days": 756,
+        "mean_block_days": 20,
+        "bootstrap_method": "regime",
+        "equity_mode": "fixed_notional",
+        "extra_slippage_ticks": 2.0,
+        "slippage_cost_per_trade_return": 0.0005,
+        "missed_trade_probability": 0.1,
+        "synchronized_loss_probability": 0.5,
+        "gap_shock_probability": 0.005,
+        "gap_shock_multiplier": 2.0,
+        "starting_equity": 1.0,
+        "ruin_level": 0.5
+      },
+      "summary": {
+        "paths": 1000000,
+        "probability_profitable": 0.863122,
+        "probability_ruin_50pct": 0.254345,
+        "probability_drawdown_20pct": 0.98332,
+        "probability_drawdown_30pct": 0.84046,
+        "probability_drawdown_50pct": 0.412115,
+        "return_quantiles": {
+          "0.01": -1.0,
+          "0.05": -0.9007280000000029,
+          "0.25": 0.3996637499999969,
+          "0.5": 1.0054999999999905,
+          "0.75": 1.6062162499999921,
+          "0.95": 2.4809554999999945,
+          "0.99": 3.1024557499999954
+        },
+        "max_drawdown_quantiles": {
+          "0.01": -1.0,
+          "0.05": -0.9973139862765313,
+          "0.25": -0.6197461271194975,
+          "0.5": -0.45162380680715875,
+          "0.75": -0.33954073749557717,
+          "0.95": -0.23671805165363038,
+          "0.99": -0.18714801207650658
+        },
+        "recovery_days_quantiles": {
+          "0.01": 85.0,
+          "0.05": 116.0,
+          "0.25": 191.0,
+          "0.5": 281.0,
+          "0.75": 420.0,
+          "0.95": 692.0,
+          "0.99": 750.0
+        }
+      }
+    }
+  }
+}

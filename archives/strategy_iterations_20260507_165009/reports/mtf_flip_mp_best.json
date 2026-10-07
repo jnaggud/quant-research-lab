@@ -1,0 +1,580 @@
+{
+  "source_data": "tmp/bitstamp_btcusd_15m_20250930_20260507.json",
+  "workers": 32,
+  "requested_trials": 12800,
+  "completed_trials": 12800,
+  "best": {
+    "worker_id": 0,
+    "score": -21.3521678036212,
+    "params": {
+      "tf": "240min",
+      "fast": 7,
+      "slow": 10,
+      "confirm": "1D",
+      "confirm_fast": 14,
+      "confirm_slow": 36,
+      "hold_bars": 1,
+      "cost_bps": 4.0
+    },
+    "metrics": {
+      "full": {
+        "total_return": 30.108719438202392,
+        "n_trades": 42,
+        "win_rate": 42.857142857142854,
+        "profit_factor": 1.7441970219965448,
+        "max_drawdown": 13.176129532040868
+      },
+      "q1": {
+        "total_return": 15.962121936610707,
+        "n_trades": 9,
+        "win_rate": 55.55555555555556,
+        "profit_factor": 2.702125034304846,
+        "max_drawdown": 5.798585188961388
+      },
+      "q2": {
+        "total_return": -8.6425804320587,
+        "n_trades": 12,
+        "win_rate": 25.0,
+        "profit_factor": 0.4730846775246454,
+        "max_drawdown": 13.176129532040848
+      },
+      "q3": {
+        "total_return": 15.784181389960072,
+        "n_trades": 10,
+        "win_rate": 50.0,
+        "profit_factor": 3.2839388773998115,
+        "max_drawdown": 4.268460110551237
+      },
+      "q4": {
+        "total_return": 6.071129885509308,
+        "n_trades": 11,
+        "win_rate": 45.45454545454545,
+        "profit_factor": 1.8318772583648428,
+        "max_drawdown": 4.930655456621556
+      }
+    },
+    "trials": 400
+  },
+  "top10": [
+    {
+      "worker_id": 0,
+      "score": -21.3521678036212,
+      "params": {
+        "tf": "240min",
+        "fast": 7,
+        "slow": 10,
+        "confirm": "1D",
+        "confirm_fast": 14,
+        "confirm_slow": 36,
+        "hold_bars": 1,
+        "cost_bps": 4.0
+      },
+      "metrics": {
+        "full": {
+          "total_return": 30.108719438202392,
+          "n_trades": 42,
+          "win_rate": 42.857142857142854,
+          "profit_factor": 1.7441970219965448,
+          "max_drawdown": 13.176129532040868
+        },
+        "q1": {
+          "total_return": 15.962121936610707,
+          "n_trades": 9,
+          "win_rate": 55.55555555555556,
+          "profit_factor": 2.702125034304846,
+          "max_drawdown": 5.798585188961388
+        },
+        "q2": {
+          "total_return": -8.6425804320587,
+          "n_trades": 12,
+          "win_rate": 25.0,
+          "profit_factor": 0.4730846775246454,
+          "max_drawdown": 13.176129532040848
+        },
+        "q3": {
+          "total_return": 15.784181389960072,
+          "n_trades": 10,
+          "win_rate": 50.0,
+          "profit_factor": 3.2839388773998115,
+          "max_drawdown": 4.268460110551237
+        },
+        "q4": {
+          "total_return": 6.071129885509308,
+          "n_trades": 11,
+          "win_rate": 45.45454545454545,
+          "profit_factor": 1.8318772583648428,
+          "max_drawdown": 4.930655456621556
+        }
+      },
+      "trials": 400
+    },
+    {
+      "worker_id": 27,
+      "score": -22.55250177918338,
+      "params": {
+        "tf": "60min",
+        "fast": 34,
+        "slow": 44,
+        "confirm": "1D",
+        "confirm_fast": 9,
+        "confirm_slow": 20,
+        "hold_bars": 4,
+        "cost_bps": 4.0
+      },
+      "metrics": {
+        "full": {
+          "total_return": 26.929418478414746,
+          "n_trades": 43,
+          "win_rate": 44.18604651162791,
+          "profit_factor": 1.702189549378957,
+          "max_drawdown": 14.743309740395047
+        },
+        "q1": {
+          "total_return": 24.937934745831658,
+          "n_trades": 7,
+          "win_rate": 85.71428571428571,
+          "profit_factor": 14.665157220888222,
+          "max_drawdown": 1.7198089737894224
+        },
+        "q2": {
+          "total_return": -8.479659194214639,
+          "n_trades": 15,
+          "win_rate": 20.0,
+          "profit_factor": 0.5430354465474082,
+          "max_drawdown": 13.211996205843867
+        },
+        "q3": {
+          "total_return": 12.702571338863077,
+          "n_trades": 10,
+          "win_rate": 70.0,
+          "profit_factor": 2.433449117956578,
+          "max_drawdown": 9.404784520491988
+        },
+        "q4": {
+          "total_return": -2.0510653425229175,
+          "n_trades": 12,
+          "win_rate": 33.33333333333333,
+          "profit_factor": 0.853320453015247,
+          "max_drawdown": 8.750373075248651
+        }
+      },
+      "trials": 400
+    },
+    {
+      "worker_id": 30,
+      "score": -28.228382097618564,
+      "params": {
+        "tf": "60min",
+        "fast": 33,
+        "slow": 46,
+        "confirm": "1D",
+        "confirm_fast": 14,
+        "confirm_slow": 37,
+        "hold_bars": 3,
+        "cost_bps": 4.0
+      },
+      "metrics": {
+        "full": {
+          "total_return": 22.987125041554137,
+          "n_trades": 42,
+          "win_rate": 38.095238095238095,
+          "profit_factor": 1.600126708078475,
+          "max_drawdown": 14.266732861115564
+        },
+        "q1": {
+          "total_return": 21.41238083180803,
+          "n_trades": 7,
+          "win_rate": 71.42857142857143,
+          "profit_factor": 7.527203549410294,
+          "max_drawdown": 1.7198143300804385
+        },
+        "q2": {
+          "total_return": -8.823958953747846,
+          "n_trades": 15,
+          "win_rate": 20.0,
+          "profit_factor": 0.5210040511655207,
+          "max_drawdown": 13.169876173745864
+        },
+        "q3": {
+          "total_return": 7.674615203782031,
+          "n_trades": 9,
+          "win_rate": 33.33333333333333,
+          "profit_factor": 1.8227155622632347,
+          "max_drawdown": 10.846035271106407
+        },
+        "q4": {
+          "total_return": 3.18168477574603,
+          "n_trades": 11,
+          "win_rate": 45.45454545454545,
+          "profit_factor": 1.4255614613235994,
+          "max_drawdown": 6.195844398671456
+        }
+      },
+      "trials": 400
+    },
+    {
+      "worker_id": 10,
+      "score": -29.456972408361295,
+      "params": {
+        "tf": "240min",
+        "fast": 7,
+        "slow": 18,
+        "confirm": "1D",
+        "confirm_fast": 7,
+        "confirm_slow": 19,
+        "hold_bars": 3,
+        "cost_bps": 4.0
+      },
+      "metrics": {
+        "full": {
+          "total_return": 15.536449580224732,
+          "n_trades": 41,
+          "win_rate": 41.46341463414634,
+          "profit_factor": 1.3810814987440103,
+          "max_drawdown": 19.25424154796883
+        },
+        "q1": {
+          "total_return": 23.877720506013645,
+          "n_trades": 6,
+          "win_rate": 83.33333333333334,
+          "profit_factor": 16.338661074562932,
+          "max_drawdown": 1.4710378255611045
+        },
+        "q2": {
+          "total_return": -7.463787834350411,
+          "n_trades": 13,
+          "win_rate": 30.76923076923077,
+          "profit_factor": 0.5509848438146553,
+          "max_drawdown": 13.078983763738744
+        },
+        "q3": {
+          "total_return": 6.364446075319252,
+          "n_trades": 13,
+          "win_rate": 38.46153846153847,
+          "profit_factor": 1.4524472010907934,
+          "max_drawdown": 12.793338160642772
+        },
+        "q4": {
+          "total_return": -5.763553661743037,
+          "n_trades": 12,
+          "win_rate": 33.33333333333333,
+          "profit_factor": 0.6445524199513857,
+          "max_drawdown": 11.38083389082638
+        }
+      },
+      "trials": 400
+    },
+    {
+      "worker_id": 3,
+      "score": -30.514244555692088,
+      "params": {
+        "tf": "60min",
+        "fast": 34,
+        "slow": 44,
+        "confirm": "1D",
+        "confirm_fast": 17,
+        "confirm_slow": 32,
+        "hold_bars": 1,
+        "cost_bps": 4.0
+      },
+      "metrics": {
+        "full": {
+          "total_return": 18.810096668765187,
+          "n_trades": 42,
+          "win_rate": 40.476190476190474,
+          "profit_factor": 1.4786405383747387,
+          "max_drawdown": 13.211996205843887
+        },
+        "q1": {
+          "total_return": 17.6405995741046,
+          "n_trades": 7,
+          "win_rate": 57.14285714285714,
+          "profit_factor": 4.610128670706776,
+          "max_drawdown": 4.7729738165658695
+        },
+        "q2": {
+          "total_return": -8.44934232918626,
+          "n_trades": 15,
+          "win_rate": 20.0,
+          "profit_factor": 0.5448510251987749,
+          "max_drawdown": 13.211996205843867
+        },
+        "q3": {
+          "total_return": 6.888632401719019,
+          "n_trades": 9,
+          "win_rate": 55.55555555555556,
+          "profit_factor": 1.6955838308673712,
+          "max_drawdown": 9.404784520491987
+        },
+        "q4": {
+          "total_return": 3.2055686244004233,
+          "n_trades": 11,
+          "win_rate": 45.45454545454545,
+          "profit_factor": 1.4055113701584874,
+          "max_drawdown": 6.654395489226212
+        }
+      },
+      "trials": 400
+    },
+    {
+      "worker_id": 9,
+      "score": -31.4741522517681,
+      "params": {
+        "tf": "60min",
+        "fast": 33,
+        "slow": 47,
+        "confirm": "1D",
+        "confirm_fast": 11,
+        "confirm_slow": 19,
+        "hold_bars": 1,
+        "cost_bps": 4.0
+      },
+      "metrics": {
+        "full": {
+          "total_return": 21.37314727792292,
+          "n_trades": 43,
+          "win_rate": 39.53488372093023,
+          "profit_factor": 1.546345357631568,
+          "max_drawdown": 19.195896895635396
+        },
+        "q1": {
+          "total_return": 25.57248342713976,
+          "n_trades": 7,
+          "win_rate": 85.71428571428571,
+          "profit_factor": 14.962152745383827,
+          "max_drawdown": 1.7198089737894269
+        },
+        "q2": {
+          "total_return": -9.161393931575478,
+          "n_trades": 15,
+          "win_rate": 20.0,
+          "profit_factor": 0.49755203662258085,
+          "max_drawdown": 13.076382267920362
+        },
+        "q3": {
+          "total_return": 10.888311382278214,
+          "n_trades": 10,
+          "win_rate": 50.0,
+          "profit_factor": 2.0958247135896197,
+          "max_drawdown": 10.8460352711064
+        },
+        "q4": {
+          "total_return": -4.57655282274354,
+          "n_trades": 12,
+          "win_rate": 33.33333333333333,
+          "profit_factor": 0.6863366904178098,
+          "max_drawdown": 11.737110400299589
+        }
+      },
+      "trials": 400
+    },
+    {
+      "worker_id": 17,
+      "score": -31.551509650531628,
+      "params": {
+        "tf": "60min",
+        "fast": 32,
+        "slow": 49,
+        "confirm": "1D",
+        "confirm_fast": 15,
+        "confirm_slow": 36,
+        "hold_bars": 2,
+        "cost_bps": 4.0
+      },
+      "metrics": {
+        "full": {
+          "total_return": 22.534496908634694,
+          "n_trades": 43,
+          "win_rate": 39.53488372093023,
+          "profit_factor": 1.5844846688483802,
+          "max_drawdown": 14.048417598253776
+        },
+        "q1": {
+          "total_return": 20.78745106885791,
+          "n_trades": 7,
+          "win_rate": 71.42857142857143,
+          "profit_factor": 6.417568957655524,
+          "max_drawdown": 2.2723529074206836
+        },
+        "q2": {
+          "total_return": -9.399986530354287,
+          "n_trades": 15,
+          "win_rate": 20.0,
+          "profit_factor": 0.48333520490457754,
+          "max_drawdown": 13.076382267920362
+        },
+        "q3": {
+          "total_return": 8.579465025874299,
+          "n_trades": 10,
+          "win_rate": 40.0,
+          "profit_factor": 1.8988916978777017,
+          "max_drawdown": 10.523044239552638
+        },
+        "q4": {
+          "total_return": 3.1242007494931556,
+          "n_trades": 11,
+          "win_rate": 45.45454545454545,
+          "profit_factor": 1.413668530541895,
+          "max_drawdown": 6.296450515931125
+        }
+      },
+      "trials": 400
+    },
+    {
+      "worker_id": 16,
+      "score": -32.48244370851504,
+      "params": {
+        "tf": "60min",
+        "fast": 34,
+        "slow": 45,
+        "confirm": "1D",
+        "confirm_fast": 5,
+        "confirm_slow": 29,
+        "hold_bars": 4,
+        "cost_bps": 4.0
+      },
+      "metrics": {
+        "full": {
+          "total_return": 17.252757983939617,
+          "n_trades": 44,
+          "win_rate": 38.63636363636363,
+          "profit_factor": 1.421042321159946,
+          "max_drawdown": 18.69019817796282
+        },
+        "q1": {
+          "total_return": 20.3372283104613,
+          "n_trades": 7,
+          "win_rate": 71.42857142857143,
+          "profit_factor": 4.847656863619836,
+          "max_drawdown": 3.428613748920893
+        },
+        "q2": {
+          "total_return": -8.539055799824125,
+          "n_trades": 15,
+          "win_rate": 20.0,
+          "profit_factor": 0.5380386927166784,
+          "max_drawdown": 13.169876173745864
+        },
+        "q3": {
+          "total_return": 8.86574246971572,
+          "n_trades": 9,
+          "win_rate": 44.44444444444444,
+          "profit_factor": 1.9238948844404393,
+          "max_drawdown": 10.8460352711064
+        },
+        "q4": {
+          "total_return": -2.1420433308709463,
+          "n_trades": 13,
+          "win_rate": 38.46153846153847,
+          "profit_factor": 0.8487994660793033,
+          "max_drawdown": 9.173269259584941
+        }
+      },
+      "trials": 400
+    },
+    {
+      "worker_id": 5,
+      "score": -33.20696918754588,
+      "params": {
+        "tf": "60min",
+        "fast": 30,
+        "slow": 50,
+        "confirm": "1D",
+        "confirm_fast": 14,
+        "confirm_slow": 37,
+        "hold_bars": 2,
+        "cost_bps": 4.0
+      },
+      "metrics": {
+        "full": {
+          "total_return": 23.455365715808018,
+          "n_trades": 41,
+          "win_rate": 39.02439024390244,
+          "profit_factor": 1.593886251337735,
+          "max_drawdown": 14.45297939837736
+        },
+        "q1": {
+          "total_return": 21.46114891210067,
+          "n_trades": 7,
+          "win_rate": 71.42857142857143,
+          "profit_factor": 7.540144413479263,
+          "max_drawdown": 1.7198143300804385
+        },
+        "q2": {
+          "total_return": -9.673250799947297,
+          "n_trades": 14,
+          "win_rate": 21.428571428571427,
+          "profit_factor": 0.49524134566812106,
+          "max_drawdown": 13.937079308463563
+        },
+        "q3": {
+          "total_return": 8.162817450990811,
+          "n_trades": 9,
+          "win_rate": 33.33333333333333,
+          "profit_factor": 1.8655923471356555,
+          "max_drawdown": 10.89041790990224
+        },
+        "q4": {
+          "total_return": 4.034698669610859,
+          "n_trades": 11,
+          "win_rate": 45.45454545454545,
+          "profit_factor": 1.5076755131890303,
+          "max_drawdown": 6.561037914057683
+        }
+      },
+      "trials": 400
+    },
+    {
+      "worker_id": 29,
+      "score": -33.79731822045277,
+      "params": {
+        "tf": "60min",
+        "fast": 34,
+        "slow": 44,
+        "confirm": "1D",
+        "confirm_fast": 12,
+        "confirm_slow": 37,
+        "hold_bars": 0,
+        "cost_bps": 4.0
+      },
+      "metrics": {
+        "full": {
+          "total_return": 25.61404166092929,
+          "n_trades": 42,
+          "win_rate": 42.857142857142854,
+          "profit_factor": 1.6619204643583674,
+          "max_drawdown": 14.306451161962059
+        },
+        "q1": {
+          "total_return": 19.715905289309422,
+          "n_trades": 7,
+          "win_rate": 71.42857142857143,
+          "profit_factor": 4.940985674489162,
+          "max_drawdown": 3.606183264725573
+        },
+        "q2": {
+          "total_return": -10.053209407252261,
+          "n_trades": 15,
+          "win_rate": 20.0,
+          "profit_factor": 0.4707190035775578,
+          "max_drawdown": 14.306451161962086
+        },
+        "q3": {
+          "total_return": 11.77474189772838,
+          "n_trades": 9,
+          "win_rate": 55.55555555555556,
+          "profit_factor": 2.552116302302581,
+          "max_drawdown": 8.166299870737364
+        },
+        "q4": {
+          "total_return": 4.36550714824131,
+          "n_trades": 11,
+          "win_rate": 45.45454545454545,
+          "profit_factor": 1.576891152035738,
+          "max_drawdown": 5.986479585581662
+        }
+      },
+      "trials": 400
+    }
+  ]
+}

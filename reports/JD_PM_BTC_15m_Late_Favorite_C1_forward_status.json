@@ -1,0 +1,21 @@
+{
+  "strategy": "JD PM BTC 15m Late Favorite C1",
+  "status": "NOT_READY",
+  "signals": 0,
+  "resolved": 0,
+  "calendar_days": 0,
+  "net_pnl": 0,
+  "win_rate": 0.0,
+  "max_drawdown": 0.0,
+  "profitable_week_fraction": 0.0,
+  "weekly_pnl": {},
+  "checks": {
+    "minimum_signals": false,
+    "minimum_calendar_days": false,
+    "all_signals_resolved": false,
+    "positive_net_pnl": false,
+    "profitable_weeks": false,
+    "drawdown_limit": true,
+    "displayed_liquidity": false
+  }
+}

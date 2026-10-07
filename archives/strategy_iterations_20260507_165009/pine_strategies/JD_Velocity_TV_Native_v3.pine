@@ -1,0 +1,82 @@
+//@version=6
+strategy("JD Velocity TV Native v3", overlay=true, initial_capital=10000, default_qty_type=strategy.percent_of_equity, default_qty_value=100, pyramiding=0, commission_type=strategy.commission.percent, commission_value=0.0, slippage=0, process_orders_on_close=true)
+
+direction = input.string("Long + short", "Direction", options=["Long only", "Long + short"])
+fastLen = input.int(34, "Fast EMA", minval=1)
+slowLen = input.int(89, "Slow EMA", minval=1)
+regimeLen = input.int(200, "Regime EMA", minval=1)
+adxLen = input.int(14, "ADX length", minval=1)
+aroonLen = input.int(25, "Aroon length", minval=2)
+normLen = input.int(50, "Normalization length", minval=5)
+oscSmooth = input.int(3, "Velocity oscillator smoothing", minval=1)
+minAdx = input.float(8.0, "Minimum ADX", step=0.5)
+longVelocityFloor = input.float(-0.55, "Long velocity floor", step=0.05)
+shortVelocityCeiling = input.float(0.55, "Short velocity ceiling", step=0.05)
+useDateRange = input.bool(false, "Use date range")
+startTime = input.time(1672531200000, "Start")
+endTime = input.time(4102444800000, "End")
+showSignals = input.bool(true, "Show signals")
+showOsc = input.bool(false, "Show velocity oscillator")
+
+f_safe_div(a, b) => math.abs(b) > 1e-10 ? a / b : 0.0
+f_clip(x, lo, hi) => math.max(lo, math.min(hi, x))
+f_norm_minmax(src, len) =>
+    lowest = ta.lowest(src, len)
+    highest = ta.highest(src, len)
+    f_clip(2.0 * f_safe_div(src - lowest, highest - lowest) - 1.0, -1.0, 1.0)
+f_williams(len) => -100.0 * f_safe_div(ta.highest(high, len) - close, ta.highest(high, len) - ta.lowest(low, len))
+f_aroon_osc(len) =>
+    highBars = ta.highestbars(high, len + 1)
+    lowBars = ta.lowestbars(low, len + 1)
+    aroonUp = 100.0 * (len - math.abs(highBars)) / len
+    aroonDown = 100.0 * (len - math.abs(lowBars)) / len
+    aroonUp - aroonDown
+
+emaFast = ta.ema(close, fastLen)
+emaSlow = ta.ema(close, slowLen)
+emaRegime = ta.ema(close, regimeLen)
+[_, _, adx] = ta.dmi(adxLen, adxLen)
+[_, _, macdHist] = ta.macd(close, 12, 26, 9)
+rsi = ta.rsi(close, 14)
+
+rocNorm = f_norm_minmax(ta.roc(close, 10), normLen)
+macdNorm = f_norm_minmax(macdHist, normLen)
+aroonNorm = f_aroon_osc(aroonLen) / 100.0
+trendComponent = (rocNorm + macdNorm + aroonNorm) / 3.0
+rsiNorm = (rsi - 50.0) / 50.0
+stochNorm = (ta.stoch(close, high, low, 14) - 50.0) / 50.0
+willNorm = (f_williams(14) + 50.0) / 50.0
+reversionComponent = (rsiNorm + stochNorm + willNorm) / 3.0
+weight = f_clip(adx / 100.0, 0.0, 1.0)
+velocityOsc = f_clip(ta.sma(weight * trendComponent + (1.0 - weight) * reversionComponent, oscSmooth), -1.0, 1.0)
+
+inRange = not useDateRange or (time >= startTime and time <= endTime)
+longTrend = emaFast > emaSlow and close > emaRegime and adx >= minAdx
+shortTrend = emaFast < emaSlow and close < emaRegime and adx >= minAdx
+fastCrossUp = ta.crossover(emaFast, emaSlow)
+fastCrossDown = ta.crossunder(emaFast, emaSlow)
+regimeCrossUp = ta.crossover(close, emaRegime)
+regimeCrossDown = ta.crossunder(close, emaRegime)
+longTrigger = fastCrossUp or regimeCrossUp
+shortTrigger = fastCrossDown or regimeCrossDown
+longSignal = inRange and strategy.position_size <= 0 and longTrend and longTrigger and velocityOsc > longVelocityFloor
+shortSignal = inRange and direction == "Long + short" and strategy.position_size >= 0 and shortTrend and shortTrigger and velocityOsc < shortVelocityCeiling
+longExit = strategy.position_size > 0 and (emaFast < emaSlow or close < emaRegime or (useDateRange and time > endTime))
+shortExit = strategy.position_size < 0 and (emaFast > emaSlow or close > emaRegime or (useDateRange and time > endTime))
+
+if longSignal
+    strategy.entry("Long", strategy.long)
+if shortSignal
+    strategy.entry("Short", strategy.short)
+if longExit
+    strategy.close("Long")
+if shortExit
+    strategy.close("Short")
+
+plot(emaFast, "Fast EMA", color=color.new(color.aqua, 0))
+plot(emaSlow, "Slow EMA", color=color.new(color.orange, 0))
+plot(emaRegime, "Regime EMA", color=color.new(color.white, 20), linewidth=2)
+plotshape(showSignals and longSignal, "Long", shape.triangleup, location.belowbar, color=color.lime, size=size.tiny, text="L")
+plotshape(showSignals and shortSignal, "Short", shape.triangledown, location.abovebar, color=color.red, size=size.tiny, text="S")
+plot(showOsc ? velocityOsc : na, "Velocity ARWO", color=color.new(color.aqua, 0), display=display.pane)
+hline(0, "Midline", color=color.gray)

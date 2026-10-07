@@ -1,0 +1,14 @@
+{
+  "data_files": [
+    "tmp/tv_cl1_15m_loaded_full_raw.json",
+    "tmp/tv_cl1_15m_last500_20260519.json"
+  ],
+  "data_start": "2025-06-30T22:00:00+00:00",
+  "data_end": "2026-05-19T07:45:00+00:00",
+  "prominence_pct": 1.0,
+  "distance": 5,
+  "absolute_prominence": 0.7017794928761169,
+  "peaks": 356,
+  "valleys": 397,
+  "out": "pine_strategies/JD_CL_15m_SciPy_Truth_Markers_20260519.pine"
+}

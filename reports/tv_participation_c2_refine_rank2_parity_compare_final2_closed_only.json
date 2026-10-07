@@ -1,0 +1,24 @@
+{
+  "closed_historical_success_excluding_latest_live_trade": true,
+  "compared_trades": 478,
+  "latest_local": [
+    20767,
+    20772,
+    1,
+    7566.5,
+    7558.25,
+    -417.5,
+    "core"
+  ],
+  "latest_tv": [
+    20767,
+    20772,
+    1,
+    7566.5,
+    7560.25,
+    -317.5,
+    "core"
+  ],
+  "mismatch_count": 0,
+  "mismatches": []
+}

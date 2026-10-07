@@ -1,0 +1,497 @@
+{
+  "created_at_local": "2026-05-07T16:50:09",
+  "purpose": "Snapshot all Pine strategy iterations, optimizer scripts, reports, publish pack, and data exports from the TradingView strategy development session.",
+  "current_chart_benchmark": {
+    "symbol": "BITSTAMP:BTCUSD",
+    "timeframe": "15m",
+    "active_strategy": "JD BTC 15m TV Range Reversal 64k 20260507",
+    "tradingview_strategy_tester_range": "Sep 30, 2025 \u2013 May 7, 2026",
+    "net_pnl": "+2,557.26 USD / +25.57%",
+    "max_equity_drawdown": "689.17 USD / 5.50%",
+    "total_trades": 387,
+    "profitable_trades": "20.93% / 81 of 387",
+    "profit_factor": 1.383
+  },
+  "key_iterations": [
+    {
+      "file": "pine_strategies/JD_Velocity_TV_Native_v1.pine",
+      "role": "early TradingView-native velocity conversion"
+    },
+    {
+      "file": "pine_strategies/JD_Velocity_TV_Native_v2.pine",
+      "role": "second native velocity conversion"
+    },
+    {
+      "file": "pine_strategies/JD_Velocity_TV_Native_v3.pine",
+      "role": "third native velocity conversion"
+    },
+    {
+      "file": "pine_strategies/JD_Velocity_Optuna_MTF_Best.pine",
+      "role": "Optuna-derived MTF velocity candidate"
+    },
+    {
+      "file": "pine_strategies/JD_MTF_Flip_64k_Best.pine",
+      "role": "4H/daily MTF flip base strategy"
+    },
+    {
+      "file": "pine_strategies/JD_MTF_Peak_Valley_Reversal.pine",
+      "role": "peak/valley reversal experiment"
+    },
+    {
+      "file": "pine_strategies/JD_BTC_15m_MTF_Reversal_64k.pine",
+      "role": "sparse 15m MTF reversal candidate"
+    },
+    {
+      "file": "pine_strategies/JD_BTC_15m_MTF_Reversal_HF_96k.pine",
+      "role": "higher-frequency 15m reversal candidate"
+    },
+    {
+      "file": "pine_strategies/JD_BTC_15m_TVRange_Reversal_64k.pine",
+      "role": "current best TradingView-range 15m strategy on chart"
+    }
+  ],
+  "files": [
+    {
+      "path": "pine_strategies/JD_BTC_15m_MTF_Reversal_64k.pine",
+      "archive_path": "archives/strategy_iterations_20260507_165009/pine_strategies/JD_BTC_15m_MTF_Reversal_64k.pine",
+      "bytes": 5553,
+      "modified_unix": 1778159747.6461332,
+      "sha256": "192c4176e06efaace7ec8615ac0798caad755dc4b98ef0f1d7cbe730f0bdf085"
+    },
+    {
+      "path": "pine_strategies/JD_BTC_15m_MTF_Reversal_HF_96k.pine",
+      "archive_path": "archives/strategy_iterations_20260507_165009/pine_strategies/JD_BTC_15m_MTF_Reversal_HF_96k.pine",
+      "bytes": 5598,
+      "modified_unix": 1778171130.763472,
+      "sha256": "7f427f10cde57516d6c4d4fcceddf995ac6659d92141f7129cf832bea4fe7e9a"
+    },
+    {
+      "path": "pine_strategies/JD_BTC_15m_TVRange_Reversal_64k.pine",
+      "archive_path": "archives/strategy_iterations_20260507_165009/pine_strategies/JD_BTC_15m_TVRange_Reversal_64k.pine",
+      "bytes": 6545,
+      "modified_unix": 1778172250.4606414,
+      "sha256": "53f96afffc024aa81f6db7c6ec1e31077ee8aaee05d851aa1ad8ae2f58c77d5f"
+    },
+    {
+      "path": "pine_strategies/JD_MTF_Flip_64k_Best.pine",
+      "archive_path": "archives/strategy_iterations_20260507_165009/pine_strategies/JD_MTF_Flip_64k_Best.pine",
+      "bytes": 3235,
+      "modified_unix": 1778152451.8735394,
+      "sha256": "964c1bf9b925ad5e6b50bba13ebba5784d28a17c42c606bd83f8b5587022eeb8"
+    },
+    {
+      "path": "pine_strategies/JD_MTF_Peak_Valley_Reversal.pine",
+      "archive_path": "archives/strategy_iterations_20260507_165009/pine_strategies/JD_MTF_Peak_Valley_Reversal.pine",
+      "bytes": 6569,
+      "modified_unix": 1778153366.1836758,
+      "sha256": "d805d51759e3172d6a4e4513d4b6dd1b77f4d212c94a44e86b3df8c0b0146063"
+    },
+    {
+      "path": "pine_strategies/JD_Velocity_Optuna_MTF_Best.pine",
+      "archive_path": "archives/strategy_iterations_20260507_165009/pine_strategies/JD_Velocity_Optuna_MTF_Best.pine",
+      "bytes": 6801,
+      "modified_unix": 1778147449.702275,
+      "sha256": "c7deb5d5a189b4be00dc3a630a78f47f801c0e1f7e3767ce41f348e64e966244"
+    },
+    {
+      "path": "pine_strategies/JD_Velocity_TV_Native_v1.pine",
+      "archive_path": "archives/strategy_iterations_20260507_165009/pine_strategies/JD_Velocity_TV_Native_v1.pine",
+      "bytes": 7577,
+      "modified_unix": 1778110983.423247,
+      "sha256": "446aa0f0cdce9d73e48483689f9da62a669994411d1424276e8bfd05b03bc88c"
+    },
+    {
+      "path": "pine_strategies/JD_Velocity_TV_Native_v2.pine",
+      "archive_path": "archives/strategy_iterations_20260507_165009/pine_strategies/JD_Velocity_TV_Native_v2.pine",
+      "bytes": 5943,
+      "modified_unix": 1778115600.1676192,
+      "sha256": "e75f6f3952e35b5689a395d81c885defd34dc0d02193fe0ff5e9b281684bd6f1"
+    },
+    {
+      "path": "pine_strategies/JD_Velocity_TV_Native_v3.pine",
+      "archive_path": "archives/strategy_iterations_20260507_165009/pine_strategies/JD_Velocity_TV_Native_v3.pine",
+      "bytes": 4371,
+      "modified_unix": 1778116165.2607174,
+      "sha256": "12cde56b08afadd3ab42636fb891e777a58129c654b4e6c9d7ed0de2db22d9cf"
+    },
+    {
+      "path": "pine_strategies/velocity_BTCUSD_15m_v15_algo.pine",
+      "archive_path": "archives/strategy_iterations_20260507_165009/pine_strategies/velocity_BTCUSD_15m_v15_algo.pine",
+      "bytes": 14806,
+      "modified_unix": 1778103209.9502246,
+      "sha256": "161cbf4b147d7f729c3dfb9e44e2b31bab1014a93aafeb3245bcae65e7b258b7"
+    },
+    {
+      "path": "pine_strategies/velocity_BTCUSD_15m_v15_manual.pine",
+      "archive_path": "archives/strategy_iterations_20260507_165009/pine_strategies/velocity_BTCUSD_15m_v15_manual.pine",
+      "bytes": 14811,
+      "modified_unix": 1778103209.9493062,
+      "sha256": "2358c2bfb4b5fd560b41ac39b70c4b420a2645c681beb585f5a9b12298eb87eb"
+    },
+    {
+      "path": "pine_strategies/velocity_BTCUSD_15m_v2.pine",
+      "archive_path": "archives/strategy_iterations_20260507_165009/pine_strategies/velocity_BTCUSD_15m_v2.pine",
+      "bytes": 17360,
+      "modified_unix": 1778107651.4890168,
+      "sha256": "21c20449182b6e6e0af963503dc17e7631a7065de923216c5285e31d2a5836f0"
+    },
+    {
+      "path": "pine_strategies/velocity_BTCUSD_1y_v2.pine",
+      "archive_path": "archives/strategy_iterations_20260507_165009/pine_strategies/velocity_BTCUSD_1y_v2.pine",
+      "bytes": 14802,
+      "modified_unix": 1778103209.950884,
+      "sha256": "9541a7d0c950e0371874cc90dea600575cd624c5e4cda182ecb74870c3e9b183"
+    },
+    {
+      "path": "pine_strategies/velocity_BTCUSD_1y_v3.pine",
+      "archive_path": "archives/strategy_iterations_20260507_165009/pine_strategies/velocity_BTCUSD_1y_v3.pine",
+      "bytes": 14802,
+      "modified_unix": 1778103209.949988,
+      "sha256": "f40e2dd672115e66eba0c0dbc81f91ff65116e74de2e7331343c674a71f9e966"
+    },
+    {
+      "path": "pine_strategies/velocity_BTCUSD_1y_v4.pine",
+      "archive_path": "archives/strategy_iterations_20260507_165009/pine_strategies/velocity_BTCUSD_1y_v4.pine",
+      "bytes": 14797,
+      "modified_unix": 1778103209.949191,
+      "sha256": "b215c2806bb782b9656f4910a7f294883133b6f9cc08d1b35895dfe338e35463"
+    },
+    {
+      "path": "pine_strategies/velocity_BTCUSD_5y_v2.pine",
+      "archive_path": "archives/strategy_iterations_20260507_165009/pine_strategies/velocity_BTCUSD_5y_v2.pine",
+      "bytes": 14819,
+      "modified_unix": 1778103209.9482827,
+      "sha256": "cb12572fa03a170968e0fc50232e1f5be8522cb3afc710b9c41c91247cb666c6"
+    },
+    {
+      "path": "pine_strategies/velocity_BTCUSD_5y_v3.pine",
+      "archive_path": "archives/strategy_iterations_20260507_165009/pine_strategies/velocity_BTCUSD_5y_v3.pine",
+      "bytes": 14819,
+      "modified_unix": 1778103209.9480598,
+      "sha256": "694c83273e374ec9e8ecaed49fec4fe847db3eb0fa13fdfe0811b3334345ee23"
+    },
+    {
+      "path": "pine_strategies/velocity_BTCUSD_5y_v4.pine",
+      "archive_path": "archives/strategy_iterations_20260507_165009/pine_strategies/velocity_BTCUSD_5y_v4.pine",
+      "bytes": 14789,
+      "modified_unix": 1778103209.9486349,
+      "sha256": "b5e92c206b21aac32be0d0b4e21a75ccc24c12d1b5318dcdbb6d28c7cb34a22f"
+    },
+    {
+      "path": "pine_strategies/velocity_BTCUSD_ARWO_regime_15m.pine",
+      "archive_path": "archives/strategy_iterations_20260507_165009/pine_strategies/velocity_BTCUSD_ARWO_regime_15m.pine",
+      "bytes": 14840,
+      "modified_unix": 1778103209.9501042,
+      "sha256": "ffb5893991dc454f72307337a633dcc00a67246f5124cb43bf91f0fc0f013a1f"
+    },
+    {
+      "path": "pine_strategies/velocity_BTCUSD_any_reversal_15min.pine",
+      "archive_path": "archives/strategy_iterations_20260507_165009/pine_strategies/velocity_BTCUSD_any_reversal_15min.pine",
+      "bytes": 14845,
+      "modified_unix": 1778103209.94956,
+      "sha256": "613716c5ed520bf3a5685109208183c31cf691e828d229523ce52f23f3c760b9"
+    },
+    {
+      "path": "pine_strategies/velocity_BTCUSD_any_reversal_2y_daily_JD5.pine",
+      "archive_path": "archives/strategy_iterations_20260507_165009/pine_strategies/velocity_BTCUSD_any_reversal_2y_daily_JD5.pine",
+      "bytes": 14830,
+      "modified_unix": 1778103209.9494178,
+      "sha256": "01274c671504f2c385634436749662ba4ccedabfe57066d808f6a897cfc91d21"
+    },
+    {
+      "path": "pine_strategies/velocity_BTCUSD_any_reversal_JD6_5y_1d.pine",
+      "archive_path": "archives/strategy_iterations_20260507_165009/pine_strategies/velocity_BTCUSD_any_reversal_JD6_5y_1d.pine",
+      "bytes": 14853,
+      "modified_unix": 1778103209.949691,
+      "sha256": "d8318789c5d13e66fcfddbc637e103f2067c38797e212ca0a55a63e66eef7b67"
+    },
+    {
+      "path": "pine_strategies/velocity_BTCUSD_any_reversal_JD_2y_1d.pine",
+      "archive_path": "archives/strategy_iterations_20260507_165009/pine_strategies/velocity_BTCUSD_any_reversal_JD_2y_1d.pine",
+      "bytes": 14853,
+      "modified_unix": 1778103209.9487374,
+      "sha256": "9928612c819756155bdac1a290251fb6b9fa2162cd43e8d116f1de582dc582f3"
+    },
+    {
+      "path": "pine_strategies/velocity_BTCUSD_any_reversal_sl.37_tp9.7.pine",
+      "archive_path": "archives/strategy_iterations_20260507_165009/pine_strategies/velocity_BTCUSD_any_reversal_sl.37_tp9.7.pine",
+      "bytes": 14847,
+      "modified_unix": 1778103209.948978,
+      "sha256": "a3ce099129542f823ada31f57c90579f2faab24cf95c69810e0f1f9a2bbd7b5c"
+    },
+    {
+      "path": "pine_strategies/velocity_BTCUSD_velocity_crossover_and_zone_JD3.pine",
+      "archive_path": "archives/strategy_iterations_20260507_165009/pine_strategies/velocity_BTCUSD_velocity_crossover_and_zone_JD3.pine",
+      "bytes": 14856,
+      "modified_unix": 1778103209.9490774,
+      "sha256": "85d7670403e5cb66ed0de606fee7318a348626dc1da4ff672d9ee217b2f2589c"
+    },
+    {
+      "path": "pine_strategies/velocity_BTCUSD_velocity_crossover_or_zone_JD4.pine",
+      "archive_path": "archives/strategy_iterations_20260507_165009/pine_strategies/velocity_BTCUSD_velocity_crossover_or_zone_JD4.pine",
+      "bytes": 14851,
+      "modified_unix": 1778103209.9497972,
+      "sha256": "a9a81bf713fe34c61274c9b00f26e5591450885df21e219299b76ca6a8a2a5c2"
+    },
+    {
+      "path": "pine_strategies/velocity_BTCUSD_velocity_crossover_or_zone_sl.97.pine",
+      "archive_path": "archives/strategy_iterations_20260507_165009/pine_strategies/velocity_BTCUSD_velocity_crossover_or_zone_sl.97.pine",
+      "bytes": 14888,
+      "modified_unix": 1778103209.9503262,
+      "sha256": "da96985c5429c088be103aaa9dd524ba25019ab0b60b645557468a48b7caa45e"
+    },
+    {
+      "path": "pine_strategies/velocity_BTC_1y.pine",
+      "archive_path": "archives/strategy_iterations_20260507_165009/pine_strategies/velocity_BTC_1y.pine",
+      "bytes": 14807,
+      "modified_unix": 1778103209.9505196,
+      "sha256": "efbc625aa4a9c7ca31d13fd306206e2e5ac24f8f49f4fdcb227801ae079b7a18"
+    },
+    {
+      "path": "pine_strategies/velocity_BTC_2y_v2.pine",
+      "archive_path": "archives/strategy_iterations_20260507_165009/pine_strategies/velocity_BTC_2y_v2.pine",
+      "bytes": 14800,
+      "modified_unix": 1778103209.9504268,
+      "sha256": "ec7acd9b851de170cb9d6420fc27e4201aae09a06df28b9ed687581f52641035"
+    },
+    {
+      "path": "pine_strategies/velocity_BTC_2y_v3.pine",
+      "archive_path": "archives/strategy_iterations_20260507_165009/pine_strategies/velocity_BTC_2y_v3.pine",
+      "bytes": 14800,
+      "modified_unix": 1778103209.9507844,
+      "sha256": "37268e7d5cb2823270dd7ecd0ef3ec84f041f4d15fe9a8cf0361c798c84b4ee2"
+    },
+    {
+      "path": "pine_strategies/velocity_BTC_2y_v4.pine",
+      "archive_path": "archives/strategy_iterations_20260507_165009/pine_strategies/velocity_BTC_2y_v4.pine",
+      "bytes": 14788,
+      "modified_unix": 1778103209.9488573,
+      "sha256": "d8ec80aa7e904fe1e6e02cf5a345d7387501db51add29da0d370ab70dd975939"
+    },
+    {
+      "path": "pine_strategies/velocity_BTC_5y.pine",
+      "archive_path": "archives/strategy_iterations_20260507_165009/pine_strategies/velocity_BTC_5y.pine",
+      "bytes": 14808,
+      "modified_unix": 1778103209.950655,
+      "sha256": "743d0bf4516ea876f6c64c07ec113fd26919c79fcf60a167be4bd8cefc097063"
+    },
+    {
+      "path": "pine_strategies/velocity_BTC_5y_2.pine",
+      "archive_path": "archives/strategy_iterations_20260507_165009/pine_strategies/velocity_BTC_5y_2.pine",
+      "bytes": 14806,
+      "modified_unix": 1778103209.9484212,
+      "sha256": "7fb84e83f6c6a4e7f67ad1eeb14ac41220cf55b80cb6bc1d822418e29f2ff256"
+    },
+    {
+      "path": "scripts/fetch_bitstamp_ohlc.py",
+      "archive_path": "archives/strategy_iterations_20260507_165009/scripts/fetch_bitstamp_ohlc.py",
+      "bytes": 2312,
+      "modified_unix": 1778148247.8771074,
+      "sha256": "4ad8927c9ea0362567ba4b87f2bfdaf6f090fcbe49fc8fec1e3a24e21f030297"
+    },
+    {
+      "path": "scripts/optimize_15m_mtf_reversal.py",
+      "archive_path": "archives/strategy_iterations_20260507_165009/scripts/optimize_15m_mtf_reversal.py",
+      "bytes": 11603,
+      "modified_unix": 1778159116.2893677,
+      "sha256": "8d18ad63cca7ea502e94d4c9c9588263f931bb16bae24893fd55ff8c9fdeee03"
+    },
+    {
+      "path": "scripts/optimize_15m_mtf_reversal_mp.py",
+      "archive_path": "archives/strategy_iterations_20260507_165009/scripts/optimize_15m_mtf_reversal_mp.py",
+      "bytes": 3679,
+      "modified_unix": 1778159116.309522,
+      "sha256": "7f16e96ac51d6750907983517ea3d5ec0b58ed6e9578d340d8377d662de1eac1"
+    },
+    {
+      "path": "scripts/optimize_15m_mtf_reversal_return_mp.py",
+      "archive_path": "archives/strategy_iterations_20260507_165009/scripts/optimize_15m_mtf_reversal_return_mp.py",
+      "bytes": 5441,
+      "modified_unix": 1778178079.5320926,
+      "sha256": "dafc41fe23aed88e3b1954f1554c496ebdc03ab65d91ab1460a8c94205c11c33"
+    },
+    {
+      "path": "scripts/optimize_mtf_flip.py",
+      "archive_path": "archives/strategy_iterations_20260507_165009/scripts/optimize_mtf_flip.py",
+      "bytes": 7143,
+      "modified_unix": 1778148807.3495157,
+      "sha256": "c36721469a9e5c81f302ebbb09a1390d0c2e72b388df1f74bb066e1c49911e2c"
+    },
+    {
+      "path": "scripts/optimize_mtf_flip_mp.py",
+      "archive_path": "archives/strategy_iterations_20260507_165009/scripts/optimize_mtf_flip_mp.py",
+      "bytes": 3781,
+      "modified_unix": 1778150865.009887,
+      "sha256": "4e2e35487e028d7c09907c5f74f890a1a2a85c51f66b66aeed0e181a5838faf6"
+    },
+    {
+      "path": "scripts/optimize_mtf_velocity.py",
+      "archive_path": "archives/strategy_iterations_20260507_165009/scripts/optimize_mtf_velocity.py",
+      "bytes": 18390,
+      "modified_unix": 1778147262.9593272,
+      "sha256": "deb26c2e74418ee1e528e5ce3a772adbef0779096376ce0bb863d86829d54ef4"
+    },
+    {
+      "path": "reports/btc_velocity_pine_manifest.json",
+      "archive_path": "archives/strategy_iterations_20260507_165009/reports/btc_velocity_pine_manifest.json",
+      "bytes": 17250,
+      "modified_unix": 1778099182.7408314,
+      "sha256": "fd3c544025903cf403f61b9e499ed8cc2ecc976fa0a6d2be801bbcb37d5593c5"
+    },
+    {
+      "path": "reports/btc_velocity_top5.json",
+      "archive_path": "archives/strategy_iterations_20260507_165009/reports/btc_velocity_top5.json",
+      "bytes": 4077,
+      "modified_unix": 1778099923.855054,
+      "sha256": "e948b955bf99f2c1953e267d5a1ff476aaaab4b952113dfb87cf977e7f1f2438"
+    },
+    {
+      "path": "reports/btc_velocity_top5.md",
+      "archive_path": "archives/strategy_iterations_20260507_165009/reports/btc_velocity_top5.md",
+      "bytes": 1335,
+      "modified_unix": 1778099923.855205,
+      "sha256": "cb7b21cc358d6f55b26af0e0a54c261e4c421c2734b323994da9517e6e0d3e38"
+    },
+    {
+      "path": "reports/btc_velocity_tradingview_backtests.json",
+      "archive_path": "archives/strategy_iterations_20260507_165009/reports/btc_velocity_tradingview_backtests.json",
+      "bytes": 18773,
+      "modified_unix": 1778106161.7002687,
+      "sha256": "93565657434556b1f8ab1f490499851b168697900376ee1fc511561f3a88d760"
+    },
+    {
+      "path": "reports/btc_velocity_tradingview_top5.json",
+      "archive_path": "archives/strategy_iterations_20260507_165009/reports/btc_velocity_tradingview_top5.json",
+      "bytes": 4220,
+      "modified_unix": 1778103749.4438233,
+      "sha256": "75e34c9b9f962995d647fea13ec82b2b889e63ab6af56422cf56407e4dd63a8c"
+    },
+    {
+      "path": "reports/btc_velocity_tradingview_top5.md",
+      "archive_path": "archives/strategy_iterations_20260507_165009/reports/btc_velocity_tradingview_top5.md",
+      "bytes": 614,
+      "modified_unix": 1778103749.4439814,
+      "sha256": "5b8c479181ae3bb45c5baa4a1219bd2f8e36893c8418af7642c277d6994d9cdc"
+    },
+    {
+      "path": "reports/mtf_15m_reversal_hf_mp_best.json",
+      "archive_path": "archives/strategy_iterations_20260507_165009/reports/mtf_15m_reversal_hf_mp_best.json",
+      "bytes": 21093,
+      "modified_unix": 1778171083.5457954,
+      "sha256": "7f67a0c4a884f29743181e5317c8e50dbe6b2e1c760fc3aede415ee4fcd5b54d"
+    },
+    {
+      "path": "reports/mtf_15m_reversal_mp_best.json",
+      "archive_path": "archives/strategy_iterations_20260507_165009/reports/mtf_15m_reversal_mp_best.json",
+      "bytes": 20565,
+      "modified_unix": 1778159439.491213,
+      "sha256": "5bb77138d901ead9093fa9d88f2739c7d7ff200ade7b2a000f4313bd1d3dd80b"
+    },
+    {
+      "path": "reports/mtf_15m_reversal_tvtester_64k_min60.json",
+      "archive_path": "archives/strategy_iterations_20260507_165009/reports/mtf_15m_reversal_tvtester_64k_min60.json",
+      "bytes": 21068,
+      "modified_unix": 1778172173.663841,
+      "sha256": "17118f2b0ed0a036d3abf837126fc671228917f5ffff598dc27cd9cbcc975352"
+    },
+    {
+      "path": "reports/mtf_flip_mp_best.json",
+      "archive_path": "archives/strategy_iterations_20260507_165009/reports/mtf_flip_mp_best.json",
+      "bytes": 16285,
+      "modified_unix": 1778148963.0596452,
+      "sha256": "3aced5d25f87dc2a64876c778458381fbb1fe99f19bfab989d9c4678fa6b2582"
+    },
+    {
+      "path": "reports/mtf_flip_mp_best_64k.json",
+      "archive_path": "archives/strategy_iterations_20260507_165009/reports/mtf_flip_mp_best_64k.json",
+      "bytes": 16201,
+      "modified_unix": 1778151075.5953228,
+      "sha256": "99e6a6576022f6c1b56144028064b7b176723e9f23ad1930f630a52dcc176aaf"
+    },
+    {
+      "path": "reports/mtf_flip_optuna_best.json",
+      "archive_path": "archives/strategy_iterations_20260507_165009/reports/mtf_flip_optuna_best.json",
+      "bytes": 1452,
+      "modified_unix": 1778148548.1499329,
+      "sha256": "d04c08d7640867532280c5c8b4f739de2090eaef660e9779a5ed9bfb89d719e8"
+    },
+    {
+      "path": "reports/mtf_flip_optuna_best_confirmed.json",
+      "archive_path": "archives/strategy_iterations_20260507_165009/reports/mtf_flip_optuna_best_confirmed.json",
+      "bytes": 1410,
+      "modified_unix": 1778148719.6799989,
+      "sha256": "28aaae8c6426eeb695e642929ad472f9474de950cf20c4f5ff29c071e7357d84"
+    },
+    {
+      "path": "reports/mtf_velocity_optuna_best.json",
+      "archive_path": "archives/strategy_iterations_20260507_165009/reports/mtf_velocity_optuna_best.json",
+      "bytes": 2321,
+      "modified_unix": 1778147319.3312614,
+      "sha256": "3f1a61d2ae0dfc6166d0e494877c871159681cafcdb558bb8e810fb82de27079"
+    },
+    {
+      "path": "reports/tradingview_publish_pack_jd_btc_15m_tv_range_reversal.md",
+      "archive_path": "archives/strategy_iterations_20260507_165009/reports/tradingview_publish_pack_jd_btc_15m_tv_range_reversal.md",
+      "bytes": 3780,
+      "modified_unix": 1778180171.7189085,
+      "sha256": "a631b84217c85950fa0ffe39fbd764426ea2297a2353beabd3b8809eb30bd1d3"
+    },
+    {
+      "path": "tmp/bitstamp_btcusd_15m_20231231_20260507.json",
+      "archive_path": "archives/strategy_iterations_20260507_165009/tmp/bitstamp_btcusd_15m_20231231_20260507.json",
+      "bytes": 13141719,
+      "modified_unix": 1778170438.841293,
+      "sha256": "175f02551ac1d61bf863e4172ab234216b1bcd14fcc50dc1c16dc9ed33ac601f"
+    },
+    {
+      "path": "tmp/bitstamp_btcusd_15m_20250930_20260507.json",
+      "archive_path": "archives/strategy_iterations_20260507_165009/tmp/bitstamp_btcusd_15m_20250930_20260507.json",
+      "bytes": 3357459,
+      "modified_unix": 1778148368.4303064,
+      "sha256": "71fdaccae839ce2166183f26c168f55597550e828770d2b03a6a26680c87a8d2"
+    },
+    {
+      "path": "tmp/bitstamp_btcusd_15m_tvtester_20250930_20260507.json",
+      "archive_path": "archives/strategy_iterations_20260507_165009/tmp/bitstamp_btcusd_15m_tvtester_20250930_20260507.json",
+      "bytes": 3361341,
+      "modified_unix": 1778171993.4005933,
+      "sha256": "68d002ba70d425b26666a7049ca64a9ec86ec0e4619b6ad561a6838265720477"
+    },
+    {
+      "path": "tmp/tv_btcusd_15m_1000.json",
+      "archive_path": "archives/strategy_iterations_20260507_165009/tmp/tv_btcusd_15m_1000.json",
+      "bytes": 75215,
+      "modified_unix": 1778146846.574057,
+      "sha256": "84e9a94fd34ffa3048c16f10d0efba277d66ea756039f9dae92b148b98a7f26b"
+    },
+    {
+      "path": "tmp/tv_btcusd_15m_1250.json",
+      "archive_path": "archives/strategy_iterations_20260507_165009/tmp/tv_btcusd_15m_1250.json",
+      "bytes": 0,
+      "modified_unix": 1778146759.0391452,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "tmp/tv_btcusd_15m_500.json",
+      "archive_path": "archives/strategy_iterations_20260507_165009/tmp/tv_btcusd_15m_500.json",
+      "bytes": 75215,
+      "modified_unix": 1778146846.4992318,
+      "sha256": "84e9a94fd34ffa3048c16f10d0efba277d66ea756039f9dae92b148b98a7f26b"
+    },
+    {
+      "path": "tmp/tv_btcusd_15m_current_500.json",
+      "archive_path": "archives/strategy_iterations_20260507_165009/tmp/tv_btcusd_15m_current_500.json",
+      "bytes": 47301,
+      "modified_unix": 1778171730.8745604,
+      "sha256": "a4fd6e4113b360c70f04c09a247c204ba59fe33ae3a433fe29f02775f7421fe1"
+    },
+    {
+      "path": "reports/current_best_strategy_checkpoint.md",
+      "archive_path": "archives/strategy_iterations_20260507_165009/reports/current_best_strategy_checkpoint.md",
+      "bytes": 1415,
+      "modified_unix": 1778190971.3160713,
+      "sha256": "05e332da84c56780d4cce10adeccb6ae51e02941f0cb625fdc46052369c7e628"
+    }
+  ],
+  "current_best_checkpoint": "reports/current_best_strategy_checkpoint.md"
+}

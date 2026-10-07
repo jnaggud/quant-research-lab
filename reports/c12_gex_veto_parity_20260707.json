@@ -1,0 +1,25 @@
+{
+  "params_worker": 143,
+  "veto_rule": "core_short only if prior-session gex_z<0",
+  "veto_share": 0.516091281451141,
+  "n_short_signal_bars": 1444,
+  "n_vetoed": 537,
+  "c11": {
+    "net": 129107.5,
+    "pf": 1.827,
+    "trades": 436,
+    "maxDD$": -7382.5
+  },
+  "c12": {
+    "net": 111572.5,
+    "pf": 1.695,
+    "trades": 423,
+    "maxDD$": -10155.0
+  },
+  "gates": {
+    "net >= C11": false,
+    "PF >= C11": false,
+    "maxDD <= C11": false,
+    "trades sane": true
+  }
+}

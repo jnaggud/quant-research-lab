@@ -1,0 +1,136 @@
+//@version=6
+strategy("JD Velocity TV Native v1", overlay=true, initial_capital=10000, default_qty_type=strategy.percent_of_equity, default_qty_value=100, pyramiding=0, commission_type=strategy.commission.percent, commission_value=0.02, slippage=0, process_orders_on_close=true)
+
+direction = input.string("Long only", "Direction", options=["Long only", "Long + short"])
+useDateRange = input.bool(false, "Use date range")
+startTime = input.time(1672531200000, "Start")
+endTime = input.time(4102444800000, "End")
+
+emaFastLen = input.int(34, "Fast EMA", minval=1)
+emaSlowLen = input.int(89, "Slow EMA", minval=1)
+emaRegimeLen = input.int(200, "Regime EMA", minval=1)
+adxLen = input.int(14, "ADX length", minval=1)
+adxTrendMin = input.float(16.0, "Minimum ADX", step=0.5)
+aroonLen = input.int(25, "Aroon length", minval=2)
+normLen = input.int(50, "Normalization length", minval=5)
+oscSmoothLen = input.int(3, "Oscillator smoothing", minval=1)
+velocitySmoothLen = input.int(2, "Velocity smoothing", minval=1)
+
+oversold = input.float(-0.34, "Oversold", step=0.01)
+overbought = input.float(0.42, "Overbought", step=0.01)
+extremeMult = input.float(1.65, "Extreme multiplier", step=0.05)
+momentumMult = input.float(1.15, "Momentum multiplier", step=0.05)
+pullbackLookback = input.int(8, "Pullback lookback", minval=1)
+breakoutLen = input.int(42, "Breakout length", minval=2)
+minBarsBetween = input.int(4, "Minimum bars between trades", minval=0)
+
+rsiLen = input.int(14, "RSI length", minval=2)
+longRsiFloor = input.float(42.0, "Long RSI floor", step=0.5)
+shortRsiCeiling = input.float(58.0, "Short RSI ceiling", step=0.5)
+volumeLen = input.int(20, "Volume MA length", minval=1)
+volumeMult = input.float(0.85, "Volume multiplier", step=0.05)
+
+atrLen = input.int(14, "ATR length", minval=1)
+stopAtr = input.float(2.2, "Stop ATR", step=0.1)
+takeProfitAtr = input.float(5.0, "Take profit ATR", step=0.1)
+trailActivationAtr = input.float(2.4, "Trail activation ATR", step=0.1)
+trailAtr = input.float(2.0, "Trail ATR", step=0.1)
+exitOnVelocityFlip = input.bool(true, "Exit on velocity flip")
+exitOnRegimeLoss = input.bool(true, "Exit on regime loss")
+
+showSignals = input.bool(true, "Show signals")
+showOscillator = input.bool(false, "Show oscillator in pane")
+
+f_safe_div(a, b) => math.abs(b) > 1e-10 ? a / b : 0.0
+f_clip(x, lo, hi) => math.max(lo, math.min(hi, x))
+f_norm_minmax(src, len) =>
+    lowest = ta.lowest(src, len)
+    highest = ta.highest(src, len)
+    f_clip(2.0 * f_safe_div(src - lowest, highest - lowest) - 1.0, -1.0, 1.0)
+f_williams(len) => -100.0 * f_safe_div(ta.highest(high, len) - close, ta.highest(high, len) - ta.lowest(low, len))
+f_aroon_osc(len) =>
+    highBars = ta.highestbars(high, len + 1)
+    lowBars = ta.lowestbars(low, len + 1)
+    aroonUp = 100.0 * (len - math.abs(highBars)) / len
+    aroonDown = 100.0 * (len - math.abs(lowBars)) / len
+    aroonUp - aroonDown
+
+emaFast = ta.ema(close, emaFastLen)
+emaSlow = ta.ema(close, emaSlowLen)
+emaRegime = ta.ema(close, emaRegimeLen)
+[plusDi, minusDi, adx] = ta.dmi(adxLen, adxLen)
+[macdLine, macdSignal, macdHist] = ta.macd(close, 12, 26, 9)
+rsi = ta.rsi(close, rsiLen)
+atr = ta.atr(atrLen)
+volOk = volume >= ta.sma(volume, volumeLen) * volumeMult
+
+rocNorm = f_norm_minmax(ta.roc(close, 10), normLen)
+macdNorm = f_norm_minmax(macdHist, normLen)
+aroonNorm = f_aroon_osc(aroonLen) / 100.0
+trendComponent = (rocNorm + macdNorm + aroonNorm) / 3.0
+rsiNorm = (rsi - 50.0) / 50.0
+stochNorm = (ta.stoch(close, high, low, 14) - 50.0) / 50.0
+willNorm = (f_williams(14) + 50.0) / 50.0
+reversionComponent = (rsiNorm + stochNorm + willNorm) / 3.0
+regimeWeight = f_clip(adx / 100.0, 0.0, 1.0)
+arwoRaw = regimeWeight * trendComponent + (1.0 - regimeWeight) * reversionComponent
+arwo = f_clip(ta.sma(arwoRaw, oscSmoothLen), -1.0, 1.0)
+velocityRaw = arwo - arwo[1]
+velocity = velocitySmoothLen > 1 ? ta.sma(velocityRaw, velocitySmoothLen) : velocityRaw
+velocityStd = nz(ta.stdev(velocity, normLen), 0.0)
+
+inRange = not useDateRange or (time >= startTime and time <= endTime)
+bullRegime = close > emaRegime and emaFast > emaSlow and emaSlow >= emaRegime * 0.985 and adx >= adxTrendMin
+bearRegime = close < emaRegime and emaFast < emaSlow and emaSlow <= emaRegime * 1.015 and adx >= adxTrendMin
+oversoldRecently = ta.lowest(arwo, pullbackLookback) < oversold
+overboughtRecently = ta.highest(arwo, pullbackLookback) > overbought
+velocityCrossUp = ta.crossover(velocity, 0)
+velocityCrossDown = ta.crossunder(velocity, 0)
+longReversal = oversoldRecently and velocityCrossUp and rsi > longRsiFloor
+shortReversal = overboughtRecently and velocityCrossDown and rsi < shortRsiCeiling
+longBreakout = close > ta.highest(high, breakoutLen)[1] and arwo > 0 and velocity > velocityStd * momentumMult
+shortBreakdown = close < ta.lowest(low, breakoutLen)[1] and arwo < 0 and velocity < -velocityStd * momentumMult
+
+var int lastTradeBar = na
+barsSinceTrade = na(lastTradeBar) ? 100000 : bar_index - lastTradeBar
+canTrade = inRange and barsSinceTrade >= minBarsBetween
+longSignal = canTrade and volOk and bullRegime and (longReversal or longBreakout)
+shortSignal = canTrade and direction == "Long + short" and volOk and bearRegime and (shortReversal or shortBreakdown)
+
+if longSignal and strategy.position_size <= 0
+    strategy.entry("Long", strategy.long)
+    lastTradeBar := bar_index
+if shortSignal and strategy.position_size >= 0
+    strategy.entry("Short", strategy.short)
+    lastTradeBar := bar_index
+
+longStop = strategy.position_avg_price - atr * stopAtr
+longLimit = strategy.position_avg_price + atr * takeProfitAtr
+shortStop = strategy.position_avg_price + atr * stopAtr
+shortLimit = strategy.position_avg_price - atr * takeProfitAtr
+trailPoints = atr * trailAtr / syminfo.mintick
+trailOffset = atr * trailActivationAtr / syminfo.mintick
+
+strategy.exit("Long ATR Exit", "Long", stop=longStop, limit=longLimit, trail_points=trailPoints, trail_offset=trailOffset)
+strategy.exit("Short ATR Exit", "Short", stop=shortStop, limit=shortLimit, trail_points=trailPoints, trail_offset=trailOffset)
+
+longVelocityExit = exitOnVelocityFlip and strategy.position_size > 0 and velocityCrossDown and arwo > overbought * 0.35
+shortVelocityExit = exitOnVelocityFlip and strategy.position_size < 0 and velocityCrossUp and arwo < oversold * 0.35
+longRegimeExit = exitOnRegimeLoss and strategy.position_size > 0 and close < emaSlow and macdHist < macdHist[1]
+shortRegimeExit = exitOnRegimeLoss and strategy.position_size < 0 and close > emaSlow and macdHist > macdHist[1]
+
+if longVelocityExit or longRegimeExit or (useDateRange and time > endTime and strategy.position_size > 0)
+    strategy.close("Long")
+if shortVelocityExit or shortRegimeExit or (useDateRange and time > endTime and strategy.position_size < 0)
+    strategy.close("Short")
+
+plot(emaFast, "Fast EMA", color=color.new(color.aqua, 0))
+plot(emaSlow, "Slow EMA", color=color.new(color.orange, 0))
+plot(emaRegime, "Regime EMA", color=color.new(color.white, 25), linewidth=2)
+plotshape(showSignals and longSignal, "Long", shape.triangleup, location.belowbar, color=color.lime, size=size.tiny, text="L")
+plotshape(showSignals and shortSignal, "Short", shape.triangledown, location.abovebar, color=color.red, size=size.tiny, text="S")
+plot(showOscillator ? arwo : na, "ARWO", color=color.new(color.aqua, 0), display=display.pane)
+plot(showOscillator ? velocity : na, "Velocity", color=color.new(color.yellow, 0), display=display.pane)
+hline(0, "Midline", color=color.gray)
+hline(oversold, "Oversold", color=color.new(color.lime, 40))
+hline(overbought, "Overbought", color=color.new(color.red, 40))

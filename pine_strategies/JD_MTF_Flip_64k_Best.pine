@@ -1,0 +1,64 @@
+//@version=6
+strategy("JD MTF Flip 64k Best 20260507", overlay=true, initial_capital=10000, default_qty_type=strategy.percent_of_equity, default_qty_value=100, pyramiding=0, commission_type=strategy.commission.percent, commission_value=0.02, slippage=0, process_orders_on_close=true)
+
+// Source: reports/mtf_flip_mp_best_64k.json
+// Python params: tf=240min fast=6 slow=10, confirm=1D fast=16 slow=33, hold_bars=1, cost_bps=4.
+h4FastLen = input.int(6, "4H fast EMA", minval=1)
+h4SlowLen = input.int(10, "4H slow EMA", minval=1)
+dFastLen = input.int(16, "Daily confirm fast EMA", minval=1)
+dSlowLen = input.int(33, "Daily confirm slow EMA", minval=1)
+holdBars = input.int(1, "Signal confirmation bars", minval=0)
+useDateRange = input.bool(true, "Use Python test date range")
+startTime = input.time(1759190400000, "Start")
+endTime = input.time(1778157600000, "End")
+showSignals = input.bool(true, "Show signals")
+showMtfLines = input.bool(true, "Show MTF EMAs")
+
+h4Fast = request.security(syminfo.tickerid, "240", ta.ema(close, h4FastLen)[1], barmerge.gaps_off, barmerge.lookahead_off)
+h4Slow = request.security(syminfo.tickerid, "240", ta.ema(close, h4SlowLen)[1], barmerge.gaps_off, barmerge.lookahead_off)
+dFast = request.security(syminfo.tickerid, "1D", ta.ema(close, dFastLen)[1], barmerge.gaps_off, barmerge.lookahead_off)
+dSlow = request.security(syminfo.tickerid, "1D", ta.ema(close, dSlowLen)[1], barmerge.gaps_off, barmerge.lookahead_off)
+
+h4Signal = h4Fast > h4Slow ? 1 : -1
+dailySignal = dFast > dSlow ? 1 : -1
+baseSignal = h4Signal == dailySignal ? h4Signal : 0
+
+var int tradeSignal = 0
+var int pendingSignal = na
+var int pendingAge = 0
+
+if baseSignal == tradeSignal
+    pendingSignal := na
+    pendingAge := 0
+else
+    if na(pendingSignal) or pendingSignal != baseSignal
+        pendingSignal := baseSignal
+        pendingAge := 0
+    else
+        pendingAge += 1
+    if pendingAge >= holdBars
+        tradeSignal := pendingSignal
+        pendingSignal := na
+        pendingAge := 0
+
+inRange = not useDateRange or (time >= startTime and time <= endTime)
+targetSignal = inRange ? tradeSignal : 0
+
+longSignal = targetSignal == 1 and strategy.position_size <= 0
+shortSignal = targetSignal == -1 and strategy.position_size >= 0
+flatSignal = targetSignal == 0 and strategy.position_size != 0
+
+if longSignal
+    strategy.entry("Long", strategy.long)
+if shortSignal
+    strategy.entry("Short", strategy.short)
+if flatSignal
+    strategy.close_all(comment="MTF flat")
+
+plot(showMtfLines ? h4Fast : na, "4H Fast EMA prev", color=color.new(color.aqua, 0))
+plot(showMtfLines ? h4Slow : na, "4H Slow EMA prev", color=color.new(color.orange, 0))
+plot(showMtfLines ? dFast : na, "Daily Fast EMA prev", color=color.new(color.lime, 55), linewidth=2)
+plot(showMtfLines ? dSlow : na, "Daily Slow EMA prev", color=color.new(color.red, 55), linewidth=2)
+plotshape(showSignals and longSignal, "Long", shape.triangleup, location.belowbar, color=color.lime, size=size.tiny, text="L")
+plotshape(showSignals and shortSignal, "Short", shape.triangledown, location.abovebar, color=color.red, size=size.tiny, text="S")
+bgcolor(targetSignal == 1 ? color.new(color.green, 92) : targetSignal == -1 ? color.new(color.red, 92) : color.new(color.gray, 94))

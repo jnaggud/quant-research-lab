@@ -1,0 +1,119 @@
+//@version=6
+strategy("JD CL 15m Trend Bias 64k C4 20260508", overlay=true, initial_capital=50000, default_qty_type=strategy.fixed, default_qty_value=1, pyramiding=0, margin_long=5, margin_short=5, commission_type=strategy.commission.cash_per_contract, commission_value=2.50, slippage=1, process_orders_on_close=true)
+
+// Source: reports/cl_15m_trend_bias_64k.json candidate 4, worker 59
+// Objective: create a CL-specific 15m trend-biased futures strategy.
+// Engine: H4 trend bias, wider long carry risk, separate short trailing risk, min-hold gate, and momentum/regime exits.
+h4FastLen = input.int(9, "4H fast EMA", minval=1)
+h4SlowLen = input.int(20, "4H slow EMA", minval=1)
+dFastLen = input.int(14, "Daily fast EMA", minval=1)
+dSlowLen = input.int(82, "Daily slow EMA", minval=1)
+longMode = input.string("either_up", "Long regime mode", options=["h4_up", "daily_up", "both_up", "either_up"])
+shortMode = input.string("daily_down", "Short regime mode", options=["h4_down", "both_down", "daily_down", "h4_down_daily_not_up"])
+localFilter = input.string("none", "Local filter", options=["none", "ema21", "ema55", "stack", "ema144"])
+stopAtr = input.float(9.0469, "Hard stop ATR", step=0.1)
+trailAtr = input.float(32.0164, "Long trail ATR", step=0.1)
+shortTrailAtr = input.float(17.8071, "Short trail ATR", step=0.1)
+cooldownBars = input.int(7, "Cooldown bars", minval=0)
+minHoldBars = input.int(17, "Minimum hold bars", minval=0)
+longRsiMin = input.float(50.3454, "Long RSI min", step=0.1)
+shortRsiMax = input.float(41.1098, "Short RSI max", step=0.1)
+longMacdFloor = input.float(-5.7702, "Long MACD floor", step=0.1)
+shortMacdCeiling = input.float(3.5496, "Short MACD ceiling", step=0.1)
+volMult = input.float(0.7344, "Volume multiplier", step=0.01)
+useMomentumExit = input.bool(false, "Use momentum exit")
+longExitRsi = input.float(43.4859, "Long momentum exit RSI", step=0.1)
+shortExitRsi = input.float(67.7506, "Short momentum exit RSI", step=0.1)
+longExitMode = input.string("daily_down", "Long regime exit", options=["h4_down", "daily_down", "both_down", "none"])
+shortExitMode = input.string("daily_up", "Short regime exit", options=["h4_up", "daily_up", "either_up", "none"])
+allowShorts = input.bool(true, "Allow shorts")
+useDateRange = input.bool(true, "Use test date range")
+startTime = input.time(1751320800000, "Start")
+endTime = input.time(1778270499000, "End")
+showSignals = input.bool(true, "Show signals")
+showMtfLines = input.bool(true, "Show MTF EMAs")
+
+h4Fast = request.security(syminfo.tickerid, "240", ta.ema(close, h4FastLen)[1], barmerge.gaps_off, barmerge.lookahead_off)
+h4Slow = request.security(syminfo.tickerid, "240", ta.ema(close, h4SlowLen)[1], barmerge.gaps_off, barmerge.lookahead_off)
+dFast = request.security(syminfo.tickerid, "1D", ta.ema(close, dFastLen)[1], barmerge.gaps_off, barmerge.lookahead_off)
+dSlow = request.security(syminfo.tickerid, "1D", ta.ema(close, dSlowLen)[1], barmerge.gaps_off, barmerge.lookahead_off)
+
+h4Signal = h4Fast > h4Slow ? 1 : -1
+dailySignal = dFast > dSlow ? 1 : -1
+inRange = not useDateRange or (time >= startTime and time <= endTime)
+
+rsi = ta.rsi(close, 14)
+[_, _, macdHist] = ta.macd(close, 12, 26, 9)
+atr = ta.atr(14)
+ema8 = ta.ema(close, 8)
+ema21 = ta.ema(close, 21)
+ema55 = ta.ema(close, 55)
+ema144 = ta.ema(close, 144)
+volSma = ta.sma(volume, 48)
+
+longFilter = localFilter == "none" ? true : localFilter == "ema21" ? close > ema21 : localFilter == "ema55" ? close > ema55 : localFilter == "stack" ? ema8 > ema21 and ema21 > ema55 and close > ema8 : close > ema144
+shortFilter = localFilter == "none" ? true : localFilter == "ema21" ? close < ema21 : localFilter == "ema55" ? close < ema55 : localFilter == "stack" ? ema8 < ema21 and ema21 < ema55 and close < ema8 : close < ema144
+longRegime = longMode == "daily_up" ? dailySignal == 1 : longMode == "both_up" ? h4Signal == 1 and dailySignal == 1 : longMode == "either_up" ? h4Signal == 1 or dailySignal == 1 : h4Signal == 1
+shortRegime = shortMode == "both_down" ? h4Signal == -1 and dailySignal == -1 : shortMode == "daily_down" ? dailySignal == -1 : shortMode == "h4_down_daily_not_up" ? h4Signal == -1 and dailySignal != 1 : h4Signal == -1
+volOk = volume >= volMult * volSma
+longSetup = inRange and longRegime and longFilter and rsi >= longRsiMin and macdHist >= longMacdFloor and volOk
+shortSetup = inRange and allowShorts and shortRegime and shortFilter and rsi <= shortRsiMax and macdHist <= shortMacdCeiling and volOk
+
+var int lastExitBar = na
+var int entryBar = na
+var float entryHigh = na
+var float entryLow = na
+flatNow = strategy.position_size == 0 and strategy.position_size[1] != 0
+if flatNow
+    lastExitBar := bar_index
+    entryBar := na
+    entryHigh := na
+    entryLow := na
+cooldownOk = na(lastExitBar) or bar_index - lastExitBar >= cooldownBars
+canEnter = strategy.position_size == 0 and cooldownOk
+
+if canEnter and longSetup
+    strategy.entry("Long", strategy.long)
+    entryBar := bar_index
+    entryHigh := high
+    entryLow := low
+else if canEnter and shortSetup
+    strategy.entry("Short", strategy.short)
+    entryBar := bar_index
+    entryHigh := high
+    entryLow := low
+
+if strategy.position_size != 0
+    entryHigh := na(entryHigh) ? high : math.max(entryHigh, high)
+    entryLow := na(entryLow) ? low : math.min(entryLow, low)
+
+barsHeld = strategy.position_size != 0 and not na(entryBar) ? bar_index - entryBar : 0
+holdOk = barsHeld >= minHoldBars
+longStop = math.max(strategy.position_avg_price - stopAtr * atr, entryHigh - trailAtr * atr)
+shortStop = math.min(strategy.position_avg_price + stopAtr * atr, entryLow + shortTrailAtr * atr)
+
+longRegimeExit = longExitMode == "h4_down" ? h4Signal == -1 : longExitMode == "daily_down" ? dailySignal == -1 : longExitMode == "both_down" ? h4Signal == -1 and dailySignal == -1 : false
+shortRegimeExit = shortExitMode == "h4_up" ? h4Signal == 1 : shortExitMode == "daily_up" ? dailySignal == 1 : shortExitMode == "either_up" ? h4Signal == 1 or dailySignal == 1 : false
+
+if strategy.position_size > 0
+    strategy.exit("Long Risk", "Long", stop=longStop)
+if strategy.position_size < 0
+    strategy.exit("Short Risk", "Short", stop=shortStop)
+if strategy.position_size > 0 and (not inRange or (holdOk and longRegimeExit))
+    strategy.close("Long", comment="Regime exit")
+if strategy.position_size < 0 and (not inRange or (holdOk and shortRegimeExit))
+    strategy.close("Short", comment="Regime exit")
+if strategy.position_size > 0 and holdOk and useMomentumExit and dailySignal != 1 and macdHist < macdHist[1] and rsi < longExitRsi
+    strategy.close("Long", comment="Momentum exit")
+if strategy.position_size < 0 and holdOk and useMomentumExit and macdHist > macdHist[1] and rsi > shortExitRsi
+    strategy.close("Short", comment="Momentum exit")
+
+plot(showMtfLines ? h4Fast : na, "4H Fast EMA prev", color=color.new(color.aqua, 0))
+plot(showMtfLines ? h4Slow : na, "4H Slow EMA prev", color=color.new(color.orange, 0))
+plot(showMtfLines ? dFast : na, "Daily Fast EMA prev", color=color.new(color.lime, 60), linewidth=2)
+plot(showMtfLines ? dSlow : na, "Daily Slow EMA prev", color=color.new(color.red, 60), linewidth=2)
+plot(strategy.position_size > 0 ? longStop : na, "Long active stop", color=color.new(color.red, 0), style=plot.style_linebr)
+plot(strategy.position_size < 0 ? shortStop : na, "Short active stop", color=color.new(color.lime, 0), style=plot.style_linebr)
+plotshape(showSignals and longSetup, "Long setup", shape.circle, location.belowbar, color=color.new(color.lime, 0), size=size.tiny, text="L")
+plotshape(showSignals and shortSetup, "Short setup", shape.circle, location.abovebar, color=color.new(color.fuchsia, 0), size=size.tiny, text="S")
+bgcolor(h4Signal == 1 ? color.new(color.green, 92) : color.new(color.red, 94))

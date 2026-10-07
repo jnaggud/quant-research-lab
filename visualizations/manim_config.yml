@@ -1,0 +1,12 @@
+directories:
+  base: "."
+  cache: ".cache/manim"
+  subdirs:
+    output: "media/quant_desk"
+    raster_images: "visualizations/assets"
+    vector_images: "visualizations/assets"
+    sounds: "visualizations/assets"
+    data: "reports"
+    downloads: ".cache/manim/downloads"
+file_writer:
+  ffmpeg_bin: "ffmpeg"
