@@ -1,5 +1,6 @@
 """Public demo checks: offline operation, data integrity, and report reconciliation."""
 import subprocess
+import json
 import numpy as np
 import pytest
 from dashboard.demo import synthetic_bars, synthetic_report
@@ -43,3 +44,24 @@ def test_live_mode_does_not_silently_substitute_demo(monkeypatch):
     report = app.test_client().get("/api/trader").get_json()
     assert not report["ok"] and not report["live"]
     assert not report.get("demo")
+
+
+def test_static_export_keeps_synthetic_inputs_even_in_live_environment(tmp_path, monkeypatch):
+    from dashboard.export_demo import export_site
+    monkeypatch.setenv("DASHBOARD_MODE", "live")
+    private_report = tmp_path / "private.json"
+    private_report.write_text('{"private_marker": "must-not-be-published"}')
+    monkeypatch.setenv("QUANT_TV_REPORT_FILE", str(private_report))
+    output = tmp_path / "site"
+    export_site(output)
+    html = (output / "index.html").read_text()
+    assert 'data-live-url="./fixtures/live.json"' in html
+    assert 'data-trader-url="./fixtures/trader.json"' in html
+    assert '"/studio-assets/' not in html
+    for name in ("live", "trader"):
+        text = (output / "fixtures" / f"{name}.json").read_text()
+        payload = json.loads(text)
+        assert payload["ok"] and payload["demo"] and not payload["live"]
+        assert "must-not-be-published" not in text
+    assert (output / "studio-assets" / "studio.js").exists()
+    assert (output / "studio-assets" / "studio.css").exists()

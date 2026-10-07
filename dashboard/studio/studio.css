@@ -2,6 +2,10 @@
 * { box-sizing:border-box; }
 body { margin:0; background:#06090c; overflow-x:hidden; }
 #app { max-width:1720px; min-height:100vh; margin:auto; padding:24px 34px 42px; }
+.portfolio-nav { display:flex; justify-content:space-between; flex-wrap:wrap; gap:14px; padding-bottom:20px; color:#a8b3bc; font:700 10px/1.5 ui-monospace,SFMono-Regular,Menlo,monospace; }
+.portfolio-nav div { display:flex; gap:20px; flex-wrap:wrap; }
+.portfolio-nav a { color:#9acff5; text-decoration:none; }
+.portfolio-nav a:hover, .portfolio-nav a:focus-visible { color:#fff; text-decoration:underline; }
 header { min-height:108px; display:flex; justify-content:space-between; align-items:flex-start; border-bottom:1px solid #25303a; padding:7px 0 24px; }
 .eyebrow { color:#738491; font:700 10px/1.2 ui-monospace,SFMono-Regular,Menlo,monospace; }
 h1 { margin:12px 0 0; font-size:46px; line-height:1; font-weight:630; letter-spacing:0; }

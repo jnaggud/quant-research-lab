@@ -1,4 +1,4 @@
-# Quant Research Lab
+# Algorithmic Trading Research Lab: Python & Pine Script
 
 [![Tests](https://github.com/jnaggud/quant-research-lab/actions/workflows/tests.yml/badge.svg)](https://github.com/jnaggud/quant-research-lab/actions/workflows/tests.yml)
 ![Python](https://img.shields.io/badge/Python-3.10%20%7C%203.12-3776AB)
@@ -25,6 +25,10 @@ Built by [Jefferson Duggan](https://github.com/jnaggud). The project combines Py
 
 ## Try the demo
 
+**[Open the interactive demo](https://algorithmic-trading-research-lab.jnaggud.chatgpt.site)** · **[Watch the 75-second walkthrough](https://github.com/jnaggud/quant-research-lab/releases/tag/portfolio-demo-v1)**
+
+The hosted dashboard is a static export of the Python-generated synthetic fixtures. No sign-in is needed. To run the Python server locally:
+
 Use Python 3.10 or 3.12. No API keys, TradingView connection, Node.js, or market-data subscription are needed for the demo.
 
 ```bash
@@ -43,6 +47,15 @@ On Windows, activate the environment with `.venv\Scripts\Activate.ps1`. Use `--p
 ```bash
 python -m dashboard.demo --output data/demo
 ```
+
+To generate the standalone website locally:
+
+```bash
+python -m dashboard.export_demo --output dist/demo
+python -m http.server 8060 --directory dist/demo
+```
+
+The exporter always uses synthetic inputs, including when live-mode environment variables are set.
 
 ## Run the research checks
 
